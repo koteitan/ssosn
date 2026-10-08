@@ -1,0 +1,170 @@
+#!/usr/bin/env python3
+"""One expansion step of 強2階探索数列 (strong second-order search sequence).
+
+usage:
+  ./ssosn "0,1,0"        expand with [1]
+  ./ssosn "0,1,0[2]"     expand with [2]
+  ./ssosn -v "..."       also print p(i), mbp(x), br and the cut
+  ./ssosn --r76057 "..." rev 76057 (2026-09-29)
+  ./ssosn --old "..."    rev 76008 with the cut mbp(p(br))  (earlier reading)
+  ./ssosn --fix "..."    rev 76008 with both corrections proposed on 2026-09-27
+
+Definition: 巨大数研究 Wiki, ユーザーブログ:Kanrokoti/強2階探索表記, rev 76153
+(2026-10-04), read literally:
+
+  S[n] = n                                   if Length = 0
+       = (S_k)_{k=1}^{Length-1} [f(n)]       else if S_Length = 0
+       = G ⌢ B ⌢ ... ⌢ B [f(n)]  (f(n) copies of B)   otherwise
+  f(n) = n + 1
+  G  = (S_k)_{k=1}^{fbp(br)}
+  B  = (S_k)_{k=fbp(br)+1}^{Length-1} ⌢ (S_Length - 1)
+  br = min({ i | 1 < i <= Length and
+               ( (S_k)_{k=fbp(i)+1}^{Length} <= (S_k)_{k=fbp(i-1)+1}^{Length}
+                 or exists j with p(i) < j <= fbp(i) and S_j <= S_{p(i)} ) } ∪ {Length})
+  fbp(i) = mbp(p(i))
+  mbp(x) = Length     if Length <= x
+         = x          else if S_x < S_Length and
+                           (S_k)_{k=mbp(x+1)+1}^{Length} < (S_k)_{k=x+1}^{Length}
+         = mbp(x+1)   otherwise
+  p(i) = sp^i(Length)
+  sp(x) = max({ i >= 1 | i < x, (S_k)_{k=i}^{Length} < (S_k)_{k=x}^{Length} } ∪ {1})
+  Sequences are compared in left-lexicographic order (a proper prefix is smaller).
+
+--r76057: br = min{ i | 1 < i <= Length and ( S_{fbp(i)} <= S_{fbp(i-1)}
+              or (S_k)_{k=fbp(i)+1}^{Length} <= (S_k)_{k=fbp(i-1)+1}^{Length} ) },
+          mbp(x) = x if Length <= x (otherwise as above).
+--old: mbp(x) = min({ i | x <= i < Length, S_i < S_Length,
+                          (S_k)_{k=mbp(x+1)+1}^{Length} < (S_k)_{k=i+1}^{Length} } ∪ {Length-1})
+       for x < Length, and Length-1 otherwise (rev 76008), with the cut mbp(p(br)).
+--fix: as --old but with "<=" instead of "<" in mbp (the largest bad part).
+"""
+import re
+import sys
+
+
+class Seq:
+    def __init__(self, S, mode="new"):
+        self.S = tuple(S)
+        self.L = len(S)
+        self.mode = mode          # "new" (rev 76153), "r76057", "old", "fix"
+        self._mbp = {}
+
+    def suf(self, k):
+        """(S_j)_{j=k}^{L}, 1-based; k = L+1 gives ()."""
+        return self.S[k - 1:]
+
+    def sp(self, x):
+        best = 1
+        for i in range(1, x):
+            if self.suf(i) < self.suf(x):
+                best = i
+        return best
+
+    def p(self, i):
+        x = self.L
+        for _ in range(i):
+            x = self.sp(x)
+        return x
+
+    def mbp(self, x):
+        L, S = self.L, self.S
+        if self.mode in ("new", "r76057"):
+            if L <= x:
+                return L if self.mode == "new" else x
+            if x not in self._mbp:
+                m = self.mbp(x + 1)
+                if S[x - 1] < S[L - 1] and self.suf(m + 1) < self.suf(x + 1):
+                    self._mbp[x] = x
+                else:
+                    self._mbp[x] = m
+            return self._mbp[x]
+        if x >= L:
+            return L - 1
+        if x not in self._mbp:
+            base = self.suf(self.mbp(x + 1) + 1)
+            fix = self.mode == "fix"
+            cand = [i for i in range(x, L)
+                    if S[i - 1] < S[L - 1]
+                    and (base <= self.suf(i + 1) if fix else base < self.suf(i + 1))]
+            self._mbp[x] = min(cand + [L - 1])
+        return self._mbp[x]
+
+    def br(self):
+        S, L = self.S, self.L
+        if self.mode == "new":
+            for i in range(2, L + 1):
+                a, b, pi = self.mbp(self.p(i)), self.mbp(self.p(i - 1)), self.p(i)
+                if self.suf(a + 1) <= self.suf(b + 1):
+                    return i
+                if any(S[j - 1] <= S[pi - 1] for j in range(pi + 1, a + 1)):
+                    return i
+            return L
+        for i in range(2, self.L + 1):
+            a, b = self.mbp(self.p(i)), self.mbp(self.p(i - 1))
+            if S[a - 1] <= S[b - 1] or self.suf(a + 1) <= self.suf(b + 1):
+                return i
+        return None
+
+    def cut(self):
+        br = self.br()
+        if br is None:
+            raise ValueError("br is undefined (no i with 1 < i <= Length satisfies the condition)")
+        return self.mbp(self.p(br))
+
+
+def step(S, n, mode="new"):
+    """One step: returns (S', n') with S[n] = S'[n']."""
+    S = tuple(S)
+    f = n + 1
+    if not S:
+        return None, n
+    if S[-1] == 0:
+        return S[:-1], f
+    c = Seq(S, mode).cut()
+    G = S[:c]
+    B = S[c:-1] + (S[-1] - 1,)
+    return G + B * f, f
+
+
+def show(S):
+    return "(" + ",".join(map(str, S)) + ")"
+
+
+def parse(arg):
+    m = re.fullmatch(r"\s*\(?\s*([0-9,\s]*?)\s*\)?\s*(?:\[\s*(\d+)\s*\])?\s*", arg)
+    if not m:
+        raise ValueError(f"cannot parse: {arg!r}")
+    body, n = m.group(1), m.group(2)
+    S = tuple(int(t) for t in body.replace(" ", "").split(",") if t != "")
+    return S, int(n) if n is not None else 1
+
+
+def main(argv):
+    mode = ("fix" if "--fix" in argv else "old" if "--old" in argv
+            else "r76057" if "--r76057" in argv else "new")
+    verbose = "-v" in argv
+    args = [a for a in argv if a not in ("--fix", "--old", "--r76057", "-v")]
+    if not args or args[0] in ("-h", "--help"):
+        print(__doc__.split("\n\n")[1])
+        return 0
+    for arg in args:
+        S, n = parse(arg)
+        T, m = step(S, n, mode)
+        if T is None:
+            print(f"{show(S)}[{n}] = {n}")
+            continue
+        if verbose and S and S[-1] != 0:
+            q = Seq(S, mode)
+            L = len(S)
+            print("  p(i)   :", [q.p(i) for i in range(L + 1)])
+            print("  mbp(x) :", {x: q.mbp(x) for x in range(1, L + 1)})
+            br = q.br()
+            c = q.cut()
+            print(f"  br = {br}, p(br) = {q.p(br)}, cut = mbp(p(br)) = {c}")
+            print(f"  G = {show(S[:c])}, B = {show(S[c:-1] + (S[-1] - 1,))}")
+        print(f"{show(S)}[{n}] = {show(T)}[{m}]")
+    return 0
+
+
+if __name__ == "__main__":
+    sys.exit(main(sys.argv[1:]))

@@ -1,0 +1,12 @@
+import re,html,sys
+s=open(sys.argv[1],encoding="utf-8").read()
+m=re.search(r'mw-parser-output(.*?)(Community content is available|printfooter)',s,re.S)
+t=m.group(1)
+t=re.sub(r'<(script|style)[^>]*>.*?</\1>','',t,flags=re.S)
+t=re.sub(r'<br\s*/?>','\n',t)
+t=re.sub(r'</(p|div|li|h\d|tr|pre|dd|dt)>','\n',t)
+t=re.sub(r'<t[dh][^>]*>',' | ',t)
+t=re.sub(r'<[^>]+>','',t)
+t=html.unescape(t)
+t=re.sub(r'\n\s*\n+','\n\n',t)
+print(t)
