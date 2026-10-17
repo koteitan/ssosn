@@ -1,0 +1,50 @@
+lift5350 {'agree': 5350}
+core 2000 failures 0
+core 4000 failures 0
+core 6000 failures 0
+core 8000 failures 0
+core 10000 failures 0
+core 12000 failures 0
+core 14000 failures 0
+core 16000 failures 0
+core FINAL Counter({'local_pass': 17828}) fail 0 order 0
+closure87976 10000 {'agree': 10000}
+closure87976 20000 {'agree': 20000}
+closure87976 30000 {'agree': 30000}
+closure87976 40000 {'agree': 40000}
+closure87976 50000 {'agree': 50000}
+closure87976 60000 {'agree': 60000}
+closure87976 70000 {'agree': 70000}
+closure87976 80000 {'agree': 80000}
+closure87976 {'agree': 87976}
+old977 {'outside': Counter({'agree': 585}), 'region': Counter({'agree': 237, 'differ': 155})}
+current 20000 {'agree': 20000}
+current 40000 {'agree': 40000}
+current 60000 {'agree': 60000}
+current 80000 {'agree': 80000}
+current 100000 {'agree': 100000}
+historical 100000 {'agree': 100000}
+historical 200000 {'agree': 200000}
+historical 300000 {'agree': 300000}
+historical 400000 {'agree': 400000}
+historical 500000 {'agree': 500000}
+historical 600000 {'agree': 600000}
+historical 700000 {'agree': 700000}
+historical 800000 {'agree': 800000}
+all old checks passed
+new region 200 all pass
+new region 400 all pass
+new region 600 all pass
+new region 800 all pass
+new region 1000 all pass
+new region 1200 all pass
+new region 1400 all pass
+new region 1600 all pass
+new region 1800 all pass
+new region 2000 all pass
+new region 2200 all pass
+new region 2400 all pass
+new region 2600 all pass
+new region 2800 all pass
+new region 3000 all pass
+new region ALL PASS {'tested': 3064, 'local_pass': 3064}

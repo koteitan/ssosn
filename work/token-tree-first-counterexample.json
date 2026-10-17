@@ -1,0 +1,1770 @@
+{
+  "tokens": [
+    "D",
+    "W",
+    "A0",
+    "W",
+    "D",
+    "W"
+  ],
+  "sequence": [
+    0,
+    0,
+    2,
+    1,
+    0,
+    2,
+    0,
+    1,
+    2,
+    1,
+    0,
+    1,
+    2,
+    0,
+    1,
+    2,
+    1,
+    0,
+    2,
+    0,
+    1,
+    2,
+    1
+  ],
+  "parent": [
+    [
+      "p",
+      [
+        [
+          "p",
+          [],
+          []
+        ]
+      ],
+      [
+        [
+          "p",
+          [
+            [
+              "p",
+              [],
+              []
+            ]
+          ],
+          [
+            [
+              "p",
+              [],
+              [
+                [
+                  "p",
+                  [],
+                  [
+                    [
+                      "p",
+                      [],
+                      []
+                    ]
+                  ]
+                ],
+                [
+                  "p",
+                  [],
+                  []
+                ]
+              ]
+            ]
+          ]
+        ],
+        [
+          "p",
+          [],
+          [
+            [
+              "p",
+              [],
+              [
+                [
+                  "p",
+                  [],
+                  []
+                ]
+              ]
+            ],
+            [
+              "p",
+              [],
+              []
+            ]
+          ]
+        ]
+      ]
+    ]
+  ],
+  "parent_rendered": "e_(e_(ω^(ω+1))+ω^(ω+1))",
+  "terms": [
+    {
+      "n": 1,
+      "sequence": [
+        0,
+        0,
+        2,
+        1,
+        0,
+        2,
+        0,
+        1,
+        2,
+        1,
+        0,
+        1,
+        2,
+        0,
+        1,
+        2,
+        1,
+        0,
+        2,
+        0,
+        1,
+        2,
+        0
+      ],
+      "ordinal": [
+        [
+          "p",
+          [
+            [
+              "p",
+              [],
+              []
+            ]
+          ],
+          [
+            [
+              "p",
+              [
+                [
+                  "p",
+                  [],
+                  []
+                ]
+              ],
+              [
+                [
+                  "p",
+                  [],
+                  [
+                    [
+                      "p",
+                      [],
+                      [
+                        [
+                          "p",
+                          [],
+                          []
+                        ]
+                      ]
+                    ],
+                    [
+                      "p",
+                      [],
+                      []
+                    ]
+                  ]
+                ]
+              ]
+            ],
+            [
+              "p",
+              [],
+              [
+                [
+                  "p",
+                  [],
+                  [
+                    [
+                      "p",
+                      [],
+                      []
+                    ]
+                  ]
+                ]
+              ]
+            ],
+            [
+              "p",
+              [],
+              []
+            ]
+          ]
+        ],
+        [
+          "p",
+          [],
+          []
+        ]
+      ],
+      "rendered": "e_(e_(ω^(ω+1))+ω^(ω)+1)+1",
+      "below_parent": true,
+      "standard": true,
+      "tokens": [
+        "D",
+        "W",
+        "A0",
+        "W",
+        "D",
+        "A0"
+      ],
+      "terminal": [
+        0
+      ]
+    },
+    {
+      "n": 2,
+      "sequence": [
+        0,
+        0,
+        2,
+        1,
+        0,
+        2,
+        0,
+        1,
+        2,
+        1,
+        0,
+        1,
+        2,
+        0,
+        1,
+        2,
+        1,
+        0,
+        2,
+        0,
+        1,
+        2,
+        0,
+        2,
+        0,
+        1,
+        2,
+        0
+      ],
+      "ordinal": [
+        [
+          "p",
+          [
+            [
+              "p",
+              [],
+              []
+            ]
+          ],
+          [
+            [
+              "p",
+              [
+                [
+                  "p",
+                  [],
+                  []
+                ]
+              ],
+              [
+                [
+                  "p",
+                  [],
+                  [
+                    [
+                      "p",
+                      [],
+                      [
+                        [
+                          "p",
+                          [],
+                          []
+                        ]
+                      ]
+                    ],
+                    [
+                      "p",
+                      [],
+                      []
+                    ]
+                  ]
+                ]
+              ]
+            ],
+            [
+              "p",
+              [],
+              [
+                [
+                  "p",
+                  [],
+                  [
+                    [
+                      "p",
+                      [],
+                      []
+                    ]
+                  ]
+                ],
+                [
+                  "p",
+                  [],
+                  []
+                ]
+              ]
+            ],
+            [
+              "p",
+              [],
+              []
+            ]
+          ]
+        ],
+        [
+          "p",
+          [],
+          []
+        ]
+      ],
+      "rendered": "e_(e_(ω^(ω+1))+ω^(ω+1)+1)+1",
+      "below_parent": false,
+      "standard": true,
+      "tokens": [
+        "D",
+        "W",
+        "A0",
+        "W",
+        "D",
+        "A1",
+        "A0"
+      ],
+      "terminal": [
+        0
+      ]
+    },
+    {
+      "n": 3,
+      "sequence": [
+        0,
+        0,
+        2,
+        1,
+        0,
+        2,
+        0,
+        1,
+        2,
+        1,
+        0,
+        1,
+        2,
+        0,
+        1,
+        2,
+        1,
+        0,
+        2,
+        0,
+        1,
+        2,
+        0,
+        2,
+        0,
+        1,
+        2,
+        0,
+        2,
+        0,
+        1,
+        2,
+        0
+      ],
+      "ordinal": [
+        [
+          "p",
+          [
+            [
+              "p",
+              [],
+              []
+            ]
+          ],
+          [
+            [
+              "p",
+              [
+                [
+                  "p",
+                  [],
+                  []
+                ]
+              ],
+              [
+                [
+                  "p",
+                  [],
+                  [
+                    [
+                      "p",
+                      [],
+                      [
+                        [
+                          "p",
+                          [],
+                          []
+                        ]
+                      ]
+                    ],
+                    [
+                      "p",
+                      [],
+                      []
+                    ]
+                  ]
+                ]
+              ]
+            ],
+            [
+              "p",
+              [],
+              [
+                [
+                  "p",
+                  [],
+                  [
+                    [
+                      "p",
+                      [],
+                      []
+                    ]
+                  ]
+                ],
+                [
+                  "p",
+                  [],
+                  []
+                ],
+                [
+                  "p",
+                  [],
+                  []
+                ]
+              ]
+            ],
+            [
+              "p",
+              [],
+              []
+            ]
+          ]
+        ],
+        [
+          "p",
+          [],
+          []
+        ]
+      ],
+      "rendered": "e_(e_(ω^(ω+1))+ω^(ω+2)+1)+1",
+      "below_parent": false,
+      "standard": true,
+      "tokens": [
+        "D",
+        "W",
+        "A0",
+        "W",
+        "D",
+        "A1",
+        "A1",
+        "A0"
+      ],
+      "terminal": [
+        0
+      ]
+    },
+    {
+      "n": 4,
+      "sequence": [
+        0,
+        0,
+        2,
+        1,
+        0,
+        2,
+        0,
+        1,
+        2,
+        1,
+        0,
+        1,
+        2,
+        0,
+        1,
+        2,
+        1,
+        0,
+        2,
+        0,
+        1,
+        2,
+        0,
+        2,
+        0,
+        1,
+        2,
+        0,
+        2,
+        0,
+        1,
+        2,
+        0,
+        2,
+        0,
+        1,
+        2,
+        0
+      ],
+      "ordinal": [
+        [
+          "p",
+          [
+            [
+              "p",
+              [],
+              []
+            ]
+          ],
+          [
+            [
+              "p",
+              [
+                [
+                  "p",
+                  [],
+                  []
+                ]
+              ],
+              [
+                [
+                  "p",
+                  [],
+                  [
+                    [
+                      "p",
+                      [],
+                      [
+                        [
+                          "p",
+                          [],
+                          []
+                        ]
+                      ]
+                    ],
+                    [
+                      "p",
+                      [],
+                      []
+                    ]
+                  ]
+                ]
+              ]
+            ],
+            [
+              "p",
+              [],
+              [
+                [
+                  "p",
+                  [],
+                  [
+                    [
+                      "p",
+                      [],
+                      []
+                    ]
+                  ]
+                ],
+                [
+                  "p",
+                  [],
+                  []
+                ],
+                [
+                  "p",
+                  [],
+                  []
+                ],
+                [
+                  "p",
+                  [],
+                  []
+                ]
+              ]
+            ],
+            [
+              "p",
+              [],
+              []
+            ]
+          ]
+        ],
+        [
+          "p",
+          [],
+          []
+        ]
+      ],
+      "rendered": "e_(e_(ω^(ω+1))+ω^(ω+3)+1)+1",
+      "below_parent": false,
+      "standard": true,
+      "tokens": [
+        "D",
+        "W",
+        "A0",
+        "W",
+        "D",
+        "A1",
+        "A1",
+        "A1",
+        "A0"
+      ],
+      "terminal": [
+        0
+      ]
+    },
+    {
+      "n": 5,
+      "sequence": [
+        0,
+        0,
+        2,
+        1,
+        0,
+        2,
+        0,
+        1,
+        2,
+        1,
+        0,
+        1,
+        2,
+        0,
+        1,
+        2,
+        1,
+        0,
+        2,
+        0,
+        1,
+        2,
+        0,
+        2,
+        0,
+        1,
+        2,
+        0,
+        2,
+        0,
+        1,
+        2,
+        0,
+        2,
+        0,
+        1,
+        2,
+        0,
+        2,
+        0,
+        1,
+        2,
+        0
+      ],
+      "ordinal": [
+        [
+          "p",
+          [
+            [
+              "p",
+              [],
+              []
+            ]
+          ],
+          [
+            [
+              "p",
+              [
+                [
+                  "p",
+                  [],
+                  []
+                ]
+              ],
+              [
+                [
+                  "p",
+                  [],
+                  [
+                    [
+                      "p",
+                      [],
+                      [
+                        [
+                          "p",
+                          [],
+                          []
+                        ]
+                      ]
+                    ],
+                    [
+                      "p",
+                      [],
+                      []
+                    ]
+                  ]
+                ]
+              ]
+            ],
+            [
+              "p",
+              [],
+              [
+                [
+                  "p",
+                  [],
+                  [
+                    [
+                      "p",
+                      [],
+                      []
+                    ]
+                  ]
+                ],
+                [
+                  "p",
+                  [],
+                  []
+                ],
+                [
+                  "p",
+                  [],
+                  []
+                ],
+                [
+                  "p",
+                  [],
+                  []
+                ],
+                [
+                  "p",
+                  [],
+                  []
+                ]
+              ]
+            ],
+            [
+              "p",
+              [],
+              []
+            ]
+          ]
+        ],
+        [
+          "p",
+          [],
+          []
+        ]
+      ],
+      "rendered": "e_(e_(ω^(ω+1))+ω^(ω+4)+1)+1",
+      "below_parent": false,
+      "standard": true,
+      "tokens": [
+        "D",
+        "W",
+        "A0",
+        "W",
+        "D",
+        "A1",
+        "A1",
+        "A1",
+        "A1",
+        "A0"
+      ],
+      "terminal": [
+        0
+      ]
+    }
+  ],
+  "kind": "real_term_order",
+  "adjacent_violations": [
+    {
+      "left": [
+        0,
+        0,
+        2,
+        1,
+        0,
+        2,
+        0,
+        1,
+        2,
+        1,
+        0,
+        1,
+        2,
+        0,
+        1,
+        2,
+        1,
+        0,
+        2,
+        0,
+        1,
+        2,
+        0,
+        2,
+        0,
+        1,
+        2,
+        0,
+        2,
+        0,
+        1,
+        2,
+        0,
+        2,
+        0,
+        1,
+        2,
+        0,
+        2,
+        0,
+        1,
+        2,
+        0
+      ],
+      "right": [
+        0,
+        0,
+        2,
+        1,
+        0,
+        2,
+        0,
+        1,
+        2,
+        1,
+        0,
+        1,
+        2,
+        0,
+        1,
+        2,
+        1,
+        0,
+        2,
+        0,
+        1,
+        2,
+        1
+      ],
+      "left_value": [
+        [
+          "p",
+          [
+            [
+              "p",
+              [],
+              []
+            ]
+          ],
+          [
+            [
+              "p",
+              [
+                [
+                  "p",
+                  [],
+                  []
+                ]
+              ],
+              [
+                [
+                  "p",
+                  [],
+                  [
+                    [
+                      "p",
+                      [],
+                      [
+                        [
+                          "p",
+                          [],
+                          []
+                        ]
+                      ]
+                    ],
+                    [
+                      "p",
+                      [],
+                      []
+                    ]
+                  ]
+                ]
+              ]
+            ],
+            [
+              "p",
+              [],
+              [
+                [
+                  "p",
+                  [],
+                  [
+                    [
+                      "p",
+                      [],
+                      []
+                    ]
+                  ]
+                ],
+                [
+                  "p",
+                  [],
+                  []
+                ],
+                [
+                  "p",
+                  [],
+                  []
+                ],
+                [
+                  "p",
+                  [],
+                  []
+                ],
+                [
+                  "p",
+                  [],
+                  []
+                ]
+              ]
+            ],
+            [
+              "p",
+              [],
+              []
+            ]
+          ]
+        ],
+        [
+          "p",
+          [],
+          []
+        ]
+      ],
+      "right_value": [
+        [
+          "p",
+          [
+            [
+              "p",
+              [],
+              []
+            ]
+          ],
+          [
+            [
+              "p",
+              [
+                [
+                  "p",
+                  [],
+                  []
+                ]
+              ],
+              [
+                [
+                  "p",
+                  [],
+                  [
+                    [
+                      "p",
+                      [],
+                      [
+                        [
+                          "p",
+                          [],
+                          []
+                        ]
+                      ]
+                    ],
+                    [
+                      "p",
+                      [],
+                      []
+                    ]
+                  ]
+                ]
+              ]
+            ],
+            [
+              "p",
+              [],
+              [
+                [
+                  "p",
+                  [],
+                  [
+                    [
+                      "p",
+                      [],
+                      []
+                    ]
+                  ]
+                ],
+                [
+                  "p",
+                  [],
+                  []
+                ]
+              ]
+            ]
+          ]
+        ]
+      ]
+    }
+  ],
+  "tree": {
+    "terms": [
+      {
+        "index": {
+          "terms": [
+            {
+              "index": {
+                "terms": [],
+                "origin": {
+                  "token": "zero",
+                  "opened_depth": 0,
+                  "copy": [],
+                  "source": [],
+                  "iteration": []
+                }
+              },
+              "argument": {
+                "terms": [],
+                "origin": {
+                  "token": "zero",
+                  "opened_depth": 0,
+                  "copy": [],
+                  "source": [],
+                  "iteration": []
+                }
+              },
+              "origin": {
+                "token": "general copy rank index",
+                "opened_depth": 0,
+                "copy": [],
+                "source": [],
+                "iteration": []
+              },
+              "frame": null
+            }
+          ],
+          "origin": {
+            "token": "general copy rank index",
+            "opened_depth": 0,
+            "copy": [],
+            "source": [],
+            "iteration": []
+          }
+        },
+        "argument": {
+          "terms": [
+            {
+              "index": {
+                "terms": [
+                  {
+                    "index": {
+                      "terms": [],
+                      "origin": {
+                        "token": "zero",
+                        "opened_depth": 0,
+                        "copy": [],
+                        "source": [],
+                        "iteration": []
+                      }
+                    },
+                    "argument": {
+                      "terms": [],
+                      "origin": {
+                        "token": "zero",
+                        "opened_depth": 0,
+                        "copy": [],
+                        "source": [],
+                        "iteration": []
+                      }
+                    },
+                    "origin": {
+                      "token": "leading W",
+                      "opened_depth": 0,
+                      "copy": [
+                        "W",
+                        "D",
+                        "W"
+                      ],
+                      "source": [
+                        "D",
+                        "W"
+                      ],
+                      "iteration": []
+                    },
+                    "frame": null
+                  }
+                ],
+                "origin": {
+                  "token": "leading W",
+                  "opened_depth": 0,
+                  "copy": [
+                    "W",
+                    "D",
+                    "W"
+                  ],
+                  "source": [
+                    "D",
+                    "W"
+                  ],
+                  "iteration": []
+                }
+              },
+              "argument": {
+                "terms": [
+                  {
+                    "index": {
+                      "terms": [],
+                      "origin": {
+                        "token": "zero",
+                        "opened_depth": 0,
+                        "copy": [],
+                        "source": [],
+                        "iteration": []
+                      }
+                    },
+                    "argument": {
+                      "terms": [
+                        {
+                          "index": {
+                            "terms": [],
+                            "origin": {
+                              "token": "zero",
+                              "opened_depth": 0,
+                              "copy": [],
+                              "source": [],
+                              "iteration": []
+                            }
+                          },
+                          "argument": {
+                            "terms": [
+                              {
+                                "index": {
+                                  "terms": [],
+                                  "origin": {
+                                    "token": "zero",
+                                    "opened_depth": 0,
+                                    "copy": [],
+                                    "source": [],
+                                    "iteration": []
+                                  }
+                                },
+                                "argument": {
+                                  "terms": [],
+                                  "origin": {
+                                    "token": "zero",
+                                    "opened_depth": 0,
+                                    "copy": [],
+                                    "source": [],
+                                    "iteration": []
+                                  }
+                                },
+                                "origin": {
+                                  "token": "D",
+                                  "opened_depth": 0,
+                                  "copy": [
+                                    "A0"
+                                  ],
+                                  "source": [
+                                    1,
+                                    0
+                                  ],
+                                  "iteration": []
+                                },
+                                "frame": null
+                              }
+                            ],
+                            "origin": {
+                              "token": "D",
+                              "opened_depth": 0,
+                              "copy": [
+                                "A0"
+                              ],
+                              "source": [
+                                1,
+                                0
+                              ],
+                              "iteration": []
+                            }
+                          },
+                          "origin": {
+                            "token": "D",
+                            "opened_depth": 0,
+                            "copy": [
+                              "A0"
+                            ],
+                            "source": [
+                              1,
+                              0
+                            ],
+                            "iteration": []
+                          },
+                          "frame": null
+                        },
+                        {
+                          "index": {
+                            "terms": [],
+                            "origin": {
+                              "token": "zero",
+                              "opened_depth": 0,
+                              "copy": [],
+                              "source": [],
+                              "iteration": []
+                            }
+                          },
+                          "argument": {
+                            "terms": [],
+                            "origin": {
+                              "token": "zero",
+                              "opened_depth": 0,
+                              "copy": [],
+                              "source": [],
+                              "iteration": []
+                            }
+                          },
+                          "origin": {
+                            "token": "A0",
+                            "opened_depth": 0,
+                            "copy": [
+                              "A0"
+                            ],
+                            "source": [
+                              1,
+                              0
+                            ],
+                            "iteration": []
+                          },
+                          "frame": null
+                        }
+                      ],
+                      "origin": {
+                        "token": "A0",
+                        "opened_depth": 0,
+                        "copy": [
+                          "A0"
+                        ],
+                        "source": [
+                          1,
+                          0
+                        ],
+                        "iteration": []
+                      }
+                    },
+                    "origin": {
+                      "token": "leading W",
+                      "opened_depth": 0,
+                      "copy": [
+                        "W",
+                        "D",
+                        "W"
+                      ],
+                      "source": [
+                        "D",
+                        "W"
+                      ],
+                      "iteration": []
+                    },
+                    "frame": null
+                  }
+                ],
+                "origin": {
+                  "token": "leading W",
+                  "opened_depth": 0,
+                  "copy": [
+                    "W",
+                    "D",
+                    "W"
+                  ],
+                  "source": [
+                    "D",
+                    "W"
+                  ],
+                  "iteration": []
+                }
+              },
+              "origin": {
+                "token": "leading W",
+                "opened_depth": 0,
+                "copy": [
+                  "W",
+                  "D",
+                  "W"
+                ],
+                "source": [
+                  "D",
+                  "W"
+                ],
+                "iteration": []
+              },
+              "frame": null
+            },
+            {
+              "index": {
+                "terms": [],
+                "origin": {
+                  "token": "zero",
+                  "opened_depth": 0,
+                  "copy": [],
+                  "source": [],
+                  "iteration": []
+                }
+              },
+              "argument": {
+                "terms": [
+                  {
+                    "index": {
+                      "terms": [],
+                      "origin": {
+                        "token": "zero",
+                        "opened_depth": 0,
+                        "copy": [],
+                        "source": [],
+                        "iteration": []
+                      }
+                    },
+                    "argument": {
+                      "terms": [
+                        {
+                          "index": {
+                            "terms": [],
+                            "origin": {
+                              "token": "zero",
+                              "opened_depth": 0,
+                              "copy": [],
+                              "source": [],
+                              "iteration": []
+                            }
+                          },
+                          "argument": {
+                            "terms": [],
+                            "origin": {
+                              "token": "zero",
+                              "opened_depth": 0,
+                              "copy": [],
+                              "source": [],
+                              "iteration": []
+                            }
+                          },
+                          "origin": {
+                            "token": "D",
+                            "opened_depth": 0,
+                            "copy": [
+                              "A0"
+                            ],
+                            "source": [
+                              0,
+                              1,
+                              0
+                            ],
+                            "iteration": []
+                          },
+                          "frame": null
+                        }
+                      ],
+                      "origin": {
+                        "token": "D",
+                        "opened_depth": 0,
+                        "copy": [
+                          "A0"
+                        ],
+                        "source": [
+                          0,
+                          1,
+                          0
+                        ],
+                        "iteration": []
+                      }
+                    },
+                    "origin": {
+                      "token": "D",
+                      "opened_depth": 0,
+                      "copy": [
+                        "A0"
+                      ],
+                      "source": [
+                        0,
+                        1,
+                        0
+                      ],
+                      "iteration": []
+                    },
+                    "frame": null
+                  },
+                  {
+                    "index": {
+                      "terms": [],
+                      "origin": {
+                        "token": "zero",
+                        "opened_depth": 0,
+                        "copy": [],
+                        "source": [],
+                        "iteration": []
+                      }
+                    },
+                    "argument": {
+                      "terms": [],
+                      "origin": {
+                        "token": "zero",
+                        "opened_depth": 0,
+                        "copy": [],
+                        "source": [],
+                        "iteration": []
+                      }
+                    },
+                    "origin": {
+                      "token": "A0",
+                      "opened_depth": 0,
+                      "copy": [
+                        "A0"
+                      ],
+                      "source": [
+                        0,
+                        1,
+                        0
+                      ],
+                      "iteration": []
+                    },
+                    "frame": null
+                  }
+                ],
+                "origin": {
+                  "token": "A0",
+                  "opened_depth": 0,
+                  "copy": [
+                    "A0"
+                  ],
+                  "source": [
+                    0,
+                    1,
+                    0
+                  ],
+                  "iteration": []
+                }
+              },
+              "origin": {
+                "token": "A0",
+                "opened_depth": 0,
+                "copy": [
+                  "W",
+                  "D",
+                  "W"
+                ],
+                "source": [
+                  "D",
+                  "W",
+                  "A0",
+                  "W",
+                  "D",
+                  "W"
+                ],
+                "iteration": [
+                  "W",
+                  "D",
+                  "W"
+                ]
+              },
+              "frame": {
+                "token": "A0",
+                "opened_depth": 0,
+                "copy": [
+                  "W",
+                  "D",
+                  "W"
+                ],
+                "covered_depth": 0,
+                "rank": {
+                  "terms": [
+                    {
+                      "index": {
+                        "terms": [],
+                        "origin": {
+                          "token": "zero",
+                          "opened_depth": 0,
+                          "copy": [],
+                          "source": [],
+                          "iteration": []
+                        }
+                      },
+                      "argument": {
+                        "terms": [
+                          {
+                            "index": {
+                              "terms": [],
+                              "origin": {
+                                "token": "zero",
+                                "opened_depth": 0,
+                                "copy": [],
+                                "source": [],
+                                "iteration": []
+                              }
+                            },
+                            "argument": {
+                              "terms": [],
+                              "origin": {
+                                "token": "zero",
+                                "opened_depth": 0,
+                                "copy": [],
+                                "source": [],
+                                "iteration": []
+                              }
+                            },
+                            "origin": {
+                              "token": "D",
+                              "opened_depth": 0,
+                              "copy": [
+                                "A0"
+                              ],
+                              "source": [
+                                0,
+                                1,
+                                0
+                              ],
+                              "iteration": []
+                            },
+                            "frame": null
+                          }
+                        ],
+                        "origin": {
+                          "token": "D",
+                          "opened_depth": 0,
+                          "copy": [
+                            "A0"
+                          ],
+                          "source": [
+                            0,
+                            1,
+                            0
+                          ],
+                          "iteration": []
+                        }
+                      },
+                      "origin": {
+                        "token": "D",
+                        "opened_depth": 0,
+                        "copy": [
+                          "A0"
+                        ],
+                        "source": [
+                          0,
+                          1,
+                          0
+                        ],
+                        "iteration": []
+                      },
+                      "frame": null
+                    },
+                    {
+                      "index": {
+                        "terms": [],
+                        "origin": {
+                          "token": "zero",
+                          "opened_depth": 0,
+                          "copy": [],
+                          "source": [],
+                          "iteration": []
+                        }
+                      },
+                      "argument": {
+                        "terms": [],
+                        "origin": {
+                          "token": "zero",
+                          "opened_depth": 0,
+                          "copy": [],
+                          "source": [],
+                          "iteration": []
+                        }
+                      },
+                      "origin": {
+                        "token": "A0",
+                        "opened_depth": 0,
+                        "copy": [
+                          "A0"
+                        ],
+                        "source": [
+                          0,
+                          1,
+                          0
+                        ],
+                        "iteration": []
+                      },
+                      "frame": null
+                    }
+                  ],
+                  "origin": {
+                    "token": "A0",
+                    "opened_depth": 0,
+                    "copy": [
+                      "A0"
+                    ],
+                    "source": [
+                      0,
+                      1,
+                      0
+                    ],
+                    "iteration": []
+                  }
+                }
+              }
+            }
+          ],
+          "origin": {
+            "token": "A0",
+            "opened_depth": 0,
+            "copy": [
+              "W",
+              "D",
+              "W"
+            ],
+            "source": [
+              "D",
+              "W",
+              "A0",
+              "W",
+              "D",
+              "W"
+            ],
+            "iteration": [
+              "W",
+              "D",
+              "W"
+            ]
+          }
+        },
+        "origin": {
+          "token": "general copy rank index",
+          "opened_depth": 0,
+          "copy": [],
+          "source": [],
+          "iteration": []
+        },
+        "frame": null
+      }
+    ],
+    "origin": {
+      "token": "sequence",
+      "opened_depth": 0,
+      "copy": [],
+      "source": [
+        0,
+        0,
+        2,
+        1,
+        0,
+        2,
+        0,
+        1,
+        2,
+        1,
+        0,
+        1,
+        2,
+        0,
+        1,
+        2,
+        1,
+        0,
+        2,
+        0,
+        1,
+        2,
+        1
+      ],
+      "iteration": []
+    }
+  },
+  "standard": true,
+  "G": [
+    0,
+    0,
+    2,
+    1,
+    0,
+    2,
+    0,
+    1,
+    2,
+    1,
+    0,
+    1,
+    2,
+    0,
+    1,
+    2,
+    1,
+    0
+  ],
+  "B": [
+    2,
+    0,
+    1,
+    2,
+    0
+  ],
+  "H": [
+    0,
+    0,
+    2,
+    1,
+    0,
+    2,
+    0,
+    1,
+    2,
+    1,
+    0,
+    1,
+    2,
+    0,
+    1,
+    2,
+    1,
+    0,
+    2
+  ],
+  "Q": [
+    0,
+    1,
+    2,
+    0,
+    2
+  ],
+  "V": [
+    0,
+    1,
+    2,
+    0
+  ],
+  "all_n_word_certificate": true
+}

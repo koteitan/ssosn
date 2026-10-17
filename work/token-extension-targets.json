@@ -1,0 +1,327 @@
+{
+  "cases": [
+    {
+      "sequence": "0021021",
+      "standard": true,
+      "G": [
+        0,
+        0
+      ],
+      "B": [
+        2,
+        1,
+        0,
+        2,
+        0
+      ],
+      "terms": [
+        {
+          "n": 1,
+          "sequence": "0021020",
+          "law_matches": true,
+          "status": "value",
+          "ordinal": [
+            [
+              "p",
+              [
+                [
+                  "p",
+                  [],
+                  []
+                ]
+              ],
+              [
+                [
+                  "p",
+                  [
+                    [
+                      "p",
+                      [],
+                      []
+                    ]
+                  ],
+                  [
+                    [
+                      "p",
+                      [],
+                      [
+                        [
+                          "p",
+                          [],
+                          [
+                            [
+                              "p",
+                              [],
+                              []
+                            ]
+                          ]
+                        ]
+                      ]
+                    ]
+                  ]
+                ]
+              ]
+            ],
+            [
+              "p",
+              [],
+              []
+            ]
+          ],
+          "rendered": "e_(e_(ω^(ω)))+1"
+        },
+        {
+          "n": 2,
+          "sequence": "002102021020",
+          "law_matches": true,
+          "status": "unresolved",
+          "reason": "('non-token suffix', (0, 2, 0, 2, 1, 0, 2))"
+        },
+        {
+          "n": 3,
+          "sequence": "00210202102021020",
+          "law_matches": true,
+          "status": "unresolved",
+          "reason": "('non-token suffix', (0, 2, 0, 2, 1, 0, 2, 0, 2, 1, 0, 2))"
+        },
+        {
+          "n": 4,
+          "sequence": "0021020210202102021020",
+          "law_matches": true,
+          "status": "unresolved",
+          "reason": "('non-token suffix', (0, 2, 0, 2, 1, 0, 2, 0, 2, 1, 0, 2, 0, 2, 1, 0, 2))"
+        },
+        {
+          "n": 5,
+          "sequence": "002102021020210202102021020",
+          "law_matches": true,
+          "status": "unresolved",
+          "reason": "('non-token suffix', (0, 2, 0, 2, 1, 0, 2, 0, 2, 1, 0, 2, 0, 2, 1, 0, 2, 0, 2, 1, 0, 2))"
+        }
+      ],
+      "status": "unresolved",
+      "reason": "('non-token suffix', (0, 2, 1))"
+    },
+    {
+      "sequence": "00211",
+      "standard": true,
+      "G": [
+        0,
+        0
+      ],
+      "B": [
+        2,
+        1,
+        0
+      ],
+      "terms": [
+        {
+          "n": 1,
+          "sequence": "00210",
+          "law_matches": true,
+          "status": "value",
+          "ordinal": [
+            [
+              "p",
+              [
+                [
+                  "p",
+                  [],
+                  []
+                ]
+              ],
+              [
+                [
+                  "p",
+                  [
+                    [
+                      "p",
+                      [],
+                      []
+                    ]
+                  ],
+                  []
+                ]
+              ]
+            ],
+            [
+              "p",
+              [],
+              []
+            ]
+          ],
+          "rendered": "e_(e_(0))+1"
+        },
+        {
+          "n": 2,
+          "sequence": "00210210",
+          "law_matches": true,
+          "status": "unresolved",
+          "reason": "('non-token suffix', (0, 2, 1))"
+        },
+        {
+          "n": 3,
+          "sequence": "00210210210",
+          "law_matches": true,
+          "status": "unresolved",
+          "reason": "('non-token suffix', (0, 2, 1, 0, 2, 1))"
+        },
+        {
+          "n": 4,
+          "sequence": "00210210210210",
+          "law_matches": true,
+          "status": "unresolved",
+          "reason": "('non-token suffix', (0, 2, 1, 0, 2, 1, 0, 2, 1))"
+        },
+        {
+          "n": 5,
+          "sequence": "00210210210210210",
+          "law_matches": true,
+          "status": "unresolved",
+          "reason": "('non-token suffix', (0, 2, 1, 0, 2, 1, 0, 2, 1, 0, 2, 1))"
+        }
+      ],
+      "status": "unresolved",
+      "reason": "('non-token suffix', (1,))"
+    },
+    {
+      "sequence": "0022",
+      "standard": true,
+      "G": [
+        0,
+        0
+      ],
+      "B": [
+        2,
+        1
+      ],
+      "terms": [
+        {
+          "n": 1,
+          "sequence": "0021",
+          "law_matches": true,
+          "status": "value",
+          "ordinal": [
+            [
+              "p",
+              [
+                [
+                  "p",
+                  [],
+                  []
+                ]
+              ],
+              [
+                [
+                  "p",
+                  [
+                    [
+                      "p",
+                      [],
+                      []
+                    ]
+                  ],
+                  []
+                ]
+              ]
+            ]
+          ],
+          "rendered": "e_(e_(0))"
+        },
+        {
+          "n": 2,
+          "sequence": "002121",
+          "law_matches": true,
+          "status": "unresolved",
+          "reason": "('non-token suffix', (2, 1))"
+        },
+        {
+          "n": 3,
+          "sequence": "00212121",
+          "law_matches": true,
+          "status": "unresolved",
+          "reason": "('non-token suffix', (2, 1, 2, 1))"
+        },
+        {
+          "n": 4,
+          "sequence": "0021212121",
+          "law_matches": true,
+          "status": "unresolved",
+          "reason": "('non-token suffix', (2, 1, 2, 1, 2, 1))"
+        },
+        {
+          "n": 5,
+          "sequence": "002121212121",
+          "law_matches": true,
+          "status": "unresolved",
+          "reason": "('non-token suffix', (2, 1, 2, 1, 2, 1, 2, 1))"
+        }
+      ],
+      "status": "unresolved",
+      "reason": "('unrecognized self-reference', (2, 2))"
+    },
+    {
+      "sequence": "003",
+      "standard": true,
+      "G": [
+        0,
+        0
+      ],
+      "B": [
+        2
+      ],
+      "terms": [
+        {
+          "n": 1,
+          "sequence": "002",
+          "law_matches": true,
+          "status": "value",
+          "ordinal": [
+            [
+              "p",
+              [
+                [
+                  "p",
+                  [],
+                  []
+                ]
+              ],
+              []
+            ]
+          ],
+          "rendered": "e_(0)"
+        },
+        {
+          "n": 2,
+          "sequence": "0022",
+          "law_matches": true,
+          "status": "unresolved",
+          "reason": "('unrecognized self-reference', (2, 2))"
+        },
+        {
+          "n": 3,
+          "sequence": "00222",
+          "law_matches": true,
+          "status": "unresolved",
+          "reason": "('unrecognized self-reference', (2, 2, 2))"
+        },
+        {
+          "n": 4,
+          "sequence": "002222",
+          "law_matches": true,
+          "status": "unresolved",
+          "reason": "('unrecognized self-reference', (2, 2, 2, 2))"
+        },
+        {
+          "n": 5,
+          "sequence": "0022222",
+          "law_matches": true,
+          "status": "unresolved",
+          "reason": "('unrecognized self-reference', (2, 2, 2, 2, 2))"
+        }
+      ],
+      "status": "unresolved",
+      "reason": "outside 0/1/2 range"
+    }
+  ]
+}

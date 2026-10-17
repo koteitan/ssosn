@@ -1,0 +1,16 @@
+0 {'standard': 1, 'all_n_cut_certificate': 1, 'local_order_pass': 1, 'finite_calibration_pass': 1} failures 0
+1 {'standard': 3, 'all_n_cut_certificate': 3, 'local_order_pass': 3, 'finite_calibration_pass': 3} failures 0
+2 {'standard': 6, 'all_n_cut_certificate': 6, 'local_order_pass': 6, 'finite_calibration_pass': 6} failures 0
+3 {'standard': 11, 'all_n_cut_certificate': 11, 'local_order_pass': 11, 'finite_calibration_pass': 11} failures 0
+4 {'standard': 19, 'all_n_cut_certificate': 19, 'local_order_pass': 19, 'finite_calibration_pass': 19} failures 0
+5 {'standard': 32, 'all_n_cut_certificate': 32, 'local_order_pass': 32, 'finite_calibration_pass': 32} failures 0
+6 {'standard': 52, 'all_n_cut_certificate': 52, 'local_order_pass': 52, 'finite_calibration_pass': 52} failures 0
+7 {'standard': 85, 'all_n_cut_certificate': 85, 'local_order_pass': 85, 'finite_calibration_pass': 85} failures 0
+8 {'standard': 137, 'all_n_cut_certificate': 137, 'local_order_pass': 137, 'finite_calibration_pass': 137} failures 0
+9 {'standard': 219, 'all_n_cut_certificate': 219, 'local_order_pass': 219, 'finite_calibration_pass': 219} failures 0
+10 {'standard': 349, 'all_n_cut_certificate': 349, 'local_order_pass': 349, 'finite_calibration_pass': 349} failures 0
+11 {'standard': 554, 'all_n_cut_certificate': 554, 'local_order_pass': 554, 'finite_calibration_pass': 554} failures 0
+12 {'standard': 876, 'all_n_cut_certificate': 876, 'local_order_pass': 876, 'finite_calibration_pass': 876} failures 0
+13 {'standard': 1383, 'all_n_cut_certificate': 1383, 'local_order_pass': 1383, 'finite_calibration_pass': 1383} failures 0
+14 {'standard': 2176, 'all_n_cut_certificate': 2176, 'local_order_pass': 2176, 'finite_calibration_pass': 2176} failures 0
+FINAL {'standard': 2176, 'all_n_cut_certificate': 2176, 'local_order_pass': 2176, 'finite_calibration_pass': 2176} values 13056 failures 0 order 0

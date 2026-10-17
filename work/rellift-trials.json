@@ -1,0 +1,52 @@
+[
+  {
+    "target": "a",
+    "sequence": "002101210120201210121",
+    "budget": 60.0,
+    "ordinal": null,
+    "resolved": 116,
+    "unresolved": 1183,
+    "total_jobs": 19496,
+    "total_seconds": 189.02793873000337
+  },
+  {
+    "target": "b",
+    "sequence": "002101210120202",
+    "budget": 60.0,
+    "ordinal": null,
+    "resolved": 116,
+    "unresolved": 1183,
+    "total_jobs": 20228,
+    "total_seconds": 253.51777111900446
+  },
+  {
+    "target": "S",
+    "sequence": "002101210120210121012021",
+    "budget": 60.0,
+    "ordinal": null,
+    "resolved": 116,
+    "unresolved": 1183,
+    "total_jobs": 20955,
+    "total_seconds": 318.0621060860067
+  },
+  {
+    "target": "WW",
+    "sequence": "002101210121",
+    "budget": 60.0,
+    "ordinal": null,
+    "resolved": 116,
+    "unresolved": 1183,
+    "total_jobs": 21680,
+    "total_seconds": 382.6019460830066
+  },
+  {
+    "target": "top",
+    "sequence": "002102",
+    "budget": 60.0,
+    "ordinal": null,
+    "resolved": 116,
+    "unresolved": 1183,
+    "total_jobs": 22407,
+    "total_seconds": 447.10698897601105
+  }
+]

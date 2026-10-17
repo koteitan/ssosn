@@ -1,0 +1,31 @@
+{
+  "MAXD": 7,
+  "NS": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "USE_LIFT": true,
+  "EXT": true,
+  "MORE": true,
+  "closure_nmax": 3,
+  "closure_maxlen": 24,
+  "selected": 5382,
+  "runs": [
+    {
+      "EXT121": false,
+      "agree": 18,
+      "differ": [],
+      "tainted": 0,
+      "nosup": 0
+    },
+    {
+      "EXT121": true,
+      "agree": 18,
+      "differ": [],
+      "tainted": 0,
+      "nosup": 0
+    }
+  ]
+}

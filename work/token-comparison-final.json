@@ -1,0 +1,329 @@
+{
+  "independent_evaluator": "token_value; no rule6/lower/sequence recursion",
+  "all_reference_counts": {
+    "lift": {
+      "total": 5350,
+      "agree": 5350
+    },
+    "NOREGION:R": {
+      "total": 429793,
+      "agree": 429793
+    },
+    "NOREGION:hook": {
+      "total": 87777,
+      "agree": 87777
+    },
+    "RELLIFT:R": {
+      "total": 667362,
+      "agree": 667362
+    },
+    "RELLIFT:hook": {
+      "total": 245720,
+      "agree": 245720
+    },
+    "EXT121E:R": {
+      "total": 72275,
+      "agree": 72275
+    },
+    "EXT121E:hook": {
+      "total": 17750,
+      "agree": 17750
+    },
+    "audit11-cache:R": {
+      "total": 90010,
+      "agree": 45121,
+      "differ": 44889
+    },
+    "audit11-cache:hook": {
+      "total": 88448,
+      "agree": 33367,
+      "differ": 55081
+    },
+    "frontier8:R": {
+      "total": 89698,
+      "agree": 44873,
+      "differ": 44825
+    },
+    "frontier8:hook": {
+      "total": 87413,
+      "agree": 32513,
+      "differ": 54900
+    },
+    "audit11-rules": {
+      "total": 799,
+      "agree": 474,
+      "differ": 325
+    },
+    "audit11-EXT121": {
+      "total": 220,
+      "agree": 57,
+      "differ": 163
+    },
+    "audit11-EXT121E": {
+      "total": 218,
+      "agree": 43,
+      "differ": 175
+    },
+    "audit11-roots": {
+      "total": 23,
+      "agree": 23
+    },
+    "toksearch2": {
+      "total": 977,
+      "agree": 822,
+      "differ": 155
+    }
+  },
+  "standard_reference_counts": {
+    "lift": {
+      "agree": 1226,
+      "total": 1226
+    },
+    "NOREGION:R": {
+      "agree": 187,
+      "total": 187
+    },
+    "NOREGION:hook": {
+      "agree": 207,
+      "total": 207
+    },
+    "RELLIFT:R": {
+      "agree": 204,
+      "total": 204
+    },
+    "RELLIFT:hook": {
+      "agree": 224,
+      "total": 224
+    },
+    "EXT121E:R": {
+      "agree": 182,
+      "total": 182
+    },
+    "EXT121E:hook": {
+      "agree": 195,
+      "total": 195
+    },
+    "audit11-cache:R": {
+      "agree": 44869,
+      "total": 89758,
+      "differ": 44889
+    },
+    "audit11-cache:hook": {
+      "agree": 33206,
+      "total": 88287,
+      "differ": 55081
+    },
+    "frontier8:R": {
+      "agree": 44809,
+      "total": 89634,
+      "differ": 44825
+    },
+    "frontier8:hook": {
+      "agree": 32488,
+      "total": 87388,
+      "differ": 54900
+    },
+    "audit11-rules": {
+      "agree": 474,
+      "total": 799,
+      "differ": 325
+    },
+    "audit11-EXT121": {
+      "agree": 57,
+      "total": 220,
+      "differ": 163
+    },
+    "audit11-EXT121E": {
+      "agree": 43,
+      "total": 218,
+      "differ": 175
+    },
+    "audit11-roots": {
+      "agree": 15,
+      "total": 15
+    },
+    "toksearch2": {
+      "agree": 822,
+      "total": 977,
+      "differ": 155
+    }
+  },
+  "standard_differ_count": 200513,
+  "all_sequences": 870281,
+  "standard_membership_filtered": false,
+  "verified_standard_sequences": 142096,
+  "standard_sequences": null,
+  "nonstandard_sequences": null,
+  "audited_valued_sequences": 870281,
+  "valued_standard_sequences": 142096,
+  "unresolved_standard_sequences": 0,
+  "membership_steps": 0,
+  "adjacent_violations": [],
+  "audit11_sequences": 139813,
+  "audit11_reference_covered": 139813,
+  "audit11_evaluator_resolved": 139813,
+  "seconds": 271.5674814899976,
+  "standard_differ_examples": [
+    {
+      "source": "audit11-cache:R",
+      "sequence": "0021012101202012101210120201",
+      "status": "differ",
+      "token_value": "w^(e_(e_w+w^(w^2+1))+1)",
+      "reference": "w^(e_(e_w+w^(w2+1))+1)",
+      "reason": ""
+    },
+    {
+      "source": "audit11-cache:R",
+      "sequence": "00210121012020121012101202012101210120201",
+      "status": "differ",
+      "token_value": "w^(e_(e_w+w^(w^2·2+1))+1)",
+      "reference": "w^(e_(e_w+w^(w4+1))+1)",
+      "reason": ""
+    },
+    {
+      "source": "audit11-cache:R",
+      "sequence": "002101210120201210121012020121012101202012101210120201",
+      "status": "differ",
+      "token_value": "w^(e_(e_w+w^(w^2·3+1))+1)",
+      "reference": "w^(e_(e_w+w^(w6+1))+1)",
+      "reason": ""
+    },
+    {
+      "source": "audit11-cache:R",
+      "sequence": "002101210120202",
+      "status": "differ",
+      "token_value": "e_(e_w+w^w^3)",
+      "reference": "e_(e_w+w^w^2)",
+      "reason": ""
+    },
+    {
+      "source": "audit11-cache:R",
+      "sequence": "0021012101202020",
+      "status": "differ",
+      "token_value": "e_(e_w+w^w^3)+1",
+      "reference": "e_(e_w+w^w^2)+1",
+      "reason": ""
+    },
+    {
+      "source": "audit11-cache:R",
+      "sequence": "00210121012020201",
+      "status": "differ",
+      "token_value": "w^(e_(e_w+w^w^3)+1)",
+      "reference": "w^(e_(e_w+w^w^2)+1)",
+      "reason": ""
+    },
+    {
+      "source": "audit11-cache:R",
+      "sequence": "00210121012020201210121012020201",
+      "status": "differ",
+      "token_value": "w^(e_(e_w+w^w^(w^2+1))+1)",
+      "reference": "w^(e_(e_w+w^w^(w2+1))+1)",
+      "reason": ""
+    },
+    {
+      "source": "audit11-cache:R",
+      "sequence": "00210121012020201210121012020201210121012020201",
+      "status": "differ",
+      "token_value": "w^(e_(e_w+w^w^(w^2·2+1))+1)",
+      "reference": "w^(e_(e_w+w^w^(w4+1))+1)",
+      "reason": ""
+    },
+    {
+      "source": "audit11-cache:R",
+      "sequence": "00210121012020201210121012020201210121012020201210121012020201",
+      "status": "differ",
+      "token_value": "w^(e_(e_w+w^w^(w^2·3+1))+1)",
+      "reference": "w^(e_(e_w+w^w^(w6+1))+1)",
+      "reason": ""
+    },
+    {
+      "source": "audit11-cache:R",
+      "sequence": "00210121012020202",
+      "status": "differ",
+      "token_value": "e_(e_w+w^w^w^3)",
+      "reference": "e_(e_w+w^w^w^2)",
+      "reason": ""
+    },
+    {
+      "source": "audit11-cache:R",
+      "sequence": "002101210120202020",
+      "status": "differ",
+      "token_value": "e_(e_w+w^w^w^3)+1",
+      "reference": "e_(e_w+w^w^w^2)+1",
+      "reason": ""
+    },
+    {
+      "source": "audit11-cache:R",
+      "sequence": "0021012101202020201",
+      "status": "differ",
+      "token_value": "w^(e_(e_w+w^w^w^3)+1)",
+      "reference": "w^(e_(e_w+w^w^w^2)+1)",
+      "reason": ""
+    },
+    {
+      "source": "audit11-cache:R",
+      "sequence": "002101210120202020121012101202020201",
+      "status": "differ",
+      "token_value": "w^(e_(e_w+w^w^w^(w^2+1))+1)",
+      "reference": "w^(e_(e_w+w^w^w^(w2+1))+1)",
+      "reason": ""
+    },
+    {
+      "source": "audit11-cache:R",
+      "sequence": "00210121012020202012101210120202020121012101202020201",
+      "status": "differ",
+      "token_value": "w^(e_(e_w+w^w^w^(w^2·2+1))+1)",
+      "reference": "w^(e_(e_w+w^w^w^(w4+1))+1)",
+      "reason": ""
+    },
+    {
+      "source": "audit11-cache:R",
+      "sequence": "0021012101202020201210121012020202012101210120202020121012101202020201",
+      "status": "differ",
+      "token_value": "w^(e_(e_w+w^w^w^(w^2·3+1))+1)",
+      "reference": "w^(e_(e_w+w^w^w^(w6+1))+1)",
+      "reason": ""
+    },
+    {
+      "source": "audit11-cache:R",
+      "sequence": "0021012101202020202",
+      "status": "differ",
+      "token_value": "e_(e_w+w^w^w^w^3)",
+      "reference": "e_(e_w+w^w^w^w^2)",
+      "reason": ""
+    },
+    {
+      "source": "audit11-cache:R",
+      "sequence": "00210121012020202020",
+      "status": "differ",
+      "token_value": "e_(e_w+w^w^w^w^3)+1",
+      "reference": "e_(e_w+w^w^w^w^2)+1",
+      "reason": ""
+    },
+    {
+      "source": "audit11-cache:R",
+      "sequence": "0021012101202101210120121012101202012101210120201",
+      "status": "differ",
+      "token_value": "w^(e_(e_w·2+w^(w^2+1))+1)",
+      "reference": "w^(e_(e_w·2+w^(w2+1))+1)",
+      "reason": ""
+    },
+    {
+      "source": "audit11-cache:R",
+      "sequence": "00210121012021012101201210121012020121012101202012101210120201",
+      "status": "differ",
+      "token_value": "w^(e_(e_w·2+w^(w^2·2+1))+1)",
+      "reference": "w^(e_(e_w·2+w^(w4+1))+1)",
+      "reason": ""
+    },
+    {
+      "source": "audit11-cache:R",
+      "sequence": "002101210120210121012012101210120201210121012020121012101202012101210120201",
+      "status": "differ",
+      "token_value": "w^(e_(e_w·2+w^(w^2·3+1))+1)",
+      "reference": "w^(e_(e_w·2+w^(w6+1))+1)",
+      "reason": ""
+    }
+  ],
+  "all_comparisons_file": "token-comparison-final.tsv.gz"
+}

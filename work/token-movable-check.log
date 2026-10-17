@@ -1,0 +1,8 @@
+2 std 6 counts {'non_W': 5, 'leading_agree': 1} failures 0
+3 std 27 counts {'non_W': 26, 'leading_agree': 3, 'plain-copy_agree': 4} failures 0
+4 std 100 counts {'non_W': 104, 'leading_agree': 7, 'plain-copy_agree': 22} failures 0
+5 std 329 counts {'non_W': 354, 'leading_agree': 14, 'plain-copy_agree': 94} failures 0
+6 std 1006 counts {'non_W': 1114, 'leading_agree': 26, 'plain-copy_agree': 322, 'erase-opened-unit_agree': 2, 'retain-built-unit_agree': 4} failures 0
+7 std 2895 counts {'non_W': 3279, 'leading_agree': 45, 'plain-copy_agree': 1005, 'erase-opened-unit_agree': 13, 'retain-built-unit_agree': 21} failures 0
+8 std 8013 counts {'non_W': 9230, 'leading_agree': 77, 'plain-copy_agree': 2918, 'erase-opened-unit_agree': 65, 'retain-built-unit_agree': 86} failures 0
+FINAL {'non_W': 9230, 'leading_agree': 77, 'plain-copy_agree': 2918, 'erase-opened-unit_agree': 65, 'retain-built-unit_agree': 86} failures 0

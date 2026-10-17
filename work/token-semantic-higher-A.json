@@ -1,0 +1,188 @@
+{
+  "method": "actual cuts, n=1..5, extra n=6 only on calibration failure; no rule6; finite calibration is not a proof",
+  "counts": {
+    "local_order_pass": 1879,
+    "finite_calibration_pass": 1877,
+    "finite_calibration_FAIL": 2,
+    "additional_calibration_pass": 2
+  },
+  "local_order_failures": [],
+  "finite_calibration_failures": [
+    "0021012021012020202020121012021",
+    "0021012021012021012020202020121012021"
+  ],
+  "additional_calibration": [
+    {
+      "sequence": "0021012021012020202020121012021",
+      "n": 6,
+      "passed": true,
+      "ordinal": [
+        [
+          "p",
+          [
+            [
+              "p",
+              [],
+              []
+            ]
+          ],
+          [
+            [
+              "p",
+              [],
+              [
+                [
+                  "p",
+                  [],
+                  [
+                    [
+                      "p",
+                      [],
+                      [
+                        [
+                          "p",
+                          [],
+                          [
+                            [
+                              "p",
+                              [
+                                [
+                                  "p",
+                                  [],
+                                  []
+                                ]
+                              ],
+                              []
+                            ],
+                            [
+                              "p",
+                              [],
+                              [
+                                [
+                                  "p",
+                                  [],
+                                  [
+                                    [
+                                      "p",
+                                      [],
+                                      []
+                                    ],
+                                    [
+                                      "p",
+                                      [],
+                                      []
+                                    ]
+                                  ]
+                                ]
+                              ]
+                            ]
+                          ]
+                        ]
+                      ]
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          ]
+        ],
+        [
+          "p",
+          [],
+          []
+        ]
+      ]
+    },
+    {
+      "sequence": "0021012021012021012020202020121012021",
+      "n": 6,
+      "passed": true,
+      "ordinal": [
+        [
+          "p",
+          [
+            [
+              "p",
+              [],
+              []
+            ]
+          ],
+          [
+            [
+              "p",
+              [],
+              [
+                [
+                  "p",
+                  [],
+                  [
+                    [
+                      "p",
+                      [],
+                      [
+                        [
+                          "p",
+                          [],
+                          [
+                            [
+                              "p",
+                              [
+                                [
+                                  "p",
+                                  [],
+                                  []
+                                ]
+                              ],
+                              [
+                                [
+                                  "p",
+                                  [],
+                                  []
+                                ]
+                              ]
+                            ],
+                            [
+                              "p",
+                              [],
+                              [
+                                [
+                                  "p",
+                                  [],
+                                  [
+                                    [
+                                      "p",
+                                      [],
+                                      []
+                                    ],
+                                    [
+                                      "p",
+                                      [],
+                                      []
+                                    ]
+                                  ]
+                                ]
+                              ]
+                            ]
+                          ]
+                        ]
+                      ]
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          ]
+        ],
+        [
+          "p",
+          [],
+          []
+        ]
+      ]
+    }
+  ],
+  "unresolved": [],
+  "valued_sequences": 11276,
+  "adjacent_violations": [],
+  "seconds": 0.9239066299996921
+}

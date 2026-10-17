@@ -1,0 +1,32 @@
+[
+  {
+    "target": "S",
+    "sequence": "002101210120210121012021",
+    "budget": 30.0,
+    "ordinal": null,
+    "resolved": 87,
+    "unresolved": 1212,
+    "total_jobs": 367,
+    "total_seconds": 33.74687603199709
+  },
+  {
+    "target": "WW",
+    "sequence": "002101210121",
+    "budget": 30.0,
+    "ordinal": null,
+    "resolved": 87,
+    "unresolved": 1212,
+    "total_jobs": 731,
+    "total_seconds": 67.50408536199393
+  },
+  {
+    "target": "top",
+    "sequence": "002102",
+    "budget": 30.0,
+    "ordinal": null,
+    "resolved": 97,
+    "unresolved": 1202,
+    "total_jobs": 1097,
+    "total_seconds": 101.23466769599327
+  }
+]

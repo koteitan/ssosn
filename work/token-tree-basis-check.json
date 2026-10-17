@@ -1,0 +1,49 @@
+{
+  "rows": [
+    {
+      "name": "W^1",
+      "local": true,
+      "calibration": true
+    },
+    {
+      "name": "W^2",
+      "local": true,
+      "calibration": true
+    },
+    {
+      "name": "W^3",
+      "local": true,
+      "calibration": true
+    },
+    {
+      "name": "W^4",
+      "local": true,
+      "calibration": true
+    },
+    {
+      "name": "W^5",
+      "local": true,
+      "calibration": true
+    },
+    {
+      "name": "W^6",
+      "local": true,
+      "calibration": true
+    },
+    {
+      "name": "W^7",
+      "local": true,
+      "calibration": true
+    },
+    {
+      "name": "W^8",
+      "local": true,
+      "calibration": true
+    },
+    {
+      "name": "002102",
+      "local": true,
+      "calibration": true
+    }
+  ]
+}

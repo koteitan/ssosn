@@ -1,0 +1,14 @@
+{
+  "method": "actual cuts, n=1..5, extra n=6 only on calibration failure; no rule6; finite calibration is not a proof",
+  "counts": {
+    "local_order_pass": 17828,
+    "finite_calibration_pass": 17828
+  },
+  "local_order_failures": [],
+  "finite_calibration_failures": [],
+  "additional_calibration": [],
+  "unresolved": [],
+  "valued_sequences": 106968,
+  "adjacent_violations": [],
+  "seconds": 11.67659723199904
+}

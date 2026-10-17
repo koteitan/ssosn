@@ -1,0 +1,1672 @@
+{
+  "MAXD": 7,
+  "NS": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "USE_LIFT": true,
+  "EXT": true,
+  "MORE": true,
+  "EXT121": false,
+  "EXT121E": false,
+  "experiment": "EXT121E",
+  "hypothesis_II_executed": false,
+  "rows": [
+    {
+      "label": "prefix",
+      "sequence": "002",
+      "status": "clean",
+      "rendered": "e0",
+      "ordinal": [
+        [
+          "p",
+          [
+            [
+              "p",
+              [],
+              []
+            ]
+          ],
+          []
+        ]
+      ]
+    },
+    {
+      "label": "prefix",
+      "sequence": "0021",
+      "status": "clean",
+      "rendered": "e_e0",
+      "ordinal": [
+        [
+          "p",
+          [
+            [
+              "p",
+              [],
+              []
+            ]
+          ],
+          [
+            [
+              "p",
+              [
+                [
+                  "p",
+                  [],
+                  []
+                ]
+              ],
+              []
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "label": "prefix",
+      "sequence": "002101",
+      "status": "clean",
+      "rendered": "w^(e_e0+1)",
+      "ordinal": [
+        [
+          "p",
+          [],
+          [
+            [
+              "p",
+              [
+                [
+                  "p",
+                  [],
+                  []
+                ]
+              ],
+              [
+                [
+                  "p",
+                  [
+                    [
+                      "p",
+                      [],
+                      []
+                    ]
+                  ],
+                  []
+                ]
+              ]
+            ],
+            [
+              "p",
+              [],
+              []
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "label": "prefix",
+      "sequence": "0021012",
+      "status": "clean",
+      "rendered": "e_(e0+1)",
+      "ordinal": [
+        [
+          "p",
+          [
+            [
+              "p",
+              [],
+              []
+            ]
+          ],
+          [
+            [
+              "p",
+              [
+                [
+                  "p",
+                  [],
+                  []
+                ]
+              ],
+              []
+            ],
+            [
+              "p",
+              [],
+              []
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "label": "prefix",
+      "sequence": "00210121",
+      "status": "clean",
+      "rendered": "e_e_w",
+      "ordinal": [
+        [
+          "p",
+          [
+            [
+              "p",
+              [],
+              []
+            ]
+          ],
+          [
+            [
+              "p",
+              [
+                [
+                  "p",
+                  [],
+                  []
+                ]
+              ],
+              [
+                [
+                  "p",
+                  [],
+                  [
+                    [
+                      "p",
+                      [],
+                      []
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "label": "prefix",
+      "sequence": "0021012101",
+      "status": "clean",
+      "rendered": "w^(e_e_w+1)",
+      "ordinal": [
+        [
+          "p",
+          [],
+          [
+            [
+              "p",
+              [
+                [
+                  "p",
+                  [],
+                  []
+                ]
+              ],
+              [
+                [
+                  "p",
+                  [
+                    [
+                      "p",
+                      [],
+                      []
+                    ]
+                  ],
+                  [
+                    [
+                      "p",
+                      [],
+                      [
+                        [
+                          "p",
+                          [],
+                          []
+                        ]
+                      ]
+                    ]
+                  ]
+                ]
+              ]
+            ],
+            [
+              "p",
+              [],
+              []
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "label": "prefix",
+      "sequence": "00210121012",
+      "status": "clean",
+      "rendered": "e_(e_w+1)",
+      "ordinal": [
+        [
+          "p",
+          [
+            [
+              "p",
+              [],
+              []
+            ]
+          ],
+          [
+            [
+              "p",
+              [
+                [
+                  "p",
+                  [],
+                  []
+                ]
+              ],
+              [
+                [
+                  "p",
+                  [],
+                  [
+                    [
+                      "p",
+                      [],
+                      []
+                    ]
+                  ]
+                ]
+              ]
+            ],
+            [
+              "p",
+              [],
+              []
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "label": "exception",
+      "sequence": "0021012101202",
+      "status": "clean",
+      "rendered": "e_(e_w+w^3)",
+      "ordinal": [
+        [
+          "p",
+          [
+            [
+              "p",
+              [],
+              []
+            ]
+          ],
+          [
+            [
+              "p",
+              [
+                [
+                  "p",
+                  [],
+                  []
+                ]
+              ],
+              [
+                [
+                  "p",
+                  [],
+                  [
+                    [
+                      "p",
+                      [],
+                      []
+                    ]
+                  ]
+                ]
+              ]
+            ],
+            [
+              "p",
+              [],
+              [
+                [
+                  "p",
+                  [],
+                  []
+                ],
+                [
+                  "p",
+                  [],
+                  []
+                ],
+                [
+                  "p",
+                  [],
+                  []
+                ]
+              ]
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "label": "prefix",
+      "sequence": "00210121012021",
+      "status": "clean",
+      "rendered": "e_(e_w+e0)",
+      "ordinal": [
+        [
+          "p",
+          [
+            [
+              "p",
+              [],
+              []
+            ]
+          ],
+          [
+            [
+              "p",
+              [
+                [
+                  "p",
+                  [],
+                  []
+                ]
+              ],
+              [
+                [
+                  "p",
+                  [],
+                  [
+                    [
+                      "p",
+                      [],
+                      []
+                    ]
+                  ]
+                ]
+              ]
+            ],
+            [
+              "p",
+              [
+                [
+                  "p",
+                  [],
+                  []
+                ]
+              ],
+              []
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "label": "prefix",
+      "sequence": "0021012101202101",
+      "status": "clean",
+      "rendered": "w^(e_(e_w+e0)+1)",
+      "ordinal": [
+        [
+          "p",
+          [],
+          [
+            [
+              "p",
+              [
+                [
+                  "p",
+                  [],
+                  []
+                ]
+              ],
+              [
+                [
+                  "p",
+                  [
+                    [
+                      "p",
+                      [],
+                      []
+                    ]
+                  ],
+                  [
+                    [
+                      "p",
+                      [],
+                      [
+                        [
+                          "p",
+                          [],
+                          []
+                        ]
+                      ]
+                    ]
+                  ]
+                ],
+                [
+                  "p",
+                  [
+                    [
+                      "p",
+                      [],
+                      []
+                    ]
+                  ],
+                  []
+                ]
+              ]
+            ],
+            [
+              "p",
+              [],
+              []
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "label": "prefix",
+      "sequence": "00210121012021012",
+      "status": "clean",
+      "rendered": "e_(e_w+e0+1)",
+      "ordinal": [
+        [
+          "p",
+          [
+            [
+              "p",
+              [],
+              []
+            ]
+          ],
+          [
+            [
+              "p",
+              [
+                [
+                  "p",
+                  [],
+                  []
+                ]
+              ],
+              [
+                [
+                  "p",
+                  [],
+                  [
+                    [
+                      "p",
+                      [],
+                      []
+                    ]
+                  ]
+                ]
+              ]
+            ],
+            [
+              "p",
+              [
+                [
+                  "p",
+                  [],
+                  []
+                ]
+              ],
+              []
+            ],
+            [
+              "p",
+              [],
+              []
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "label": "prefix",
+      "sequence": "002101210120210121",
+      "status": "clean",
+      "rendered": "e_(e_w·2)",
+      "ordinal": [
+        [
+          "p",
+          [
+            [
+              "p",
+              [],
+              []
+            ]
+          ],
+          [
+            [
+              "p",
+              [
+                [
+                  "p",
+                  [],
+                  []
+                ]
+              ],
+              [
+                [
+                  "p",
+                  [],
+                  [
+                    [
+                      "p",
+                      [],
+                      []
+                    ]
+                  ]
+                ]
+              ]
+            ],
+            [
+              "p",
+              [
+                [
+                  "p",
+                  [],
+                  []
+                ]
+              ],
+              [
+                [
+                  "p",
+                  [],
+                  [
+                    [
+                      "p",
+                      [],
+                      []
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "label": "prefix",
+      "sequence": "00210121012021012101",
+      "status": "clean",
+      "rendered": "w^(e_(e_w·2)+1)",
+      "ordinal": [
+        [
+          "p",
+          [],
+          [
+            [
+              "p",
+              [
+                [
+                  "p",
+                  [],
+                  []
+                ]
+              ],
+              [
+                [
+                  "p",
+                  [
+                    [
+                      "p",
+                      [],
+                      []
+                    ]
+                  ],
+                  [
+                    [
+                      "p",
+                      [],
+                      [
+                        [
+                          "p",
+                          [],
+                          []
+                        ]
+                      ]
+                    ]
+                  ]
+                ],
+                [
+                  "p",
+                  [
+                    [
+                      "p",
+                      [],
+                      []
+                    ]
+                  ],
+                  [
+                    [
+                      "p",
+                      [],
+                      [
+                        [
+                          "p",
+                          [],
+                          []
+                        ]
+                      ]
+                    ]
+                  ]
+                ]
+              ]
+            ],
+            [
+              "p",
+              [],
+              []
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "label": "prefix",
+      "sequence": "002101210120210121012",
+      "status": "clean",
+      "rendered": "e_(e_w·2+1)",
+      "ordinal": [
+        [
+          "p",
+          [
+            [
+              "p",
+              [],
+              []
+            ]
+          ],
+          [
+            [
+              "p",
+              [
+                [
+                  "p",
+                  [],
+                  []
+                ]
+              ],
+              [
+                [
+                  "p",
+                  [],
+                  [
+                    [
+                      "p",
+                      [],
+                      []
+                    ]
+                  ]
+                ]
+              ]
+            ],
+            [
+              "p",
+              [
+                [
+                  "p",
+                  [],
+                  []
+                ]
+              ],
+              [
+                [
+                  "p",
+                  [],
+                  [
+                    [
+                      "p",
+                      [],
+                      []
+                    ]
+                  ]
+                ]
+              ]
+            ],
+            [
+              "p",
+              [],
+              []
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "label": "prefix",
+      "sequence": "00210121012021012101202",
+      "status": "clean",
+      "rendered": "e_w^(e_w+1)",
+      "ordinal": [
+        [
+          "p",
+          [
+            [
+              "p",
+              [],
+              []
+            ]
+          ],
+          [
+            [
+              "p",
+              [],
+              [
+                [
+                  "p",
+                  [
+                    [
+                      "p",
+                      [],
+                      []
+                    ]
+                  ],
+                  [
+                    [
+                      "p",
+                      [],
+                      [
+                        [
+                          "p",
+                          [],
+                          []
+                        ]
+                      ]
+                    ]
+                  ]
+                ],
+                [
+                  "p",
+                  [],
+                  []
+                ]
+              ]
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "label": "root-before",
+      "sequence": "002101210120210121012021",
+      "status": "timeout",
+      "rendered": null,
+      "ordinal": null
+    },
+    {
+      "label": "term-1",
+      "sequence": "002101210120210121012020",
+      "status": "clean",
+      "rendered": "e_w^(e_w+1)+1",
+      "ordinal": [
+        [
+          "p",
+          [
+            [
+              "p",
+              [],
+              []
+            ]
+          ],
+          [
+            [
+              "p",
+              [],
+              [
+                [
+                  "p",
+                  [
+                    [
+                      "p",
+                      [],
+                      []
+                    ]
+                  ],
+                  [
+                    [
+                      "p",
+                      [],
+                      [
+                        [
+                          "p",
+                          [],
+                          []
+                        ]
+                      ]
+                    ]
+                  ]
+                ],
+                [
+                  "p",
+                  [],
+                  []
+                ]
+              ]
+            ]
+          ]
+        ],
+        [
+          "p",
+          [],
+          []
+        ]
+      ]
+    },
+    {
+      "label": "term-2",
+      "sequence": "00210121012021012101202020",
+      "status": "clean",
+      "rendered": "e_w^w^(e_w+1)+1",
+      "ordinal": [
+        [
+          "p",
+          [
+            [
+              "p",
+              [],
+              []
+            ]
+          ],
+          [
+            [
+              "p",
+              [],
+              [
+                [
+                  "p",
+                  [],
+                  [
+                    [
+                      "p",
+                      [
+                        [
+                          "p",
+                          [],
+                          []
+                        ]
+                      ],
+                      [
+                        [
+                          "p",
+                          [],
+                          [
+                            [
+                              "p",
+                              [],
+                              []
+                            ]
+                          ]
+                        ]
+                      ]
+                    ],
+                    [
+                      "p",
+                      [],
+                      []
+                    ]
+                  ]
+                ]
+              ]
+            ]
+          ]
+        ],
+        [
+          "p",
+          [],
+          []
+        ]
+      ]
+    },
+    {
+      "label": "prefix",
+      "sequence": "002101210120210121012020202",
+      "status": "timeout",
+      "rendered": null,
+      "ordinal": null
+    },
+    {
+      "label": "term-3",
+      "sequence": "0021012101202101210120202020",
+      "status": "timeout",
+      "rendered": null,
+      "ordinal": null
+    },
+    {
+      "label": "prefix",
+      "sequence": "002101210120210121012020202",
+      "status": "timeout",
+      "rendered": null,
+      "ordinal": null
+    },
+    {
+      "label": "prefix",
+      "sequence": "00210121012021012101202020202",
+      "status": "timeout",
+      "rendered": null,
+      "ordinal": null
+    },
+    {
+      "label": "term-4",
+      "sequence": "002101210120210121012020202020",
+      "status": "timeout",
+      "rendered": null,
+      "ordinal": null
+    },
+    {
+      "label": "prefix",
+      "sequence": "002101210120210121012020202",
+      "status": "timeout",
+      "rendered": null,
+      "ordinal": null
+    },
+    {
+      "label": "prefix",
+      "sequence": "00210121012021012101202020202",
+      "status": "timeout",
+      "rendered": null,
+      "ordinal": null
+    },
+    {
+      "label": "prefix",
+      "sequence": "0021012101202101210120202020202",
+      "status": "timeout",
+      "rendered": null,
+      "ordinal": null
+    },
+    {
+      "label": "term-5",
+      "sequence": "00210121012021012101202020202020",
+      "status": "timeout",
+      "rendered": null,
+      "ordinal": null
+    },
+    {
+      "label": "root-after",
+      "sequence": "002101210120210121012021",
+      "status": "timeout",
+      "rendered": null,
+      "ordinal": null
+    },
+    {
+      "label": "root-before",
+      "sequence": "002101210121",
+      "status": "timeout",
+      "rendered": null,
+      "ordinal": null
+    },
+    {
+      "label": "term-1",
+      "sequence": "002101210120",
+      "status": "clean",
+      "rendered": "e_(e_w+1)+1",
+      "ordinal": [
+        [
+          "p",
+          [
+            [
+              "p",
+              [],
+              []
+            ]
+          ],
+          [
+            [
+              "p",
+              [
+                [
+                  "p",
+                  [],
+                  []
+                ]
+              ],
+              [
+                [
+                  "p",
+                  [],
+                  [
+                    [
+                      "p",
+                      [],
+                      []
+                    ]
+                  ]
+                ]
+              ]
+            ],
+            [
+              "p",
+              [],
+              []
+            ]
+          ]
+        ],
+        [
+          "p",
+          [],
+          []
+        ]
+      ]
+    },
+    {
+      "label": "term-2",
+      "sequence": "0021012101202101210120",
+      "status": "clean",
+      "rendered": "e_(e_w·2+1)+1",
+      "ordinal": [
+        [
+          "p",
+          [
+            [
+              "p",
+              [],
+              []
+            ]
+          ],
+          [
+            [
+              "p",
+              [
+                [
+                  "p",
+                  [],
+                  []
+                ]
+              ],
+              [
+                [
+                  "p",
+                  [],
+                  [
+                    [
+                      "p",
+                      [],
+                      []
+                    ]
+                  ]
+                ]
+              ]
+            ],
+            [
+              "p",
+              [
+                [
+                  "p",
+                  [],
+                  []
+                ]
+              ],
+              [
+                [
+                  "p",
+                  [],
+                  [
+                    [
+                      "p",
+                      [],
+                      []
+                    ]
+                  ]
+                ]
+              ]
+            ],
+            [
+              "p",
+              [],
+              []
+            ]
+          ]
+        ],
+        [
+          "p",
+          [],
+          []
+        ]
+      ]
+    },
+    {
+      "label": "prefix",
+      "sequence": "002101210120210121012021",
+      "status": "timeout",
+      "rendered": null,
+      "ordinal": null
+    },
+    {
+      "label": "prefix",
+      "sequence": "00210121012021012101202101",
+      "status": "timeout",
+      "rendered": null,
+      "ordinal": null
+    },
+    {
+      "label": "prefix",
+      "sequence": "002101210120210121012021012",
+      "status": "timeout",
+      "rendered": null,
+      "ordinal": null
+    },
+    {
+      "label": "prefix",
+      "sequence": "0021012101202101210120210121",
+      "status": "timeout",
+      "rendered": null,
+      "ordinal": null
+    },
+    {
+      "label": "prefix",
+      "sequence": "002101210120210121012021012101",
+      "status": "timeout",
+      "rendered": null,
+      "ordinal": null
+    },
+    {
+      "label": "prefix",
+      "sequence": "0021012101202101210120210121012",
+      "status": "timeout",
+      "rendered": null,
+      "ordinal": null
+    },
+    {
+      "label": "term-3",
+      "sequence": "00210121012021012101202101210120",
+      "status": "timeout",
+      "rendered": null,
+      "ordinal": null
+    },
+    {
+      "label": "prefix",
+      "sequence": "002101210120210121012021",
+      "status": "timeout",
+      "rendered": null,
+      "ordinal": null
+    },
+    {
+      "label": "prefix",
+      "sequence": "00210121012021012101202101",
+      "status": "timeout",
+      "rendered": null,
+      "ordinal": null
+    },
+    {
+      "label": "prefix",
+      "sequence": "002101210120210121012021012",
+      "status": "timeout",
+      "rendered": null,
+      "ordinal": null
+    },
+    {
+      "label": "prefix",
+      "sequence": "0021012101202101210120210121",
+      "status": "timeout",
+      "rendered": null,
+      "ordinal": null
+    },
+    {
+      "label": "prefix",
+      "sequence": "002101210120210121012021012101",
+      "status": "timeout",
+      "rendered": null,
+      "ordinal": null
+    },
+    {
+      "label": "prefix",
+      "sequence": "0021012101202101210120210121012",
+      "status": "timeout",
+      "rendered": null,
+      "ordinal": null
+    },
+    {
+      "label": "prefix",
+      "sequence": "002101210120210121012021012101202",
+      "status": "timeout",
+      "rendered": null,
+      "ordinal": null
+    },
+    {
+      "label": "prefix",
+      "sequence": "0021012101202101210120210121012021",
+      "status": "timeout",
+      "rendered": null,
+      "ordinal": null
+    },
+    {
+      "label": "prefix",
+      "sequence": "002101210120210121012021012101202101",
+      "status": "timeout",
+      "rendered": null,
+      "ordinal": null
+    },
+    {
+      "label": "prefix",
+      "sequence": "0021012101202101210120210121012021012",
+      "status": "timeout",
+      "rendered": null,
+      "ordinal": null
+    },
+    {
+      "label": "prefix",
+      "sequence": "00210121012021012101202101210120210121",
+      "status": "timeout",
+      "rendered": null,
+      "ordinal": null
+    },
+    {
+      "label": "prefix",
+      "sequence": "0021012101202101210120210121012021012101",
+      "status": "timeout",
+      "rendered": null,
+      "ordinal": null
+    },
+    {
+      "label": "prefix",
+      "sequence": "00210121012021012101202101210120210121012",
+      "status": "timeout",
+      "rendered": null,
+      "ordinal": null
+    },
+    {
+      "label": "term-4",
+      "sequence": "002101210120210121012021012101202101210120",
+      "status": "timeout",
+      "rendered": null,
+      "ordinal": null
+    },
+    {
+      "label": "prefix",
+      "sequence": "002101210120210121012021",
+      "status": "timeout",
+      "rendered": null,
+      "ordinal": null
+    },
+    {
+      "label": "prefix",
+      "sequence": "00210121012021012101202101",
+      "status": "timeout",
+      "rendered": null,
+      "ordinal": null
+    },
+    {
+      "label": "prefix",
+      "sequence": "002101210120210121012021012",
+      "status": "timeout",
+      "rendered": null,
+      "ordinal": null
+    },
+    {
+      "label": "prefix",
+      "sequence": "0021012101202101210120210121",
+      "status": "timeout",
+      "rendered": null,
+      "ordinal": null
+    },
+    {
+      "label": "prefix",
+      "sequence": "002101210120210121012021012101",
+      "status": "timeout",
+      "rendered": null,
+      "ordinal": null
+    },
+    {
+      "label": "prefix",
+      "sequence": "0021012101202101210120210121012",
+      "status": "timeout",
+      "rendered": null,
+      "ordinal": null
+    },
+    {
+      "label": "prefix",
+      "sequence": "002101210120210121012021012101202",
+      "status": "timeout",
+      "rendered": null,
+      "ordinal": null
+    },
+    {
+      "label": "prefix",
+      "sequence": "0021012101202101210120210121012021",
+      "status": "timeout",
+      "rendered": null,
+      "ordinal": null
+    },
+    {
+      "label": "prefix",
+      "sequence": "002101210120210121012021012101202101",
+      "status": "timeout",
+      "rendered": null,
+      "ordinal": null
+    },
+    {
+      "label": "prefix",
+      "sequence": "0021012101202101210120210121012021012",
+      "status": "timeout",
+      "rendered": null,
+      "ordinal": null
+    },
+    {
+      "label": "prefix",
+      "sequence": "00210121012021012101202101210120210121",
+      "status": "timeout",
+      "rendered": null,
+      "ordinal": null
+    },
+    {
+      "label": "prefix",
+      "sequence": "0021012101202101210120210121012021012101",
+      "status": "timeout",
+      "rendered": null,
+      "ordinal": null
+    },
+    {
+      "label": "prefix",
+      "sequence": "00210121012021012101202101210120210121012",
+      "status": "timeout",
+      "rendered": null,
+      "ordinal": null
+    },
+    {
+      "label": "prefix",
+      "sequence": "0021012101202101210120210121012021012101202",
+      "status": "timeout",
+      "rendered": null,
+      "ordinal": null
+    },
+    {
+      "label": "prefix",
+      "sequence": "00210121012021012101202101210120210121012021",
+      "status": "timeout",
+      "rendered": null,
+      "ordinal": null
+    },
+    {
+      "label": "prefix",
+      "sequence": "0021012101202101210120210121012021012101202101",
+      "status": "timeout",
+      "rendered": null,
+      "ordinal": null
+    },
+    {
+      "label": "prefix",
+      "sequence": "00210121012021012101202101210120210121012021012",
+      "status": "timeout",
+      "rendered": null,
+      "ordinal": null
+    },
+    {
+      "label": "prefix",
+      "sequence": "002101210120210121012021012101202101210120210121",
+      "status": "timeout",
+      "rendered": null,
+      "ordinal": null
+    },
+    {
+      "label": "prefix",
+      "sequence": "00210121012021012101202101210120210121012021012101",
+      "status": "timeout",
+      "rendered": null,
+      "ordinal": null
+    },
+    {
+      "label": "prefix",
+      "sequence": "002101210120210121012021012101202101210120210121012",
+      "status": "timeout",
+      "rendered": null,
+      "ordinal": null
+    },
+    {
+      "label": "term-5",
+      "sequence": "0021012101202101210120210121012021012101202101210120",
+      "status": "timeout",
+      "rendered": null,
+      "ordinal": null
+    },
+    {
+      "label": "root-after",
+      "sequence": "002101210121",
+      "status": "timeout",
+      "rendered": null,
+      "ordinal": null
+    },
+    {
+      "label": "root-before",
+      "sequence": "002102",
+      "status": "timeout",
+      "rendered": null,
+      "ordinal": null
+    },
+    {
+      "label": "term-1",
+      "sequence": "002101",
+      "status": "clean",
+      "rendered": "w^(e_e0+1)",
+      "ordinal": [
+        [
+          "p",
+          [],
+          [
+            [
+              "p",
+              [
+                [
+                  "p",
+                  [],
+                  []
+                ]
+              ],
+              [
+                [
+                  "p",
+                  [
+                    [
+                      "p",
+                      [],
+                      []
+                    ]
+                  ],
+                  []
+                ]
+              ]
+            ],
+            [
+              "p",
+              [],
+              []
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "label": "term-2",
+      "sequence": "0021012101",
+      "status": "clean",
+      "rendered": "w^(e_e_w+1)",
+      "ordinal": [
+        [
+          "p",
+          [],
+          [
+            [
+              "p",
+              [
+                [
+                  "p",
+                  [],
+                  []
+                ]
+              ],
+              [
+                [
+                  "p",
+                  [
+                    [
+                      "p",
+                      [],
+                      []
+                    ]
+                  ],
+                  [
+                    [
+                      "p",
+                      [],
+                      [
+                        [
+                          "p",
+                          [],
+                          []
+                        ]
+                      ]
+                    ]
+                  ]
+                ]
+              ]
+            ],
+            [
+              "p",
+              [],
+              []
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "label": "prefix",
+      "sequence": "002101210121",
+      "status": "timeout",
+      "rendered": null,
+      "ordinal": null
+    },
+    {
+      "label": "term-3",
+      "sequence": "00210121012101",
+      "status": "timeout",
+      "rendered": null,
+      "ordinal": null
+    },
+    {
+      "label": "prefix",
+      "sequence": "002101210121",
+      "status": "timeout",
+      "rendered": null,
+      "ordinal": null
+    },
+    {
+      "label": "prefix",
+      "sequence": "00210121012101",
+      "status": "timeout",
+      "rendered": null,
+      "ordinal": null
+    },
+    {
+      "label": "prefix",
+      "sequence": "002101210121012",
+      "status": "timeout",
+      "rendered": null,
+      "ordinal": null
+    },
+    {
+      "label": "prefix",
+      "sequence": "0021012101210121",
+      "status": "timeout",
+      "rendered": null,
+      "ordinal": null
+    },
+    {
+      "label": "term-4",
+      "sequence": "002101210121012101",
+      "status": "timeout",
+      "rendered": null,
+      "ordinal": null
+    },
+    {
+      "label": "prefix",
+      "sequence": "002101210121",
+      "status": "timeout",
+      "rendered": null,
+      "ordinal": null
+    },
+    {
+      "label": "prefix",
+      "sequence": "00210121012101",
+      "status": "timeout",
+      "rendered": null,
+      "ordinal": null
+    },
+    {
+      "label": "prefix",
+      "sequence": "002101210121012",
+      "status": "timeout",
+      "rendered": null,
+      "ordinal": null
+    },
+    {
+      "label": "prefix",
+      "sequence": "0021012101210121",
+      "status": "timeout",
+      "rendered": null,
+      "ordinal": null
+    },
+    {
+      "label": "prefix",
+      "sequence": "002101210121012101",
+      "status": "timeout",
+      "rendered": null,
+      "ordinal": null
+    },
+    {
+      "label": "prefix",
+      "sequence": "0021012101210121012",
+      "status": "timeout",
+      "rendered": null,
+      "ordinal": null
+    },
+    {
+      "label": "prefix",
+      "sequence": "00210121012101210121",
+      "status": "timeout",
+      "rendered": null,
+      "ordinal": null
+    },
+    {
+      "label": "term-5",
+      "sequence": "0021012101210121012101",
+      "status": "timeout",
+      "rendered": null,
+      "ordinal": null
+    },
+    {
+      "label": "root-after",
+      "sequence": "002102",
+      "status": "timeout",
+      "rendered": null,
+      "ordinal": null
+    }
+  ],
+  "sup3": [
+    {
+      "sequence": "002101210120210121012021",
+      "ordinal": null,
+      "rendered": null
+    },
+    {
+      "sequence": "002101210121",
+      "ordinal": null,
+      "rendered": null
+    },
+    {
+      "sequence": "002102",
+      "ordinal": null,
+      "rendered": null
+    }
+  ],
+  "active_EXT121E_bases": {}
+}

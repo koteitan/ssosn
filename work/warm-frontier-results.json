@@ -1,0 +1,562 @@
+{
+  "method": "rule6 clean memo with hypothesis II disabled; rules and sup remain conjectural",
+  "depth": 6,
+  "NS": [
+    1,
+    2,
+    3,
+    4
+  ],
+  "roots": [
+    {
+      "sequence": "002101210120210121012021",
+      "direct_value": null,
+      "terms": [
+        {
+          "n": 1,
+          "sequence": "002101210120210121012020",
+          "clean": true,
+          "rendered": "e_w^(e_w+1)+1",
+          "ordinal": [
+            [
+              "p",
+              [
+                [
+                  "p",
+                  [],
+                  []
+                ]
+              ],
+              [
+                [
+                  "p",
+                  [],
+                  [
+                    [
+                      "p",
+                      [
+                        [
+                          "p",
+                          [],
+                          []
+                        ]
+                      ],
+                      [
+                        [
+                          "p",
+                          [],
+                          [
+                            [
+                              "p",
+                              [],
+                              []
+                            ]
+                          ]
+                        ]
+                      ]
+                    ],
+                    [
+                      "p",
+                      [],
+                      []
+                    ]
+                  ]
+                ]
+              ]
+            ],
+            [
+              "p",
+              [],
+              []
+            ]
+          ]
+        },
+        {
+          "n": 2,
+          "sequence": "00210121012021012101202020",
+          "clean": true,
+          "rendered": "e_w^w^(e_w+1)+1",
+          "ordinal": [
+            [
+              "p",
+              [
+                [
+                  "p",
+                  [],
+                  []
+                ]
+              ],
+              [
+                [
+                  "p",
+                  [],
+                  [
+                    [
+                      "p",
+                      [],
+                      [
+                        [
+                          "p",
+                          [
+                            [
+                              "p",
+                              [],
+                              []
+                            ]
+                          ],
+                          [
+                            [
+                              "p",
+                              [],
+                              [
+                                [
+                                  "p",
+                                  [],
+                                  []
+                                ]
+                              ]
+                            ]
+                          ]
+                        ],
+                        [
+                          "p",
+                          [],
+                          []
+                        ]
+                      ]
+                    ]
+                  ]
+                ]
+              ]
+            ],
+            [
+              "p",
+              [],
+              []
+            ]
+          ]
+        },
+        {
+          "n": 3,
+          "sequence": "0021012101202101210120202020",
+          "clean": true,
+          "rendered": "e_w^w^w^(e_w+1)+1",
+          "ordinal": [
+            [
+              "p",
+              [
+                [
+                  "p",
+                  [],
+                  []
+                ]
+              ],
+              [
+                [
+                  "p",
+                  [],
+                  [
+                    [
+                      "p",
+                      [],
+                      [
+                        [
+                          "p",
+                          [],
+                          [
+                            [
+                              "p",
+                              [
+                                [
+                                  "p",
+                                  [],
+                                  []
+                                ]
+                              ],
+                              [
+                                [
+                                  "p",
+                                  [],
+                                  [
+                                    [
+                                      "p",
+                                      [],
+                                      []
+                                    ]
+                                  ]
+                                ]
+                              ]
+                            ],
+                            [
+                              "p",
+                              [],
+                              []
+                            ]
+                          ]
+                        ]
+                      ]
+                    ]
+                  ]
+                ]
+              ]
+            ],
+            [
+              "p",
+              [],
+              []
+            ]
+          ]
+        },
+        {
+          "n": 4,
+          "sequence": "002101210120210121012020202020",
+          "clean": false,
+          "rendered": null,
+          "ordinal": null
+        },
+        {
+          "n": 5,
+          "sequence": "00210121012021012101202020202020",
+          "clean": false,
+          "rendered": null,
+          "ordinal": null
+        }
+      ],
+      "candidate_terms_used": 3,
+      "sup3_candidate": "e_e_(w+1)",
+      "sup3_ordinal": [
+        [
+          "p",
+          [
+            [
+              "p",
+              [],
+              []
+            ]
+          ],
+          [
+            [
+              "p",
+              [
+                [
+                  "p",
+                  [],
+                  []
+                ]
+              ],
+              [
+                [
+                  "p",
+                  [],
+                  [
+                    [
+                      "p",
+                      [],
+                      []
+                    ]
+                  ]
+                ],
+                [
+                  "p",
+                  [],
+                  []
+                ]
+              ]
+            ]
+          ]
+        ]
+      ]
+    },
+    {
+      "sequence": "002101210121",
+      "direct_value": null,
+      "terms": [
+        {
+          "n": 1,
+          "sequence": "002101210120",
+          "clean": true,
+          "rendered": "e_(e_w+1)+1",
+          "ordinal": [
+            [
+              "p",
+              [
+                [
+                  "p",
+                  [],
+                  []
+                ]
+              ],
+              [
+                [
+                  "p",
+                  [
+                    [
+                      "p",
+                      [],
+                      []
+                    ]
+                  ],
+                  [
+                    [
+                      "p",
+                      [],
+                      [
+                        [
+                          "p",
+                          [],
+                          []
+                        ]
+                      ]
+                    ]
+                  ]
+                ],
+                [
+                  "p",
+                  [],
+                  []
+                ]
+              ]
+            ],
+            [
+              "p",
+              [],
+              []
+            ]
+          ]
+        },
+        {
+          "n": 2,
+          "sequence": "0021012101202101210120",
+          "clean": true,
+          "rendered": "e_(e_w·2+1)+1",
+          "ordinal": [
+            [
+              "p",
+              [
+                [
+                  "p",
+                  [],
+                  []
+                ]
+              ],
+              [
+                [
+                  "p",
+                  [
+                    [
+                      "p",
+                      [],
+                      []
+                    ]
+                  ],
+                  [
+                    [
+                      "p",
+                      [],
+                      [
+                        [
+                          "p",
+                          [],
+                          []
+                        ]
+                      ]
+                    ]
+                  ]
+                ],
+                [
+                  "p",
+                  [
+                    [
+                      "p",
+                      [],
+                      []
+                    ]
+                  ],
+                  [
+                    [
+                      "p",
+                      [],
+                      [
+                        [
+                          "p",
+                          [],
+                          []
+                        ]
+                      ]
+                    ]
+                  ]
+                ],
+                [
+                  "p",
+                  [],
+                  []
+                ]
+              ]
+            ],
+            [
+              "p",
+              [],
+              []
+            ]
+          ]
+        },
+        {
+          "n": 3,
+          "sequence": "00210121012021012101202101210120",
+          "clean": false,
+          "rendered": null,
+          "ordinal": null
+        },
+        {
+          "n": 4,
+          "sequence": "002101210120210121012021012101202101210120",
+          "clean": false,
+          "rendered": null,
+          "ordinal": null
+        },
+        {
+          "n": 5,
+          "sequence": "0021012101202101210120210121012021012101202101210120",
+          "clean": false,
+          "rendered": null,
+          "ordinal": null
+        }
+      ],
+      "candidate_terms_used": 2,
+      "sup3_candidate": null,
+      "sup3_ordinal": null
+    },
+    {
+      "sequence": "002102",
+      "direct_value": null,
+      "terms": [
+        {
+          "n": 1,
+          "sequence": "002101",
+          "clean": true,
+          "rendered": "w^(e_e0+1)",
+          "ordinal": [
+            [
+              "p",
+              [],
+              [
+                [
+                  "p",
+                  [
+                    [
+                      "p",
+                      [],
+                      []
+                    ]
+                  ],
+                  [
+                    [
+                      "p",
+                      [
+                        [
+                          "p",
+                          [],
+                          []
+                        ]
+                      ],
+                      []
+                    ]
+                  ]
+                ],
+                [
+                  "p",
+                  [],
+                  []
+                ]
+              ]
+            ]
+          ]
+        },
+        {
+          "n": 2,
+          "sequence": "0021012101",
+          "clean": true,
+          "rendered": "w^(e_e_w+1)",
+          "ordinal": [
+            [
+              "p",
+              [],
+              [
+                [
+                  "p",
+                  [
+                    [
+                      "p",
+                      [],
+                      []
+                    ]
+                  ],
+                  [
+                    [
+                      "p",
+                      [
+                        [
+                          "p",
+                          [],
+                          []
+                        ]
+                      ],
+                      [
+                        [
+                          "p",
+                          [],
+                          [
+                            [
+                              "p",
+                              [],
+                              []
+                            ]
+                          ]
+                        ]
+                      ]
+                    ]
+                  ]
+                ],
+                [
+                  "p",
+                  [],
+                  []
+                ]
+              ]
+            ]
+          ]
+        },
+        {
+          "n": 3,
+          "sequence": "00210121012101",
+          "clean": false,
+          "rendered": null,
+          "ordinal": null
+        },
+        {
+          "n": 4,
+          "sequence": "002101210121012101",
+          "clean": false,
+          "rendered": null,
+          "ordinal": null
+        },
+        {
+          "n": 5,
+          "sequence": "0021012101210121012101",
+          "clean": false,
+          "rendered": null,
+          "ordinal": null
+        }
+      ],
+      "candidate_terms_used": 2,
+      "sup3_candidate": null,
+      "sup3_ordinal": null
+    }
+  ],
+  "source_sha256": {
+    "work/rule6.py": "68dc5f0f8276b233a2bd4904b0e6427aa19d06b535a21015c1d3ec3964384616",
+    "work/lift.py": "8a7afbbeca75abf68409ba603988f459badfa2dbd238648bd1247e6713c74e6c",
+    "evalord.py": "bcbb18fff6c5cff6c4348c11176b279cf26e7283408830e20cc8d69a699b4512",
+    "ordinal.py": "d14e8ea76bc589bc824f108b7eaf2c0510b4b2aa01b3423f69a53354aaca9079"
+  }
+}

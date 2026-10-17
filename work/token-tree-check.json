@@ -1,0 +1,51 @@
+{
+  "method": "CNF trees with origin/depth/copy/frame; references used only by this checker",
+  "phases": {
+    "lift5350": {
+      "counts": {
+        "agree": 5350
+      },
+      "changes": []
+    },
+    "core17828": {
+      "counts": {
+        "local_pass": 17828
+      },
+      "failures": [],
+      "valued_sequences": 106968,
+      "adjacent_violations": []
+    },
+    "closure87976": {
+      "counts": {
+        "agree": 87976
+      },
+      "changes": []
+    },
+    "old977": {
+      "outside": {
+        "agree": 585
+      },
+      "region": {
+        "agree": 237,
+        "differ": 155
+      }
+    },
+    "current103434": {
+      "agree": 103434
+    },
+    "historical870281": {
+      "agree": 870281
+    },
+    "new_region": {
+      "counts": {
+        "tested": 3064,
+        "local_pass": 3064
+      },
+      "stopped_on_first_counterexample": false,
+      "valued_sequences": 18384,
+      "adjacent_violations": []
+    }
+  },
+  "first_counterexample": null,
+  "seconds": 562.9474840539988
+}

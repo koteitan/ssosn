@@ -1,0 +1,200 @@
+{
+  "independent_evaluator": "token_value; no rule6/lower/sequence recursion",
+  "all_reference_counts": {
+    "lift": {
+      "total": 5350,
+      "agree": 5350
+    },
+    "toksearch2": {
+      "total": 977,
+      "agree": 822,
+      "differ": 155
+    }
+  },
+  "standard_reference_counts": {
+    "lift": {
+      "agree": 5350,
+      "total": 5350
+    },
+    "toksearch2": {
+      "agree": 822,
+      "total": 977,
+      "differ": 155
+    }
+  },
+  "standard_differ_count": 155,
+  "all_sequences": 6327,
+  "standard_sequences": 6327,
+  "nonstandard_sequences": 0,
+  "valued_standard_sequences": 6327,
+  "unresolved_standard_sequences": 0,
+  "membership_steps": 52590,
+  "adjacent_violations": [],
+  "audit11_sequences": 139813,
+  "audit11_reference_covered": 0,
+  "audit11_evaluator_resolved": 392,
+  "seconds": 7.398221277006087,
+  "standard_differ_examples": [
+    {
+      "source": "toksearch2",
+      "sequence": "002101210120202",
+      "status": "differ",
+      "token_value": "e_(e_w+w^w^3)",
+      "reference": "e_(e_w+w^w^2)",
+      "reason": ""
+    },
+    {
+      "source": "toksearch2",
+      "sequence": "002101210120202012",
+      "status": "differ",
+      "token_value": "e_(e_w+w^w^3+1)",
+      "reference": "e_(e_w+w^w^2+1)",
+      "reason": ""
+    },
+    {
+      "source": "toksearch2",
+      "sequence": "00210121012020201202",
+      "status": "differ",
+      "token_value": "e_(e_w+w^(w^3+1))",
+      "reference": "e_(e_w+w^(w^2+1))",
+      "reason": ""
+    },
+    {
+      "source": "toksearch2",
+      "sequence": "0021012101202020120202",
+      "status": "differ",
+      "token_value": "e_(e_w+w^w^4)",
+      "reference": "e_(e_w+w^w^3)",
+      "reason": ""
+    },
+    {
+      "source": "toksearch2",
+      "sequence": "002101210120202012012",
+      "status": "differ",
+      "token_value": "e_(e_w+w^w^3+2)",
+      "reference": "e_(e_w+w^w^2+2)",
+      "reason": ""
+    },
+    {
+      "source": "toksearch2",
+      "sequence": "00210121012020201202012",
+      "status": "differ",
+      "token_value": "e_(e_w+w^(w^3+1)+1)",
+      "reference": "e_(e_w+w^(w^2+1)+1)",
+      "reason": ""
+    },
+    {
+      "source": "toksearch2",
+      "sequence": "0021012101202020120201202",
+      "status": "differ",
+      "token_value": "e_(e_w+w^(w^3+2))",
+      "reference": "e_(e_w+w^(w^2+2))",
+      "reason": ""
+    },
+    {
+      "source": "toksearch2",
+      "sequence": "0021012101202020120202012",
+      "status": "differ",
+      "token_value": "e_(e_w+w^w^4+1)",
+      "reference": "e_(e_w+w^w^3+1)",
+      "reason": ""
+    },
+    {
+      "source": "toksearch2",
+      "sequence": "002101210120202012020201202",
+      "status": "differ",
+      "token_value": "e_(e_w+w^(w^4+1))",
+      "reference": "e_(e_w+w^(w^3+1))",
+      "reason": ""
+    },
+    {
+      "source": "toksearch2",
+      "sequence": "00210121012020201202020120202",
+      "status": "differ",
+      "token_value": "e_(e_w+w^w^5)",
+      "reference": "e_(e_w+w^w^4)",
+      "reason": ""
+    },
+    {
+      "source": "toksearch2",
+      "sequence": "002101210120202012012012",
+      "status": "differ",
+      "token_value": "e_(e_w+w^w^3+3)",
+      "reference": "e_(e_w+w^w^2+3)",
+      "reason": ""
+    },
+    {
+      "source": "toksearch2",
+      "sequence": "0021012101202020120121",
+      "status": "differ",
+      "token_value": "e_(e_w+w^w^3+w)",
+      "reference": "e_(e_w+w^w^2+w)",
+      "reason": ""
+    },
+    {
+      "source": "toksearch2",
+      "sequence": "00210121012020201202012012",
+      "status": "differ",
+      "token_value": "e_(e_w+w^(w^3+1)+2)",
+      "reference": "e_(e_w+w^(w^2+1)+2)",
+      "reason": ""
+    },
+    {
+      "source": "toksearch2",
+      "sequence": "002101210120202012020121",
+      "status": "differ",
+      "token_value": "e_(e_w+w^(w^3+w))",
+      "reference": "e_(e_w+w^(w^2+w))",
+      "reason": ""
+    },
+    {
+      "source": "toksearch2",
+      "sequence": "0021012101202020120201202012",
+      "status": "differ",
+      "token_value": "e_(e_w+w^(w^3+2)+1)",
+      "reference": "e_(e_w+w^(w^2+2)+1)",
+      "reason": ""
+    },
+    {
+      "source": "toksearch2",
+      "sequence": "002101210120202012020120201202",
+      "status": "differ",
+      "token_value": "e_(e_w+w^(w^3+3))",
+      "reference": "e_(e_w+w^(w^2+3))",
+      "reason": ""
+    },
+    {
+      "source": "toksearch2",
+      "sequence": "0021012101202020120202012012",
+      "status": "differ",
+      "token_value": "e_(e_w+w^w^4+2)",
+      "reference": "e_(e_w+w^w^3+2)",
+      "reason": ""
+    },
+    {
+      "source": "toksearch2",
+      "sequence": "002101210120202012020201202012",
+      "status": "differ",
+      "token_value": "e_(e_w+w^(w^4+1)+1)",
+      "reference": "e_(e_w+w^(w^3+1)+1)",
+      "reason": ""
+    },
+    {
+      "source": "toksearch2",
+      "sequence": "00210121012020201202020120201202",
+      "status": "differ",
+      "token_value": "e_(e_w+w^(w^4+2))",
+      "reference": "e_(e_w+w^(w^3+2))",
+      "reason": ""
+    },
+    {
+      "source": "toksearch2",
+      "sequence": "00210121012020201202020120202012",
+      "status": "differ",
+      "token_value": "e_(e_w+w^w^5+1)",
+      "reference": "e_(e_w+w^w^4+1)",
+      "reason": ""
+    }
+  ],
+  "all_comparisons_file": "token-legacy-comparison.tsv.gz"
+}

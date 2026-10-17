@@ -1,0 +1,19 @@
+{
+  "source_token_bound": 9,
+  "alphabet": [
+    "A0",
+    "A1",
+    "A2",
+    "E1",
+    "W"
+  ],
+  "counts": {
+    "A0_outside_three_laws": 7809,
+    "L_A_all_n_certified": 5553,
+    "L_E_all_n_certified": 514,
+    "L_W_all_n_certified": 3952
+  },
+  "failures": [],
+  "meaning": "Every n>=1 for every source in the stated finite corpus; not every unbounded token string",
+  "proof": "G D=H V and V D=Q V imply G D^n=H Q^(n-1) V by induction"
+}

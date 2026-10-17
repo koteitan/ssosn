@@ -1,0 +1,68 @@
+{
+  "standard_sequences": 139813,
+  "reference_rows": {
+    "agree": 77944,
+    "differ": 100376
+  },
+  "unique_sequence_reference_pairs": {
+    "agree": 54150,
+    "differ": 85685
+  },
+  "sequence_classes": {
+    "all_agree": 54133,
+    "mixed": 17,
+    "all_differ": 85663
+  },
+  "by_source": {
+    "cache_R": {
+      "agree": 44834,
+      "differ": 44889
+    },
+    "cache_hook": {
+      "agree": 32604,
+      "differ": 55081
+    },
+    "published_evaluator_EXT121E": {
+      "agree": 11
+    },
+    "real_sup": {
+      "agree": 231,
+      "differ": 166
+    },
+    "focused_term": {
+      "agree": 6,
+      "differ": 4
+    },
+    "rule": {
+      "agree": 237,
+      "differ": 155
+    },
+    "ext121-independent-checked.json:off_rule_after_warm": {
+      "differ": 13
+    },
+    "ext121-independent-checked.json:off_rule": {
+      "differ": 13
+    },
+    "ext121-independent-checked.json:off_real_sup": {
+      "agree": 8,
+      "differ": 8
+    },
+    "ext121e-independent-checked.json:off_rule_after_warm": {
+      "differ": 13
+    },
+    "ext121e-independent-checked.json:off_rule": {
+      "differ": 13
+    },
+    "ext121e-independent-checked.json:off_real_sup": {
+      "agree": 8,
+      "differ": 8
+    },
+    "published_rule_EXT121E": {
+      "differ": 13,
+      "agree": 5
+    }
+  },
+  "adjacent_violations": [],
+  "all_original_rows_recovered": true,
+  "seconds": 23.3318749329992
+}
