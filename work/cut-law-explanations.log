@@ -1,0 +1,6 @@
+core17828 {'A0': 7809, 'br_2': 12275, 'agree': 17828, 'A_positive': 5553, 'br_3': 5553, 'E': 514, 'leading_W': 9, 'W': 3943} failure False
+movable3146 {'leading': 77, 'br_2': 3146, 'agree': 3146, 'plain-copy': 2918, 'erase-opened-unit': 65, 'retain-built-unit': 86} failure False
+base2 {'base2': 2176, 'br_2': 1398, 'agree': 2176, 'br_3': 778} failure False
+movable_pure_D_contexts {'pure_D_T0': 9, 'br_3': 9, 'agree': 18, 'pure_D_T1': 9, 'br_2': 9} failure False
+boundary3064 {'boundary_A0': 1237, 'br_2': 2097, 'agree': 3064, 'boundary_A1': 575, 'br_3': 967, 'boundary_A2': 232, 'boundary_E1': 70, 'boundary_W': 790, 'boundary_D': 160} failure False
+FINAL failure None

@@ -17,3 +17,5 @@ import SSOS.BinarySearch
 import SSOS.ShapeExpansion
 import SSOS.CutReduction
 import SSOS.CutShape
+import SSOS.CutRank
+import SSOS.TokenCut

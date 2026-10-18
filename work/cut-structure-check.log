@@ -1,0 +1,12 @@
+CUT {'length': 2, 'all_agree': 1, 'standard': 1}
+CUT {'length': 3, 'all_agree': 3, 'standard': 3}
+CUT {'length': 4, 'all_agree': 9, 'standard': 6}
+CUT {'length': 5, 'all_agree': 27, 'standard': 14}
+CUT {'length': 6, 'all_agree': 81, 'standard': 32}
+CUT {'length': 7, 'all_agree': 243, 'standard': 74}
+CUT {'length': 8, 'all_agree': 729, 'standard': 169}
+CUT {'length': 9, 'all_agree': 2187, 'standard': 400}
+CUT {'length': 10, 'all_agree': 6561, 'standard': 937}
+CUT {'length': 11, 'all_agree': 19683, 'standard': 2207}
+CUT FINAL {'all_sequences': 29524, 'all_zero_ended': 9842, 'standard': 3843, 'standard_successor': 1637, 'br_2': 3719, 'all_positive_ended': 19682, 'standard_limit': 2206, 'br_3': 124} failures 0
+FIRST FIXED SUBTREE COUNTEREXAMPLE {'parent': (0, 0, 1, 0, 1), 'cut': 2, 'G': (0, 0), 'B': (1, 0, 0), 'n': 2, 'old_sequence': (0, 0, 1, 0, 0), 'new_sequence': (0, 0, 1, 0, 0, 1, 0, 0), 'old_parents': (1, 1, 2, 1, 1), 'new_parents': (1, 1, 2, 1, 4, 5, 1, 1), 'changed': [{'position': 5, 'old_parent': 1, 'new_parent': 4}], 'parent_standard': True, 'old_standard': True, 'new_standard': True, 'old_suffix_ranks': (3, 4, 5, 2, 1, 0), 'new_suffix_ranks': (4, 6, 8, 3, 5, 7, 2, 1, 0)}

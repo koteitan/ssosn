@@ -12,6 +12,7 @@ import conj
 import conj2
 from ordinal import cmp, ZERO as OZERO, ONE as OONE
 import token_base2
+from cut_structure import CutTree
 
 
 class Unknown(Exception):
@@ -176,6 +177,51 @@ W = A(0)+(1,)
 BOUNDARY = (2,1,0,2)
 GENERAL_COPY_EXPERIMENT = False  # rejected extension; use fresh caches when changing
 MOVABLE_ONE_EXPERIMENT = False  # §18, independently guarded and checked
+CUT_COPY_ACTION_EXPERIMENT = False  # §21; fresh structures and typed copy action
+
+
+def raw_tokens(tokens):
+    return sum(((0,2) if t=='D' else W if t=='W' else
+                A(int(t[1:]))+((1,) if t.startswith('E') else ()) for t in tokens),())
+
+
+def fresh_copy_from_cut(tokens, k):
+    """Rotate the actual raw B through terminal 01 to recover C A_(k-1)."""
+    s=(0,0,2,1)+raw_tokens(tokens)
+    c=CutTree.build(s).locate()['cut']
+    b=s[c:-1]+(s[-1]-1,)
+    v=(0,1)
+    if (v+b)[-2:]!=v:
+        raise Unknown('cut copy does not close at terminal 01')
+    q=(v+b)[:-2]
+    lower=A(k-1)
+    if q[-len(lower):]!=lower:
+        raise Unknown('cut copy lacks the lower-depth tail')
+    return parse(q[:-len(lower)],True)
+
+
+def typed_copy_rank(copies, depth, origin):
+    """Candidate action on A_depth, distinct from its epsilon-index action.
+
+    For one D-run, the checked movable-one law copies A_b when depth<b.
+    Its omega iteration bumps that actual depth in the generated power tree.
+    More complicated words retain the inherited, unproved rank hypothesis;
+    the real-term checker must reject it if it violates order.
+    """
+    rank=copy_rank(copies)
+    end=len(copies)
+    while end and copies[end-1]=='W':end-=1
+    lower=end
+    while lower and copies[lower-1]=='D':lower-=1
+    if end==len(copies) or lower==end or not lower or any(t!='W' for t in copies[:lower]):
+        return rank
+    b=end-lower
+    if depth>=b:return rank
+    baseline=power(copy_rank(copies[:end]),origin)
+    moved=bump(baseline,b-depth,power(natural(len(copies)-end,origin),origin),origin)
+    if len(moved.terms)!=1 or moved.terms[0].index.terms:
+        raise Unknown('typed copy action is not one omega power')
+    return moved.terms[0].argument
 
 
 def parse(tail, allow_d=False):
@@ -283,7 +329,8 @@ def fold(tokens, boundary=False, general=False):
         event_depth=k if token.startswith('A') else active_depth
         law_copy=context_copy(tokens,start,event_depth,j,root_copy)
         origin = Origin(token, event_depth, law_copy, tokens[:i], copies)
-        rank=copy_rank(copies) if general else None
+        rank=(typed_copy_rank(copies,k,origin) if CUT_COPY_ACTION_EXPERIMENT and token.startswith('A')
+              else copy_rank(copies)) if general else None
         amount = power(rank if general else omega(origin) if rank_limit else natural(m, origin), origin)
         iterated=bool(copies) if general else m!=0
         frame = Frame(token, k, copies, k, rank) if iterated and token.startswith('A') else None
@@ -293,7 +340,11 @@ def fold(tokens, boundary=False, general=False):
             if k == 0:
                 value = plus(value, amount, origin)
             elif fresh:
-                value = plus(base, tower(plus(offset, amount, origin), k, origin, frame), origin)
+                seed_offset=offset
+                if general and CUT_COPY_ACTION_EXPERIMENT:
+                    actual_copy=fresh_copy_from_cut(tokens[:start+1],k)
+                    seed_offset=typed_copy_rank(actual_copy,k-1,origin)
+                value = plus(base, tower(plus(seed_offset, amount, origin), k, origin, frame), origin)
             else:
                 value = bump(value, k, amount, origin)
             active_depth = k
@@ -351,6 +402,8 @@ def known_block_tree(u):
 @lru_cache(maxsize=15000)
 def block_tree(u):
     u=tuple(u)
+    if CUT_COPY_ACTION_EXPERIMENT and u[:2]==(2,1):
+        return epsilon(fold(parse(u[2:],True),general=True),Origin('cut copy action index'))
     try:
         return known_block_tree(u)
     except Unknown:

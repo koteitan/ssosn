@@ -134,6 +134,10 @@ L_A:  R⌢T⌢A_k [n] = R⌢T⌢A_(k−1)⌢(C⌢T⌢A_(k−1))^(n−1)⌢(0,1) 
 
 - 部品 9 個までの標準形 17828 本で、n = 1..5 の外れは 0 でした（`2026-10-17.md` の 15 節）。
 - A0 で終わる列（+1）は、この 3 つの規則の対象外です。
+- **2026-10-18: 展開の形は Lean で証明しました**（4 節、`2026-10-17.md` の 23 節）。
+  - L_E（X⌢E）と L_W（Z = A_(k+1)・E・A0、W だけの場合）は、すべての n とすべての X で成り立ちます。X⌢A0 [n] = X⌢(0,1)⌢1^n も同じです。
+  - L_A は、T についての接尾辞の条件 3 つのもとで成り立ちます。T が空なら条件なしです。
+  - 値の読み方（下）は証明していません。
 
 **値の読み方**
 
@@ -297,6 +301,8 @@ Lean と Mathlib はどちらも v4.33.1 です（`lean-toolchain`, `lakefile.to
 | `SSOS/ShapeExpansion.lean` | `StdShape.E`: 木の展開が `StdShape` を保つ証明。`CutCorrect` の仮定なし |
 | `SSOS/CutReduction.lean` | `CutCorrect` を、元の探索を含まない argmax の条件に置き換える必要十分条件 |
 | `SSOS/CutShape.lean` | **`cutCorrect_of_stdShape`, `standard_shape`, `cutCorrect_of_standard`, `o_fs_lt_of_standard`, `o_fs_sup_of_standard`**（2026-10-16、Claude） |
+| `SSOS/CutRank.lean` | どんな列でも成り立つ切れ目の言い直し `mbp_eq_iff`, `p_one_eq_last`, `breakAt_iff`, `br_eq_find`（2026-10-18、Claude） |
+| `SSOS/TokenCut.lean` | 部品の規則の展開の形 `fs_A0`, `fs_E`, `law_W_A`, `law_W_E`, `law_W_A0`, `law_W_lead`, `stage2_A`, `law_A`, `law_A_lead`（2026-10-18、Claude） |
 
 **2026-10-16: 0/1 の標準形すべてで、実際の展開と木の展開の対応が証明されました。**
 `sorry` も独自の `axiom` もなく、公理は propext, Classical.choice, Quot.sound だけです。
@@ -311,6 +317,20 @@ o_fs_sup_of_standard   : Standard S → 0 < S_L → o(S) = sup_n o(fs S (n+1))
 
 これと `o_append_zero`（o(S⌢0) = o(S)+1）、`o_fs_top_sup`（sup_n o((0,0,2)[n]) = e0）を合わせると、
 (0,0,2) より下の標準形すべてで、値 o が展開の規則と矛盾しないことが証明されたことになります。
+
+**2026-10-18: e0 より上の展開の形（部品の規則）も一部証明しました。** 値は扱っていません。
+
+```
+mbp_eq_iff  : mbp S x = 「x 以上の候補 j（S_j < S_L）のうち、suf(j+1) が最大の j」、候補がなければ L
+breakAt_iff : breakAt S i ↔ fbp(i) = fbp(i−1) ∨ ∃ j, p(i) < j ≤ fbp(i) ∧ S_j ≤ S_(p(i))
+fs_E        : X⌢E [n]             = X⌢A_n⌢0
+law_W_A     : X⌢A_(k+1)⌢W^m⌢W [n] = X⌢(A_(k+1)⌢W^m)^n⌢A0⌢0     （E・A0 でも同じ）
+law_W_lead  : (0,0,2,1)⌢W^(j+1) [n+1] = (0,0,2,1)⌢W^j⌢(E⌢W^j)^n⌢A0⌢0
+law_A       : R0⌢A_d⌢W^(m+1)⌢T⌢A_(k+1) [n] = R0⌢A_d⌢(W^(m+1)⌢T⌢A_k)^n⌢(0,1)   （d ≤ k、T に条件）
+```
+
+`[n]` は n 個コピーする形（`fs S n`）です。`mbp_eq_iff` と `breakAt_iff` は標準形の仮定も 0/1/2 の制限もなく成り立ちます。
+X は任意の列です。`law_A` の T の条件と証明の方法は `2026-10-17.md` の 23 節にあります。
 
 以下は、2026-10-16 の完成より前に書いた説明です（歴史として残します）。
 
@@ -358,6 +378,7 @@ argmax は、その性質を述べる `IsZeroArgmax` と一意性で表してい
 
 - **A. 部品の働きを、定義から導く。**
   - 親 p(i) と切れ目の決め方を部品の言葉に直して、L_A / L_E / L_W がなぜ成り立つかを説明します。
+    → 2026-10-18 に済みました（`2026-10-17.md` の 20・21・23 節、Lean の `CutRank.lean`・`TokenCut.lean`）。残りは、T が空でない L_A の条件を標準形から導くことです。
   - そこから、P = (2,1,0,2) より上の部品（D、1 の入る場所が違う部品、土台 (2,2) など）の働きを導きます。
   - 新しい読み方は、少なくとも次を満たす必要があります。
     1. 2.2 の値（lift の 5350 本、作り直した 977 本の表のうち区間の外の 585 本など）を全部出す。
