@@ -1,0 +1,397 @@
+{
+  "A": [
+    "D",
+    "W",
+    "A0"
+  ],
+  "B": [
+    "D",
+    "D",
+    "A0"
+  ],
+  "Q": [
+    "W",
+    "D",
+    "W",
+    "A0"
+  ],
+  "L": [
+    "W",
+    "D",
+    "W",
+    "A1"
+  ],
+  "parents": {
+    "AD": {
+      "sequence": [
+        0,
+        0,
+        2,
+        1,
+        0,
+        2,
+        0,
+        1,
+        2,
+        1,
+        0,
+        1,
+        2,
+        0,
+        2
+      ],
+      "standard": true,
+      "cut": 2,
+      "G": [
+        0,
+        0
+      ],
+      "B": [
+        2,
+        1,
+        0,
+        2,
+        0,
+        1,
+        2,
+        1,
+        0,
+        1,
+        2,
+        0,
+        1
+      ],
+      "H": [
+        0,
+        0,
+        2,
+        1,
+        0,
+        2,
+        0,
+        1,
+        2,
+        1,
+        0,
+        1,
+        2
+      ],
+      "Q": [
+        0,
+        1,
+        2,
+        1,
+        0,
+        2,
+        0,
+        1,
+        2,
+        1,
+        0,
+        1,
+        2
+      ],
+      "V": [
+        0,
+        1
+      ],
+      "all_n_word_identities": true
+    },
+    "BL": {
+      "sequence": [
+        0,
+        0,
+        2,
+        1,
+        0,
+        2,
+        0,
+        2,
+        0,
+        1,
+        2,
+        0,
+        1,
+        2,
+        1,
+        0,
+        2,
+        0,
+        1,
+        2,
+        1,
+        0,
+        1,
+        2,
+        0,
+        2
+      ],
+      "standard": true,
+      "cut": 13,
+      "G": [
+        0,
+        0,
+        2,
+        1,
+        0,
+        2,
+        0,
+        2,
+        0,
+        1,
+        2,
+        0,
+        1
+      ],
+      "B": [
+        2,
+        1,
+        0,
+        2,
+        0,
+        1,
+        2,
+        1,
+        0,
+        1,
+        2,
+        0,
+        1
+      ],
+      "H": [
+        0,
+        0,
+        2,
+        1,
+        0,
+        2,
+        0,
+        2,
+        0,
+        1,
+        2,
+        0,
+        1,
+        2,
+        1,
+        0,
+        2,
+        0,
+        1,
+        2,
+        1,
+        0,
+        1,
+        2
+      ],
+      "Q": [
+        0,
+        1,
+        2,
+        1,
+        0,
+        2,
+        0,
+        1,
+        2,
+        1,
+        0,
+        1,
+        2
+      ],
+      "V": [
+        0,
+        1
+      ],
+      "all_n_word_identities": true
+    },
+    "BD": {
+      "sequence": [
+        0,
+        0,
+        2,
+        1,
+        0,
+        2,
+        0,
+        2,
+        0,
+        1,
+        2,
+        0,
+        2
+      ],
+      "standard": true
+    }
+  },
+  "tests": [
+    {
+      "n": 0,
+      "A_standard": true,
+      "B_standard": true
+    },
+    {
+      "n": 1,
+      "A_standard": true,
+      "B_standard": true
+    },
+    {
+      "n": 2,
+      "A_standard": true,
+      "B_standard": true
+    },
+    {
+      "n": 3,
+      "A_standard": true,
+      "B_standard": true
+    },
+    {
+      "n": 4,
+      "A_standard": true,
+      "B_standard": true
+    },
+    {
+      "n": 5,
+      "A_standard": true,
+      "B_standard": true
+    },
+    {
+      "n": 6,
+      "A_standard": true,
+      "B_standard": true
+    },
+    {
+      "n": 7,
+      "A_standard": true,
+      "B_standard": true
+    },
+    {
+      "n": 8,
+      "A_standard": true,
+      "B_standard": true
+    },
+    {
+      "n": 9,
+      "A_standard": true,
+      "B_standard": true
+    },
+    {
+      "n": 10,
+      "A_standard": true,
+      "B_standard": true
+    },
+    {
+      "n": 11,
+      "A_standard": true,
+      "B_standard": true
+    },
+    {
+      "n": 12,
+      "A_standard": true,
+      "B_standard": true
+    },
+    {
+      "n": 13,
+      "A_standard": true,
+      "B_standard": true
+    },
+    {
+      "n": 14,
+      "A_standard": true,
+      "B_standard": true
+    },
+    {
+      "n": 15,
+      "A_standard": true,
+      "B_standard": true
+    },
+    {
+      "n": 16,
+      "A_standard": true,
+      "B_standard": true
+    },
+    {
+      "n": 17,
+      "A_standard": true,
+      "B_standard": true
+    },
+    {
+      "n": 18,
+      "A_standard": true,
+      "B_standard": true
+    },
+    {
+      "n": 19,
+      "A_standard": true,
+      "B_standard": true
+    },
+    {
+      "n": 20,
+      "A_standard": true,
+      "B_standard": true
+    },
+    {
+      "n": 21,
+      "A_standard": true,
+      "B_standard": true
+    },
+    {
+      "n": 22,
+      "A_standard": true,
+      "B_standard": true
+    },
+    {
+      "n": 23,
+      "A_standard": true,
+      "B_standard": true
+    },
+    {
+      "n": 24,
+      "A_standard": true,
+      "B_standard": true
+    },
+    {
+      "n": 25,
+      "A_standard": true,
+      "B_standard": true
+    },
+    {
+      "n": 26,
+      "A_standard": true,
+      "B_standard": true
+    },
+    {
+      "n": 27,
+      "A_standard": true,
+      "B_standard": true
+    },
+    {
+      "n": 28,
+      "A_standard": true,
+      "B_standard": true
+    },
+    {
+      "n": 29,
+      "A_standard": true,
+      "B_standard": true
+    },
+    {
+      "n": 30,
+      "A_standard": true,
+      "B_standard": true
+    },
+    {
+      "n": 31,
+      "A_standard": true,
+      "B_standard": true
+    },
+    {
+      "n": 32,
+      "A_standard": true,
+      "B_standard": true
+    }
+  ],
+  "BL_less_BD": true,
+  "statement": "No common base-independent Y(T) preserving both order and cofinal expansions",
+  "scope": "Does not rule out context-dependent Y_X(T) or a different induced expansion"
+}

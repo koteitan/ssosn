@@ -1,4 +1,11 @@
 __pycache__/
+/work/stdtok-*.json
+/work/stdtok-*.json.gz
+/work/above-p26-*.json.gz
+/work/value-new26-*.json.gz
+/work/self28-*.json.gz
+/work/inversion29*.json.gz
+/work/reltail30*.json.gz
 lean/.lake/
 
 # large generated outputs (> 1 MB) of work/ scripts; regenerate with the scripts (see 2026-10-17.md)
@@ -29,3 +36,5 @@ lean/.lake/
 /work/toktable2-classification.json
 /work/toktable2-comparison.json
 /work/cut-structure-check.json
+/work/token-grammar24-check.json
+/work/token-grammar24-refine.json

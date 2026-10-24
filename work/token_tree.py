@@ -178,6 +178,8 @@ BOUNDARY = (2,1,0,2)
 GENERAL_COPY_EXPERIMENT = False  # rejected extension; use fresh caches when changing
 MOVABLE_ONE_EXPERIMENT = False  # §18, independently guarded and checked
 CUT_COPY_ACTION_EXPERIMENT = False  # §21; fresh structures and typed copy action
+CONSISTENT_COPY_SEED_EXPERIMENT = False  # §27; fresh and promoted seeds use the depth-0 copy action
+WD_AFTER_ITERATION_EXPERIMENT = False  # §28; trailing W after W D^b iterates A_b
 
 
 def raw_tokens(tokens):
@@ -317,12 +319,15 @@ def fold(tokens, boundary=False, general=False):
         # opened depth. The syntactic erasure law requires the preceding
         # A_k to have k<b; otherwise its whole unit is copied instead.
         movable_depth, movable_iterations = None, 0
-        if general and MOVABLE_ONE_EXPERIMENT and token.startswith('A'):
+        if general and (MOVABLE_ONE_EXPERIMENT or
+                        WD_AFTER_ITERATION_EXPERIMENT and CUT_COPY_ACTION_EXPERIMENT
+                        and CONSISTENT_COPY_SEED_EXPERIMENT) and token.startswith('A'):
             end=len(copies)
             while end and copies[end-1]=='W':end-=1
             lower=end
             while lower and copies[lower-1]=='D':lower-=1
-            if end<len(copies) and lower<end and lower and copies[lower-1]=='W' and k<end-lower:
+            if (end<len(copies) and lower<end and lower and copies[lower-1]=='W' and k<end-lower
+                    and (MOVABLE_ONE_EXPERIMENT or all(t=='W' for t in copies[:lower]))):
                 movable_depth=end-lower
                 movable_iterations=len(copies)-end
                 copies=copies[:end]
@@ -333,7 +338,10 @@ def fold(tokens, boundary=False, general=False):
               else copy_rank(copies)) if general else None
         amount = power(rank if general else omega(origin) if rank_limit else natural(m, origin), origin)
         iterated=bool(copies) if general else m!=0
-        frame = Frame(token, k, copies, k, rank) if iterated and token.startswith('A') else None
+        frame_rank=(typed_copy_rank(copies,0,origin)
+                    if general and CUT_COPY_ACTION_EXPERIMENT and CONSISTENT_COPY_SEED_EXPERIMENT
+                    and iterated and token.startswith('A') else rank)
+        frame = Frame(token, k, copies, k, frame_rank) if iterated and token.startswith('A') else None
         if frame:
             amount = CNF(tuple(replace(t, frame=frame) for t in amount.terms), origin)
         if token.startswith('A'):
@@ -343,7 +351,7 @@ def fold(tokens, boundary=False, general=False):
                 seed_offset=offset
                 if general and CUT_COPY_ACTION_EXPERIMENT:
                     actual_copy=fresh_copy_from_cut(tokens[:start+1],k)
-                    seed_offset=typed_copy_rank(actual_copy,k-1,origin)
+                    seed_offset=typed_copy_rank(actual_copy,0 if CONSISTENT_COPY_SEED_EXPERIMENT else k-1,origin)
                 value = plus(base, tower(plus(seed_offset, amount, origin), k, origin, frame), origin)
             else:
                 value = bump(value, k, amount, origin)

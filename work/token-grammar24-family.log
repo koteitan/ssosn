@@ -1,0 +1,5 @@
+family {'child_pass': 562, 'child_reject': 67} r=0..32 and 100, all expected thresholds agree
+reference rewrite 4000 {'pass': 11355}
+reference rewrite 16000 {'pass': 44875}
+reference closure {'pass': 50095} failure examples []
+one-copy decrement {'agree': 19682}

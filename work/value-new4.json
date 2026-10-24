@@ -1,0 +1,78 @@
+{
+  "max_tokens": 4,
+  "alphabet": [
+    "A0",
+    "A1",
+    "A2",
+    "A3",
+    "E1",
+    "W"
+  ],
+  "reference_count": 363,
+  "includes_empty_reference": true,
+  "candidate_scope": "nonempty words with standard immediate prefix",
+  "counts": {
+    "True:True": 362,
+    "False:False": 315,
+    "False:True": 1
+  },
+  "nonstandard_sides": {
+    "lower=True,upper=False": 305,
+    "lower=True,upper=True": 1,
+    "lower=False,upper=True": 10
+  },
+  "adjacent_order_failures": [],
+  "mismatches": [
+    {
+      "tokens": [
+        "A3",
+        "W",
+        "W"
+      ],
+      "raw": [
+        0,
+        0,
+        2,
+        1,
+        0,
+        1,
+        2,
+        0,
+        2,
+        0,
+        2,
+        0,
+        2,
+        0,
+        1,
+        2,
+        1,
+        0,
+        1,
+        2,
+        1
+      ],
+      "standard": false,
+      "value_new": true,
+      "value": "e0+w^w^w^w^2",
+      "lower_pass": true,
+      "upper_pass": true,
+      "lower_witness": {
+        "tokens": [
+          "A3",
+          "W",
+          "A3",
+          "W"
+        ],
+        "value": "e0+w^w^w^(w2)"
+      },
+      "upper_witness": {
+        "tokens": [
+          "E1"
+        ],
+        "value": "e0·2"
+      }
+    }
+  ],
+  "elapsed_seconds": 0.009838616009801626
+}

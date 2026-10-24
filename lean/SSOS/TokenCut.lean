@@ -946,4 +946,168 @@ theorem law_A_lead_adjacent (j k : ℕ) :
   simp only [List.append_nil] at h
   exact h.2
 
+/-! ## L_A with a token string `T`
+
+The conditions of `law_A` on `T` follow from two token-level conditions:
+`MidOK K T` (every `A_e` in `T` has `e ≥ K`, and `T` does not start with `W`) and
+`BlockLe U K T` (after each `W` or `E` of `T`, the rest followed by `A_K` is at most `U`).
+`BlockLe` compares the `(2,1)`-blocks: the block of the copy word against the blocks that
+start at the last `(2,1)` of each later `W` or `E`. -/
+
+inductive Tok
+  | A (e : ℕ)
+  | E
+  | W
+  deriving DecidableEq
+
+def Tok.raw : Tok → List ℕ
+  | .A e => tA e
+  | .E => tE
+  | .W => tW
+
+def rawT (T : List Tok) : List ℕ := (T.map Tok.raw).flatten
+
+@[simp] theorem rawT_nil : rawT [] = [] := rfl
+@[simp] theorem rawT_cons (t : Tok) (T : List Tok) : rawT (t :: T) = t.raw ++ rawT T := by
+  simp [rawT]
+
+def MidOK (K : ℕ) (T : List Tok) : Prop :=
+  (∀ e, Tok.A e ∈ T → K ≤ e) ∧ T.head? ≠ some Tok.W
+
+def BlockLe (U : List ℕ) (K : ℕ) : List Tok → Prop
+  | [] => True
+  | t :: T => ((t = .W ∨ t = .E) → rawT T ++ tA K ≤ U) ∧ BlockLe U K T
+
+theorem tA_add (K j : ℕ) : tA (K + j) = tA K ++ copies [0,2] j := by
+  simp [tA, copies_add]
+
+theorem rawT_tA_head (T : List Tok) (K : ℕ) : ∃ B, rawT T ++ tA K = 0 :: B := by
+  cases T with
+  | nil => exact ⟨[1,2] ++ copies [0,2] K, by simp [tA]⟩
+  | cons t T =>
+    cases t with
+    | A e => exact ⟨[1,2] ++ copies [0,2] e ++ rawT T ++ tA K, by simp [Tok.raw, tA]⟩
+    | E => exact ⟨[1,2,0,2,1] ++ rawT T ++ tA K, by simp [Tok.raw, tE]⟩
+    | W => exact ⟨[1,2,1] ++ rawT T ++ tA K, by simp [Tok.raw, tW]⟩
+
+/-- Suffixes inside a token `A_e`, `E` or `W` are at least `A_K` when `1 ≤ K ≤ e`. -/
+theorem geAll_tok (k : ℕ) (t : Tok) (ht : ∀ e, t = .A e → k+1 ≤ e) (B : List ℕ) :
+    GeAll (tA (k+1)) t.raw B := by
+  have hK : tA (k+1) = 0 :: 1 :: (2 :: copies [0,2] (k+1)) := by simp [tA]
+  cases t with
+  | A e =>
+    obtain ⟨j, rfl⟩ : ∃ j, e = (k+1) + j := ⟨e - (k+1), by have := ht e rfl; omega⟩
+    have hr : (Tok.A (k+1+j)).raw = [0,1,2] ++ copies [0,2] (k+1+j) := rfl
+    rw [hr, geAll_append]
+    refine ⟨?_, by rw [hK]; exact geAll_copies_02_gen _ _ _⟩
+    simp only [GeAll, List.cons_append, List.nil_append]
+    refine ⟨?_, by rw [hK]; exact cons_le_of_lt _ _ _ _ (by decide),
+      by rw [hK]; exact cons_le_of_lt _ _ _ _ (by decide), trivial⟩
+    have h := lex_le_append (tA (k+1)) (copies [0,2] j ++ B)
+    rw [copies_add]
+    simpa [tA, List.append_assoc] using h
+  | E =>
+    simp only [Tok.raw, tE, GeAll, List.cons_append, List.nil_append]
+    refine ⟨?_, by rw [hK]; exact cons_le_of_lt _ _ _ _ (by decide),
+      by rw [hK]; exact cons_le_of_lt _ _ _ _ (by decide), ?_,
+      by rw [hK]; exact cons_le_of_lt _ _ _ _ (by decide),
+      by rw [hK]; exact cons_le_of_lt _ _ _ _ (by decide), trivial⟩
+    · cases k with
+      | zero => simpa [tA, copies] using lex_le_append [0,1,2,0,2] (1 :: B)
+      | succ k =>
+        simp only [tA, copies_succ, List.cons_append, List.nil_append]
+        exact (List.cons_lt_cons_iff.mpr (Or.inr ⟨rfl, List.cons_lt_cons_iff.mpr (Or.inr ⟨rfl,
+          List.cons_lt_cons_iff.mpr (Or.inr ⟨rfl, List.cons_lt_cons_iff.mpr (Or.inr ⟨rfl,
+          List.cons_lt_cons_iff.mpr (Or.inr ⟨rfl, cons_lt_of_lt _ _ _ _ (by decide)⟩)⟩)⟩)⟩)⟩)).le
+    · rw [hK]
+      exact (List.cons_lt_cons_iff.mpr (Or.inr ⟨rfl, cons_lt_of_lt _ _ _ _ (by decide)⟩)).le
+  | W =>
+    simp only [Tok.raw, tW, GeAll, List.cons_append, List.nil_append]
+    refine ⟨?_, by rw [hK]; exact cons_le_of_lt _ _ _ _ (by decide),
+      by rw [hK]; exact cons_le_of_lt _ _ _ _ (by decide),
+      by rw [hK]; exact cons_le_of_lt _ _ _ _ (by decide), trivial⟩
+    rw [hK]
+    exact (List.cons_lt_cons_iff.mpr (Or.inr ⟨rfl, List.cons_lt_cons_iff.mpr (Or.inr ⟨rfl,
+      List.cons_lt_cons_iff.mpr (Or.inr ⟨rfl, cons_lt_of_lt _ _ _ _ (by decide)⟩)⟩)⟩)).le
+
+theorem midOK_hT1 (k : ℕ) (T : List Tok) (hT : ∀ e, Tok.A e ∈ T → k+1 ≤ e) (B : List ℕ) :
+    GeAll (tA (k+1)) (rawT T) B := by
+  induction T generalizing B with
+  | nil => simp [GeAll]
+  | cons t T ih =>
+    rw [rawT_cons, geAll_append]
+    exact ⟨geAll_tok k t (fun e he => hT e (by simp [he])) _,
+      ih (fun e he => hT e (by simp [he])) B⟩
+
+theorem midOK_hT3 (k : ℕ) (T : List Tok) (hT : MidOK (k+1) T) :
+    ∃ Z', rawT T ++ tA (k+1) = [0,1,2,0] ++ Z' := by
+  cases T with
+  | nil => exact ⟨[2] ++ copies [0,2] k, by simp [tA, copies_succ]⟩
+  | cons t T =>
+    cases t with
+    | A e =>
+      obtain ⟨j, rfl⟩ : ∃ j, e = (k+1) + j := ⟨e - (k+1), by have := hT.1 e (by simp); omega⟩
+      exact ⟨[2] ++ copies [0,2] (k+j) ++ rawT T ++ tA (k+1), by
+        simp [Tok.raw, tA, show k + 1 + j = (k + j) + 1 by omega, copies_succ]⟩
+    | E => exact ⟨[2,1] ++ rawT T ++ tA (k+1), by simp [Tok.raw, tE]⟩
+    | W => exact absurd rfl hT.2
+
+/-- The tails after the `0`s and `1`s of the tokens of `T` are at most the copy word
+`(2,1)⌢U`, given the block order. -/
+theorem blockLe_hT2 (k : ℕ) (U : List ℕ) (T : List Tok) (hT : ∀ e, Tok.A e ∈ T → k+1 ≤ e)
+    (hB : BlockLe U (k+1) T) : TailsLe 2 (2 :: 1 :: U) (rawT T) (tA (k+1)) := by
+  induction T with
+  | nil => simp [TailsLe]
+  | cons t T ih =>
+    rw [rawT_cons, tailsLe_append]
+    refine ⟨?_, ih (fun e he => hT e (by simp [he])) hB.2⟩
+    obtain ⟨B, hB0⟩ := rawT_tA_head T (k+1)
+    have hblk := hB.1
+    rw [hB0] at hblk ⊢
+    cases t with
+    | A e =>
+      have he : k+1 ≤ e := hT e (by simp)
+      obtain ⟨j, rfl⟩ : ∃ j, e = j + 1 := ⟨e - 1, by omega⟩
+      simp only [Tok.raw, tA]
+      rw [tailsLe_append]
+      refine ⟨?_, tailsLe_copies_02_mid _ _ _⟩
+      simp only [TailsLe, List.cons_append, List.nil_append]
+      refine ⟨fun _ => cons_le_of_lt _ _ _ _ (by decide), fun _ => ?_, by omega, trivial⟩
+      rw [copies_succ]
+      exact (List.cons_lt_cons_iff.mpr (Or.inr ⟨rfl, cons_lt_of_lt _ _ _ _ (by decide)⟩)).le
+    | E =>
+      simp only [Tok.raw, tE, TailsLe, List.cons_append, List.nil_append]
+      refine ⟨fun _ => cons_le_of_lt _ _ _ _ (by decide),
+        fun _ => (List.cons_lt_cons_iff.mpr (Or.inr ⟨rfl, cons_lt_of_lt _ _ _ _ (by decide)⟩)).le,
+        by omega, fun _ => ?_, by omega, fun _ => cons_le_of_lt _ _ _ _ (by decide), trivial⟩
+      exact cons_le_cons_same 2 _ _ (cons_le_cons_same 1 _ _ (hblk (Or.inr rfl)))
+    | W =>
+      simp only [Tok.raw, tW, TailsLe, List.cons_append, List.nil_append]
+      refine ⟨fun _ => cons_le_of_lt _ _ _ _ (by decide), fun _ => ?_, by omega,
+        fun _ => cons_le_of_lt _ _ _ _ (by decide), trivial⟩
+      exact cons_le_cons_same 2 _ _ (cons_le_cons_same 1 _ _ (hblk (Or.inl rfl)))
+
+/-- L_A for a token string `T`: `R0⌢A_d⌢W^(m+1)⌢T⌢A_(k+1) [n] = R0⌢A_d⌢(W^(m+1)⌢T⌢A_k)^n⌢(0,1)`
+when `d ≤ k`, every `A_e` in `T` has `e ≥ k+1`, `T` does not start with `W`, and the
+`(2,1)`-blocks after the `W`s and `E`s of `T` are at most `W^m⌢T⌢A_(k+1)`. -/
+theorem law_A_tok (R0 : List ℕ) (T : List Tok) (d k m : ℕ) (hd : d ≤ k)
+    (hT : MidOK (k+1) T) (hB : BlockLe (copies tW m ++ rawT T ++ tA (k+1)) (k+1) T) :
+    let S := R0 ++ tA d ++ copies tW (m+1) ++ rawT T ++ tA (k+1)
+    p S 3 = R0.length + 1 ∧ br S = 3 ∧ cut S = R0.length + 2 * d + 5 ∧
+    ∀ n, fs S n = R0 ++ tA d ++ copies (copies tW (m+1) ++ rawT T ++ tA k) n ++ [0,1] := by
+  obtain ⟨Z', hZ'⟩ := midOK_hT3 k T hT
+  have h2 := blockLe_hT2 k _ T hT.1 hB
+  exact law_A R0 (rawT T) Z' d k m hd hZ' (midOK_hT1 k T hT.1 _) (by simpa using h2)
+
+/-- L_A for a token string `T` after the leading run `W^j`. -/
+theorem law_A_lead_tok (T : List Tok) (j k : ℕ)
+    (hT : MidOK (k+1) T) (hB : BlockLe (copies tW j ++ rawT T ++ tA (k+1)) (k+1) T) :
+    let S := [0,0,2,1] ++ copies tW j ++ rawT T ++ tA (k+1)
+    p S 3 = 1 ∧ br S = 3 ∧ cut S = 2 ∧
+    ∀ n, fs S (n+1) = [0,0,2,1] ++ copies tW j ++ rawT T ++ tA k ++
+      copies (copies tW (j+1) ++ rawT T ++ tA k) n ++ [0,1] := by
+  obtain ⟨Z', hZ'⟩ := midOK_hT3 k T hT
+  have h2 := blockLe_hT2 k _ T hT.1 hB
+  exact law_A_lead (rawT T) Z' j k hZ' (midOK_hT1 k T hT.1 _) (by simpa using h2)
+
 end SSOS.Seq
