@@ -1,0 +1,555 @@
+{
+  "max_tokens": 9,
+  "configs": [
+    [
+      "DW_A0",
+      [
+        "D",
+        "W"
+      ],
+      0
+    ],
+    [
+      "DD_A0",
+      [
+        "D",
+        "D"
+      ],
+      0
+    ],
+    [
+      "DDD_A0",
+      [
+        "D",
+        "D",
+        "D"
+      ],
+      0
+    ],
+    [
+      "DDD_A1",
+      [
+        "D",
+        "D",
+        "D"
+      ],
+      1
+    ],
+    [
+      "ref_A0",
+      [
+        "D",
+        "D",
+        "D",
+        "D",
+        "D",
+        "D",
+        "D",
+        "D",
+        "D",
+        "D"
+      ],
+      0
+    ],
+    [
+      "ref_A1",
+      [
+        "D",
+        "D",
+        "D",
+        "D",
+        "D",
+        "D",
+        "D",
+        "D",
+        "D",
+        "D"
+      ],
+      1
+    ],
+    [
+      "check_A0",
+      [
+        "D",
+        "D",
+        "D",
+        "D",
+        "D",
+        "D",
+        "D",
+        "D",
+        "D",
+        "D",
+        "D"
+      ],
+      0
+    ],
+    [
+      "check_A1",
+      [
+        "D",
+        "D",
+        "D",
+        "D",
+        "D",
+        "D",
+        "D",
+        "D",
+        "D",
+        "D",
+        "D"
+      ],
+      1
+    ]
+  ],
+  "domain": "tail raw < (0,2), next sibling excluded",
+  "reference_method": "independent D^(N+1) unit at the same depth, finite empirical common language",
+  "cap_method": "same cofinal copy Q in sibling and reference marker; no guessed ordinal values",
+  "full_spelling_universe": 1953125,
+  "explicitly_tested": 8740,
+  "levels": [
+    {
+      "length": 1,
+      "standard": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "tested": 5
+    },
+    {
+      "length": 2,
+      "standard": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "tested": 15
+    },
+    {
+      "length": 3,
+      "standard": [
+        8,
+        9,
+        9,
+        8,
+        9,
+        8,
+        9,
+        8
+      ],
+      "tested": 35
+    },
+    {
+      "length": 4,
+      "standard": [
+        13,
+        17,
+        21,
+        16,
+        21,
+        16,
+        21,
+        16
+      ],
+      "tested": 80
+    },
+    {
+      "length": 5,
+      "standard": [
+        24,
+        37,
+        51,
+        32,
+        55,
+        36,
+        55,
+        36
+      ],
+      "tested": 185
+    },
+    {
+      "length": 6,
+      "standard": [
+        41,
+        77,
+        126,
+        63,
+        146,
+        81,
+        146,
+        81
+      ],
+      "tested": 460
+    },
+    {
+      "length": 7,
+      "standard": [
+        73,
+        168,
+        322,
+        129,
+        402,
+        198,
+        402,
+        198
+      ],
+      "tested": 1190
+    },
+    {
+      "length": 8,
+      "standard": [
+        126,
+        359,
+        820,
+        266,
+        1108,
+        501,
+        1108,
+        501
+      ],
+      "tested": 3200
+    },
+    {
+      "length": 9,
+      "standard": [
+        219,
+        772,
+        2088,
+        556,
+        3052,
+        1308,
+        3052,
+        1308
+      ],
+      "tested": 8740
+    }
+  ],
+  "matrices": [
+    {
+      "True:True": 511,
+      "False:False": 1952614
+    },
+    {
+      "True:True": 1446,
+      "False:False": 1951679
+    },
+    {
+      "True:True": 3444,
+      "False:False": 1949681
+    },
+    {
+      "True:True": 1077,
+      "False:False": 1952048
+    }
+  ],
+  "mismatches": [
+    [],
+    [],
+    [],
+    []
+  ],
+  "standard_spellings": [
+    511,
+    1446,
+    3444,
+    1077,
+    4800,
+    2155,
+    4800,
+    2155
+  ],
+  "unique_standard": [
+    344,
+    978,
+    2109,
+    897,
+    3017,
+    1624,
+    3017,
+    1624
+  ],
+  "initial_segment_audit": [
+    {
+      "violations": 0,
+      "examples": []
+    },
+    {
+      "violations": 0,
+      "examples": []
+    },
+    {
+      "violations": 0,
+      "examples": []
+    },
+    {
+      "violations": 0,
+      "examples": []
+    }
+  ],
+  "larger_reference_differences": [
+    [],
+    []
+  ],
+  "certificates": [
+    {
+      "base": [
+        "D",
+        "W",
+        "A0"
+      ],
+      "sibling": [
+        0,
+        0,
+        2,
+        1,
+        0,
+        2,
+        0,
+        1,
+        2,
+        1,
+        0,
+        1,
+        2,
+        0,
+        2
+      ],
+      "reference": [
+        "D",
+        "D",
+        "D",
+        "D",
+        "D",
+        "D",
+        "D",
+        "D",
+        "D",
+        "D",
+        "A0"
+      ],
+      "marker": [
+        "W",
+        "D",
+        "W",
+        "A1"
+      ],
+      "Q": [
+        0,
+        1,
+        2,
+        1,
+        0,
+        2,
+        0,
+        1,
+        2,
+        1,
+        0,
+        1,
+        2
+      ],
+      "sibling_cut": 2,
+      "marker_cut": 29,
+      "all_n_word_identities": true
+    },
+    {
+      "base": [
+        "D",
+        "D",
+        "A0"
+      ],
+      "sibling": [
+        0,
+        0,
+        2,
+        1,
+        0,
+        2,
+        0,
+        2,
+        0,
+        1,
+        2,
+        0,
+        2
+      ],
+      "reference": [
+        "D",
+        "D",
+        "D",
+        "D",
+        "D",
+        "D",
+        "D",
+        "D",
+        "D",
+        "D",
+        "A0"
+      ],
+      "marker": [
+        "W",
+        "D",
+        "D",
+        "A1"
+      ],
+      "Q": [
+        0,
+        1,
+        2,
+        1,
+        0,
+        2,
+        0,
+        2,
+        0,
+        1,
+        2
+      ],
+      "sibling_cut": 2,
+      "marker_cut": 29,
+      "all_n_word_identities": true
+    },
+    {
+      "base": [
+        "D",
+        "D",
+        "D",
+        "A0"
+      ],
+      "sibling": [
+        0,
+        0,
+        2,
+        1,
+        0,
+        2,
+        0,
+        2,
+        0,
+        2,
+        0,
+        1,
+        2,
+        0,
+        2
+      ],
+      "reference": [
+        "D",
+        "D",
+        "D",
+        "D",
+        "D",
+        "D",
+        "D",
+        "D",
+        "D",
+        "D",
+        "A0"
+      ],
+      "marker": [
+        "W",
+        "D",
+        "D",
+        "D",
+        "A1"
+      ],
+      "Q": [
+        0,
+        1,
+        2,
+        1,
+        0,
+        2,
+        0,
+        2,
+        0,
+        2,
+        0,
+        1,
+        2
+      ],
+      "sibling_cut": 2,
+      "marker_cut": 29,
+      "all_n_word_identities": true
+    },
+    {
+      "base": [
+        "D",
+        "D",
+        "D",
+        "A1"
+      ],
+      "sibling": [
+        0,
+        0,
+        2,
+        1,
+        0,
+        2,
+        0,
+        2,
+        0,
+        2,
+        0,
+        1,
+        2,
+        0,
+        2,
+        0,
+        2
+      ],
+      "reference": [
+        "D",
+        "D",
+        "D",
+        "D",
+        "D",
+        "D",
+        "D",
+        "D",
+        "D",
+        "D",
+        "A1"
+      ],
+      "marker": [
+        "W",
+        "D",
+        "D",
+        "D",
+        "A2"
+      ],
+      "Q": [
+        0,
+        1,
+        2,
+        1,
+        0,
+        2,
+        0,
+        2,
+        0,
+        2,
+        0,
+        1,
+        2,
+        0,
+        2
+      ],
+      "sibling_cut": 2,
+      "marker_cut": 31,
+      "all_n_word_identities": true
+    }
+  ],
+  "seconds": 12.064391045016237
+}

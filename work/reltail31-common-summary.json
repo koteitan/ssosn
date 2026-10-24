@@ -1,0 +1,44 @@
+{
+  "reference_base": [
+    "D",
+    "D",
+    "D",
+    "D",
+    "D",
+    "D",
+    "D",
+    "D",
+    "D",
+    "D",
+    "A0"
+  ],
+  "cap": [
+    "W",
+    "D",
+    "D",
+    "D",
+    "D",
+    "D",
+    "D",
+    "D",
+    "D",
+    "D",
+    "D",
+    "A1"
+  ],
+  "max_tokens": 7,
+  "tail_count": 497,
+  "processed": 497,
+  "complete": true,
+  "counts": {
+    "stable3_5_7": 59,
+    "inferred5": 36,
+    "undecided": 402
+  },
+  "order_audit": {
+    "stable_values": 59,
+    "adjacent_violations": 0,
+    "examples": []
+  },
+  "method": "induced reference cut, strip exact outer terminal, recurse on contracted tails; evalord.sup first 3 and 5, then independently 7; all unstable, timeout, cap, escape, and unknown cases retained"
+}

@@ -6,6 +6,7 @@ __pycache__/
 /work/self28-*.json.gz
 /work/inversion29*.json.gz
 /work/reltail30*.json.gz
+/work/reltail-cap31*.json.gz
 lean/.lake/
 
 # large generated outputs (> 1 MB) of work/ scripts; regenerate with the scripts (see 2026-10-17.md)

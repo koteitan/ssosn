@@ -180,6 +180,57 @@ MOVABLE_ONE_EXPERIMENT = False  # §18, independently guarded and checked
 CUT_COPY_ACTION_EXPERIMENT = False  # §21; fresh structures and typed copy action
 CONSISTENT_COPY_SEED_EXPERIMENT = False  # §27; fresh and promoted seeds use the depth-0 copy action
 WD_AFTER_ITERATION_EXPERIMENT = False  # §28; trailing W after W D^b iterates A_b
+RELTAIL_CAP_EXPERIMENT = False  # §31; measured common relative tails below their cap
+RELTAIL_CAP_VALUES = None
+RELTAIL_CAP_COUNTS = {'eligible': 0, 'table': 0, 'fallback': 0}
+
+
+def reltail_cap_load(path):
+    """Load only tails whose 3/5/7-sample recursion stabilized."""
+    import gzip, json
+    global RELTAIL_CAP_VALUES
+    data=json.load(gzip.open(path,'rt'))
+    RELTAIL_CAP_VALUES={raw_tokens(tuple(row['tail'])):tuple(tuple(t) for t in row['value'])
+        for row in data['rows'] if row['status']=='stable3_5_7' and 'value' in row
+        and 'common-reference-language' in row['source']}
+    return len(RELTAIL_CAP_VALUES)
+
+
+def _from_ordinal(value, origin):
+    return CNF(tuple(Principal(_from_ordinal(index,origin),_from_ordinal(argument,origin),origin)
+                     for _,index,argument in value),origin)
+
+
+def _reltail_cap_fold(tokens, boundary, general):
+    """Apply the finite measured F table at the first unit after W/D roots."""
+    if not RELTAIL_CAP_EXPERIMENT or not general or RELTAIL_CAP_VALUES is None:
+        return None
+    tokens=tuple(tokens);j=0
+    while j<len(tokens) and tokens[j] in ('W','D'):j+=1
+    if j>=len(tokens) or not tokens[j].startswith('A'):
+        return None
+    depth=int(tokens[j][1:]);tail=tokens[j+1:]
+    if not tail or any(t not in ('A0','A1','A2','W','D') for t in tail):
+        return None
+    normalized=[]
+    for t in tail:
+        if t.startswith('A'):
+            k=int(t[1:])-depth
+            if k<0:return None
+            normalized.append('A'+str(k))
+        else:normalized.append(t)
+    reference_marker=('W',)+('D',)*10+('A1',)
+    if raw_tokens(tuple(normalized))>=raw_tokens(reference_marker):return None
+    RELTAIL_CAP_COUNTS['eligible']+=1
+    value=RELTAIL_CAP_VALUES.get(raw_tokens(tuple(normalized)))
+    if value is None:
+        RELTAIL_CAP_COUNTS['fallback']+=1
+        return None
+    RELTAIL_CAP_COUNTS['table']+=1
+    prefix=fold(tokens[:j+1],boundary=boundary,general=general)
+    origin=Origin('relative tail table',depth,(),tokens,tuple(normalized))
+    amount=_from_ordinal(value,origin)
+    return plus(prefix,amount,origin) if depth==0 else bump(prefix,depth,amount,origin)
 
 
 def raw_tokens(tokens):
@@ -271,6 +322,8 @@ def context_copy(tokens, start, k, beginning, default):
 
 def fold(tokens, boundary=False, general=False):
     tokens = tuple(tokens)
+    relative=_reltail_cap_fold(tokens,boundary,general)
+    if relative is not None:return relative
     j = 0
     if general:
         while j<len(tokens) and tokens[j] in ('W','D'):

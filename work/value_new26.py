@@ -22,11 +22,15 @@ from above_p_data26 import HERE,raw,P,UPPER
 
 def run(data,variant):
     start=time.monotonic()
-    T.CUT_COPY_ACTION_EXPERIMENT=variant in ('cut','seed','iterate')
-    T.CONSISTENT_COPY_SEED_EXPERIMENT=variant in ('seed','iterate')
+    T.CUT_COPY_ACTION_EXPERIMENT=variant in ('cut','seed','iterate','reltail')
+    T.CONSISTENT_COPY_SEED_EXPERIMENT=variant in ('seed','iterate','reltail')
     T.WD_AFTER_ITERATION_EXPERIMENT=variant=='iterate'
     T.GENERAL_COPY_EXPERIMENT=variant in ('general','movable')
     T.MOVABLE_ONE_EXPERIMENT=variant=='movable'
+    T.RELTAIL_CAP_EXPERIMENT=variant=='reltail'
+    T.RELTAIL_CAP_COUNTS={'eligible':0,'table':0,'fallback':0}
+    if variant=='reltail':
+        T.reltail_cap_load(HERE/'reltail31-common.json.gz')
     seq_class=harness.Seq
     original_cut=seq_class.cut
     @lru_cache(maxsize=32768)
@@ -184,7 +188,8 @@ def run(data,variant):
     return dict(variant=variant,flags=dict(CUT_COPY_ACTION_EXPERIMENT=T.CUT_COPY_ACTION_EXPERIMENT,
         GENERAL_COPY_EXPERIMENT=T.GENERAL_COPY_EXPERIMENT,MOVABLE_ONE_EXPERIMENT=T.MOVABLE_ONE_EXPERIMENT,
         CONSISTENT_COPY_SEED_EXPERIMENT=T.CONSISTENT_COPY_SEED_EXPERIMENT,
-        WD_AFTER_ITERATION_EXPERIMENT=T.WD_AFTER_ITERATION_EXPERIMENT),
+        WD_AFTER_ITERATION_EXPERIMENT=T.WD_AFTER_ITERATION_EXPERIMENT,
+        RELTAIL_CAP_EXPERIMENT=T.RELTAIL_CAP_EXPERIMENT),
         max_tokens=data['max_tokens'],lower_bound=P,upper_bound=UPPER,
         spelling_counts=dict(counts),unique_raw_counts=dict(unique_counts),nonstandard_sides=dict(side_counts),
         references_total=len(standard_raw),references_known=len(known_refs),
@@ -197,12 +202,13 @@ def run(data,variant):
         extended_counts=dict(extended_counts),
         extended_unique_raw_counts=dict(extended_unique),extended_examples=dict(extended_examples),
         extended_adjacent_failures=extended_adjacent,focus92=focus,
+        reltail_cap_counts=dict(T.RELTAIL_CAP_COUNTS),
         seconds=time.monotonic()-start)
 
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('variant',choices=('cut','movable','general','seed','iterate'))
+    parser.add_argument('variant',choices=('cut','movable','general','seed','iterate','reltail'))
     parser.add_argument('--data',type=Path,default=HERE/'above-p26-data.json.gz')
     args=parser.parse_args()
     with gzip.open(args.data,'rt') as source:data=json.load(source)

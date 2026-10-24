@@ -35,11 +35,14 @@ def main():
     parser.add_argument('--resume',action='store_true')
     parser.add_argument('--budget',type=float,default=520)
     parser.add_argument('--case-budget',type=float,default=15)
+    parser.add_argument('--variant',choices=('seed','reltail'),default='seed')
     args=parser.parse_args()
     configure('seed')
+    T.RELTAIL_CAP_EXPERIMENT=args.variant=='reltail'
+    if T.RELTAIL_CAP_EXPERIMENT:T.reltail_cap_load(HERE/'reltail31-common.json.gz')
     start=time.monotonic()
     data=json.load(gzip.open(HERE/'above-p26-data.json.gz','rt'))
-    old=json.load(gzip.open(HERE/'value-new26-seed.json.gz','rt'))
+    old=json.load(gzip.open(HERE/f'value-new26-{args.variant}.json.gz','rt'))
     labels={};weights=collections.Counter()
     for row in data['rows']:
         if row['standard']:
@@ -83,13 +86,14 @@ def main():
                               a=s,b=refs[upper[j]]));count+=1
         if count:failed_sources.add(s)
         if count==2:both+=1
-    assert len(failed_sources)==1139 and sum(weights[s] for s in failed_sources)==1892
-    out=HERE/'inversion29.json.gz'
+    if args.variant=='seed':
+        assert len(failed_sources)==1139 and sum(weights[s] for s in failed_sources)==1892
+    out=HERE/('inversion29.json.gz' if args.variant=='seed' else 'inversion29-reltail.json.gz')
     if args.resume:
         report=json.load(gzip.open(out,'rt'))
         assert report['total_pairs']==len(pairs)
     else:
-        report=dict(total_pairs=len(pairs),sources=1139,source_spellings=1892,
+        report=dict(total_pairs=len(pairs),sources=len(failed_sources),source_spellings=sum(weights[s] for s in failed_sources),
             sources_with_both_sides=both,pair_spelling_weight=sum(p['weight'] for p in pairs),
             processed=0,complete=False,rows=[],seconds=0,
             partner_method='all extended references; max lower, min upper; follow both failing sides')
