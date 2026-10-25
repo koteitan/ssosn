@@ -239,7 +239,6 @@ def _tail_s_fold(tokens, boundary, general):
         import tail_symbolic as S
         _TAIL_S_MODULE=S
         S.BASE=(0,0,2,1)+(0,2)*10+(0,1,2)
-        S.F.cache_clear()
     Fmod=_TAIL_S_MODULE
     def eval_F(word,depth=0):
         TAIL_S_COUNTS['eligible']+=1
@@ -447,7 +446,6 @@ def fold(tokens, boundary=False, general=False):
             import tail_symbolic as S
             _TAIL_S_MODULE=S
             S.BASE=(0,0,2,1)+(0,2)*10+(0,1,2)
-            S.F.cache_clear()
         TAIL_S_MARKER_COUNTS['eligible']+=1
         _TAIL_S_ACTIVE=True
         try:
