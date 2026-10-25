@@ -35,13 +35,16 @@ def main():
     parser.add_argument('--resume',action='store_true')
     parser.add_argument('--budget',type=float,default=520)
     parser.add_argument('--case-budget',type=float,default=15)
-    parser.add_argument('--variant',choices=('seed','reltail','tails'),default='seed')
+    parser.add_argument('--variant',choices=('seed','reltail','tails','s1'),default='seed')
     args=parser.parse_args()
     configure('seed')
     T.RELTAIL_CAP_EXPERIMENT=args.variant=='reltail'
     if T.RELTAIL_CAP_EXPERIMENT:T.reltail_cap_load(HERE/'reltail31-common.json.gz')
-    T.TAIL_S_EXPERIMENT=args.variant=='tails'
+    T.TAIL_S_EXPERIMENT=args.variant in ('tails','s1')
     T.TAIL_S_DEPTH_EXPERIMENT=False
+    T.TAIL_S_MARKER_EXPERIMENT=args.variant=='s1'
+    T.TAIL_S_COUNTS={'eligible':0,'decided':0,'undecided':0}
+    T.TAIL_S_MARKER_COUNTS={'eligible':0,'decided':0,'undecided':0}
     start=time.monotonic()
     data=json.load(gzip.open(HERE/'above-p26-data.json.gz','rt'))
     old=json.load(gzip.open(HERE/f'value-new26-{args.variant}.json.gz','rt'))
@@ -91,7 +94,8 @@ def main():
     if args.variant=='seed':
         assert len(failed_sources)==1139 and sum(weights[s] for s in failed_sources)==1892
     out=HERE/('inversion29.json.gz' if args.variant=='seed' else
-        'inversion29-reltail.json.gz' if args.variant=='reltail' else 'inversion29-tails.json.gz')
+        'inversion29-reltail.json.gz' if args.variant=='reltail' else
+        'inversion29-tails.json.gz' if args.variant=='tails' else 'inversion29-s1.json.gz')
     if args.resume:
         report=json.load(gzip.open(out,'rt'))
         assert report['total_pairs']==len(pairs)

@@ -1,7 +1,7 @@
 """Measure the existing above-P candidates; never change a value rule.
 
 timeout 600 python3 work/value_new26.py cut
-Variants: cut (§21), movable (§18), general (§17), seed (§27), iterate (§28), reltail (§31), tails (§33).
+Variants: cut (§21), movable (§18), general (§17), seed (§27), iterate (§28), reltail (§31), tails (§33), s1 (§34).
 """
 import argparse
 import bisect
@@ -22,16 +22,18 @@ from above_p_data26 import HERE,raw,P,UPPER
 
 def run(data,variant):
     start=time.monotonic()
-    T.CUT_COPY_ACTION_EXPERIMENT=variant in ('cut','seed','iterate','reltail','tails')
-    T.CONSISTENT_COPY_SEED_EXPERIMENT=variant in ('seed','iterate','reltail','tails')
+    T.CUT_COPY_ACTION_EXPERIMENT=variant in ('cut','seed','iterate','reltail','tails','s1')
+    T.CONSISTENT_COPY_SEED_EXPERIMENT=variant in ('seed','iterate','reltail','tails','s1')
     T.WD_AFTER_ITERATION_EXPERIMENT=variant=='iterate'
     T.GENERAL_COPY_EXPERIMENT=variant in ('general','movable')
     T.MOVABLE_ONE_EXPERIMENT=variant=='movable'
     T.RELTAIL_CAP_EXPERIMENT=variant=='reltail'
     T.RELTAIL_CAP_COUNTS={'eligible':0,'table':0,'fallback':0}
-    T.TAIL_S_EXPERIMENT=variant=='tails'
+    T.TAIL_S_EXPERIMENT=variant in ('tails','s1')
     T.TAIL_S_DEPTH_EXPERIMENT=False
     T.TAIL_S_COUNTS={'eligible':0,'decided':0,'undecided':0}
+    T.TAIL_S_MARKER_EXPERIMENT=variant=='s1'
+    T.TAIL_S_MARKER_COUNTS={'eligible':0,'decided':0,'undecided':0}
     if variant=='reltail':
         T.reltail_cap_load(HERE/'reltail31-common.json.gz')
     seq_class=harness.Seq
@@ -193,7 +195,8 @@ def run(data,variant):
         CONSISTENT_COPY_SEED_EXPERIMENT=T.CONSISTENT_COPY_SEED_EXPERIMENT,
         WD_AFTER_ITERATION_EXPERIMENT=T.WD_AFTER_ITERATION_EXPERIMENT,
         RELTAIL_CAP_EXPERIMENT=T.RELTAIL_CAP_EXPERIMENT,TAIL_S_EXPERIMENT=T.TAIL_S_EXPERIMENT,
-        TAIL_S_DEPTH_EXPERIMENT=T.TAIL_S_DEPTH_EXPERIMENT),
+        TAIL_S_DEPTH_EXPERIMENT=T.TAIL_S_DEPTH_EXPERIMENT,
+        TAIL_S_MARKER_EXPERIMENT=T.TAIL_S_MARKER_EXPERIMENT),
         max_tokens=data['max_tokens'],lower_bound=P,upper_bound=UPPER,
         spelling_counts=dict(counts),unique_raw_counts=dict(unique_counts),nonstandard_sides=dict(side_counts),
         references_total=len(standard_raw),references_known=len(known_refs),
@@ -208,12 +211,13 @@ def run(data,variant):
         extended_adjacent_failures=extended_adjacent,focus92=focus,
         reltail_cap_counts=dict(T.RELTAIL_CAP_COUNTS),
         tail_s_counts=dict(T.TAIL_S_COUNTS),
+        tail_s_marker_counts=dict(T.TAIL_S_MARKER_COUNTS),
         seconds=time.monotonic()-start)
 
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('variant',choices=('cut','movable','general','seed','iterate','reltail','tails'))
+    parser.add_argument('variant',choices=('cut','movable','general','seed','iterate','reltail','tails','s1'))
     parser.add_argument('--data',type=Path,default=HERE/'above-p26-data.json.gz')
     args=parser.parse_args()
     with gzip.open(args.data,'rt') as source:data=json.load(source)

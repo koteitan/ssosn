@@ -185,9 +185,25 @@ RELTAIL_CAP_VALUES = None
 RELTAIL_CAP_COUNTS = {'eligible': 0, 'table': 0, 'fallback': 0}
 TAIL_S_EXPERIMENT = False  # §33; symbolic common-tail rule S, with seed fallback
 TAIL_S_DEPTH_EXPERIMENT = False  # separate §33 extension to tails after fresh A_k
+TAIL_S_MARKER_EXPERIMENT = False  # §34; value fresh siblings through their marker
+TAIL_S_E_EXPERIMENT = False  # §35; value E by the sup of its A_n siblings
+TAIL_S_COMPLETE_EXPERIMENT = False  # §36; S after every A_k sibling, with strict branch purity
 TAIL_S_COUNTS = {'eligible': 0, 'decided': 0, 'undecided': 0}
+TAIL_S_MARKER_COUNTS = {'eligible': 0, 'decided': 0, 'undecided': 0}
+TAIL_S_E_COUNTS = {'eligible': 0, 'decided': 0, 'undecided': 0}
+PURITY_TRACKING = False  # §35 measurement only; does not change values
+PURE_BLOCKS = {}
+PURE_BODIES = {}
+PURE_VALUES = {}
+PURE_FOLDS = {}
+PURE_ANCHOR_TOKENS = set()
 _TAIL_S_ACTIVE = False
 _TAIL_S_MODULE = None
+
+
+def _tail_undecided_total():
+    return (TAIL_S_COUNTS['undecided'] + TAIL_S_MARKER_COUNTS['undecided']
+            + TAIL_S_E_COUNTS['undecided'])
 
 
 def _tail_s_fold(tokens, boundary, general):
@@ -201,61 +217,63 @@ def _tail_s_fold(tokens, boundary, general):
     if j>=len(tokens) or not tokens[j].startswith('A'):
         return None
     k=int(tokens[j][1:]); tail=tokens[j+1:]
-    if k and not TAIL_S_DEPTH_EXPERIMENT:
+    if not tail and k==0:
         return None
-    if not k and tail:
-        if tail[0] not in ('A0','W'):
+    if k and not (TAIL_S_DEPTH_EXPERIMENT or TAIL_S_COMPLETE_EXPERIMENT):
+        return None
+    if tail:
+        if tail[0] not in ('A'+str(k),'W'):
             return None
-        marker=('W',)+tokens[:j]+('A1',)
+        marker=('W',)+tokens[:j]+('A'+str(k+1),)
         if raw_tokens(tail)>=raw_tokens(marker):
             return None
-    # The marker defines a fresh A_k sibling only in the separate depth
-    # experiment. The default experiment measures tails after A0 units.
+        if any(t.startswith('A') and int(t[1:])<k for t in tail):
+            return None
+    # The completed S experiment applies to every A_k unit.  Its tail must
+    # remain below the next sibling marker at the same depth.
     if any(not (t in ('W','D') or t.startswith('A')) for t in tail):
         return None
-    # Work at a common A0 unit. A fresh A_k is read through the marker
-    # W Z A_k; ordinary tails are shifted down by the unit depth.
-    marker=('W',)+tokens[:j]+(tokens[j],) if k else None
-    word=marker if marker is not None else tail
-    norm=[]
-    for t in word:
-        if t.startswith('A'):
-            q=int(t[1:])-(0 if marker is not None else k)
-            if q<0:return None
-            norm.append('A'+str(q))
-        else:norm.append(t)
+    # F is common; the sibling itself is obtained from its marker.
+    norm=tuple(('A'+str(int(t[1:])-k)) if t.startswith('A') else t for t in tail)
     if _TAIL_S_MODULE is None:
         import tail_symbolic as S
         _TAIL_S_MODULE=S
         S.BASE=(0,0,2,1)+(0,2)*10+(0,1,2)
         S.F.cache_clear()
     Fmod=_TAIL_S_MODULE
-    def eval_F(word):
+    def eval_F(word,depth=0):
         TAIL_S_COUNTS['eligible']+=1
-        try:value=Fmod.F(Fmod.seq(' '.join(word)))
+        try:value=Fmod.F(Fmod.seq(word),depth=depth)
         except Exception:
             TAIL_S_COUNTS['undecided']+=1
             raise
         TAIL_S_COUNTS['decided']+=1
         return value
+    sibling_relative=None
     try:
-        relative=eval_F(norm)
-        tail_value=eval_F(tail) if k and tail else ()
+        relative=eval_F(norm,k) if tail else ()
     except Exception:return None
     _TAIL_S_ACTIVE=True
     try:
         base=fold(tokens[:j]+('A0',),boundary,general)
+        if k:
+            try:
+                sibling_relative=eval_F(('W',)+tokens[:j]+(tokens[j],))
+            except Exception:
+                return None
+            base=plus(base,_from_ordinal(sibling_relative,
+                Origin('S sibling marker',k,(),('W',)+tokens[:j]+(tokens[j],))),
+                Origin('S sibling base',k,(),tokens[:j+1]))
     finally:
         _TAIL_S_ACTIVE=False
     origin=Origin('symbolic common tail S',k,(),tokens,tuple(norm))
     amount=_from_ordinal(relative,origin)
-    # F is already evaluated in the common unit's relative scale. In
-    # particular the sibling marker carries its own depth; bumping it again
-    # would apply the depth twice.
-    result=plus(base,amount,origin)
-    if k and tail:
-        shifted=_from_ordinal(tail_value,origin)
-        result=bump(result,k,shifted,origin)
+    result=plus(base,amount,origin) if k==0 else bump(base,k,amount,origin)
+    if PURITY_TRACKING:
+        base_tokens=tuple(tokens[:j]+('A0',))
+        PURE_FOLDS[tokens]=(PURE_FOLDS.get(base_tokens,False)
+            and (not tail or relative is not None)
+            and (not k or sibling_relative is not None))
     return result
 
 
@@ -419,7 +437,48 @@ def fold(tokens, boundary=False, general=False):
     else:
         base = base_index(j, root_origin)
         offset = natural(j+1, root_origin)
+    def marker_relative(k):
+        """Compute F(W Z A_k) for the fresh sibling marker."""
+        global _TAIL_S_ACTIVE, _TAIL_S_MODULE
+        if not (TAIL_S_EXPERIMENT and TAIL_S_MARKER_EXPERIMENT and general):
+            return None
+        marker=('W',)+tokens[:j]+('A'+str(k),)
+        if _TAIL_S_MODULE is None:
+            import tail_symbolic as S
+            _TAIL_S_MODULE=S
+            S.BASE=(0,0,2,1)+(0,2)*10+(0,1,2)
+            S.F.cache_clear()
+        TAIL_S_MARKER_COUNTS['eligible']+=1
+        _TAIL_S_ACTIVE=True
+        try:
+            rel=_TAIL_S_MODULE.F(_TAIL_S_MODULE.seq(' '.join(marker)))
+        except Exception:
+            TAIL_S_MARKER_COUNTS['undecided']+=1
+            return None
+        finally:
+            _TAIL_S_ACTIVE=False
+        TAIL_S_MARKER_COUNTS['decided']+=1
+        return _from_ordinal(rel,Origin('S sibling marker',0,(),marker))
+    def e_sibling_sup(prefix):
+        """Return the stable 3/4-sample sup of X A_n, for X E = sup X A_n."""
+        if not (TAIL_S_EXPERIMENT and TAIL_S_MARKER_EXPERIMENT and TAIL_S_E_EXPERIMENT):
+            return None
+        TAIL_S_E_COUNTS['eligible']+=1
+        try:
+            xs=[ordinal(fold(tuple(prefix)+('A'+str(n),),boundary,general))
+                for n in (1,2,3,4)]
+            if any(cmp(a,b)>=0 for a,b in zip(xs,xs[1:])):
+                raise Unknown('E siblings not increasing')
+            s3=evalord.sup(xs[:3]);s4=evalord.sup(xs)
+            if s3 is None or s4 is None or cmp(s3,s4):
+                raise Unknown('E sibling sup undecided')
+        except Exception:
+            TAIL_S_E_COUNTS['undecided']+=1
+            return None
+        TAIL_S_E_COUNTS['decided']+=1
+        return _from_ordinal(s4,Origin('S E sibling sup',0,(),tuple(prefix)))
     value = base
+    pure = (tuple(tokens[:j]) in PURE_ANCHOR_TOKENS if j else True) if PURITY_TRACKING else False
     fresh, active_depth, i = True, 0, j
     while i < len(tokens):
         token = tokens[i]
@@ -476,20 +535,40 @@ def fold(tokens, boundary=False, general=False):
         if token.startswith('A'):
             if k == 0:
                 value = plus(value, amount, origin)
+                if PURITY_TRACKING and (copies or rank_limit):
+                    pure=False
             elif fresh:
-                seed_offset=offset
-                if general and CUT_COPY_ACTION_EXPERIMENT:
-                    actual_copy=fresh_copy_from_cut(tokens[:start+1],k)
-                    seed_offset=typed_copy_rank(actual_copy,0 if CONSISTENT_COPY_SEED_EXPERIMENT else k-1,origin)
-                value = plus(base, tower(plus(seed_offset, amount, origin), k, origin, frame), origin)
+                # The marker formula is for the exact fresh sibling Z A_k.
+                # A_k followed by W/D is an iterated unit, not that sibling.
+                relative=marker_relative(k) if not copies and not rank_limit else None
+                if relative is not None:
+                    value=plus(base,relative,origin)
+                    if PURITY_TRACKING:
+                        pure = pure and PURE_FOLDS.get(tuple(tokens[:j]+('A0',)),False)
+                else:
+                    seed_offset=offset
+                    if general and CUT_COPY_ACTION_EXPERIMENT:
+                        actual_copy=fresh_copy_from_cut(tokens[:start+1],k)
+                        seed_offset=typed_copy_rank(actual_copy,0 if CONSISTENT_COPY_SEED_EXPERIMENT else k-1,origin)
+                    value = plus(base, tower(plus(seed_offset, amount, origin), k, origin, frame), origin)
+                    if PURITY_TRACKING:pure=False
             else:
                 value = bump(value, k, amount, origin)
+                if PURITY_TRACKING:pure=False
             active_depth = k
         elif token == 'E1':
-            if fresh:
+            sibling=e_sibling_sup(tokens[:start])
+            if sibling is not None:
+                value=sibling
+                if PURITY_TRACKING:
+                    pure = pure and all(PURE_FOLDS.get(tuple(tokens[:start])+('A'+str(n),),False)
+                                        for n in (1,2,3,4))
+            elif fresh:
                 value = plus(base, epsilon(amount if iterated else ZERO, origin), origin)
+                if PURITY_TRACKING:pure=False
             else:
                 value = epsilon_iteration(value, active_depth, iterated, amount, origin)
+                if PURITY_TRACKING:pure=False
         else:
             raise Unknown(('tree unsupported token', token))
         if movable_depth is not None:
@@ -498,7 +577,10 @@ def fold(tokens, boundary=False, general=False):
             value=bump(value, movable_depth, power(natural(movable_iterations,moved_origin),moved_origin),
                        moved_origin)
             active_depth=movable_depth
+            if PURITY_TRACKING:pure=False
         fresh = False
+    if PURITY_TRACKING:
+        PURE_FOLDS[tokens]=pure
     return value
 
 
@@ -539,14 +621,21 @@ def known_block_tree(u):
 @lru_cache(maxsize=15000)
 def block_tree(u):
     u=tuple(u)
+    before=_tail_undecided_total()
     if CUT_COPY_ACTION_EXPERIMENT and u[:2]==(2,1):
-        return epsilon(fold(parse(u[2:],True),general=True),Origin('cut copy action index'))
-    try:
-        return known_block_tree(u)
-    except Unknown:
-        if GENERAL_COPY_EXPERIMENT and u[:2]==(2,1):
-            return epsilon(fold(parse(u[2:],True),general=True),Origin('general copy rank index'))
-        raise
+        result=epsilon(fold(parse(u[2:],True),general=True),Origin('cut copy action index'))
+    else:
+        try:
+            result=known_block_tree(u)
+        except Unknown:
+            if GENERAL_COPY_EXPERIMENT and u[:2]==(2,1):
+                result=epsilon(fold(parse(u[2:],True),general=True),Origin('general copy rank index'))
+            else:
+                raise
+    if PURITY_TRACKING:
+        parsed=tuple(parse(u[2:],True)) if u[:2]==(2,1) else ()
+        PURE_BLOCKS[u]=(parsed in PURE_ANCHOR_TOKENS or PURE_FOLDS.get(parsed,False))
+    return result
 
 
 def block_value(u):
@@ -555,6 +644,9 @@ def block_value(u):
 
 @lru_cache(maxsize=15000)
 def body_tree(body):
+    body=tuple(body)
+    before=_tail_undecided_total()
+    children_pure=True
     result = ZERO
     for unit in conj2.units(body):
         origin = Origin('structural unit', 0, (), unit)
@@ -564,8 +656,15 @@ def body_tree(body):
             x = epsilon(ZERO, origin)
         else:
             t = conj2.T(unit)
-            x = block_tree(unit) if t == unit else power(plus(one(origin), body_tree(t), origin), origin)
+            if t == unit:
+                x=block_tree(unit)
+                children_pure=children_pure and PURE_BLOCKS.get(tuple(unit),not PURITY_TRACKING)
+            else:
+                x=power(plus(one(origin), body_tree(t), origin), origin)
+                children_pure=children_pure and PURE_BODIES.get(tuple(t),not PURITY_TRACKING)
         result = plus(result, x, origin)
+    if PURITY_TRACKING:
+        PURE_BODIES[body]=children_pure and _tail_undecided_total()==before
     return result
 
 
@@ -576,8 +675,14 @@ def value_tree(s):
         raise Unknown('tree outside 0/1/2 range')
     origin = Origin('sequence', 0, (), s)
     if len(s)>2 and s[-1] == 0:
-        return successor(value_tree(s[:-1]), origin)
-    return plus(natural(2, origin), body_tree(s[2:]), origin)
+        result=successor(value_tree(s[:-1]), origin)
+        if PURITY_TRACKING:
+            PURE_VALUES[s]=PURE_VALUES.get(s[:-1],not PURITY_TRACKING)
+        return result
+    result=plus(natural(2, origin), body_tree(s[2:]), origin)
+    if PURITY_TRACKING:
+        PURE_VALUES[s]=PURE_BODIES.get(tuple(s[2:]),not PURITY_TRACKING)
+    return result
 
 
 def value(s):
