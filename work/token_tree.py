@@ -196,6 +196,7 @@ PURE_BLOCKS = {}
 PURE_BODIES = {}
 PURE_VALUES = {}
 PURE_FOLDS = {}
+PURITY_ON_DEMAND = False  # §42; compute a missing base fold flag instead of reading False
 PURE_ANCHOR_TOKENS = set()
 _TAIL_S_ACTIVE = False
 _TAIL_S_MODULE = None
@@ -411,6 +412,19 @@ def context_copy(tokens, start, k, beginning, default):
     return copies
 
 
+def _fold_flag_only(tokens, boundary, general):
+    """§42: compute a missing PURE_FOLDS flag without changing the S recursion state."""
+    global _TAIL_S_ACTIVE
+    saved=_TAIL_S_ACTIVE
+    _TAIL_S_ACTIVE=False  # as when the base fold is evaluated on its own
+    try:
+        fold(tokens,boundary,general)
+    except Exception:
+        pass
+    finally:
+        _TAIL_S_ACTIVE=saved
+
+
 def fold(tokens, boundary=False, general=False):
     tokens = tuple(tokens)
     symbolic=_tail_s_fold(tokens,boundary,general)
@@ -542,7 +556,10 @@ def fold(tokens, boundary=False, general=False):
                 if relative is not None:
                     value=plus(base,relative,origin)
                     if PURITY_TRACKING:
-                        pure = pure and PURE_FOLDS.get(tuple(tokens[:j]+('A0',)),False)
+                        base_key=tuple(tokens[:j]+('A0',))
+                        if PURITY_ON_DEMAND and base_key not in PURE_FOLDS:
+                            _fold_flag_only(base_key,boundary,general)
+                        pure = pure and PURE_FOLDS.get(base_key,False)
                 else:
                     seed_offset=offset
                     if general and CUT_COPY_ACTION_EXPERIMENT:
@@ -559,6 +576,10 @@ def fold(tokens, boundary=False, general=False):
             if sibling is not None:
                 value=sibling
                 if PURITY_TRACKING:
+                    if PURITY_ON_DEMAND:
+                        for n in (1,2,3,4):
+                            key=tuple(tokens[:start])+('A'+str(n),)
+                            if key not in PURE_FOLDS:_fold_flag_only(key,boundary,general)
                     pure = pure and all(PURE_FOLDS.get(tuple(tokens[:start])+('A'+str(n),),False)
                                         for n in (1,2,3,4))
             elif fresh:

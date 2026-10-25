@@ -19,6 +19,7 @@ R = {'A0': (0,1,2), 'A1': (0,1,2,0,2), 'A2': (0,1,2,0,2,0,2), 'W': (0,1,2,1), 'D
 A0, A1 = (0,1,2), (0,1,2,0,2)
 BASE = None
 FIXEDPOINT_SUP_EXPERIMENT = False  # §38; fixed-point-aware 3/4-term sup
+ADD_WD_EXPERIMENT = False  # §42; ADD split, rotation sup, and the W-run+D rules WD-i/WD-ii
 CURRENT_BUDGET_SECONDS = 0.0  # runner sets this only for budgeted experiments
 _CACHE_VERSION = 2  # s_block_k changes the value of cached F terms
 _F_CACHE = {}
@@ -218,8 +219,12 @@ def fixedpoint_sup(xs, K=None):
     return None
 
 
+def _flag():
+    return 'addwd' if ADD_WD_EXPERIMENT else FIXEDPOINT_SUP_EXPERIMENT
+
+
 def F(t, depth=0):
-    key=(BASE,FIXEDPOINT_SUP_EXPERIMENT,t,depth)
+    key=(BASE,_flag(),t,depth)
     hit=_F_CACHE.get(key)
     if hit is not None:
         CACHE_STATS['F_hit']+=1
@@ -251,6 +256,12 @@ def _F_uncached(t, depth):
         return ZERO
     if t[-3:] == A0:
         return add(F(t[:-3],depth), ONE)
+    if ADD_WD_EXPERIMENT:
+        tk = tokens(t)
+        inner = [i for i, x in enumerate(tk[:-1]) if x == 'A0']
+        if inner:  # ADD: F(Z A0 X) = F(Z A0) + F(X)
+            i = inner[-1]
+            return add(F(seq(tk[:i+1]),depth), F(seq(tk[i+1:]),depth))
     H, Q, V, cs = periodic(t,depth)
     blk = s_block_k(Q)
     if blk is not None:
@@ -258,6 +269,10 @@ def _F_uncached(t, depth):
         step = add(ONE, F(r,depth))
         amount = mul_omega(step)
         return TV.bump_last(F(H,depth), k, amount)
+    if ADD_WD_EXPERIMENT:
+        value = _add_wd(H, Q, V, cs, depth)
+        if value is not None:
+            return value
     xs = [F(c,depth) for c in cs]
     if any(cmp(a, b) >= 0 for a, b in zip(xs, xs[1:])):
         raise Undecided('terms not increasing')
@@ -278,6 +293,42 @@ def _F_uncached(t, depth):
     if s3 is None or s4 is None or cmp(s3, s4):
         raise Undecided('unstable sup')
     return s3
+
+
+def _add_wd(H, Q, V, cs, depth):
+    """Rotation sup for blocks containing A0, and WD-i/WD-ii for the block W (notes §42)."""
+    th, tq, tv = tokens(H), tokens(Q), tokens(V)
+    if th is None or tq is None or tv is None:
+        return None
+    if any(tokens(c) != th + tq * m + tv for m, c in enumerate(cs)):
+        return None
+    if 'A0' in tq:
+        j = tq.index('A0')
+        first = F(seq(th + tq[:j] + ['A0']), depth)
+        step = F(seq(tq[j+1:] + tq[:j] + ['A0']), depth)
+        return add(first, mul_omega(step))
+    if tq != ['W'] or tv:
+        return None
+    W1 = seq(['W'])
+    if all(x == 'W' for x in th):
+        for m in range(1, 4):
+            h, q, v, _ = periodic(H + W1 * m, depth)
+            x = ['W'] * (len(th) + m - 1)
+            if v or not ((tokens(h) == tokens(q) == x + ['A0']) or
+                         (tokens(h) == x and tokens(q) == ['A0'] + x)):
+                return None
+        return TV.w(OMEGA)
+    blocks = []
+    for m in range(1, 4):
+        h, q, v, _ = periodic(H + W1 * m, depth)
+        b = s_block_k(q)
+        if h != H + W1 * (m - 1) or b is None:
+            return None
+        blocks.append(b)
+    k, r1 = blocks[0]
+    if any(b != (k, r1 + W1 * i) for i, b in enumerate(blocks)):
+        return None
+    return TV.bump_last(F(H, depth), k, F(r1 + seq(['D']), depth))
 
 
 def clear_caches():
