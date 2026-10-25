@@ -183,6 +183,80 @@ WD_AFTER_ITERATION_EXPERIMENT = False  # §28; trailing W after W D^b iterates A
 RELTAIL_CAP_EXPERIMENT = False  # §31; measured common relative tails below their cap
 RELTAIL_CAP_VALUES = None
 RELTAIL_CAP_COUNTS = {'eligible': 0, 'table': 0, 'fallback': 0}
+TAIL_S_EXPERIMENT = False  # §33; symbolic common-tail rule S, with seed fallback
+TAIL_S_DEPTH_EXPERIMENT = False  # separate §33 extension to tails after fresh A_k
+TAIL_S_COUNTS = {'eligible': 0, 'decided': 0, 'undecided': 0}
+_TAIL_S_ACTIVE = False
+_TAIL_S_MODULE = None
+
+
+def _tail_s_fold(tokens, boundary, general):
+    """Apply symbolic F to a unit tail; undecided F values use the seed fold."""
+    global _TAIL_S_ACTIVE, _TAIL_S_MODULE
+    if not TAIL_S_EXPERIMENT or not general or _TAIL_S_ACTIVE:
+        return None
+    tokens=tuple(tokens); j=0
+    while j<len(tokens) and tokens[j] in ('W','D'):
+        j+=1
+    if j>=len(tokens) or not tokens[j].startswith('A'):
+        return None
+    k=int(tokens[j][1:]); tail=tokens[j+1:]
+    if k and not TAIL_S_DEPTH_EXPERIMENT:
+        return None
+    if not k and tail:
+        if tail[0] not in ('A0','W'):
+            return None
+        marker=('W',)+tokens[:j]+('A1',)
+        if raw_tokens(tail)>=raw_tokens(marker):
+            return None
+    # The marker defines a fresh A_k sibling only in the separate depth
+    # experiment. The default experiment measures tails after A0 units.
+    if any(not (t in ('W','D') or t.startswith('A')) for t in tail):
+        return None
+    # Work at a common A0 unit. A fresh A_k is read through the marker
+    # W Z A_k; ordinary tails are shifted down by the unit depth.
+    marker=('W',)+tokens[:j]+(tokens[j],) if k else None
+    word=marker if marker is not None else tail
+    norm=[]
+    for t in word:
+        if t.startswith('A'):
+            q=int(t[1:])-(0 if marker is not None else k)
+            if q<0:return None
+            norm.append('A'+str(q))
+        else:norm.append(t)
+    if _TAIL_S_MODULE is None:
+        import tail_symbolic as S
+        _TAIL_S_MODULE=S
+        S.BASE=(0,0,2,1)+(0,2)*10+(0,1,2)
+        S.F.cache_clear()
+    Fmod=_TAIL_S_MODULE
+    def eval_F(word):
+        TAIL_S_COUNTS['eligible']+=1
+        try:value=Fmod.F(Fmod.seq(' '.join(word)))
+        except Exception:
+            TAIL_S_COUNTS['undecided']+=1
+            raise
+        TAIL_S_COUNTS['decided']+=1
+        return value
+    try:
+        relative=eval_F(norm)
+        tail_value=eval_F(tail) if k and tail else ()
+    except Exception:return None
+    _TAIL_S_ACTIVE=True
+    try:
+        base=fold(tokens[:j]+('A0',),boundary,general)
+    finally:
+        _TAIL_S_ACTIVE=False
+    origin=Origin('symbolic common tail S',k,(),tokens,tuple(norm))
+    amount=_from_ordinal(relative,origin)
+    # F is already evaluated in the common unit's relative scale. In
+    # particular the sibling marker carries its own depth; bumping it again
+    # would apply the depth twice.
+    result=plus(base,amount,origin)
+    if k and tail:
+        shifted=_from_ordinal(tail_value,origin)
+        result=bump(result,k,shifted,origin)
+    return result
 
 
 def reltail_cap_load(path):
@@ -322,6 +396,8 @@ def context_copy(tokens, start, k, beginning, default):
 
 def fold(tokens, boundary=False, general=False):
     tokens = tuple(tokens)
+    symbolic=_tail_s_fold(tokens,boundary,general)
+    if symbolic is not None:return symbolic
     relative=_reltail_cap_fold(tokens,boundary,general)
     if relative is not None:return relative
     j = 0
