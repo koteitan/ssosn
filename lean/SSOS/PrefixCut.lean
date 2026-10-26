@@ -820,6 +820,110 @@ theorem head_lt_parent_two_A0_A_succ (k : ℕ) :
   convert h' using 1 <;> simp [T, suf, tA, copies]
   simpa [copies] using (copies_succ [0,2] k)
 
+/-- After an `A_d` unit, another complete token starts below the next `A` depth. -/
+theorem head_lt_depth_A (d k : ℕ) (U : List ℕ)
+    (hU : ∃ V, U ++ tA (d+(k+1)) = [0,1,2] ++ V) :
+    suf (tA d ++ U ++ tA (d+(k+1))) 1 < tA (d+(k+1)) := by
+  obtain ⟨V, hV⟩ := hU
+  have h : (1 :: 2 :: V) < (2 :: copies [0,2] k) :=
+    cons_lt_of_lt 1 2 _ _ (by decide)
+  have h' := append_lt_append_left (tA d ++ [0]) _ _ h
+  have hA : tA (d+(k+1)) = tA d ++ [0,2] ++ copies [0,2] k := by
+    rw [tA_add, copies_succ]
+    simp [List.append_assoc]
+  have hleft : tA d ++ U ++ tA (d+(k+1)) =
+      (tA d ++ [0]) ++ (1 :: 2 :: V) := by
+    calc
+      tA d ++ U ++ tA (d+(k+1)) = tA d ++ (U ++ tA (d+(k+1))) := by
+        simp [List.append_assoc]
+      _ = tA d ++ ([0,1,2] ++ V) := by rw [hV]
+      _ = (tA d ++ [0]) ++ (1 :: 2 :: V) := by simp [List.append_assoc]
+  have hright : tA (d+(k+1)) =
+      (tA d ++ [0]) ++ (2 :: copies [0,2] k) := by
+    rw [hA]
+    simp [List.append_assoc]
+  change tA d ++ U ++ tA (d+(k+1)) < tA (d+(k+1))
+  rw [hleft, hright]
+  exact h'
+
+theorem head_lt_parent_zero_of_starts012 (T : List ℕ) (V : List ℕ)
+    (hT : T = [0,1,2] ++ V) (hpos : entry T T.length ≠ 0) :
+    1 < p T 0 ∧ suf T 1 < suf T (p T 0) := by
+  have hL : 1 < T.length := by simp [hT]
+  have hentry : entry T 1 = 0 := by simp [hT, entry]
+  have hs : suf T 1 < suf T T.length := by
+    apply (suf_lt_last_iff T 1 (by omega) (by omega)).2
+    omega
+  simpa [p] using And.intro hL hs
+
+theorem head_lt_parent_one_final_D_of_starts012 (Y V : List ℕ)
+    (hY : Y = [0,1,2] ++ V) :
+    let T := Y ++ [0,2]
+    1 < p T 1 ∧ suf T 1 < suf T (p T 1) := by
+  intro T
+  have hp : p T 1 = Y.length + 1 := by simpa [T] using p_one_final_D Y
+  have hs : suf T (p T 1) = [0,2] := by
+    rw [hp]
+    simpa [T] using suf_app Y [0,2] 0
+  refine ⟨by rw [hp]; simp [hY], ?_⟩
+  rw [hs]
+  subst Y
+  simp [T, suf, List.cons_lt_cons_iff]
+
+theorem head_lt_parent_two_depth_A (d k : ℕ) (U : List ℕ)
+    (hU : U = [] ∨ ∃ V, U = [0,1,2] ++ V) :
+    let S := tA d ++ U ++ tA (d+(k+1))
+    1 < p S 2 ∧ suf S 1 < suf S (p S 2) := by
+  intro S
+  let Y := tA d ++ U
+  have hq : p S 2 = Y.length + 1 := by
+    simpa [S, Y, Nat.add_assoc, List.append_assoc] using
+      (stage2_A Y (d+k)).1
+  have hqsuf : suf S (p S 2) = tA (d+(k+1)) := by
+    rw [hq]
+    simpa [S, Y, List.append_assoc] using suf_app Y (tA (d+(k+1))) 0
+  have hshape : ∃ V, U ++ tA (d+(k+1)) = [0,1,2] ++ V := by
+    rcases hU with rfl | ⟨V, rfl⟩
+    · exact ⟨copies [0,2] (d+(k+1)), by simp [tA]⟩
+    · exact ⟨V ++ tA (d+(k+1)), by simp⟩
+  refine ⟨by rw [hq]; simp [Y, tA, copies], ?_⟩
+  rw [hqsuf]
+  simpa [S, List.append_assoc] using head_lt_depth_A d k U hshape
+
+theorem head_lt_depth_W (d : ℕ) (U R : List ℕ) :
+    suf (tA (d+1) ++ U ++ tW ++ R) 1 < tW ++ R := by
+  have h : (0 :: 2 :: (copies [0,2] d ++ U ++ tW ++ R)) < (1 :: R) :=
+    cons_lt_of_lt 0 1 _ _ (by decide)
+  have h' := append_lt_append_left [0,1,2] _ _ h
+  convert h' using 1 <;> simp [suf, tA, copies_succ, tW, List.append_assoc]
+
+theorem head_lt_parent_one_depth_W (d : ℕ) (U : List ℕ) :
+    let S := tA (d+1) ++ U ++ tW
+    1 < p S 1 ∧ suf S 1 < suf S (p S 1) := by
+  intro S
+  have hq : p S 1 = (tA (d+1) ++ U).length + 1 := by
+    simpa [S, List.append_assoc] using p_one_final_W (tA (d+1) ++ U)
+  have hs : suf S (p S 1) = tW := by
+    rw [hq]
+    simpa [S, List.append_assoc] using suf_app (tA (d+1) ++ U) tW 0
+  refine ⟨by rw [hq]; simp [tA, copies_length], ?_⟩
+  rw [hs]
+  simpa [S, List.append_assoc] using head_lt_depth_W d U []
+
+theorem head_lt_parent_two_depth_W_D (d : ℕ) (U : List ℕ) (m : ℕ) :
+    let S := tA (d+1) ++ U ++ tW ++ copies [0,2] (m+1)
+    1 < p S 2 ∧ suf S 1 < suf S (p S 2) := by
+  intro S
+  have hq : p S 2 = (tA (d+1) ++ U).length + 1 := by
+    simpa [S, List.append_assoc] using p_two_final_W_D_run (tA (d+1) ++ U) m
+  have hs : suf S (p S 2) = tW ++ copies [0,2] (m+1) := by
+    rw [hq]
+    simpa [S, List.append_assoc] using
+      suf_app (tA (d+1) ++ U) (tW ++ copies [0,2] (m+1)) 0
+  refine ⟨by rw [hq]; simp [tA, copies_length], ?_⟩
+  rw [hs]
+  simpa [S, List.append_assoc] using head_lt_depth_W d U (copies [0,2] (m+1))
+
 /-- Before a final positive-depth `A`, stage three reaches an earlier `0120` head. -/
 theorem p_three_final_A_succ_shape (t : PrefixTok) (w : List PrefixTok)
     (ht : t ≠ .D) (k : ℕ) :
@@ -863,6 +967,44 @@ theorem p_three_final_A_succ_shape (t : PrefixTok) (w : List PrefixTok)
     (by simpa [tA, copies_succ] using hrlt')
     (by simpa [tA, copies_succ] using hlen)
   exact hshape
+
+/-- The same third-parent shape needs only a safe prefix and head dominance. -/
+theorem p_three_final_A_shape_of_safe (Y : List ℕ) (k : ℕ)
+    (hY : ZeroSafe Y)
+    (hhead : let S := Y ++ tA (k+1)
+      1 < p S 2 ∧ suf S 1 < suf S (p S 2)) :
+    let S := Y ++ tA (k+1)
+    ∃ R, suf S (p S 3) = [0,1,2,0] ++ R := by
+  intro S
+  obtain ⟨hrlo, hrq, hrlt⟩ :=
+    sp_result_candidate_of_one S (p S 2) hhead.1 hhead.2
+  have hrEq : p S 3 = sp S (p S 2) := p_succ S 2
+  have hrq' : p S 3 < p S 2 := by rw [hrEq]; exact hrq
+  have hrlt' : suf S (p S 3) < suf S (p S 2) := by rw [hrEq]; exact hrlt
+  have hq : p S 2 = Y.length + 1 := by simpa [S] using (stage2_A Y k).1
+  have hqshape : suf S (p S 2) = tA (k+1) := by
+    rw [hq]
+    simpa [S] using suf_app Y (tA (k+1)) 0
+  have hsafe : ZeroSafe S := by
+    simpa [S, tA] using zeroSafe_append hY
+      (ZeroSafe.zero12 (zeroSafe_D_copies (k+1)))
+  have hsafe_r : ZeroSafe (suf S (p S 3)) := by
+    simpa only [suf] using zeroSafe_drop hsafe (p S 3 - 1)
+  have hL : 1 ≤ S.length := by simp [S, tA]; omega
+  have hrlo' : 1 ≤ p S 3 := (p_bounds S hL 3).1
+  have hqlo' : 1 ≤ p S 2 := (p_bounds S hL 2).1
+  have hrhigh : p S 3 ≤ S.length := (p_bounds S hL 3).2
+  have hqhigh : p S 2 ≤ S.length := (p_bounds S hL 2).2
+  have hlen : (suf S (p S 2)).length < (suf S (p S 3)).length := by
+    have h1 := suf_length S (p S 2 - 1)
+    have h2 := suf_length S (p S 3 - 1)
+    rw [show p S 2 - 1 + 1 = p S 2 by omega] at h1
+    rw [show p S 3 - 1 + 1 = p S 3 by omega] at h2
+    omega
+  rw [hqshape] at hrlt' hlen
+  exact zeroSafe_lt_A_succ_shape hsafe_r
+    (by simpa [tA, copies_succ] using hrlt')
+    (by simpa [tA, copies_succ] using hlen)
 
 /-- The parent path shifts while each scan has a strict local predecessor. -/
 theorem p_prefix_shift_of_candidates (Z T : List ℕ) (i : ℕ)
@@ -1212,6 +1354,75 @@ theorem br_final_A_succ (Y : List ℕ) (k : ℕ)
   exact br_eq_three _ (by simp [tA, copies_length]; omega)
     (stage2_A Y k).2.2 hb3
 
+theorem breakAt_three_final_A_of_safe (Y : List ℕ) (k : ℕ)
+    (hY : ZeroSafe Y)
+    (hhead : let S := Y ++ tA (k+1)
+      1 < p S 2 ∧ suf S 1 < suf S (p S 2)) :
+    breakAt (Y ++ tA (k+1)) 3 := by
+  let S := Y ++ tA (k+1)
+  let q := p S 2
+  let r := p S 3
+  have hq : q = Y.length + 1 := by simpa [S, q] using (stage2_A Y k).1
+  have hqsuf : suf S q = tA (k+1) := by
+    rw [hq]
+    simpa [S] using suf_app Y (tA (k+1)) 0
+  obtain ⟨R, hrsuf⟩ := p_three_final_A_shape_of_safe Y k hY hhead
+  change suf S r = [0,1,2,0] ++ R at hrsuf
+  have hL : 1 ≤ S.length := by simp [S, tA]; omega
+  have hrlo : 1 ≤ r := (p_bounds S hL 3).1
+  have hrhi : r ≤ S.length := (p_bounds S hL 3).2
+  have hqlo : 1 ≤ q := (p_bounds S hL 2).1
+  have hrq : r < q := by
+    obtain ⟨_, h, _⟩ := sp_result_candidate_of_one S q hhead.1 hhead.2
+    simpa [r, q, p_succ] using h
+  have hr4 : r+3 ≤ S.length := by
+    have h := suf_length S (r-1)
+    rw [show r-1+1=r by omega, hrsuf] at h
+    simp at h
+    omega
+  have hrs1 : suf S (r+1) = [1,2,0] ++ R := by
+    rw [suf_shift S r 1 hrlo, hrsuf]; rfl
+  have hrs2 : suf S (r+2) = [2,0] ++ R := by
+    rw [suf_shift S r 2 hrlo, hrsuf]; rfl
+  have hrs3 : suf S (r+3) = 0 :: R := by
+    rw [suf_shift S r 3 hrlo, hrsuf]; rfl
+  have hqs2 : suf S (q+2) = 2 :: 0 :: 2 :: copies [0,2] k := by
+    rw [suf_shift S q 2 hqlo, hqsuf]
+    simp [tA, copies_succ]
+  have hfirst : suf S (r+1) < suf S (q+2) := by
+    rw [hrs1, hqs2]
+    exact cons_lt_of_lt 1 2 _ _ (by decide)
+  have hsecond : suf S (r+2) < suf S (q+2) := by
+    have hparent : suf S r < suf S q := by
+      obtain ⟨_, _, h⟩ := sp_result_candidate_of_one S q hhead.1 hhead.2
+      simpa [r, q, p_succ] using h
+    rw [hrsuf, hqsuf] at hparent
+    rw [hrs2, hqs2]
+    simpa [tA, copies_succ, List.cons_lt_cons_iff] using hparent
+  have hlast : entry S S.length = 2 :=
+    entry_last S (Y ++ tA k ++ [0]) 2 (by simp [S, tA_succ, List.append_assoc])
+  have hq1 : entry S (q+1) = 1 := by
+    rw [hq]
+    simpa [S, tA] using entry_at S Y (tA (k+1)) 1 (Y.length+2)
+      (by simp [S]) (by omega) (by simp [tA])
+  have hqcan : Candidate S (q+1) := by
+    constructor
+    · rw [hq]; simp [S, tA, copies_length]; omega
+    · rw [hq1, hlast]; omega
+  have hr0 : entry S r = 0 := entry_of_suf_cons S r 0 _ hrlo hrhi hrsuf
+  have hr2 : entry S (r+2) = 2 :=
+    entry_of_suf_cons S (r+2) 2 _ (by omega) (by omega) hrs2
+  have hr3 : entry S (r+3) = 0 :=
+    entry_of_suf_cons S (r+3) 0 R (by omega) hr4 hrs3
+  have hr2no : ¬Candidate S (r+2) := by
+    intro hc
+    have := hc.2
+    rw [hr2, hlast] at this
+    omega
+  have hb := breakAt_three_of_record_gap S q r hL rfl rfl hrq hqcan
+    hfirst hsecond hr2no (by rw [hr0, hr3])
+  simpa [S] using hb
+
 /-- A final `W` always causes the second-stage break after an initial `A0`. -/
 theorem breakAt_two_final_W (v : List PrefixTok) :
     breakAt (tA 0 ++ PrefixTok.rawWord v ++ tW) 2 := by
@@ -1274,6 +1485,60 @@ theorem breakAt_two_final_W (v : List PrefixTok) :
   have hb := breakAt_two_of_zero_record S q r hL rfl rfl hrq hqcan hrecord
     hstrict hlast hrzero
   simpa [S, Y] using hb
+
+theorem breakAt_two_final_W_of_safe (Y : List ℕ) (hY : ZeroSafe Y)
+    (hhead : let S := Y ++ tW
+      1 < p S 1 ∧ suf S 1 < suf S (p S 1)) :
+    breakAt (Y ++ tW) 2 := by
+  let S := Y ++ tW
+  let q := p S 1
+  let r := p S 2
+  have hq : q = Y.length + 1 := by simpa [S, q] using p_one_final_W Y
+  have hqsuf : suf S q = tW := by
+    rw [hq]
+    simpa [S] using suf_app Y tW 0
+  have hL : 1 ≤ S.length := by simp [S, tW]
+  have hqlo : 1 ≤ q := (p_bounds S hL 1).1
+  have hrlo : 1 ≤ r := (p_bounds S hL 2).1
+  have hrhi : r ≤ S.length := (p_bounds S hL 2).2
+  obtain ⟨_, hrq0, hrlt0⟩ := sp_result_candidate_of_one S q hhead.1 hhead.2
+  have hrq : r < q := by simpa [r, q, p_succ] using hrq0
+  have hrlt : suf S r < suf S q := by simpa [r, q, p_succ] using hrlt0
+  have hsafe : ZeroSafe S := by
+    simpa [S, tW] using zeroSafe_append hY
+      (ZeroSafe.zero12 (ZeroSafe.one ZeroSafe.nil))
+  have hsafe_r : ZeroSafe (suf S r) := by
+    simpa only [suf] using zeroSafe_drop hsafe (r-1)
+  have hne : suf S r ≠ [] := by
+    have h := suf_ne_nil S (r-1) (by omega)
+    simpa [show r-1+1 = r by omega] using h
+  rw [hqsuf] at hrlt
+  obtain ⟨R, hrsuf⟩ := zeroSafe_lt_W_head hsafe_r hne hrlt
+  have hrzero : entry S r = 0 := entry_of_suf_cons S r 0 R hrlo hrhi hrsuf
+  have hstrict : suf S (r+1) < suf S (q+1) := by
+    have h := hrlt
+    rw [hrsuf] at h
+    have htail : R < [1,2,1] := by simpa [tW, List.cons_lt_cons_iff] using h
+    rw [suf_shift S r 1 hrlo, hrsuf, suf_shift S q 1 hqlo, hqsuf]
+    simpa [tW] using htail
+  have hlast : entry S S.length = 1 :=
+    entry_last S (Y ++ [0,1,2]) 1 (by simp [S, tW])
+  have hqzero : entry S q = 0 := by
+    rw [hq]
+    simpa [S, tW] using entry_at S Y tW 0 (Y.length+1)
+      (by simp [S]) (by omega) (by simp [tW])
+  have hqcan : Candidate S q := by
+    constructor
+    · rw [hq]; simp [S, tW]
+    · rw [hqzero, hlast]; omega
+  have hrecord : mbp S q = q := by
+    rw [hq]
+    refine mbp_dec S Y [] [1,2,1] 0 1 (Y.length+1) (Y.length+1)
+      (by simp [S, tW]) rfl rfl (by simp) hlast (by decide) ?_
+    simp [TailsLe]
+  have hb := breakAt_two_of_zero_record S q r hL rfl rfl hrq hqcan hrecord
+    hstrict hlast hrzero
+  simpa [S] using hb
 
 /-- A trailing nonempty `D` run after `W` breaks by stage three. -/
 theorem breakAt_three_final_W_D_run (v : List PrefixTok) (m : ℕ) :
@@ -1930,6 +2195,62 @@ theorem fs_prefix_depth_WA (Z : List ℕ) (d k m n : ℕ) (hd : d ≤ k) :
   simp only [List.nil_append, List.append_assoc] at h₁ h₂ ⊢
   rw [h₁, h₂]
 
+/-- Final `A_(d+k+1)` after a safe, complete unit is prefix independent. -/
+theorem fs_prefix_depth_final_A (Z U : List ℕ) (d k n : ℕ)
+    (hU : U = [] ∨ ∃ V, U = [0,1,2] ++ V)
+    (hSafeU : ZeroSafe U) :
+    fs (Z ++ tA d ++ U ++ tA (d+(k+1))) n =
+      Z ++ fs (tA d ++ U ++ tA (d+(k+1))) n := by
+  let Y := tA d ++ U
+  let T := Y ++ tA (d+(k+1))
+  have hAj : tA (d+(k+1)) = tA (d+k) ++ [0,2] := by
+    simpa [Nat.add_assoc] using tA_succ (d+k)
+  have hsafeY : ZeroSafe Y := zeroSafe_append (zeroSafe_token (.A d)) hSafeU
+  have hh2 : 1 < p T 2 ∧ suf T 1 < suf T (p T 2) := by
+    simpa [T, Y, List.append_assoc] using head_lt_parent_two_depth_A d k U hU
+  have hb3 : breakAt T 3 := by
+    have h := breakAt_three_final_A_of_safe Y (d+k) hsafeY
+      (by simpa [T, Nat.add_assoc] using hh2)
+    simpa [T, Nat.add_assoc] using h
+  have hnot2 : ¬breakAt T 2 := by
+    simpa [T, Nat.add_assoc] using (stage2_A Y (d+k)).2.2
+  have hstart : ∃ V, T = [0,1,2] ++ V := by
+    exact ⟨copies [0,2] d ++ U ++ tA (d+(k+1)), by
+      simp [T, Y, tA, List.append_assoc]⟩
+  obtain ⟨V, hV⟩ := hstart
+  have hlast : entry T T.length = 2 :=
+    entry_last T (Y ++ tA (d+k) ++ [0]) 2
+      (by simp [T, hAj, List.append_assoc])
+  have hh0 : 1 < p T 0 ∧ suf T 1 < suf T (p T 0) :=
+    head_lt_parent_zero_of_starts012 T V hV (by rw [hlast]; omega)
+  have hY0 : ∃ V0, Y ++ tA (d+k) = [0,1,2] ++ V0 := by
+    exact ⟨copies [0,2] d ++ U ++ tA (d+k), by
+      simp [Y, tA, List.append_assoc]⟩
+  obtain ⟨V0, hV0⟩ := hY0
+  have hh1 : 1 < p T 1 ∧ suf T 1 < suf T (p T 1) := by
+    have h := head_lt_parent_one_final_D_of_starts012
+      (Y ++ tA (d+k)) V0 hV0
+    simpa [T, hAj, List.append_assoc] using h
+  have hcut : cut (Z ++ T) = Z.length + cut T := by
+    apply cut_prefix_of_head_dominance Z T 3 (by simp [T, Y, tA])
+      (by omega) (by simp [T, tA, copies_length]; omega) hb3
+    · intro i hi hi3
+      have hi2 : i = 2 := by omega
+      simpa [hi2] using hnot2
+    · intro j hj
+      have hcases : j = 0 ∨ j = 1 ∨ j = 2 := by omega
+      rcases hcases with rfl | rfl | rfl
+      · exact hh0
+      · exact hh1
+      · exact hh2
+  have hT : T = (Y ++ tA (d+k) ++ [0]) ++ [2] := by
+    simp [T, hAj, List.append_assoc]
+  have hc : cut (Z ++ (Y ++ tA (d+k) ++ [0]) ++ [2]) =
+      Z.length + cut ((Y ++ tA (d+k) ++ [0]) ++ [2]) := by
+    simpa [hT, List.append_assoc] using hcut
+  have hf := fs_prefix_of_cut_shift Z (Y ++ tA (d+k) ++ [0]) 1 n hc
+  simpa [T, Y, hT, List.append_assoc] using hf
+
 /-- Prefix independence for every token word whose first token is not `D`. -/
 theorem fs_prefix_token_word (Z : List ℕ) (t : PrefixTok) (w : List PrefixTok)
     (ht : t ≠ .D) (n : ℕ) :
@@ -1979,6 +2300,80 @@ theorem fs_prefix_token_word (Z : List ℕ) (t : PrefixTok) (w : List PrefixTok)
           simpa [PrefixTok.raw, List.append_assoc] using
             fs_prefix_final_E_D_run Z (PrefixTok.rawWord u) m n
 
+theorem depth_as_A0_word (d : ℕ) (u : List PrefixTok) :
+    tA d ++ PrefixTok.rawWord u =
+      tA 0 ++ PrefixTok.rawWord (List.replicate d PrefixTok.D ++ u) := by
+  rw [rawWord_append, rawWord_replicate_D]
+  have h := congrArg (fun x : List ℕ => x ++ PrefixTok.rawWord u) (tA_add 0 d)
+  simpa [List.append_assoc] using h
+
+/-- Prefix independence after `A_d`, with all `A` depths at least `d` and a new final unit. -/
+theorem fs_prefix_depth_token_word (Z : List ℕ) (d : ℕ)
+    (t : PrefixTok) (w : List PrefixTok)
+    (hfirst : t ≠ .D)
+    (hmin : ∀ j, PrefixTok.A j ∈ (t :: w) → d ≤ j)
+    (hlast : (t :: w).getLast? ≠ some (.A d)) (n : ℕ) :
+    fs (Z ++ tA d ++ PrefixTok.rawWord (t :: w)) n =
+      Z ++ fs (tA d ++ PrefixTok.rawWord (t :: w)) n := by
+  obtain ⟨u, x, r, hword, hx⟩ := word_trailing_D_decomp t w hfirst
+  have hraw : PrefixTok.rawWord (t :: w) =
+      PrefixTok.rawWord u ++ x.raw ++ copies [0,2] r := by
+    rw [hword, rawWord_append, rawWord_append, rawWord_singleton, rawWord_replicate_D]
+  rw [hraw]
+  cases x with
+  | D => exact False.elim (hx rfl)
+  | A k =>
+      simp only [PrefixTok.raw, List.append_assoc]
+      rw [tA_append_D_copies]
+      have hk : d ≤ k := hmin k (by rw [hword]; simp)
+      have hne : k+r ≠ d := by
+        intro he
+        have hr0 : r = 0 := by omega
+        have hkd : k = d := by omega
+        subst r
+        subst k
+        have hlast' : (t :: w).getLast? = some (.A d) := by
+          rw [hword]
+          simp
+        exact hlast hlast'
+      obtain ⟨m, hm⟩ : ∃ m, k+r = d+(m+1) :=
+        ⟨k+r-d-1, by omega⟩
+      rw [hm]
+      have hU : PrefixTok.rawWord u = [] ∨
+          ∃ V, PrefixTok.rawWord u = [0,1,2] ++ V := by
+        cases u with
+        | nil => left; rfl
+        | cons y ys =>
+            have hy : y = t := by
+              have h := congrArg List.head? hword
+              simp at h
+              exact h.symm
+            subst y
+            right
+            exact rawWord_head_nonD t ys hfirst
+      simpa [List.append_assoc] using
+        fs_prefix_depth_final_A Z (PrefixTok.rawWord u) d m n hU (zeroSafe_rawWord u)
+  | W =>
+      have hA : tA d = tA 0 ++ copies [0,2] d := by simpa using tA_add 0 d
+      cases r with
+      | zero =>
+          simpa [PrefixTok.raw, copies, hA, rawWord_append, rawWord_replicate_D,
+            List.append_assoc] using
+            fs_prefix_final_W Z (List.replicate d PrefixTok.D ++ u) n
+      | succ m =>
+          simpa [PrefixTok.raw, hA, rawWord_append, rawWord_replicate_D,
+            List.append_assoc] using
+            fs_prefix_final_W_D_run Z (List.replicate d PrefixTok.D ++ u) m n
+  | E =>
+      have hA : tA d = tA 0 ++ copies [0,2] d := by simpa using tA_add 0 d
+      cases r with
+      | zero =>
+          simpa [PrefixTok.raw, copies, tA, hA, List.append_assoc] using
+            fs_prefix_last_E Z (copies [0,2] d ++ PrefixTok.rawWord u) n
+      | succ m =>
+          simpa [PrefixTok.raw, hA, List.append_assoc] using
+            fs_prefix_final_E_D_run Z (copies [0,2] d ++ PrefixTok.rawWord u) m n
+
 /-- The zero-th expansion exposes the retained prefix and therefore the cut. -/
 theorem cut_prefix_of_fs_zero (Z T : List ℕ) (hT : T ≠ [])
     (hpos : entry T T.length ≠ 0)
@@ -2014,6 +2409,25 @@ theorem cut_prefix_token_word (Z : List ℕ) (t : PrefixTok) (w : List PrefixTok
     omega
   have hf : fs (Z ++ T) 0 = Z ++ fs T 0 := by
     simpa [T, List.append_assoc] using fs_prefix_token_word Z t w ht 0
+  have hc := cut_prefix_of_fs_zero Z T hT hpos hf
+  simpa [T, List.append_assoc] using hc
+
+theorem cut_prefix_depth_token_word (Z : List ℕ) (d : ℕ)
+    (t : PrefixTok) (w : List PrefixTok)
+    (hfirst : t ≠ .D)
+    (hmin : ∀ j, PrefixTok.A j ∈ (t :: w) → d ≤ j)
+    (hlast : (t :: w).getLast? ≠ some (.A d)) :
+    cut (Z ++ tA d ++ PrefixTok.rawWord (t :: w)) =
+      Z.length + cut (tA d ++ PrefixTok.rawWord (t :: w)) := by
+  let T := tA d ++ PrefixTok.rawWord (t :: w)
+  have hT : T ≠ [] := by simp [T, tA]
+  obtain ⟨u, a, hraw⟩ := rawWord_ends_positive (t :: w) (by simp)
+  have hpos : entry T T.length ≠ 0 := by
+    have h := entry_last T (tA d ++ u) (a+1) (by simp [T, hraw, List.append_assoc])
+    omega
+  have hf : fs (Z ++ T) 0 = Z ++ fs T 0 := by
+    simpa [T, List.append_assoc] using
+      fs_prefix_depth_token_word Z d t w hfirst hmin hlast 0
   have hc := cut_prefix_of_fs_zero Z T hT hpos hf
   simpa [T, List.append_assoc] using hc
 
