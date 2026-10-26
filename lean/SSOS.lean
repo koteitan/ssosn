@@ -19,3 +19,4 @@ import SSOS.CutReduction
 import SSOS.CutShape
 import SSOS.CutRank
 import SSOS.TokenCut
+import SSOS.PrefixCut
