@@ -20,3 +20,4 @@ import SSOS.CutShape
 import SSOS.CutRank
 import SSOS.TokenCut
 import SSOS.PrefixCut
+import SSOS.WRunCut
