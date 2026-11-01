@@ -17,6 +17,7 @@ P1_ROOT_EXPERIMENT=False  # §43: D/W roots above P, measured separately
 P1_V_FOLD_EXPERIMENT=False  # §43: internal V rank, on top of P1_ROOT
 P1_V_BITS_EXPERIMENT=False  # §43: V copy rank via 0/1/2 bits (v_bits43); implies the V fold
 P1_V_RAW_EXPERIMENT=False   # §43: rank from old value of 00+bits; partial diagnostic
+P2_V7_EXPERIMENT=False      # §44: root-V blocks use the v7 rank and B(r); default off
 
 class Unknown(Exception):pass
 
@@ -97,6 +98,27 @@ def index(tokens):
 @lru_cache(maxsize=200000)
 def block_value(u):
  u=tuple(u)
+ if P2_V7_EXPERIMENT and u[:5]==(2,1,0,2,1):
+  try:
+   import v_bits44
+   copies=parse_p2_v7_copies(u[2:])
+   return v_bits44.B7(copies)
+  except (Unknown, v_bits44.Unknown) as error:
+   # A_k/E tails need the same v7-seeded A_k fold as the general tree path.
+   try:
+    import token_tree
+    token_tree.GENERAL_COPY_EXPERIMENT=True
+    token_tree.V_ROOT_EXPERIMENT=True
+    token_tree.V_BITS_EXPERIMENT=P1_V_BITS_EXPERIMENT
+    token_tree.V_RAW_EXPERIMENT=P1_V_RAW_EXPERIMENT
+    previous_p2_mode=token_tree.P2_V7_EXPERIMENT
+    token_tree.P2_V7_EXPERIMENT=True
+    try:
+     return token_tree.block_value(u)
+    finally:
+     token_tree.P2_V7_EXPERIMENT=previous_p2_mode
+   except token_tree.Unknown:
+    pass
  if P1_ROOT_EXPERIMENT and u==(2,1,0,2,0,2,1):
   return p1_v_anchor()
  if P1_ROOT_EXPERIMENT and (P1_V_FOLD_EXPERIMENT or P1_V_BITS_EXPERIMENT or P1_V_RAW_EXPERIMENT) and u[:7]==(2,1,0,2,0,2,1):
@@ -149,6 +171,25 @@ def block_value(u):
   return P(ONE,leading_w_index(OMEGA))
  return P(ONE,index(parse_tail(u[2:])))
 
+
+@lru_cache(maxsize=10000)
+def parse_p2_v7_copies(raw):
+ """Unique W/D/V parse following the (2,1) prefix of a P1-root block."""
+ raw=tuple(raw)
+ pieces={'W':W,'D':(0,2),'V':(0,2,1)}
+ @lru_cache(None)
+ def go(i):
+  if i==len(raw):return ((),)
+  out=[]
+  for token,unit in pieces.items():
+   if raw[i:i+len(unit)]==unit:
+    out.extend((token,)+tail for tail in go(i+len(unit)))
+  return tuple(dict.fromkeys(out))
+ forms=go(0)
+ if len(forms)!=1:
+  raise Unknown(('P2 V7 token parse is not unique',raw,forms[:5]))
+ return forms[0]
+
 @lru_cache(maxsize=200000)
 def body_value(body):
  # The structural 0/1/2 block decomposition; no numeric override table.
@@ -170,7 +211,7 @@ def value(s):
  if len(s)>2 and s[-1]==0:return succ(value(s[:-1]))
  try:return add(nat(2),body_value(s[2:]))
  except Unknown:
-  if not P1_ROOT_EXPERIMENT:raise
+  if not (P1_ROOT_EXPERIMENT or P2_V7_EXPERIMENT):raise
   return p1_root_candidate(s)
 
 
@@ -186,19 +227,35 @@ def p1_root_candidate(s):
  import token_tree
  root=(0,0,2,1,0,2)
  if s[:len(root)]!=root:raise Unknown('outside P root experiment')
- if s[:len(root)+1]==root+(1,):raise Unknown('at or above P1: outside P root experiment')
+ p1=root+(1,)
+ p2=p1+(1,)
+ if s>=p2:raise Unknown('at or above P2: outside root experiments')
+ if s>=p1 and not P2_V7_EXPERIMENT:
+  raise Unknown('at or above P1: outside P root experiment')
  token_tree.GENERAL_COPY_EXPERIMENT=True
  token_tree.V_ROOT_EXPERIMENT=P1_V_FOLD_EXPERIMENT or P1_V_BITS_EXPERIMENT or P1_V_RAW_EXPERIMENT
  token_tree.V_BITS_EXPERIMENT=P1_V_BITS_EXPERIMENT
  token_tree.V_RAW_EXPERIMENT=P1_V_RAW_EXPERIMENT
+ previous_p2_mode=token_tree.P2_V7_EXPERIMENT
+ token_tree.P2_V7_EXPERIMENT=P2_V7_EXPERIMENT
  if s==root+(0,2,1):
+  token_tree.P2_V7_EXPERIMENT=previous_p2_mode
+  if P2_V7_EXPERIMENT:
+   import v_bits44
+   return v_bits44.B7(('V',))
   return p1_v_anchor()
  if s==root+(0,2,0,1):
+  token_tree.P2_V7_EXPERIMENT=previous_p2_mode
   return w(succ(value(root+(0,2))))
  if s==root+(0,2,1,0,1):
+  token_tree.P2_V7_EXPERIMENT=previous_p2_mode
   return w(succ(value(root+(0,2,1))))
- try:return token_tree.value(s)
- except token_tree.Unknown as error:raise Unknown(('P root fold unknown',error.args)) from error
+ try:
+  return token_tree.value(s)
+ except token_tree.Unknown as error:
+  raise Unknown(('P root fold unknown',error.args)) from error
+ finally:
+  token_tree.P2_V7_EXPERIMENT=previous_p2_mode
 
 
 @lru_cache(maxsize=1)

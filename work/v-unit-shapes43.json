@@ -1,0 +1,7207 @@
+{
+  "max_tokens": 13,
+  "input_words": 4888,
+  "class_counts": {
+    "R1": 704,
+    "R2": 720,
+    "R3": 3464
+  },
+  "OTHER_count": 0,
+  "OTHER_shortest_examples": [],
+  "multiple_R3_match_words": 0,
+  "overlap_R2_R3_words": 0,
+  "grammar_class_agreement": {
+    "agree": 2146,
+    "differ": 2742
+  },
+  "token_only_cut_agreement": {
+    "agree": 3799,
+    "differ": 1089
+  },
+  "token_only_cut_agreement_by_initial_token": {
+    "D_agree": 2227,
+    "D_differ": 217,
+    "W_agree": 1572,
+    "W_differ": 872
+  },
+  "token_only_cut_first_differences": [
+    {
+      "c": "WDVD",
+      "predicted": 2,
+      "actual": 6
+    },
+    {
+      "c": "WDVDD",
+      "predicted": 2,
+      "actual": 6
+    },
+    {
+      "c": "WDVWD",
+      "predicted": 2,
+      "actual": 6
+    },
+    {
+      "c": "WDVDDD",
+      "predicted": 2,
+      "actual": 6
+    },
+    {
+      "c": "WDVDVD",
+      "predicted": 2,
+      "actual": 6
+    },
+    {
+      "c": "WDVDWD",
+      "predicted": 2,
+      "actual": 6
+    },
+    {
+      "c": "WDVWDD",
+      "predicted": 2,
+      "actual": 6
+    },
+    {
+      "c": "DVDWDVD",
+      "predicted": 18,
+      "actual": 2
+    },
+    {
+      "c": "WDVDDDD",
+      "predicted": 2,
+      "actual": 6
+    },
+    {
+      "c": "WDVDDWD",
+      "predicted": 2,
+      "actual": 6
+    },
+    {
+      "c": "WDVDVDD",
+      "predicted": 2,
+      "actual": 6
+    },
+    {
+      "c": "WDVDVWD",
+      "predicted": 2,
+      "actual": 6
+    },
+    {
+      "c": "WDVDWDD",
+      "predicted": 2,
+      "actual": 6
+    },
+    {
+      "c": "WDVWDDD",
+      "predicted": 2,
+      "actual": 6
+    },
+    {
+      "c": "WDVWDWD",
+      "predicted": 2,
+      "actual": 6
+    },
+    {
+      "c": "DVDDWDVD",
+      "predicted": 20,
+      "actual": 2
+    },
+    {
+      "c": "DVDVWDVD",
+      "predicted": 21,
+      "actual": 2
+    },
+    {
+      "c": "DVDWWDVD",
+      "predicted": 22,
+      "actual": 17
+    },
+    {
+      "c": "WDVDDDDD",
+      "predicted": 2,
+      "actual": 6
+    },
+    {
+      "c": "WDVDDDWD",
+      "predicted": 2,
+      "actual": 6
+    }
+  ],
+  "exact_signature_count": 32,
+  "used_coarse_signatures": false,
+  "group_count": 32,
+  "groups": [
+    {
+      "signature": [
+        "R1",
+        1,
+        1,
+        false,
+        null,
+        1,
+        1,
+        1
+      ],
+      "count": 184,
+      "prefix_units_unchanged_n1_n3": {
+        "111": 184
+      },
+      "unit_reduction_counts": {
+        "T-lowered": 108,
+        "T2": 76
+      },
+      "shortest_example": {
+        "c": "DVDV",
+        "y": [
+          2,
+          2
+        ],
+        "units_y": [
+          [
+            2,
+            2
+          ]
+        ],
+        "matching_classes": [
+          [
+            "R1",
+            null
+          ]
+        ],
+        "R3_positions": [],
+        "unit_reductions": [
+          {
+            "unit": [
+              2,
+              2
+            ],
+            "T": [
+              2,
+              2
+            ],
+            "T2_if_T_fixed": [
+              2
+            ]
+          }
+        ],
+        "s0": 1,
+        "unit_index": 1,
+        "s_is_unit_start": false,
+        "prefix_units_unchanged_n1_n3": [
+          true,
+          true,
+          true
+        ],
+        "trailing_zero": null,
+        "v2_c": "e_e0",
+        "terms": [
+          {
+            "n": 1,
+            "c": "DVDD",
+            "y": [
+              2,
+              1,
+              1
+            ],
+            "units": [
+              [
+                2,
+                1,
+                1
+              ]
+            ],
+            "rank": "e_w^w"
+          },
+          {
+            "n": 2,
+            "c": "DVDDD",
+            "y": [
+              2,
+              1,
+              1,
+              1
+            ],
+            "units": [
+              [
+                2,
+                1,
+                1,
+                1
+              ]
+            ],
+            "rank": "e_w^w^w"
+          },
+          {
+            "n": 3,
+            "c": "DVDDDD",
+            "y": [
+              2,
+              1,
+              1,
+              1,
+              1
+            ],
+            "units": [
+              [
+                2,
+                1,
+                1,
+                1,
+                1
+              ]
+            ],
+            "rank": "e_w^w^w^w"
+          }
+        ]
+      }
+    },
+    {
+      "signature": [
+        "R1",
+        1,
+        1,
+        true,
+        null,
+        1,
+        1,
+        1
+      ],
+      "count": 1,
+      "prefix_units_unchanged_n1_n3": {
+        "111": 1
+      },
+      "unit_reduction_counts": {
+        "T2": 1
+      },
+      "shortest_example": {
+        "c": "DV",
+        "y": [
+          2
+        ],
+        "units_y": [
+          [
+            2
+          ]
+        ],
+        "matching_classes": [
+          [
+            "R1",
+            null
+          ]
+        ],
+        "R3_positions": [],
+        "unit_reductions": [
+          {
+            "unit": [
+              2
+            ],
+            "T": [
+              2
+            ],
+            "T2_if_T_fixed": []
+          }
+        ],
+        "s0": 0,
+        "unit_index": 1,
+        "s_is_unit_start": true,
+        "prefix_units_unchanged_n1_n3": [
+          true,
+          true,
+          true
+        ],
+        "trailing_zero": null,
+        "v2_c": "e0",
+        "terms": [
+          {
+            "n": 1,
+            "c": "DD",
+            "y": [
+              1,
+              1
+            ],
+            "units": [
+              [
+                1,
+                1
+              ]
+            ],
+            "rank": "w^w"
+          },
+          {
+            "n": 2,
+            "c": "DDD",
+            "y": [
+              1,
+              1,
+              1
+            ],
+            "units": [
+              [
+                1,
+                1,
+                1
+              ]
+            ],
+            "rank": "w^w^w"
+          },
+          {
+            "n": 3,
+            "c": "DDDD",
+            "y": [
+              1,
+              1,
+              1,
+              1
+            ],
+            "units": [
+              [
+                1,
+                1,
+                1,
+                1
+              ]
+            ],
+            "rank": "w^w^w^w"
+          }
+        ]
+      }
+    },
+    {
+      "signature": [
+        "R1",
+        2,
+        2,
+        false,
+        null,
+        2,
+        2,
+        2
+      ],
+      "count": 184,
+      "prefix_units_unchanged_n1_n3": {
+        "111": 184
+      },
+      "unit_reduction_counts": {
+        "T-fixed": 184,
+        "T-lowered": 108,
+        "T2": 76
+      },
+      "shortest_example": {
+        "c": "WDVDV",
+        "y": [
+          0,
+          2,
+          2
+        ],
+        "units_y": [
+          [
+            0
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        "matching_classes": [
+          [
+            "R1",
+            null
+          ]
+        ],
+        "R3_positions": [],
+        "unit_reductions": [
+          {
+            "unit": [
+              0
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              2,
+              2
+            ],
+            "T": [
+              2,
+              2
+            ],
+            "T2_if_T_fixed": [
+              2
+            ]
+          }
+        ],
+        "s0": 2,
+        "unit_index": 2,
+        "s_is_unit_start": false,
+        "prefix_units_unchanged_n1_n3": [
+          true,
+          true,
+          true
+        ],
+        "trailing_zero": null,
+        "v2_c": "e_e0",
+        "terms": [
+          {
+            "n": 1,
+            "c": "WDVDD",
+            "y": [
+              0,
+              2,
+              1,
+              1
+            ],
+            "units": [
+              [
+                0
+              ],
+              [
+                2,
+                1,
+                1
+              ]
+            ],
+            "rank": "e_w^w"
+          },
+          {
+            "n": 2,
+            "c": "WDVDDD",
+            "y": [
+              0,
+              2,
+              1,
+              1,
+              1
+            ],
+            "units": [
+              [
+                0
+              ],
+              [
+                2,
+                1,
+                1,
+                1
+              ]
+            ],
+            "rank": "e_w^w^w"
+          },
+          {
+            "n": 3,
+            "c": "WDVDDDD",
+            "y": [
+              0,
+              2,
+              1,
+              1,
+              1,
+              1
+            ],
+            "units": [
+              [
+                0
+              ],
+              [
+                2,
+                1,
+                1,
+                1,
+                1
+              ]
+            ],
+            "rank": "e_w^w^w^w"
+          }
+        ]
+      }
+    },
+    {
+      "signature": [
+        "R1",
+        2,
+        2,
+        true,
+        null,
+        2,
+        2,
+        2
+      ],
+      "count": 1,
+      "prefix_units_unchanged_n1_n3": {
+        "111": 1
+      },
+      "unit_reduction_counts": {
+        "T-fixed": 1,
+        "T2": 1
+      },
+      "shortest_example": {
+        "c": "WDV",
+        "y": [
+          0,
+          2
+        ],
+        "units_y": [
+          [
+            0
+          ],
+          [
+            2
+          ]
+        ],
+        "matching_classes": [
+          [
+            "R1",
+            null
+          ]
+        ],
+        "R3_positions": [],
+        "unit_reductions": [
+          {
+            "unit": [
+              0
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              2
+            ],
+            "T": [
+              2
+            ],
+            "T2_if_T_fixed": []
+          }
+        ],
+        "s0": 1,
+        "unit_index": 2,
+        "s_is_unit_start": true,
+        "prefix_units_unchanged_n1_n3": [
+          true,
+          true,
+          true
+        ],
+        "trailing_zero": null,
+        "v2_c": "e0",
+        "terms": [
+          {
+            "n": 1,
+            "c": "WDD",
+            "y": [
+              0,
+              1,
+              1
+            ],
+            "units": [
+              [
+                0
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "rank": "w^w"
+          },
+          {
+            "n": 2,
+            "c": "WDDD",
+            "y": [
+              0,
+              1,
+              1,
+              1
+            ],
+            "units": [
+              [
+                0
+              ],
+              [
+                1,
+                1,
+                1
+              ]
+            ],
+            "rank": "w^w^w"
+          },
+          {
+            "n": 3,
+            "c": "WDDDD",
+            "y": [
+              0,
+              1,
+              1,
+              1,
+              1
+            ],
+            "units": [
+              [
+                0
+              ],
+              [
+                1,
+                1,
+                1,
+                1
+              ]
+            ],
+            "rank": "w^w^w^w"
+          }
+        ]
+      }
+    },
+    {
+      "signature": [
+        "R1",
+        4,
+        4,
+        false,
+        null,
+        4,
+        4,
+        4
+      ],
+      "count": 34,
+      "prefix_units_unchanged_n1_n3": {
+        "111": 34
+      },
+      "unit_reduction_counts": {
+        "T-fixed": 68,
+        "T-lowered": 11,
+        "T2": 57
+      },
+      "shortest_example": {
+        "c": "DVDVWWDVDV",
+        "y": [
+          2,
+          2,
+          0,
+          0,
+          2,
+          2
+        ],
+        "units_y": [
+          [
+            2,
+            2
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        "matching_classes": [
+          [
+            "R1",
+            null
+          ]
+        ],
+        "R3_positions": [],
+        "unit_reductions": [
+          {
+            "unit": [
+              2,
+              2
+            ],
+            "T": [
+              2,
+              2
+            ],
+            "T2_if_T_fixed": [
+              2
+            ]
+          },
+          {
+            "unit": [
+              0
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              0
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              2,
+              2
+            ],
+            "T": [
+              2,
+              2
+            ],
+            "T2_if_T_fixed": [
+              2
+            ]
+          }
+        ],
+        "s0": 5,
+        "unit_index": 4,
+        "s_is_unit_start": false,
+        "prefix_units_unchanged_n1_n3": [
+          true,
+          true,
+          true
+        ],
+        "trailing_zero": null,
+        "v2_c": "e_e0·2",
+        "terms": [
+          {
+            "n": 1,
+            "c": "DVDVWWDVDD",
+            "y": [
+              2,
+              2,
+              0,
+              0,
+              2,
+              1,
+              1
+            ],
+            "units": [
+              [
+                2,
+                2
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                2,
+                1,
+                1
+              ]
+            ],
+            "rank": "e_e0+e_w^w"
+          },
+          {
+            "n": 2,
+            "c": "DVDVWWDVDDD",
+            "y": [
+              2,
+              2,
+              0,
+              0,
+              2,
+              1,
+              1,
+              1
+            ],
+            "units": [
+              [
+                2,
+                2
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                2,
+                1,
+                1,
+                1
+              ]
+            ],
+            "rank": "e_e0+e_w^w^w"
+          },
+          {
+            "n": 3,
+            "c": "DVDVWWDVDDDD",
+            "y": [
+              2,
+              2,
+              0,
+              0,
+              2,
+              1,
+              1,
+              1,
+              1
+            ],
+            "units": [
+              [
+                2,
+                2
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                2,
+                1,
+                1,
+                1,
+                1
+              ]
+            ],
+            "rank": "e_e0+e_w^w^w^w"
+          }
+        ]
+      }
+    },
+    {
+      "signature": [
+        "R1",
+        4,
+        4,
+        true,
+        null,
+        4,
+        4,
+        4
+      ],
+      "count": 119,
+      "prefix_units_unchanged_n1_n3": {
+        "111": 119
+      },
+      "unit_reduction_counts": {
+        "T-fixed": 238,
+        "T-lowered": 80,
+        "T2": 158
+      },
+      "shortest_example": {
+        "c": "DVWWDV",
+        "y": [
+          2,
+          0,
+          0,
+          2
+        ],
+        "units_y": [
+          [
+            2
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            2
+          ]
+        ],
+        "matching_classes": [
+          [
+            "R1",
+            null
+          ]
+        ],
+        "R3_positions": [],
+        "unit_reductions": [
+          {
+            "unit": [
+              2
+            ],
+            "T": [
+              2
+            ],
+            "T2_if_T_fixed": []
+          },
+          {
+            "unit": [
+              0
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              0
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              2
+            ],
+            "T": [
+              2
+            ],
+            "T2_if_T_fixed": []
+          }
+        ],
+        "s0": 3,
+        "unit_index": 4,
+        "s_is_unit_start": true,
+        "prefix_units_unchanged_n1_n3": [
+          true,
+          true,
+          true
+        ],
+        "trailing_zero": null,
+        "v2_c": "e0·2",
+        "terms": [
+          {
+            "n": 1,
+            "c": "DVWWDD",
+            "y": [
+              2,
+              0,
+              0,
+              1,
+              1
+            ],
+            "units": [
+              [
+                2
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "rank": "e0+w^w"
+          },
+          {
+            "n": 2,
+            "c": "DVWWDDD",
+            "y": [
+              2,
+              0,
+              0,
+              1,
+              1,
+              1
+            ],
+            "units": [
+              [
+                2
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                1,
+                1,
+                1
+              ]
+            ],
+            "rank": "e0+w^w^w"
+          },
+          {
+            "n": 3,
+            "c": "DVWWDDDD",
+            "y": [
+              2,
+              0,
+              0,
+              1,
+              1,
+              1,
+              1
+            ],
+            "units": [
+              [
+                2
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                1,
+                1,
+                1,
+                1
+              ]
+            ],
+            "rank": "e0+w^w^w^w"
+          }
+        ]
+      }
+    },
+    {
+      "signature": [
+        "R1",
+        5,
+        5,
+        false,
+        null,
+        5,
+        5,
+        5
+      ],
+      "count": 34,
+      "prefix_units_unchanged_n1_n3": {
+        "111": 34
+      },
+      "unit_reduction_counts": {
+        "T-fixed": 102,
+        "T-lowered": 11,
+        "T2": 57
+      },
+      "shortest_example": {
+        "c": "WDVDVWWDVDV",
+        "y": [
+          0,
+          2,
+          2,
+          0,
+          0,
+          2,
+          2
+        ],
+        "units_y": [
+          [
+            0
+          ],
+          [
+            2,
+            2
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            2,
+            2
+          ]
+        ],
+        "matching_classes": [
+          [
+            "R1",
+            null
+          ]
+        ],
+        "R3_positions": [],
+        "unit_reductions": [
+          {
+            "unit": [
+              0
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              2,
+              2
+            ],
+            "T": [
+              2,
+              2
+            ],
+            "T2_if_T_fixed": [
+              2
+            ]
+          },
+          {
+            "unit": [
+              0
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              0
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              2,
+              2
+            ],
+            "T": [
+              2,
+              2
+            ],
+            "T2_if_T_fixed": [
+              2
+            ]
+          }
+        ],
+        "s0": 6,
+        "unit_index": 5,
+        "s_is_unit_start": false,
+        "prefix_units_unchanged_n1_n3": [
+          true,
+          true,
+          true
+        ],
+        "trailing_zero": null,
+        "v2_c": "e_e0·2",
+        "terms": [
+          {
+            "n": 1,
+            "c": "WDVDVWWDVDD",
+            "y": [
+              0,
+              2,
+              2,
+              0,
+              0,
+              2,
+              1,
+              1
+            ],
+            "units": [
+              [
+                0
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                2,
+                1,
+                1
+              ]
+            ],
+            "rank": "e_e0+e_w^w"
+          },
+          {
+            "n": 2,
+            "c": "WDVDVWWDVDDD",
+            "y": [
+              0,
+              2,
+              2,
+              0,
+              0,
+              2,
+              1,
+              1,
+              1
+            ],
+            "units": [
+              [
+                0
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                2,
+                1,
+                1,
+                1
+              ]
+            ],
+            "rank": "e_e0+e_w^w^w"
+          },
+          {
+            "n": 3,
+            "c": "WDVDVWWDVDDDD",
+            "y": [
+              0,
+              2,
+              2,
+              0,
+              0,
+              2,
+              1,
+              1,
+              1,
+              1
+            ],
+            "units": [
+              [
+                0
+              ],
+              [
+                2,
+                2
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                2,
+                1,
+                1,
+                1,
+                1
+              ]
+            ],
+            "rank": "e_e0+e_w^w^w^w"
+          }
+        ]
+      }
+    },
+    {
+      "signature": [
+        "R1",
+        5,
+        5,
+        true,
+        null,
+        5,
+        5,
+        5
+      ],
+      "count": 119,
+      "prefix_units_unchanged_n1_n3": {
+        "111": 119
+      },
+      "unit_reduction_counts": {
+        "T-fixed": 357,
+        "T-lowered": 80,
+        "T2": 158
+      },
+      "shortest_example": {
+        "c": "WDVWWDV",
+        "y": [
+          0,
+          2,
+          0,
+          0,
+          2
+        ],
+        "units_y": [
+          [
+            0
+          ],
+          [
+            2
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            2
+          ]
+        ],
+        "matching_classes": [
+          [
+            "R1",
+            null
+          ]
+        ],
+        "R3_positions": [],
+        "unit_reductions": [
+          {
+            "unit": [
+              0
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              2
+            ],
+            "T": [
+              2
+            ],
+            "T2_if_T_fixed": []
+          },
+          {
+            "unit": [
+              0
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              0
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              2
+            ],
+            "T": [
+              2
+            ],
+            "T2_if_T_fixed": []
+          }
+        ],
+        "s0": 4,
+        "unit_index": 5,
+        "s_is_unit_start": true,
+        "prefix_units_unchanged_n1_n3": [
+          true,
+          true,
+          true
+        ],
+        "trailing_zero": null,
+        "v2_c": "e0·2",
+        "terms": [
+          {
+            "n": 1,
+            "c": "WDVWWDD",
+            "y": [
+              0,
+              2,
+              0,
+              0,
+              1,
+              1
+            ],
+            "units": [
+              [
+                0
+              ],
+              [
+                2
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "rank": "e0+w^w"
+          },
+          {
+            "n": 2,
+            "c": "WDVWWDDD",
+            "y": [
+              0,
+              2,
+              0,
+              0,
+              1,
+              1,
+              1
+            ],
+            "units": [
+              [
+                0
+              ],
+              [
+                2
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                1,
+                1,
+                1
+              ]
+            ],
+            "rank": "e0+w^w^w"
+          },
+          {
+            "n": 3,
+            "c": "WDVWWDDDD",
+            "y": [
+              0,
+              2,
+              0,
+              0,
+              1,
+              1,
+              1,
+              1
+            ],
+            "units": [
+              [
+                0
+              ],
+              [
+                2
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                1,
+                1,
+                1,
+                1
+              ]
+            ],
+            "rank": "e0+w^w^w^w"
+          }
+        ]
+      }
+    },
+    {
+      "signature": [
+        "R1",
+        7,
+        7,
+        true,
+        null,
+        7,
+        7,
+        7
+      ],
+      "count": 14,
+      "prefix_units_unchanged_n1_n3": {
+        "111": 14
+      },
+      "unit_reduction_counts": {
+        "T-fixed": 56,
+        "T-lowered": 4,
+        "T2": 38
+      },
+      "shortest_example": {
+        "c": "DVWWDVWWDV",
+        "y": [
+          2,
+          0,
+          0,
+          2,
+          0,
+          0,
+          2
+        ],
+        "units_y": [
+          [
+            2
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            2
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            2
+          ]
+        ],
+        "matching_classes": [
+          [
+            "R1",
+            null
+          ]
+        ],
+        "R3_positions": [],
+        "unit_reductions": [
+          {
+            "unit": [
+              2
+            ],
+            "T": [
+              2
+            ],
+            "T2_if_T_fixed": []
+          },
+          {
+            "unit": [
+              0
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              0
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              2
+            ],
+            "T": [
+              2
+            ],
+            "T2_if_T_fixed": []
+          },
+          {
+            "unit": [
+              0
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              0
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              2
+            ],
+            "T": [
+              2
+            ],
+            "T2_if_T_fixed": []
+          }
+        ],
+        "s0": 6,
+        "unit_index": 7,
+        "s_is_unit_start": true,
+        "prefix_units_unchanged_n1_n3": [
+          true,
+          true,
+          true
+        ],
+        "trailing_zero": null,
+        "v2_c": "e0·3",
+        "terms": [
+          {
+            "n": 1,
+            "c": "DVWWDVWWDD",
+            "y": [
+              2,
+              0,
+              0,
+              2,
+              0,
+              0,
+              1,
+              1
+            ],
+            "units": [
+              [
+                2
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                2
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "rank": "e0·2+w^w"
+          },
+          {
+            "n": 2,
+            "c": "DVWWDVWWDDD",
+            "y": [
+              2,
+              0,
+              0,
+              2,
+              0,
+              0,
+              1,
+              1,
+              1
+            ],
+            "units": [
+              [
+                2
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                2
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                1,
+                1,
+                1
+              ]
+            ],
+            "rank": "e0·2+w^w^w"
+          },
+          {
+            "n": 3,
+            "c": "DVWWDVWWDDDD",
+            "y": [
+              2,
+              0,
+              0,
+              2,
+              0,
+              0,
+              1,
+              1,
+              1,
+              1
+            ],
+            "units": [
+              [
+                2
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                2
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                1,
+                1,
+                1,
+                1
+              ]
+            ],
+            "rank": "e0·2+w^w^w^w"
+          }
+        ]
+      }
+    },
+    {
+      "signature": [
+        "R1",
+        8,
+        8,
+        true,
+        null,
+        8,
+        8,
+        8
+      ],
+      "count": 14,
+      "prefix_units_unchanged_n1_n3": {
+        "111": 14
+      },
+      "unit_reduction_counts": {
+        "T-fixed": 70,
+        "T-lowered": 4,
+        "T2": 38
+      },
+      "shortest_example": {
+        "c": "WDVWWDVWWDV",
+        "y": [
+          0,
+          2,
+          0,
+          0,
+          2,
+          0,
+          0,
+          2
+        ],
+        "units_y": [
+          [
+            0
+          ],
+          [
+            2
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            2
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            2
+          ]
+        ],
+        "matching_classes": [
+          [
+            "R1",
+            null
+          ]
+        ],
+        "R3_positions": [],
+        "unit_reductions": [
+          {
+            "unit": [
+              0
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              2
+            ],
+            "T": [
+              2
+            ],
+            "T2_if_T_fixed": []
+          },
+          {
+            "unit": [
+              0
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              0
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              2
+            ],
+            "T": [
+              2
+            ],
+            "T2_if_T_fixed": []
+          },
+          {
+            "unit": [
+              0
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              0
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              2
+            ],
+            "T": [
+              2
+            ],
+            "T2_if_T_fixed": []
+          }
+        ],
+        "s0": 7,
+        "unit_index": 8,
+        "s_is_unit_start": true,
+        "prefix_units_unchanged_n1_n3": [
+          true,
+          true,
+          true
+        ],
+        "trailing_zero": null,
+        "v2_c": "e0·3",
+        "terms": [
+          {
+            "n": 1,
+            "c": "WDVWWDVWWDD",
+            "y": [
+              0,
+              2,
+              0,
+              0,
+              2,
+              0,
+              0,
+              1,
+              1
+            ],
+            "units": [
+              [
+                0
+              ],
+              [
+                2
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                2
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                1,
+                1
+              ]
+            ],
+            "rank": "e0·2+w^w"
+          },
+          {
+            "n": 2,
+            "c": "WDVWWDVWWDDD",
+            "y": [
+              0,
+              2,
+              0,
+              0,
+              2,
+              0,
+              0,
+              1,
+              1,
+              1
+            ],
+            "units": [
+              [
+                0
+              ],
+              [
+                2
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                2
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                1,
+                1,
+                1
+              ]
+            ],
+            "rank": "e0·2+w^w^w"
+          },
+          {
+            "n": 3,
+            "c": "WDVWWDVWWDDDD",
+            "y": [
+              0,
+              2,
+              0,
+              0,
+              2,
+              0,
+              0,
+              1,
+              1,
+              1,
+              1
+            ],
+            "units": [
+              [
+                0
+              ],
+              [
+                2
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                2
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                1,
+                1,
+                1,
+                1
+              ]
+            ],
+            "rank": "e0·2+w^w^w^w"
+          }
+        ]
+      }
+    },
+    {
+      "signature": [
+        "R2",
+        1,
+        1,
+        true,
+        false,
+        1,
+        1,
+        1
+      ],
+      "count": 345,
+      "prefix_units_unchanged_n1_n3": {
+        "111": 345
+      },
+      "unit_reduction_counts": {
+        "T-lowered": 244,
+        "T2": 101
+      },
+      "shortest_example": {
+        "c": "DVD",
+        "y": [
+          2,
+          1
+        ],
+        "units_y": [
+          [
+            2,
+            1
+          ]
+        ],
+        "matching_classes": [
+          [
+            "R2",
+            null
+          ]
+        ],
+        "R3_positions": [],
+        "unit_reductions": [
+          {
+            "unit": [
+              2,
+              1
+            ],
+            "T": [
+              2,
+              1
+            ],
+            "T2_if_T_fixed": [
+              1
+            ]
+          }
+        ],
+        "s0": 0,
+        "unit_index": 1,
+        "s_is_unit_start": true,
+        "prefix_units_unchanged_n1_n3": [
+          true,
+          true,
+          true
+        ],
+        "trailing_zero": false,
+        "v2_c": "e_w",
+        "terms": [
+          {
+            "n": 1,
+            "c": "DV",
+            "y": [
+              2
+            ],
+            "units": [
+              [
+                2
+              ]
+            ],
+            "rank": "e0"
+          },
+          {
+            "n": 2,
+            "c": "DVWDV",
+            "y": [
+              2,
+              0,
+              2
+            ],
+            "units": [
+              [
+                2,
+                0,
+                2
+              ]
+            ],
+            "rank": "e1"
+          },
+          {
+            "n": 3,
+            "c": "DVWDVWDV",
+            "y": [
+              2,
+              0,
+              2,
+              0,
+              2
+            ],
+            "units": [
+              [
+                2,
+                0,
+                2,
+                0,
+                2
+              ]
+            ],
+            "rank": "e2"
+          }
+        ]
+      }
+    },
+    {
+      "signature": [
+        "R2",
+        1,
+        1,
+        true,
+        true,
+        2,
+        5,
+        8
+      ],
+      "count": 375,
+      "prefix_units_unchanged_n1_n3": {
+        "111": 375
+      },
+      "unit_reduction_counts": {
+        "T-lowered": 375
+      },
+      "shortest_example": {
+        "c": "DVWD",
+        "y": [
+          2,
+          0,
+          1
+        ],
+        "units_y": [
+          [
+            2,
+            0,
+            1
+          ]
+        ],
+        "matching_classes": [
+          [
+            "R2",
+            null
+          ]
+        ],
+        "R3_positions": [],
+        "unit_reductions": [
+          {
+            "unit": [
+              2,
+              0,
+              1
+            ],
+            "T": [
+              2,
+              0
+            ],
+            "T2_if_T_fixed": null
+          }
+        ],
+        "s0": 0,
+        "unit_index": 1,
+        "s_is_unit_start": true,
+        "prefix_units_unchanged_n1_n3": [
+          true,
+          true,
+          true
+        ],
+        "trailing_zero": true,
+        "v2_c": "w^(e0+1)",
+        "terms": [
+          {
+            "n": 1,
+            "c": "DVW",
+            "y": [
+              2,
+              0
+            ],
+            "units": [
+              [
+                2
+              ],
+              [
+                0
+              ]
+            ],
+            "rank": "e0+1"
+          },
+          {
+            "n": 2,
+            "c": "DVWWDVW",
+            "y": [
+              2,
+              0,
+              0,
+              2,
+              0
+            ],
+            "units": [
+              [
+                2
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                2
+              ],
+              [
+                0
+              ]
+            ],
+            "rank": "e0·2+1"
+          },
+          {
+            "n": 3,
+            "c": "DVWWDVWWDVW",
+            "y": [
+              2,
+              0,
+              0,
+              2,
+              0,
+              0,
+              2,
+              0
+            ],
+            "units": [
+              [
+                2
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                2
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                2
+              ],
+              [
+                0
+              ]
+            ],
+            "rank": "e0·3+1"
+          }
+        ]
+      }
+    },
+    {
+      "signature": [
+        "R3",
+        1,
+        1,
+        false,
+        false,
+        1,
+        1,
+        1
+      ],
+      "count": 240,
+      "prefix_units_unchanged_n1_n3": {
+        "111": 240
+      },
+      "unit_reduction_counts": {
+        "T-lowered": 225,
+        "T2": 15
+      },
+      "shortest_example": {
+        "c": "DVWDWDD",
+        "y": [
+          2,
+          0,
+          1,
+          0,
+          1,
+          1
+        ],
+        "units_y": [
+          [
+            2,
+            0,
+            1,
+            0,
+            1,
+            1
+          ]
+        ],
+        "matching_classes": [
+          [
+            "R3",
+            4
+          ]
+        ],
+        "R3_positions": [
+          4
+        ],
+        "unit_reductions": [
+          {
+            "unit": [
+              2,
+              0,
+              1,
+              0,
+              1,
+              1
+            ],
+            "T": [
+              2,
+              0,
+              0,
+              1
+            ],
+            "T2_if_T_fixed": null
+          }
+        ],
+        "s0": 3,
+        "unit_index": 1,
+        "s_is_unit_start": false,
+        "prefix_units_unchanged_n1_n3": [
+          true,
+          true,
+          true
+        ],
+        "trailing_zero": false,
+        "v2_c": "w^(e0+w)",
+        "terms": [
+          {
+            "n": 1,
+            "c": "DVWDWD",
+            "y": [
+              2,
+              0,
+              1,
+              0,
+              1
+            ],
+            "units": [
+              [
+                2,
+                0,
+                1,
+                0,
+                1
+              ]
+            ],
+            "rank": "w^(e0+2)"
+          },
+          {
+            "n": 2,
+            "c": "DVWDWDWD",
+            "y": [
+              2,
+              0,
+              1,
+              0,
+              1,
+              0,
+              1
+            ],
+            "units": [
+              [
+                2,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1
+              ]
+            ],
+            "rank": "w^(e0+3)"
+          },
+          {
+            "n": 3,
+            "c": "DVWDWDWDWD",
+            "y": [
+              2,
+              0,
+              1,
+              0,
+              1,
+              0,
+              1,
+              0,
+              1
+            ],
+            "units": [
+              [
+                2,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1
+              ]
+            ],
+            "rank": "w^(e0+4)"
+          }
+        ]
+      }
+    },
+    {
+      "signature": [
+        "R3",
+        10,
+        9,
+        true,
+        true,
+        9,
+        10,
+        11
+      ],
+      "count": 14,
+      "prefix_units_unchanged_n1_n3": {
+        "111": 14
+      },
+      "unit_reduction_counts": {
+        "T-fixed": 84,
+        "T-lowered": 38,
+        "T2": 18
+      },
+      "shortest_example": {
+        "c": "DVWWDWWDWWD",
+        "y": [
+          2,
+          0,
+          0,
+          1,
+          0,
+          0,
+          1,
+          0,
+          0,
+          1
+        ],
+        "units_y": [
+          [
+            2
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            1
+          ]
+        ],
+        "matching_classes": [
+          [
+            "R3",
+            9
+          ]
+        ],
+        "R3_positions": [
+          9
+        ],
+        "unit_reductions": [
+          {
+            "unit": [
+              2
+            ],
+            "T": [
+              2
+            ],
+            "T2_if_T_fixed": []
+          },
+          {
+            "unit": [
+              0
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              0
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              1
+            ],
+            "T": [],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              0
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              0
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              1
+            ],
+            "T": [],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              0
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              0
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              1
+            ],
+            "T": [],
+            "T2_if_T_fixed": null
+          }
+        ],
+        "s0": 8,
+        "unit_index": 9,
+        "s_is_unit_start": true,
+        "prefix_units_unchanged_n1_n3": [
+          true,
+          true,
+          true
+        ],
+        "trailing_zero": true,
+        "v2_c": "e0+w3",
+        "terms": [
+          {
+            "n": 1,
+            "c": "DVWWDWWDWW",
+            "y": [
+              2,
+              0,
+              0,
+              1,
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            "units": [
+              [
+                2
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                1
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                1
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ]
+            ],
+            "rank": "e0+w2+2"
+          },
+          {
+            "n": 2,
+            "c": "DVWWDWWDWWW",
+            "y": [
+              2,
+              0,
+              0,
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "units": [
+              [
+                2
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                1
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                1
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ]
+            ],
+            "rank": "e0+w2+3"
+          },
+          {
+            "n": 3,
+            "c": "DVWWDWWDWWWW",
+            "y": [
+              2,
+              0,
+              0,
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            "units": [
+              [
+                2
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                1
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                1
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ]
+            ],
+            "rank": "e0+w2+4"
+          }
+        ]
+      }
+    },
+    {
+      "signature": [
+        "R3",
+        11,
+        10,
+        true,
+        true,
+        10,
+        11,
+        12
+      ],
+      "count": 14,
+      "prefix_units_unchanged_n1_n3": {
+        "111": 14
+      },
+      "unit_reduction_counts": {
+        "T-fixed": 98,
+        "T-lowered": 38,
+        "T2": 18
+      },
+      "shortest_example": {
+        "c": "WDVWWDWWDWWD",
+        "y": [
+          0,
+          2,
+          0,
+          0,
+          1,
+          0,
+          0,
+          1,
+          0,
+          0,
+          1
+        ],
+        "units_y": [
+          [
+            0
+          ],
+          [
+            2
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            1
+          ]
+        ],
+        "matching_classes": [
+          [
+            "R3",
+            10
+          ]
+        ],
+        "R3_positions": [
+          10
+        ],
+        "unit_reductions": [
+          {
+            "unit": [
+              0
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              2
+            ],
+            "T": [
+              2
+            ],
+            "T2_if_T_fixed": []
+          },
+          {
+            "unit": [
+              0
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              0
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              1
+            ],
+            "T": [],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              0
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              0
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              1
+            ],
+            "T": [],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              0
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              0
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              1
+            ],
+            "T": [],
+            "T2_if_T_fixed": null
+          }
+        ],
+        "s0": 9,
+        "unit_index": 10,
+        "s_is_unit_start": true,
+        "prefix_units_unchanged_n1_n3": [
+          true,
+          true,
+          true
+        ],
+        "trailing_zero": true,
+        "v2_c": "e0+w3",
+        "terms": [
+          {
+            "n": 1,
+            "c": "WDVWWDWWDWW",
+            "y": [
+              0,
+              2,
+              0,
+              0,
+              1,
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            "units": [
+              [
+                0
+              ],
+              [
+                2
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                1
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                1
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ]
+            ],
+            "rank": "e0+w2+2"
+          },
+          {
+            "n": 2,
+            "c": "WDVWWDWWDWWW",
+            "y": [
+              0,
+              2,
+              0,
+              0,
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "units": [
+              [
+                0
+              ],
+              [
+                2
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                1
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                1
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ]
+            ],
+            "rank": "e0+w2+3"
+          },
+          {
+            "n": 3,
+            "c": "WDVWWDWWDWWWW",
+            "y": [
+              0,
+              2,
+              0,
+              0,
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            "units": [
+              [
+                0
+              ],
+              [
+                2
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                1
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                1
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ]
+            ],
+            "rank": "e0+w2+4"
+          }
+        ]
+      }
+    },
+    {
+      "signature": [
+        "R3",
+        2,
+        1,
+        true,
+        false,
+        2,
+        2,
+        2
+      ],
+      "count": 345,
+      "prefix_units_unchanged_n1_n3": {
+        "111": 345
+      },
+      "unit_reduction_counts": {
+        "T-fixed": 345,
+        "T-lowered": 244,
+        "T2": 101
+      },
+      "shortest_example": {
+        "c": "WDVD",
+        "y": [
+          0,
+          2,
+          1
+        ],
+        "units_y": [
+          [
+            0
+          ],
+          [
+            2,
+            1
+          ]
+        ],
+        "matching_classes": [
+          [
+            "R3",
+            0
+          ]
+        ],
+        "R3_positions": [
+          0
+        ],
+        "unit_reductions": [
+          {
+            "unit": [
+              0
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              2,
+              1
+            ],
+            "T": [
+              2,
+              1
+            ],
+            "T2_if_T_fixed": [
+              1
+            ]
+          }
+        ],
+        "s0": 0,
+        "unit_index": 1,
+        "s_is_unit_start": true,
+        "prefix_units_unchanged_n1_n3": [
+          true,
+          true,
+          true
+        ],
+        "trailing_zero": false,
+        "v2_c": "e_w",
+        "terms": [
+          {
+            "n": 1,
+            "c": "WDV",
+            "y": [
+              0,
+              2
+            ],
+            "units": [
+              [
+                0
+              ],
+              [
+                2
+              ]
+            ],
+            "rank": "e0"
+          },
+          {
+            "n": 2,
+            "c": "WDVWDV",
+            "y": [
+              0,
+              2,
+              0,
+              2
+            ],
+            "units": [
+              [
+                0
+              ],
+              [
+                2,
+                0,
+                2
+              ]
+            ],
+            "rank": "e1"
+          },
+          {
+            "n": 3,
+            "c": "WDVWDVWDV",
+            "y": [
+              0,
+              2,
+              0,
+              2,
+              0,
+              2
+            ],
+            "units": [
+              [
+                0
+              ],
+              [
+                2,
+                0,
+                2,
+                0,
+                2
+              ]
+            ],
+            "rank": "e2"
+          }
+        ]
+      }
+    },
+    {
+      "signature": [
+        "R3",
+        2,
+        1,
+        true,
+        true,
+        3,
+        6,
+        9
+      ],
+      "count": 375,
+      "prefix_units_unchanged_n1_n3": {
+        "111": 375
+      },
+      "unit_reduction_counts": {
+        "T-fixed": 375,
+        "T-lowered": 375
+      },
+      "shortest_example": {
+        "c": "WDVWD",
+        "y": [
+          0,
+          2,
+          0,
+          1
+        ],
+        "units_y": [
+          [
+            0
+          ],
+          [
+            2,
+            0,
+            1
+          ]
+        ],
+        "matching_classes": [
+          [
+            "R3",
+            0
+          ]
+        ],
+        "R3_positions": [
+          0
+        ],
+        "unit_reductions": [
+          {
+            "unit": [
+              0
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              2,
+              0,
+              1
+            ],
+            "T": [
+              2,
+              0
+            ],
+            "T2_if_T_fixed": null
+          }
+        ],
+        "s0": 0,
+        "unit_index": 1,
+        "s_is_unit_start": true,
+        "prefix_units_unchanged_n1_n3": [
+          true,
+          true,
+          true
+        ],
+        "trailing_zero": true,
+        "v2_c": "w^(e0+1)",
+        "terms": [
+          {
+            "n": 1,
+            "c": "WDVW",
+            "y": [
+              0,
+              2,
+              0
+            ],
+            "units": [
+              [
+                0
+              ],
+              [
+                2
+              ],
+              [
+                0
+              ]
+            ],
+            "rank": "e0+1"
+          },
+          {
+            "n": 2,
+            "c": "WDVWWDVW",
+            "y": [
+              0,
+              2,
+              0,
+              0,
+              2,
+              0
+            ],
+            "units": [
+              [
+                0
+              ],
+              [
+                2
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                2
+              ],
+              [
+                0
+              ]
+            ],
+            "rank": "e0·2+1"
+          },
+          {
+            "n": 3,
+            "c": "WDVWWDVWWDVW",
+            "y": [
+              0,
+              2,
+              0,
+              0,
+              2,
+              0,
+              0,
+              2,
+              0
+            ],
+            "units": [
+              [
+                0
+              ],
+              [
+                2
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                2
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                2
+              ],
+              [
+                0
+              ]
+            ],
+            "rank": "e0·3+1"
+          }
+        ]
+      }
+    },
+    {
+      "signature": [
+        "R3",
+        2,
+        2,
+        false,
+        false,
+        2,
+        2,
+        2
+      ],
+      "count": 240,
+      "prefix_units_unchanged_n1_n3": {
+        "111": 240
+      },
+      "unit_reduction_counts": {
+        "T-fixed": 240,
+        "T-lowered": 225,
+        "T2": 15
+      },
+      "shortest_example": {
+        "c": "WDVWDWDD",
+        "y": [
+          0,
+          2,
+          0,
+          1,
+          0,
+          1,
+          1
+        ],
+        "units_y": [
+          [
+            0
+          ],
+          [
+            2,
+            0,
+            1,
+            0,
+            1,
+            1
+          ]
+        ],
+        "matching_classes": [
+          [
+            "R3",
+            5
+          ]
+        ],
+        "R3_positions": [
+          5
+        ],
+        "unit_reductions": [
+          {
+            "unit": [
+              0
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              2,
+              0,
+              1,
+              0,
+              1,
+              1
+            ],
+            "T": [
+              2,
+              0,
+              0,
+              1
+            ],
+            "T2_if_T_fixed": null
+          }
+        ],
+        "s0": 4,
+        "unit_index": 2,
+        "s_is_unit_start": false,
+        "prefix_units_unchanged_n1_n3": [
+          true,
+          true,
+          true
+        ],
+        "trailing_zero": false,
+        "v2_c": "w^(e0+w)",
+        "terms": [
+          {
+            "n": 1,
+            "c": "WDVWDWD",
+            "y": [
+              0,
+              2,
+              0,
+              1,
+              0,
+              1
+            ],
+            "units": [
+              [
+                0
+              ],
+              [
+                2,
+                0,
+                1,
+                0,
+                1
+              ]
+            ],
+            "rank": "w^(e0+2)"
+          },
+          {
+            "n": 2,
+            "c": "WDVWDWDWD",
+            "y": [
+              0,
+              2,
+              0,
+              1,
+              0,
+              1,
+              0,
+              1
+            ],
+            "units": [
+              [
+                0
+              ],
+              [
+                2,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1
+              ]
+            ],
+            "rank": "w^(e0+3)"
+          },
+          {
+            "n": 3,
+            "c": "WDVWDWDWDWD",
+            "y": [
+              0,
+              2,
+              0,
+              1,
+              0,
+              1,
+              0,
+              1,
+              0,
+              1
+            ],
+            "units": [
+              [
+                0
+              ],
+              [
+                2,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1
+              ]
+            ],
+            "rank": "w^(e0+4)"
+          }
+        ]
+      }
+    },
+    {
+      "signature": [
+        "R3",
+        4,
+        3,
+        true,
+        false,
+        4,
+        4,
+        4
+      ],
+      "count": 423,
+      "prefix_units_unchanged_n1_n3": {
+        "111": 423
+      },
+      "unit_reduction_counts": {
+        "T-fixed": 846,
+        "T-lowered": 545,
+        "T2": 301
+      },
+      "shortest_example": {
+        "c": "DVWWDD",
+        "y": [
+          2,
+          0,
+          0,
+          1,
+          1
+        ],
+        "units_y": [
+          [
+            2
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "matching_classes": [
+          [
+            "R3",
+            3
+          ]
+        ],
+        "R3_positions": [
+          3
+        ],
+        "unit_reductions": [
+          {
+            "unit": [
+              2
+            ],
+            "T": [
+              2
+            ],
+            "T2_if_T_fixed": []
+          },
+          {
+            "unit": [
+              0
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              0
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              1,
+              1
+            ],
+            "T": [
+              1
+            ],
+            "T2_if_T_fixed": null
+          }
+        ],
+        "s0": 2,
+        "unit_index": 3,
+        "s_is_unit_start": true,
+        "prefix_units_unchanged_n1_n3": [
+          true,
+          true,
+          true
+        ],
+        "trailing_zero": false,
+        "v2_c": "e0+w^w",
+        "terms": [
+          {
+            "n": 1,
+            "c": "DVWWD",
+            "y": [
+              2,
+              0,
+              0,
+              1
+            ],
+            "units": [
+              [
+                2
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                1
+              ]
+            ],
+            "rank": "e0+w"
+          },
+          {
+            "n": 2,
+            "c": "DVWWDWD",
+            "y": [
+              2,
+              0,
+              0,
+              1,
+              0,
+              1
+            ],
+            "units": [
+              [
+                2
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                1,
+                0,
+                1
+              ]
+            ],
+            "rank": "e0+w^2"
+          },
+          {
+            "n": 3,
+            "c": "DVWWDWDWD",
+            "y": [
+              2,
+              0,
+              0,
+              1,
+              0,
+              1,
+              0,
+              1
+            ],
+            "units": [
+              [
+                2
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                1,
+                0,
+                1,
+                0,
+                1
+              ]
+            ],
+            "rank": "e0+w^3"
+          }
+        ]
+      }
+    },
+    {
+      "signature": [
+        "R3",
+        4,
+        3,
+        true,
+        true,
+        3,
+        4,
+        5
+      ],
+      "count": 212,
+      "prefix_units_unchanged_n1_n3": {
+        "111": 212
+      },
+      "unit_reduction_counts": {
+        "T-fixed": 424,
+        "T-lowered": 366,
+        "T2": 58
+      },
+      "shortest_example": {
+        "c": "DVWWD",
+        "y": [
+          2,
+          0,
+          0,
+          1
+        ],
+        "units_y": [
+          [
+            2
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            1
+          ]
+        ],
+        "matching_classes": [
+          [
+            "R3",
+            3
+          ]
+        ],
+        "R3_positions": [
+          3
+        ],
+        "unit_reductions": [
+          {
+            "unit": [
+              2
+            ],
+            "T": [
+              2
+            ],
+            "T2_if_T_fixed": []
+          },
+          {
+            "unit": [
+              0
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              0
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              1
+            ],
+            "T": [],
+            "T2_if_T_fixed": null
+          }
+        ],
+        "s0": 2,
+        "unit_index": 3,
+        "s_is_unit_start": true,
+        "prefix_units_unchanged_n1_n3": [
+          true,
+          true,
+          true
+        ],
+        "trailing_zero": true,
+        "v2_c": "e0+w",
+        "terms": [
+          {
+            "n": 1,
+            "c": "DVWW",
+            "y": [
+              2,
+              0,
+              0
+            ],
+            "units": [
+              [
+                2
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ]
+            ],
+            "rank": "e0+2"
+          },
+          {
+            "n": 2,
+            "c": "DVWWW",
+            "y": [
+              2,
+              0,
+              0,
+              0
+            ],
+            "units": [
+              [
+                2
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ]
+            ],
+            "rank": "e0+3"
+          },
+          {
+            "n": 3,
+            "c": "DVWWWW",
+            "y": [
+              2,
+              0,
+              0,
+              0,
+              0
+            ],
+            "units": [
+              [
+                2
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ]
+            ],
+            "rank": "e0+4"
+          }
+        ]
+      }
+    },
+    {
+      "signature": [
+        "R3",
+        4,
+        3,
+        true,
+        true,
+        5,
+        8,
+        11
+      ],
+      "count": 266,
+      "prefix_units_unchanged_n1_n3": {
+        "111": 266
+      },
+      "unit_reduction_counts": {
+        "T-fixed": 532,
+        "T-lowered": 376,
+        "T2": 156
+      },
+      "shortest_example": {
+        "c": "DVWWDWD",
+        "y": [
+          2,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "units_y": [
+          [
+            2
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            1,
+            0,
+            1
+          ]
+        ],
+        "matching_classes": [
+          [
+            "R3",
+            3
+          ]
+        ],
+        "R3_positions": [
+          3
+        ],
+        "unit_reductions": [
+          {
+            "unit": [
+              2
+            ],
+            "T": [
+              2
+            ],
+            "T2_if_T_fixed": []
+          },
+          {
+            "unit": [
+              0
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              0
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              1,
+              0,
+              1
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          }
+        ],
+        "s0": 2,
+        "unit_index": 3,
+        "s_is_unit_start": true,
+        "prefix_units_unchanged_n1_n3": [
+          true,
+          true,
+          true
+        ],
+        "trailing_zero": true,
+        "v2_c": "e0+w^2",
+        "terms": [
+          {
+            "n": 1,
+            "c": "DVWWDW",
+            "y": [
+              2,
+              0,
+              0,
+              1,
+              0
+            ],
+            "units": [
+              [
+                2
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                1
+              ],
+              [
+                0
+              ]
+            ],
+            "rank": "e0+w+1"
+          },
+          {
+            "n": 2,
+            "c": "DVWWDWWDW",
+            "y": [
+              2,
+              0,
+              0,
+              1,
+              0,
+              0,
+              1,
+              0
+            ],
+            "units": [
+              [
+                2
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                1
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                1
+              ],
+              [
+                0
+              ]
+            ],
+            "rank": "e0+w2+1"
+          },
+          {
+            "n": 3,
+            "c": "DVWWDWWDWWDW",
+            "y": [
+              2,
+              0,
+              0,
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+              1,
+              0
+            ],
+            "units": [
+              [
+                2
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                1
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                1
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                1
+              ],
+              [
+                0
+              ]
+            ],
+            "rank": "e0+w3+1"
+          }
+        ]
+      }
+    },
+    {
+      "signature": [
+        "R3",
+        4,
+        4,
+        false,
+        false,
+        4,
+        4,
+        4
+      ],
+      "count": 13,
+      "prefix_units_unchanged_n1_n3": {
+        "111": 13
+      },
+      "unit_reduction_counts": {
+        "T-fixed": 26,
+        "T-lowered": 14,
+        "T2": 12
+      },
+      "shortest_example": {
+        "c": "DVWWDDWDWDD",
+        "y": [
+          2,
+          0,
+          0,
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          1
+        ],
+        "units_y": [
+          [
+            2
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            1,
+            1,
+            0,
+            1,
+            0,
+            1,
+            1
+          ]
+        ],
+        "matching_classes": [
+          [
+            "R3",
+            8
+          ]
+        ],
+        "R3_positions": [
+          8
+        ],
+        "unit_reductions": [
+          {
+            "unit": [
+              2
+            ],
+            "T": [
+              2
+            ],
+            "T2_if_T_fixed": []
+          },
+          {
+            "unit": [
+              0
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              0
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              1,
+              1,
+              0,
+              1,
+              0,
+              1,
+              1
+            ],
+            "T": [
+              1,
+              0,
+              0,
+              1
+            ],
+            "T2_if_T_fixed": null
+          }
+        ],
+        "s0": 7,
+        "unit_index": 4,
+        "s_is_unit_start": false,
+        "prefix_units_unchanged_n1_n3": [
+          true,
+          true,
+          true
+        ],
+        "trailing_zero": false,
+        "v2_c": "e0+w^(w2)",
+        "terms": [
+          {
+            "n": 1,
+            "c": "DVWWDDWDWD",
+            "y": [
+              2,
+              0,
+              0,
+              1,
+              1,
+              0,
+              1,
+              0,
+              1
+            ],
+            "units": [
+              [
+                2
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                1,
+                1,
+                0,
+                1,
+                0,
+                1
+              ]
+            ],
+            "rank": "e0+w^(w+2)"
+          },
+          {
+            "n": 2,
+            "c": "DVWWDDWDWDWD",
+            "y": [
+              2,
+              0,
+              0,
+              1,
+              1,
+              0,
+              1,
+              0,
+              1,
+              0,
+              1
+            ],
+            "units": [
+              [
+                2
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                1,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1
+              ]
+            ],
+            "rank": "e0+w^(w+3)"
+          },
+          {
+            "n": 3,
+            "c": "DVWWDDWDWDWDWD",
+            "y": [
+              2,
+              0,
+              0,
+              1,
+              1,
+              0,
+              1,
+              0,
+              1,
+              0,
+              1,
+              0,
+              1
+            ],
+            "units": [
+              [
+                2
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                1,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1
+              ]
+            ],
+            "rank": "e0+w^(w+4)"
+          }
+        ]
+      }
+    },
+    {
+      "signature": [
+        "R3",
+        5,
+        4,
+        true,
+        false,
+        5,
+        5,
+        5
+      ],
+      "count": 423,
+      "prefix_units_unchanged_n1_n3": {
+        "111": 423
+      },
+      "unit_reduction_counts": {
+        "T-fixed": 1269,
+        "T-lowered": 545,
+        "T2": 301
+      },
+      "shortest_example": {
+        "c": "WDVWWDD",
+        "y": [
+          0,
+          2,
+          0,
+          0,
+          1,
+          1
+        ],
+        "units_y": [
+          [
+            0
+          ],
+          [
+            2
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "matching_classes": [
+          [
+            "R3",
+            4
+          ]
+        ],
+        "R3_positions": [
+          4
+        ],
+        "unit_reductions": [
+          {
+            "unit": [
+              0
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              2
+            ],
+            "T": [
+              2
+            ],
+            "T2_if_T_fixed": []
+          },
+          {
+            "unit": [
+              0
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              0
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              1,
+              1
+            ],
+            "T": [
+              1
+            ],
+            "T2_if_T_fixed": null
+          }
+        ],
+        "s0": 3,
+        "unit_index": 4,
+        "s_is_unit_start": true,
+        "prefix_units_unchanged_n1_n3": [
+          true,
+          true,
+          true
+        ],
+        "trailing_zero": false,
+        "v2_c": "e0+w^w",
+        "terms": [
+          {
+            "n": 1,
+            "c": "WDVWWD",
+            "y": [
+              0,
+              2,
+              0,
+              0,
+              1
+            ],
+            "units": [
+              [
+                0
+              ],
+              [
+                2
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                1
+              ]
+            ],
+            "rank": "e0+w"
+          },
+          {
+            "n": 2,
+            "c": "WDVWWDWD",
+            "y": [
+              0,
+              2,
+              0,
+              0,
+              1,
+              0,
+              1
+            ],
+            "units": [
+              [
+                0
+              ],
+              [
+                2
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                1,
+                0,
+                1
+              ]
+            ],
+            "rank": "e0+w^2"
+          },
+          {
+            "n": 3,
+            "c": "WDVWWDWDWD",
+            "y": [
+              0,
+              2,
+              0,
+              0,
+              1,
+              0,
+              1,
+              0,
+              1
+            ],
+            "units": [
+              [
+                0
+              ],
+              [
+                2
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                1,
+                0,
+                1,
+                0,
+                1
+              ]
+            ],
+            "rank": "e0+w^3"
+          }
+        ]
+      }
+    },
+    {
+      "signature": [
+        "R3",
+        5,
+        4,
+        true,
+        true,
+        4,
+        5,
+        6
+      ],
+      "count": 212,
+      "prefix_units_unchanged_n1_n3": {
+        "111": 212
+      },
+      "unit_reduction_counts": {
+        "T-fixed": 636,
+        "T-lowered": 366,
+        "T2": 58
+      },
+      "shortest_example": {
+        "c": "WDVWWD",
+        "y": [
+          0,
+          2,
+          0,
+          0,
+          1
+        ],
+        "units_y": [
+          [
+            0
+          ],
+          [
+            2
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            1
+          ]
+        ],
+        "matching_classes": [
+          [
+            "R3",
+            4
+          ]
+        ],
+        "R3_positions": [
+          4
+        ],
+        "unit_reductions": [
+          {
+            "unit": [
+              0
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              2
+            ],
+            "T": [
+              2
+            ],
+            "T2_if_T_fixed": []
+          },
+          {
+            "unit": [
+              0
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              0
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              1
+            ],
+            "T": [],
+            "T2_if_T_fixed": null
+          }
+        ],
+        "s0": 3,
+        "unit_index": 4,
+        "s_is_unit_start": true,
+        "prefix_units_unchanged_n1_n3": [
+          true,
+          true,
+          true
+        ],
+        "trailing_zero": true,
+        "v2_c": "e0+w",
+        "terms": [
+          {
+            "n": 1,
+            "c": "WDVWW",
+            "y": [
+              0,
+              2,
+              0,
+              0
+            ],
+            "units": [
+              [
+                0
+              ],
+              [
+                2
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ]
+            ],
+            "rank": "e0+2"
+          },
+          {
+            "n": 2,
+            "c": "WDVWWW",
+            "y": [
+              0,
+              2,
+              0,
+              0,
+              0
+            ],
+            "units": [
+              [
+                0
+              ],
+              [
+                2
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ]
+            ],
+            "rank": "e0+3"
+          },
+          {
+            "n": 3,
+            "c": "WDVWWWW",
+            "y": [
+              0,
+              2,
+              0,
+              0,
+              0,
+              0
+            ],
+            "units": [
+              [
+                0
+              ],
+              [
+                2
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ]
+            ],
+            "rank": "e0+4"
+          }
+        ]
+      }
+    },
+    {
+      "signature": [
+        "R3",
+        5,
+        4,
+        true,
+        true,
+        6,
+        9,
+        12
+      ],
+      "count": 266,
+      "prefix_units_unchanged_n1_n3": {
+        "111": 266
+      },
+      "unit_reduction_counts": {
+        "T-fixed": 798,
+        "T-lowered": 376,
+        "T2": 156
+      },
+      "shortest_example": {
+        "c": "WDVWWDWD",
+        "y": [
+          0,
+          2,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "units_y": [
+          [
+            0
+          ],
+          [
+            2
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            1,
+            0,
+            1
+          ]
+        ],
+        "matching_classes": [
+          [
+            "R3",
+            4
+          ]
+        ],
+        "R3_positions": [
+          4
+        ],
+        "unit_reductions": [
+          {
+            "unit": [
+              0
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              2
+            ],
+            "T": [
+              2
+            ],
+            "T2_if_T_fixed": []
+          },
+          {
+            "unit": [
+              0
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              0
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              1,
+              0,
+              1
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          }
+        ],
+        "s0": 3,
+        "unit_index": 4,
+        "s_is_unit_start": true,
+        "prefix_units_unchanged_n1_n3": [
+          true,
+          true,
+          true
+        ],
+        "trailing_zero": true,
+        "v2_c": "e0+w^2",
+        "terms": [
+          {
+            "n": 1,
+            "c": "WDVWWDW",
+            "y": [
+              0,
+              2,
+              0,
+              0,
+              1,
+              0
+            ],
+            "units": [
+              [
+                0
+              ],
+              [
+                2
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                1
+              ],
+              [
+                0
+              ]
+            ],
+            "rank": "e0+w+1"
+          },
+          {
+            "n": 2,
+            "c": "WDVWWDWWDW",
+            "y": [
+              0,
+              2,
+              0,
+              0,
+              1,
+              0,
+              0,
+              1,
+              0
+            ],
+            "units": [
+              [
+                0
+              ],
+              [
+                2
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                1
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                1
+              ],
+              [
+                0
+              ]
+            ],
+            "rank": "e0+w2+1"
+          },
+          {
+            "n": 3,
+            "c": "WDVWWDWWDWWDW",
+            "y": [
+              0,
+              2,
+              0,
+              0,
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+              1,
+              0
+            ],
+            "units": [
+              [
+                0
+              ],
+              [
+                2
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                1
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                1
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                1
+              ],
+              [
+                0
+              ]
+            ],
+            "rank": "e0+w3+1"
+          }
+        ]
+      }
+    },
+    {
+      "signature": [
+        "R3",
+        5,
+        5,
+        false,
+        false,
+        5,
+        5,
+        5
+      ],
+      "count": 13,
+      "prefix_units_unchanged_n1_n3": {
+        "111": 13
+      },
+      "unit_reduction_counts": {
+        "T-fixed": 39,
+        "T-lowered": 14,
+        "T2": 12
+      },
+      "shortest_example": {
+        "c": "WDVWWDDWDWDD",
+        "y": [
+          0,
+          2,
+          0,
+          0,
+          1,
+          1,
+          0,
+          1,
+          0,
+          1,
+          1
+        ],
+        "units_y": [
+          [
+            0
+          ],
+          [
+            2
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            1,
+            1,
+            0,
+            1,
+            0,
+            1,
+            1
+          ]
+        ],
+        "matching_classes": [
+          [
+            "R3",
+            9
+          ]
+        ],
+        "R3_positions": [
+          9
+        ],
+        "unit_reductions": [
+          {
+            "unit": [
+              0
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              2
+            ],
+            "T": [
+              2
+            ],
+            "T2_if_T_fixed": []
+          },
+          {
+            "unit": [
+              0
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              0
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              1,
+              1,
+              0,
+              1,
+              0,
+              1,
+              1
+            ],
+            "T": [
+              1,
+              0,
+              0,
+              1
+            ],
+            "T2_if_T_fixed": null
+          }
+        ],
+        "s0": 8,
+        "unit_index": 5,
+        "s_is_unit_start": false,
+        "prefix_units_unchanged_n1_n3": [
+          true,
+          true,
+          true
+        ],
+        "trailing_zero": false,
+        "v2_c": "e0+w^(w2)",
+        "terms": [
+          {
+            "n": 1,
+            "c": "WDVWWDDWDWD",
+            "y": [
+              0,
+              2,
+              0,
+              0,
+              1,
+              1,
+              0,
+              1,
+              0,
+              1
+            ],
+            "units": [
+              [
+                0
+              ],
+              [
+                2
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                1,
+                1,
+                0,
+                1,
+                0,
+                1
+              ]
+            ],
+            "rank": "e0+w^(w+2)"
+          },
+          {
+            "n": 2,
+            "c": "WDVWWDDWDWDWD",
+            "y": [
+              0,
+              2,
+              0,
+              0,
+              1,
+              1,
+              0,
+              1,
+              0,
+              1,
+              0,
+              1
+            ],
+            "units": [
+              [
+                0
+              ],
+              [
+                2
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                1,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1
+              ]
+            ],
+            "rank": "e0+w^(w+3)"
+          },
+          {
+            "n": 3,
+            "c": "WDVWWDDWDWDWDWD",
+            "y": [
+              0,
+              2,
+              0,
+              0,
+              1,
+              1,
+              0,
+              1,
+              0,
+              1,
+              0,
+              1,
+              0,
+              1
+            ],
+            "units": [
+              [
+                0
+              ],
+              [
+                2
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                1,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1,
+                0,
+                1
+              ]
+            ],
+            "rank": "e0+w^(w+4)"
+          }
+        ]
+      }
+    },
+    {
+      "signature": [
+        "R3",
+        7,
+        6,
+        true,
+        false,
+        7,
+        7,
+        7
+      ],
+      "count": 50,
+      "prefix_units_unchanged_n1_n3": {
+        "111": 50
+      },
+      "unit_reduction_counts": {
+        "T-fixed": 200,
+        "T-lowered": 83,
+        "T2": 67
+      },
+      "shortest_example": {
+        "c": "DVWWDDWWDD",
+        "y": [
+          2,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          1,
+          1
+        ],
+        "units_y": [
+          [
+            2
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "matching_classes": [
+          [
+            "R3",
+            7
+          ]
+        ],
+        "R3_positions": [
+          7
+        ],
+        "unit_reductions": [
+          {
+            "unit": [
+              2
+            ],
+            "T": [
+              2
+            ],
+            "T2_if_T_fixed": []
+          },
+          {
+            "unit": [
+              0
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              0
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              1,
+              1
+            ],
+            "T": [
+              1
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              0
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              0
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              1,
+              1
+            ],
+            "T": [
+              1
+            ],
+            "T2_if_T_fixed": null
+          }
+        ],
+        "s0": 6,
+        "unit_index": 6,
+        "s_is_unit_start": true,
+        "prefix_units_unchanged_n1_n3": [
+          true,
+          true,
+          true
+        ],
+        "trailing_zero": false,
+        "v2_c": "e0+w^w·2",
+        "terms": [
+          {
+            "n": 1,
+            "c": "DVWWDDWWD",
+            "y": [
+              2,
+              0,
+              0,
+              1,
+              1,
+              0,
+              0,
+              1
+            ],
+            "units": [
+              [
+                2
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                1
+              ]
+            ],
+            "rank": "e0+w^w+w"
+          },
+          {
+            "n": 2,
+            "c": "DVWWDDWWDWD",
+            "y": [
+              2,
+              0,
+              0,
+              1,
+              1,
+              0,
+              0,
+              1,
+              0,
+              1
+            ],
+            "units": [
+              [
+                2
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                1,
+                0,
+                1
+              ]
+            ],
+            "rank": "e0+w^w+w^2"
+          },
+          {
+            "n": 3,
+            "c": "DVWWDDWWDWDWD",
+            "y": [
+              2,
+              0,
+              0,
+              1,
+              1,
+              0,
+              0,
+              1,
+              0,
+              1,
+              0,
+              1
+            ],
+            "units": [
+              [
+                2
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                1,
+                0,
+                1,
+                0,
+                1
+              ]
+            ],
+            "rank": "e0+w^w+w^3"
+          }
+        ]
+      }
+    },
+    {
+      "signature": [
+        "R3",
+        7,
+        6,
+        true,
+        true,
+        6,
+        7,
+        8
+      ],
+      "count": 131,
+      "prefix_units_unchanged_n1_n3": {
+        "111": 131
+      },
+      "unit_reduction_counts": {
+        "T-fixed": 524,
+        "T-lowered": 278,
+        "T2": 115
+      },
+      "shortest_example": {
+        "c": "DVWWDWWD",
+        "y": [
+          2,
+          0,
+          0,
+          1,
+          0,
+          0,
+          1
+        ],
+        "units_y": [
+          [
+            2
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            1
+          ]
+        ],
+        "matching_classes": [
+          [
+            "R3",
+            6
+          ]
+        ],
+        "R3_positions": [
+          6
+        ],
+        "unit_reductions": [
+          {
+            "unit": [
+              2
+            ],
+            "T": [
+              2
+            ],
+            "T2_if_T_fixed": []
+          },
+          {
+            "unit": [
+              0
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              0
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              1
+            ],
+            "T": [],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              0
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              0
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              1
+            ],
+            "T": [],
+            "T2_if_T_fixed": null
+          }
+        ],
+        "s0": 5,
+        "unit_index": 6,
+        "s_is_unit_start": true,
+        "prefix_units_unchanged_n1_n3": [
+          true,
+          true,
+          true
+        ],
+        "trailing_zero": true,
+        "v2_c": "e0+w2",
+        "terms": [
+          {
+            "n": 1,
+            "c": "DVWWDWW",
+            "y": [
+              2,
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            "units": [
+              [
+                2
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                1
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ]
+            ],
+            "rank": "e0+w+2"
+          },
+          {
+            "n": 2,
+            "c": "DVWWDWWW",
+            "y": [
+              2,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "units": [
+              [
+                2
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                1
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ]
+            ],
+            "rank": "e0+w+3"
+          },
+          {
+            "n": 3,
+            "c": "DVWWDWWWW",
+            "y": [
+              2,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            "units": [
+              [
+                2
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                1
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ]
+            ],
+            "rank": "e0+w+4"
+          }
+        ]
+      }
+    },
+    {
+      "signature": [
+        "R3",
+        7,
+        6,
+        true,
+        true,
+        8,
+        11,
+        14
+      ],
+      "count": 23,
+      "prefix_units_unchanged_n1_n3": {
+        "111": 23
+      },
+      "unit_reduction_counts": {
+        "T-fixed": 92,
+        "T-lowered": 38,
+        "T2": 31
+      },
+      "shortest_example": {
+        "c": "DVWWDDWWDWD",
+        "y": [
+          2,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "units_y": [
+          [
+            2
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            1,
+            0,
+            1
+          ]
+        ],
+        "matching_classes": [
+          [
+            "R3",
+            7
+          ]
+        ],
+        "R3_positions": [
+          7
+        ],
+        "unit_reductions": [
+          {
+            "unit": [
+              2
+            ],
+            "T": [
+              2
+            ],
+            "T2_if_T_fixed": []
+          },
+          {
+            "unit": [
+              0
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              0
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              1,
+              1
+            ],
+            "T": [
+              1
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              0
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              0
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              1,
+              0,
+              1
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          }
+        ],
+        "s0": 6,
+        "unit_index": 6,
+        "s_is_unit_start": true,
+        "prefix_units_unchanged_n1_n3": [
+          true,
+          true,
+          true
+        ],
+        "trailing_zero": true,
+        "v2_c": "e0+w^w+w^2",
+        "terms": [
+          {
+            "n": 1,
+            "c": "DVWWDDWWDW",
+            "y": [
+              2,
+              0,
+              0,
+              1,
+              1,
+              0,
+              0,
+              1,
+              0
+            ],
+            "units": [
+              [
+                2
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                1
+              ],
+              [
+                0
+              ]
+            ],
+            "rank": "e0+w^w+w+1"
+          },
+          {
+            "n": 2,
+            "c": "DVWWDDWWDWWDW",
+            "y": [
+              2,
+              0,
+              0,
+              1,
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+              1,
+              0
+            ],
+            "units": [
+              [
+                2
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                1
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                1
+              ],
+              [
+                0
+              ]
+            ],
+            "rank": "e0+w^w+w2+1"
+          },
+          {
+            "n": 3,
+            "c": "DVWWDDWWDWWDWWDW",
+            "y": [
+              2,
+              0,
+              0,
+              1,
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+              1,
+              0
+            ],
+            "units": [
+              [
+                2
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                1
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                1
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                1
+              ],
+              [
+                0
+              ]
+            ],
+            "rank": "e0+w^w+w3+1"
+          }
+        ]
+      }
+    },
+    {
+      "signature": [
+        "R3",
+        8,
+        7,
+        true,
+        false,
+        8,
+        8,
+        8
+      ],
+      "count": 50,
+      "prefix_units_unchanged_n1_n3": {
+        "111": 50
+      },
+      "unit_reduction_counts": {
+        "T-fixed": 250,
+        "T-lowered": 83,
+        "T2": 67
+      },
+      "shortest_example": {
+        "c": "WDVWWDDWWDD",
+        "y": [
+          0,
+          2,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          1,
+          1
+        ],
+        "units_y": [
+          [
+            0
+          ],
+          [
+            2
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            1,
+            1
+          ]
+        ],
+        "matching_classes": [
+          [
+            "R3",
+            8
+          ]
+        ],
+        "R3_positions": [
+          8
+        ],
+        "unit_reductions": [
+          {
+            "unit": [
+              0
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              2
+            ],
+            "T": [
+              2
+            ],
+            "T2_if_T_fixed": []
+          },
+          {
+            "unit": [
+              0
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              0
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              1,
+              1
+            ],
+            "T": [
+              1
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              0
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              0
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              1,
+              1
+            ],
+            "T": [
+              1
+            ],
+            "T2_if_T_fixed": null
+          }
+        ],
+        "s0": 7,
+        "unit_index": 7,
+        "s_is_unit_start": true,
+        "prefix_units_unchanged_n1_n3": [
+          true,
+          true,
+          true
+        ],
+        "trailing_zero": false,
+        "v2_c": "e0+w^w·2",
+        "terms": [
+          {
+            "n": 1,
+            "c": "WDVWWDDWWD",
+            "y": [
+              0,
+              2,
+              0,
+              0,
+              1,
+              1,
+              0,
+              0,
+              1
+            ],
+            "units": [
+              [
+                0
+              ],
+              [
+                2
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                1
+              ]
+            ],
+            "rank": "e0+w^w+w"
+          },
+          {
+            "n": 2,
+            "c": "WDVWWDDWWDWD",
+            "y": [
+              0,
+              2,
+              0,
+              0,
+              1,
+              1,
+              0,
+              0,
+              1,
+              0,
+              1
+            ],
+            "units": [
+              [
+                0
+              ],
+              [
+                2
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                1,
+                0,
+                1
+              ]
+            ],
+            "rank": "e0+w^w+w^2"
+          },
+          {
+            "n": 3,
+            "c": "WDVWWDDWWDWDWD",
+            "y": [
+              0,
+              2,
+              0,
+              0,
+              1,
+              1,
+              0,
+              0,
+              1,
+              0,
+              1,
+              0,
+              1
+            ],
+            "units": [
+              [
+                0
+              ],
+              [
+                2
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                1,
+                0,
+                1,
+                0,
+                1
+              ]
+            ],
+            "rank": "e0+w^w+w^3"
+          }
+        ]
+      }
+    },
+    {
+      "signature": [
+        "R3",
+        8,
+        7,
+        true,
+        true,
+        7,
+        8,
+        9
+      ],
+      "count": 131,
+      "prefix_units_unchanged_n1_n3": {
+        "111": 131
+      },
+      "unit_reduction_counts": {
+        "T-fixed": 655,
+        "T-lowered": 278,
+        "T2": 115
+      },
+      "shortest_example": {
+        "c": "WDVWWDWWD",
+        "y": [
+          0,
+          2,
+          0,
+          0,
+          1,
+          0,
+          0,
+          1
+        ],
+        "units_y": [
+          [
+            0
+          ],
+          [
+            2
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            1
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            1
+          ]
+        ],
+        "matching_classes": [
+          [
+            "R3",
+            7
+          ]
+        ],
+        "R3_positions": [
+          7
+        ],
+        "unit_reductions": [
+          {
+            "unit": [
+              0
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              2
+            ],
+            "T": [
+              2
+            ],
+            "T2_if_T_fixed": []
+          },
+          {
+            "unit": [
+              0
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              0
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              1
+            ],
+            "T": [],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              0
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              0
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              1
+            ],
+            "T": [],
+            "T2_if_T_fixed": null
+          }
+        ],
+        "s0": 6,
+        "unit_index": 7,
+        "s_is_unit_start": true,
+        "prefix_units_unchanged_n1_n3": [
+          true,
+          true,
+          true
+        ],
+        "trailing_zero": true,
+        "v2_c": "e0+w2",
+        "terms": [
+          {
+            "n": 1,
+            "c": "WDVWWDWW",
+            "y": [
+              0,
+              2,
+              0,
+              0,
+              1,
+              0,
+              0
+            ],
+            "units": [
+              [
+                0
+              ],
+              [
+                2
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                1
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ]
+            ],
+            "rank": "e0+w+2"
+          },
+          {
+            "n": 2,
+            "c": "WDVWWDWWW",
+            "y": [
+              0,
+              2,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0
+            ],
+            "units": [
+              [
+                0
+              ],
+              [
+                2
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                1
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ]
+            ],
+            "rank": "e0+w+3"
+          },
+          {
+            "n": 3,
+            "c": "WDVWWDWWWW",
+            "y": [
+              0,
+              2,
+              0,
+              0,
+              1,
+              0,
+              0,
+              0,
+              0
+            ],
+            "units": [
+              [
+                0
+              ],
+              [
+                2
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                1
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ]
+            ],
+            "rank": "e0+w+4"
+          }
+        ]
+      }
+    },
+    {
+      "signature": [
+        "R3",
+        8,
+        7,
+        true,
+        true,
+        9,
+        12,
+        15
+      ],
+      "count": 23,
+      "prefix_units_unchanged_n1_n3": {
+        "111": 23
+      },
+      "unit_reduction_counts": {
+        "T-fixed": 115,
+        "T-lowered": 38,
+        "T2": 31
+      },
+      "shortest_example": {
+        "c": "WDVWWDDWWDWD",
+        "y": [
+          0,
+          2,
+          0,
+          0,
+          1,
+          1,
+          0,
+          0,
+          1,
+          0,
+          1
+        ],
+        "units_y": [
+          [
+            0
+          ],
+          [
+            2
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            1,
+            1
+          ],
+          [
+            0
+          ],
+          [
+            0
+          ],
+          [
+            1,
+            0,
+            1
+          ]
+        ],
+        "matching_classes": [
+          [
+            "R3",
+            8
+          ]
+        ],
+        "R3_positions": [
+          8
+        ],
+        "unit_reductions": [
+          {
+            "unit": [
+              0
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              2
+            ],
+            "T": [
+              2
+            ],
+            "T2_if_T_fixed": []
+          },
+          {
+            "unit": [
+              0
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              0
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              1,
+              1
+            ],
+            "T": [
+              1
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              0
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              0
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          },
+          {
+            "unit": [
+              1,
+              0,
+              1
+            ],
+            "T": [
+              0
+            ],
+            "T2_if_T_fixed": null
+          }
+        ],
+        "s0": 7,
+        "unit_index": 7,
+        "s_is_unit_start": true,
+        "prefix_units_unchanged_n1_n3": [
+          true,
+          true,
+          true
+        ],
+        "trailing_zero": true,
+        "v2_c": "e0+w^w+w^2",
+        "terms": [
+          {
+            "n": 1,
+            "c": "WDVWWDDWWDW",
+            "y": [
+              0,
+              2,
+              0,
+              0,
+              1,
+              1,
+              0,
+              0,
+              1,
+              0
+            ],
+            "units": [
+              [
+                0
+              ],
+              [
+                2
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                1
+              ],
+              [
+                0
+              ]
+            ],
+            "rank": "e0+w^w+w+1"
+          },
+          {
+            "n": 2,
+            "c": "WDVWWDDWWDWWDW",
+            "y": [
+              0,
+              2,
+              0,
+              0,
+              1,
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+              1,
+              0
+            ],
+            "units": [
+              [
+                0
+              ],
+              [
+                2
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                1
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                1
+              ],
+              [
+                0
+              ]
+            ],
+            "rank": "e0+w^w+w2+1"
+          },
+          {
+            "n": 3,
+            "c": "WDVWWDDWWDWWDWWDW",
+            "y": [
+              0,
+              2,
+              0,
+              0,
+              1,
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+              1,
+              0,
+              0,
+              1,
+              0
+            ],
+            "units": [
+              [
+                0
+              ],
+              [
+                2
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                1,
+                1
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                1
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                1
+              ],
+              [
+                0
+              ],
+              [
+                0
+              ],
+              [
+                1
+              ],
+              [
+                0
+              ]
+            ],
+            "rank": "e0+w^w+w3+1"
+          }
+        ]
+      }
+    }
+  ]
+}

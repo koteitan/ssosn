@@ -41,9 +41,13 @@ lean/.lake/
 /work/token-grammar24-refine.json
 /work/.cache/
 /work/p1-tokens43-*.json*
+/work/p2-tokens44-*.json*
 /work/p1-blocks43.json
 /work/p1-lower43.json
 /work/p1-parent-cut43.json
 /work/p1-token-cut43.json
 /work/p1-value43.json
 /work/p1-value-follow43.json
+/work/p2-root-follow44.json
+/work/p2-blocks44.json
+/work/p2-token-cut44.json

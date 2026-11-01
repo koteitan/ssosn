@@ -384,6 +384,23 @@ def parse(tail, allow_d=False):
             out.append('D')
             tail = tail[2:]
             continue
+        # In the P1-root tail, the lower units Z=0 and L_k=0 1^k
+        # may occur before a later copy operator.  Keep them inside the
+        # same general fold instead of falling back to the old binary root.
+        # Z has the A0 successor action; L_k retains its exact 0/1 index
+        # and is handled separately by fold below.
+        if (allow_d and P2_V7_EXPERIMENT and tail[:1] == (0,)
+                and tail[:3] != A(0)):
+            j = 1
+            while j < len(tail) and tail[j] == 1:
+                j += 1
+            if j > 1:
+                out.append('L'+str(j-1))
+                tail = tail[j:]
+            else:
+                out.append('A0')
+                tail = tail[1:]
+            continue
         if tail[:3] != A(0):
             raise Unknown(('tree non-token suffix', tail))
         size, k = 3, 0
@@ -520,7 +537,7 @@ def fold(tokens, boundary=False, general=False):
             while i<len(tokens) and tokens[i] in (('W','D','V') if V_ROOT_EXPERIMENT else ('W','D')):
                 copies+=(tokens[i],)
                 i+=1
-        k = int(token[1:])
+        k = int(token[1:]) if token.startswith(('A','E')) else 0
         # A terminal W after an internal one can iterate A_b rather than
         # increase the binary rank. Preserve the pre-W frame, then bump the
         # opened depth. The syntactic erasure law requires the preceding
@@ -578,6 +595,16 @@ def fold(tokens, boundary=False, general=False):
                 value = bump(value, k, amount, origin)
                 if PURITY_TRACKING:pure=False
             active_depth = k
+        elif token.startswith('L') and P2_V7_EXPERIMENT:
+            # L_k is the lower 0/1 unit 0 1^k.  Its value is the ordinary
+            # binary-index value.  If a copy follows, retain the additive
+            # copy contribution in the same root-relative fold.
+            low = binary_index((0,)+(1,)*int(token[1:]))
+            value = plus(value, low, origin)
+            if copies or rank_limit:
+                value = plus(value, amount, origin)
+            if PURITY_TRACKING:
+                pure = False
         elif token == 'E1':
             sibling=e_sibling_sup(tokens[:start])
             if sibling is not None:
@@ -589,6 +616,17 @@ def fold(tokens, boundary=False, general=False):
                             if key not in PURE_FOLDS:_fold_flag_only(key,boundary,general)
                     pure = pure and all(PURE_FOLDS.get(tuple(tokens[:start])+('A'+str(n),),False)
                                         for n in (1,2,3,4))
+            elif P2_V7_EXPERIMENT and general and fresh and iterated:
+                # Preserve the epsilon index of a fresh E when W/D copies
+                # follow it.  The uniterated E seed is epsilon_s, where s is
+                # the index of the next epsilon above the root-copy offset.
+                # Its copied form is epsilon_(s + amount), not epsilon_amount.
+                seed_eps=_ev_v43.next_fp(OONE,ordinal(offset))
+                if len(seed_eps)!=1 or cmp(seed_eps[0][1],OONE):
+                    raise Unknown('P2 E copy seed is not one epsilon term')
+                seed_s=_from_ordinal(seed_eps[0][2],origin)
+                value=plus(base,epsilon(plus(seed_s,amount,origin),origin),origin)
+                if PURITY_TRACKING:pure=False
             elif fresh and (V_BITS_EXPERIMENT or V_RAW_EXPERIMENT) and general and not iterated and not lt(ordinal(offset),E0_ORD):
                 # §43: the fresh E1 is the sup of the towers over the offset,
                 # i.e. the next epsilon above the offset (e0 when offset < e0).
@@ -630,10 +668,18 @@ def binary_index(bits, depth=0):
 V_ROOT_EXPERIMENT = False  # §43: D^omega marker inside a (2,1) block
 V_BITS_EXPERIMENT = False  # §43: V copy rank via 0/1/2 bits (v_bits43); needs V_ROOT
 V_RAW_EXPERIMENT = False   # §43: rank = old value of 00 ++ bits; partial diagnostic
+P2_V7_EXPERIMENT = False   # §44: P1-root copy rank includes the v7 root offset
 
 
 def copy_rank(copies):
     """Hypothesis for the next scope: W/D copy words use the binary rank tree."""
+    if P2_V7_EXPERIMENT and 'V' in copies:
+        import v_bits44
+        try:
+            return _from_ordinal(v_bits44.v7(tuple(copies)),
+                                 Origin('P2 v7 copy rank', 0, tuple(copies)))
+        except (ValueError, v_bits44.Unknown) as error:
+            raise Unknown(('P2 v7 copy rank', error.args)) from error
     if V_ROOT_EXPERIMENT and V_RAW_EXPERIMENT and 'V' in copies:
         import v_raw43
         try:
@@ -692,7 +738,12 @@ def known_block_tree(u):
 def block_tree(u):
     u=tuple(u)
     before=_tail_undecided_total()
-    if CUT_COPY_ACTION_EXPERIMENT and u[:2]==(2,1):
+    if P2_V7_EXPERIMENT and u[:5]==(2,1,0,2,1):
+        # Keep every P1-root prefix and tail in the v7-rooted fold.  In
+        # particular, raw Z/L units can also be accepted by the old binary
+        # parser, which must not shadow the flagged root semantics.
+        result=epsilon(fold(parse(u[2:],True),general=True),Origin('P2 v7 root index'))
+    elif CUT_COPY_ACTION_EXPERIMENT and u[:2]==(2,1):
         result=epsilon(fold(parse(u[2:],True),general=True),Origin('cut copy action index'))
     else:
         try:

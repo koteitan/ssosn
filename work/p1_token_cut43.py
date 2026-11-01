@@ -78,7 +78,7 @@ def br3_from_tokens(tokens):
         return True
     if tokens[-1] != 'D':
         return False
-    return next((t for t in reversed(tokens[:-1]) if t != 'D'), None) == 'W'
+    return next((t for t in reversed(tokens[:-1]) if t not in ('D', 'V')), None) == 'W'
 
 
 def third_parent_cut(raw, tokens, raw_map):
@@ -151,6 +151,25 @@ def d_cut(tokens, raw_map):
     return p2, max(candidates)[1]
 
 
+def v_run_cut(tokens, raw_map, root_v=False):
+    """Cut after a terminal V-run's first head, with an optional root join.
+
+    If the whole token tail is V^m and the base already ends in V, the run
+    crosses the base boundary and the cut is the outer root cut at 2.
+    """
+    m = 0
+    while m < len(tokens) and tokens[-1-m] == 'V':
+        m += 1
+    if not m:
+        raise ValueError(('no trailing V run', tokens))
+    if root_v and m == len(tokens):
+        return 2
+    positions = heads(tokens, raw_map)
+    if m >= 2:
+        return positions[len(tokens)-m][1]
+    return positions[-1][1]
+
+
 def main():
     here = Path(__file__).resolve().parent
     data = json.loads((here / 'p1-tokens43-18.json').read_text())
@@ -199,8 +218,12 @@ def main():
                 examples.append({'raw': digits, 'tokens': list(tokens),
                                  'p2': p2, 'cut': predicted})
         elif tokens[-1] == 'V':
-            predicted = heads(tokens, tm)[-1][1]
+            predicted = v_run_cut(tokens, tm, root_v=False)
             counts['final_V'] += 1
+            run = 0
+            while run < len(tokens) and tokens[-1-run] == 'V':
+                run += 1
+            counts['terminal_V_run_ge_2'] += int(run >= 2)
         elif tokens[-1] == 'W':
             p2, predicted = w_cut(tokens, tm)
             counts['final_W'] += 1
