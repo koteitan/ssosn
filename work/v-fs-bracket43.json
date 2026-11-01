@@ -1,0 +1,15 @@
+{
+ "counts": {
+  "('V_HEAD', 'eq_+2')": 6,
+  "('D_ROOT', 'eq_-1')": 2,
+  "('D_ROOT', 'eq_+0')": 20,
+  "('D_ROOT', 'between_0_1')": 105,
+  "('D_W_HEAD', 'eq_-1')": 2,
+  "('V_HEAD', 'eq_+1')": 38,
+  "('D_W_HEAD', 'eq_+1')": 2,
+  "('D_W_HEAD', 'eq_+0')": 20,
+  "('D_W_HEAD', 'between_0_1')": 105
+ },
+ "changing": [],
+ "changing_count": 0
+}

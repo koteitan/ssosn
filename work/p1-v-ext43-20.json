@@ -1,0 +1,2317 @@
+{
+ "flag": "P1_ROOT_EXPERIMENT + P1_V_BITS_EXPERIMENT",
+ "maxlen": 20,
+ "by_len": {
+  "9": 1,
+  "10": 1,
+  "11": 3,
+  "12": 7,
+  "13": 15,
+  "14": 33,
+  "15": 70,
+  "16": 144,
+  "17": 297,
+  "18": 605,
+  "19": 1216,
+  "20": 2426
+ },
+ "enum_seconds": 9.9,
+ "counts": {
+  "forms": 4818,
+  "decided": 4818,
+  "limit": 2426,
+  "limit_all10": 2426,
+  "limit_sup_agree": 2377,
+  "succ_agree": 2392,
+  "limit_sup_undecided": 49
+ },
+ "issues": [
+  {
+   "kind": "sup_undecided",
+   "raw": "002102021002011102",
+   "value": "e_e_e0+w^w^w^(e0·2)"
+  },
+  {
+   "kind": "sup_undecided",
+   "raw": "0021020210020111102",
+   "value": "e_e_e0+w^w^w^w^(e0·2)"
+  },
+  {
+   "kind": "sup_undecided",
+   "raw": "00210202100201111102",
+   "value": "e_e_e0+w^w^w^w^w^(e0·2)"
+  },
+  {
+   "kind": "sup_undecided",
+   "raw": "00210202100202011102",
+   "value": "e_e_e0+w^w^w^(e_w+e0)"
+  },
+  {
+   "kind": "sup_undecided",
+   "raw": "0021020210021011102",
+   "value": "e_e_e0+w^w^w^(e_e0+e0)"
+  },
+  {
+   "kind": "sup_undecided",
+   "raw": "00210202100210111102",
+   "value": "e_e_e0+w^w^w^w^(e_e0+e0)"
+  },
+  {
+   "kind": "sup_undecided",
+   "raw": "00210202100210121",
+   "value": "e_e_e0+e_e_w"
+  },
+  {
+   "kind": "sup_undecided",
+   "raw": "00210202101002011102",
+   "value": "w^(e_e_e0+1)+w^w^w^(e0·2)"
+  },
+  {
+   "kind": "sup_undecided",
+   "raw": "0021020210100210121",
+   "value": "w^(e_e_e0+1)+e_e_w"
+  },
+  {
+   "kind": "sup_undecided",
+   "raw": "0021020210102011102",
+   "value": "w^(e_e_e0+w^w^(e0·2))"
+  },
+  {
+   "kind": "sup_undecided",
+   "raw": "00210202101020111102",
+   "value": "w^(e_e_e0+w^w^w^(e0·2))"
+  },
+  {
+   "kind": "sup_undecided",
+   "raw": "00210202101021011102",
+   "value": "w^(e_e_e0+w^w^(e_e0+e0))"
+  },
+  {
+   "kind": "sup_undecided",
+   "raw": "002102021010210121",
+   "value": "w^(e_e_e0+e_e_w)"
+  },
+  {
+   "kind": "sup_undecided",
+   "raw": "00210202101100210121",
+   "value": "w^w^(e_e_e0+1)+e_e_w"
+  },
+  {
+   "kind": "sup_undecided",
+   "raw": "00210202101102011102",
+   "value": "w^w^(e_e_e0+w^(e0·2))"
+  },
+  {
+   "kind": "sup_undecided",
+   "raw": "0021020210110210121",
+   "value": "w^w^(e_e_e0+e_e_w)"
+  },
+  {
+   "kind": "sup_undecided",
+   "raw": "002102021011102",
+   "value": "w^w^w^(e_e_e0+e0)"
+  },
+  {
+   "kind": "sup_undecided",
+   "raw": "002102021011102012",
+   "value": "w^w^w^(e_e_e0+e1)"
+  },
+  {
+   "kind": "sup_undecided",
+   "raw": "00210202101110202012",
+   "value": "w^w^w^(e_e_e0+e_(w+1))"
+  },
+  {
+   "kind": "sup_undecided",
+   "raw": "0021020210111021012",
+   "value": "w^w^w^(e_e_e0+e_(e0+1))"
+  },
+  {
+   "kind": "sup_undecided",
+   "raw": "00210202101110210121",
+   "value": "w^w^w^(e_e_e0+e_e_w)"
+  },
+  {
+   "kind": "sup_undecided",
+   "raw": "00210202101111011102",
+   "value": "w^w^w^(w^(e_e_e0+1)+e0)"
+  },
+  {
+   "kind": "sup_undecided",
+   "raw": "0021020210111102",
+   "value": "w^w^w^w^(e_e_e0+e0)"
+  },
+  {
+   "kind": "sup_undecided",
+   "raw": "0021020210111102012",
+   "value": "w^w^w^w^(e_e_e0+e1)"
+  },
+  {
+   "kind": "sup_undecided",
+   "raw": "00210202101111021012",
+   "value": "w^w^w^w^(e_e_e0+e_(e0+1))"
+  },
+  {
+   "kind": "sup_undecided",
+   "raw": "00210202101111102",
+   "value": "w^w^w^w^w^(e_e_e0+e0)"
+  },
+  {
+   "kind": "sup_undecided",
+   "raw": "00210202101111102012",
+   "value": "w^w^w^w^w^(e_e_e0+e1)"
+  },
+  {
+   "kind": "sup_undecided",
+   "raw": "002102021011111102",
+   "value": "w^w^w^w^w^w^(e_e_e0+e0)"
+  },
+  {
+   "kind": "sup_undecided",
+   "raw": "0021020210111111102",
+   "value": "w^w^w^w^w^w^w^(e_e_e0+e0)"
+  },
+  {
+   "kind": "sup_undecided",
+   "raw": "00210202101111111102",
+   "value": "w^w^w^w^w^w^w^w^(e_e_e0+e0)"
+  },
+  {
+   "kind": "sup_undecided",
+   "raw": "00210202101200210121",
+   "value": "e_(e_e0+1)+e_e_w"
+  },
+  {
+   "kind": "sup_undecided",
+   "raw": "002102021012011102",
+   "value": "w^w^w^(e_(e_e0+1)+e0)"
+  },
+  {
+   "kind": "sup_undecided",
+   "raw": "0021020210120111102",
+   "value": "w^w^w^w^(e_(e_e0+1)+e0)"
+  },
+  {
+   "kind": "sup_undecided",
+   "raw": "00210202101201111102",
+   "value": "w^w^w^w^w^(e_(e_e0+1)+e0)"
+  },
+  {
+   "kind": "sup_undecided",
+   "raw": "00210202101202011102",
+   "value": "w^w^w^(e_(e_e0+w^(e0+1))+e0)"
+  },
+  {
+   "kind": "sup_undecided",
+   "raw": "0021020210121011102",
+   "value": "w^w^w^(e_e_w^(e0+1)+e0)"
+  },
+  {
+   "kind": "sup_undecided",
+   "raw": "00210202101210111102",
+   "value": "w^w^w^w^(e_e_w^(e0+1)+e0)"
+  },
+  {
+   "kind": "sup_undecided",
+   "raw": "00210202102002011102",
+   "value": "e_e_e_w+w^w^w^(e0·2)"
+  },
+  {
+   "kind": "sup_undecided",
+   "raw": "0021020210200210121",
+   "value": "e_e_e_w+e_e_w"
+  },
+  {
+   "kind": "sup_undecided",
+   "raw": "00210202102010210121",
+   "value": "w^(e_e_e_w+e_e_w)"
+  },
+  {
+   "kind": "sup_undecided",
+   "raw": "00210202102011102",
+   "value": "w^w^w^(e_e_e_w+e0)"
+  },
+  {
+   "kind": "sup_undecided",
+   "raw": "00210202102011102012",
+   "value": "w^w^w^(e_e_e_w+e1)"
+  },
+  {
+   "kind": "sup_undecided",
+   "raw": "002102021020111102",
+   "value": "w^w^w^w^(e_e_e_w+e0)"
+  },
+  {
+   "kind": "sup_undecided",
+   "raw": "0021020210201111102",
+   "value": "w^w^w^w^w^(e_e_e_w+e0)"
+  },
+  {
+   "kind": "sup_undecided",
+   "raw": "00210202102011111102",
+   "value": "w^w^w^w^w^w^(e_e_e_w+e0)"
+  },
+  {
+   "kind": "sup_undecided",
+   "raw": "00210202102012011102",
+   "value": "w^w^w^(e_(e_e_w+1)+e0)"
+  },
+  {
+   "kind": "sup_undecided",
+   "raw": "0021020210202011102",
+   "value": "w^w^w^(e_e_e_w^w+e0)"
+  },
+  {
+   "kind": "sup_undecided",
+   "raw": "00210202102020111102",
+   "value": "w^w^w^w^(e_e_e_w^w+e0)"
+  },
+  {
+   "kind": "sup_undecided",
+   "raw": "00210202102021011102",
+   "value": "w^w^w^(e_e_e_e0+e0)"
+  }
+ ],
+ "bits_words": [
+  {
+   "word": "DV",
+   "bits": "2",
+   "rank": "e0"
+  },
+  {
+   "word": "DVD",
+   "bits": "21",
+   "rank": "e_w"
+  },
+  {
+   "word": "DVW",
+   "bits": "20",
+   "rank": "e0+1"
+  },
+  {
+   "word": "WDV",
+   "bits": "02",
+   "rank": "e0"
+  },
+  {
+   "word": "DVDD",
+   "bits": "211",
+   "rank": "e_w^w"
+  },
+  {
+   "word": "DVDV",
+   "bits": "22",
+   "rank": "e_e0"
+  },
+  {
+   "word": "DVDW",
+   "bits": "210",
+   "rank": "e_w+1"
+  },
+  {
+   "word": "DVWD",
+   "bits": "201",
+   "rank": "w^(e0+1)"
+  },
+  {
+   "word": "DVWW",
+   "bits": "200",
+   "rank": "e0+2"
+  },
+  {
+   "word": "WDVD",
+   "bits": "021",
+   "rank": "e_w"
+  },
+  {
+   "word": "WDVW",
+   "bits": "020",
+   "rank": "e0+1"
+  },
+  {
+   "word": "DVDDD",
+   "bits": "2111",
+   "rank": "e_w^w^w"
+  },
+  {
+   "word": "DVDDW",
+   "bits": "2110",
+   "rank": "e_w^w+1"
+  },
+  {
+   "word": "DVDVD",
+   "bits": "221",
+   "rank": "e_e_w"
+  },
+  {
+   "word": "DVDVW",
+   "bits": "220",
+   "rank": "e_e0+1"
+  },
+  {
+   "word": "DVDWD",
+   "bits": "2101",
+   "rank": "w^(e_w+1)"
+  },
+  {
+   "word": "DVDWW",
+   "bits": "2100",
+   "rank": "e_w+2"
+  },
+  {
+   "word": "DVWDD",
+   "bits": "2011",
+   "rank": "w^w^(e0+1)"
+  },
+  {
+   "word": "DVWDV",
+   "bits": "202",
+   "rank": "e1"
+  },
+  {
+   "word": "DVWDW",
+   "bits": "2010",
+   "rank": "w^(e0+1)+1"
+  },
+  {
+   "word": "DVWWD",
+   "bits": "2001",
+   "rank": "e0+w"
+  },
+  {
+   "word": "DVWWW",
+   "bits": "2000",
+   "rank": "e0+3"
+  },
+  {
+   "word": "WDVDD",
+   "bits": "0211",
+   "rank": "e_w^w"
+  },
+  {
+   "word": "WDVDV",
+   "bits": "022",
+   "rank": "e_e0"
+  },
+  {
+   "word": "WDVDW",
+   "bits": "0210",
+   "rank": "e_w+1"
+  },
+  {
+   "word": "WDVWD",
+   "bits": "0201",
+   "rank": "w^(e0+1)"
+  },
+  {
+   "word": "WDVWW",
+   "bits": "0200",
+   "rank": "e0+2"
+  },
+  {
+   "word": "DVDDDD",
+   "bits": "21111",
+   "rank": "e_w^w^w^w"
+  },
+  {
+   "word": "DVDDDW",
+   "bits": "21110",
+   "rank": "e_w^w^w+1"
+  },
+  {
+   "word": "DVDDWD",
+   "bits": "21101",
+   "rank": "w^(e_w^w+1)"
+  },
+  {
+   "word": "DVDVDD",
+   "bits": "2211",
+   "rank": "e_e_w^w"
+  },
+  {
+   "word": "DVDVDV",
+   "bits": "222",
+   "rank": "e_e_e0"
+  },
+  {
+   "word": "DVDVDW",
+   "bits": "2210",
+   "rank": "e_e_w+1"
+  },
+  {
+   "word": "DVDVWD",
+   "bits": "2201",
+   "rank": "w^(e_e0+1)"
+  },
+  {
+   "word": "DVDWDD",
+   "bits": "21011",
+   "rank": "w^w^(e_w+1)"
+  },
+  {
+   "word": "DVDWDV",
+   "bits": "2102",
+   "rank": "e_(w+1)"
+  },
+  {
+   "word": "DVWDDD",
+   "bits": "20111",
+   "rank": "w^w^w^(e0+1)"
+  },
+  {
+   "word": "DVWWWW",
+   "bits": "20000",
+   "rank": "e0+4"
+  },
+  {
+   "word": "WDVDDD",
+   "bits": "02111",
+   "rank": "e_w^w^w"
+  },
+  {
+   "word": "WDVDDW",
+   "bits": "02110",
+   "rank": "e_w^w+1"
+  },
+  {
+   "word": "WDVDVD",
+   "bits": "0221",
+   "rank": "e_e_w"
+  },
+  {
+   "word": "WDVDVW",
+   "bits": "0220",
+   "rank": "e_e0+1"
+  },
+  {
+   "word": "WDVDWD",
+   "bits": "02101",
+   "rank": "w^(e_w+1)"
+  },
+  {
+   "word": "WDVDWW",
+   "bits": "02100",
+   "rank": "e_w+2"
+  },
+  {
+   "word": "WDVWDD",
+   "bits": "02011",
+   "rank": "w^w^(e0+1)"
+  },
+  {
+   "word": "WDVWDV",
+   "bits": "0202",
+   "rank": "e1"
+  },
+  {
+   "word": "WDVWDW",
+   "bits": "02010",
+   "rank": "w^(e0+1)+1"
+  },
+  {
+   "word": "WDVWWD",
+   "bits": "02001",
+   "rank": "e0+w"
+  },
+  {
+   "word": "WDVWWW",
+   "bits": "02000",
+   "rank": "e0+3"
+  },
+  {
+   "word": "DVDDDDD",
+   "bits": "211111",
+   "rank": "e_w^w^w^w^w"
+  },
+  {
+   "word": "DVDVDDD",
+   "bits": "22111",
+   "rank": "e_e_w^w^w"
+  },
+  {
+   "word": "DVDWDDD",
+   "bits": "210111",
+   "rank": "w^w^w^(e_w+1)"
+  },
+  {
+   "word": "DVDWDVD",
+   "bits": "21021",
+   "rank": "e_w^2"
+  },
+  {
+   "word": "DVWDDDD",
+   "bits": "201111",
+   "rank": "w^w^w^w^(e0+1)"
+  },
+  {
+   "word": "DVWWDVW",
+   "bits": "20020",
+   "rank": "e0·2+1"
+  },
+  {
+   "word": "DVWWWWW",
+   "bits": "200000",
+   "rank": "e0+5"
+  },
+  {
+   "word": "WDVDDDD",
+   "bits": "021111",
+   "rank": "e_w^w^w^w"
+  },
+  {
+   "word": "WDVDDDW",
+   "bits": "021110",
+   "rank": "e_w^w^w+1"
+  },
+  {
+   "word": "WDVDDWD",
+   "bits": "021101",
+   "rank": "w^(e_w^w+1)"
+  },
+  {
+   "word": "WDVDVDD",
+   "bits": "02211",
+   "rank": "e_e_w^w"
+  },
+  {
+   "word": "WDVDVDV",
+   "bits": "0222",
+   "rank": "e_e_e0"
+  },
+  {
+   "word": "WDVDVDW",
+   "bits": "02210",
+   "rank": "e_e_w+1"
+  },
+  {
+   "word": "WDVDVWD",
+   "bits": "02201",
+   "rank": "w^(e_e0+1)"
+  },
+  {
+   "word": "WDVDWDD",
+   "bits": "021011",
+   "rank": "w^w^(e_w+1)"
+  },
+  {
+   "word": "WDVDWDV",
+   "bits": "02102",
+   "rank": "e_(w+1)"
+  },
+  {
+   "word": "WDVWDDD",
+   "bits": "020111",
+   "rank": "w^w^w^(e0+1)"
+  },
+  {
+   "word": "WDVWWWW",
+   "bits": "020000",
+   "rank": "e0+4"
+  },
+  {
+   "word": "DVDDDDDD",
+   "bits": "2111111",
+   "rank": "e_w^w^w^w^w^w"
+  },
+  {
+   "word": "DVDVDDDD",
+   "bits": "221111",
+   "rank": "e_e_w^w^w^w"
+  },
+  {
+   "word": "DVDWDDDD",
+   "bits": "2101111",
+   "rank": "w^w^w^w^(e_w+1)"
+  },
+  {
+   "word": "DVWDDDDD",
+   "bits": "2011111",
+   "rank": "w^w^w^w^w^(e0+1)"
+  },
+  {
+   "word": "DVWDVWDV",
+   "bits": "20202",
+   "rank": "e2"
+  },
+  {
+   "word": "DVWWWWWW",
+   "bits": "2000000",
+   "rank": "e0+6"
+  },
+  {
+   "word": "WDVDDDDD",
+   "bits": "0211111",
+   "rank": "e_w^w^w^w^w"
+  },
+  {
+   "word": "WDVDVDDD",
+   "bits": "022111",
+   "rank": "e_e_w^w^w"
+  },
+  {
+   "word": "WDVDWDDD",
+   "bits": "0210111",
+   "rank": "w^w^w^(e_w+1)"
+  },
+  {
+   "word": "WDVDWDVD",
+   "bits": "021021",
+   "rank": "e_w^2"
+  },
+  {
+   "word": "WDVWDDDD",
+   "bits": "0201111",
+   "rank": "w^w^w^w^(e0+1)"
+  },
+  {
+   "word": "WDVWWDVW",
+   "bits": "020020",
+   "rank": "e0·2+1"
+  },
+  {
+   "word": "WDVWWWWW",
+   "bits": "0200000",
+   "rank": "e0+5"
+  },
+  {
+   "word": "DVDDDDDDD",
+   "bits": "21111111",
+   "rank": "e_w^w^w^w^w^w^w"
+  },
+  {
+   "word": "DVDDWDVDD",
+   "bits": "2110211",
+   "rank": "e_w^w^2"
+  },
+  {
+   "word": "DVDVDDDDD",
+   "bits": "2211111",
+   "rank": "e_e_w^w^w^w^w"
+  },
+  {
+   "word": "DVDVWDVDV",
+   "bits": "22022",
+   "rank": "e_e1"
+  },
+  {
+   "word": "DVDWDDDDD",
+   "bits": "21011111",
+   "rank": "w^w^w^w^w^(e_w+1)"
+  },
+  {
+   "word": "DVDWWDVDW",
+   "bits": "2100210",
+   "rank": "e_w·2+1"
+  },
+  {
+   "word": "DVWDDDDDD",
+   "bits": "20111111",
+   "rank": "w^w^w^w^w^w^(e0+1)"
+  },
+  {
+   "word": "DVWDWDVWD",
+   "bits": "2010201",
+   "rank": "w^(e0·2+1)"
+  },
+  {
+   "word": "DVWWWWWWW",
+   "bits": "20000000",
+   "rank": "e0+7"
+  },
+  {
+   "word": "WDVDDDDDD",
+   "bits": "02111111",
+   "rank": "e_w^w^w^w^w^w"
+  },
+  {
+   "word": "WDVDVDDDD",
+   "bits": "0221111",
+   "rank": "e_e_w^w^w^w"
+  },
+  {
+   "word": "WDVDWDDDD",
+   "bits": "02101111",
+   "rank": "w^w^w^w^(e_w+1)"
+  },
+  {
+   "word": "WDVWDDDDD",
+   "bits": "02011111",
+   "rank": "w^w^w^w^w^(e0+1)"
+  },
+  {
+   "word": "WDVWDVWDV",
+   "bits": "020202",
+   "rank": "e2"
+  },
+  {
+   "word": "WDVWWWWWW",
+   "bits": "02000000",
+   "rank": "e0+6"
+  },
+  {
+   "word": "DVDDDDDDDD",
+   "bits": "211111111",
+   "rank": "e_w^w^w^w^w^w^w^w"
+  },
+  {
+   "word": "DVDVDDDDDD",
+   "bits": "22111111",
+   "rank": "e_e_w^w^w^w^w^w"
+  },
+  {
+   "word": "DVDWDDDDDD",
+   "bits": "210111111",
+   "rank": "w^w^w^w^w^w^(e_w+1)"
+  },
+  {
+   "word": "DVWDDDDDDD",
+   "bits": "201111111",
+   "rank": "w^w^w^w^w^w^w^(e0+1)"
+  },
+  {
+   "word": "DVWWWWWWWW",
+   "bits": "200000000",
+   "rank": "e0+8"
+  },
+  {
+   "word": "WDVDDDDDDD",
+   "bits": "021111111",
+   "rank": "e_w^w^w^w^w^w^w"
+  },
+  {
+   "word": "WDVDDWDVDD",
+   "bits": "02110211",
+   "rank": "e_w^w^2"
+  },
+  {
+   "word": "WDVDVDDDDD",
+   "bits": "02211111",
+   "rank": "e_e_w^w^w^w^w"
+  },
+  {
+   "word": "WDVDVWDVDV",
+   "bits": "022022",
+   "rank": "e_e1"
+  },
+  {
+   "word": "WDVDWDDDDD",
+   "bits": "021011111",
+   "rank": "w^w^w^w^w^(e_w+1)"
+  },
+  {
+   "word": "WDVDWWDVDW",
+   "bits": "02100210",
+   "rank": "e_w·2+1"
+  },
+  {
+   "word": "WDVWDDDDDD",
+   "bits": "020111111",
+   "rank": "w^w^w^w^w^w^(e0+1)"
+  },
+  {
+   "word": "WDVWDWDVWD",
+   "bits": "02010201",
+   "rank": "w^(e0·2+1)"
+  },
+  {
+   "word": "WDVWWWWWWW",
+   "bits": "020000000",
+   "rank": "e0+7"
+  },
+  {
+   "word": "DVDDDDDDDDD",
+   "bits": "2111111111",
+   "rank": "e_w^w^w^w^w^w^w^w^w"
+  },
+  {
+   "word": "DVDDDWDVDDD",
+   "bits": "211102111",
+   "rank": "e_w^w^w^2"
+  },
+  {
+   "word": "DVDDWWDVDDW",
+   "bits": "211002110",
+   "rank": "e_w^w·2+1"
+  },
+  {
+   "word": "DVDVDDDDDDD",
+   "bits": "221111111",
+   "rank": "e_e_w^w^w^w^w^w^w"
+  },
+  {
+   "word": "DVDVDWDVDVD",
+   "bits": "2210221",
+   "rank": "e_e_w^2"
+  },
+  {
+   "word": "DVDVWWDVDVW",
+   "bits": "2200220",
+   "rank": "e_e0·2+1"
+  },
+  {
+   "word": "DVDWDDDDDDD",
+   "bits": "2101111111",
+   "rank": "w^w^w^w^w^w^w^(e_w+1)"
+  },
+  {
+   "word": "DVDWDVDWDVD",
+   "bits": "21021021",
+   "rank": "e_w^3"
+  },
+  {
+   "word": "DVDWDWDVDWD",
+   "bits": "210102101",
+   "rank": "w^(e_w·2+1)"
+  },
+  {
+   "word": "DVWDDDDDDDD",
+   "bits": "2011111111",
+   "rank": "w^w^w^w^w^w^w^w^(e0+1)"
+  },
+  {
+   "word": "DVWDDWDVWDD",
+   "bits": "201102011",
+   "rank": "w^w^(e0·2+1)"
+  },
+  {
+   "word": "DVWDVWDVWDV",
+   "bits": "2020202",
+   "rank": "e3"
+  },
+  {
+   "word": "DVWWDVWWDVW",
+   "bits": "20020020",
+   "rank": "e0·3+1"
+  },
+  {
+   "word": "DVWWWWWWWWW",
+   "bits": "2000000000",
+   "rank": "e0+9"
+  },
+  {
+   "word": "WDVDDDDDDDD",
+   "bits": "0211111111",
+   "rank": "e_w^w^w^w^w^w^w^w"
+  },
+  {
+   "word": "WDVDVDDDDDD",
+   "bits": "022111111",
+   "rank": "e_e_w^w^w^w^w^w"
+  },
+  {
+   "word": "WDVDWDDDDDD",
+   "bits": "0210111111",
+   "rank": "w^w^w^w^w^w^(e_w+1)"
+  },
+  {
+   "word": "WDVWDDDDDDD",
+   "bits": "0201111111",
+   "rank": "w^w^w^w^w^w^w^(e0+1)"
+  },
+  {
+   "word": "WDVWWWWWWWW",
+   "bits": "0200000000",
+   "rank": "e0+8"
+  },
+  {
+   "word": "DVDDDDDDDDDD",
+   "bits": "21111111111",
+   "rank": "e_w^w^w^w^w^w^w^w^w^w"
+  },
+  {
+   "word": "DVDVDDDDDDDD",
+   "bits": "2211111111",
+   "rank": "e_e_w^w^w^w^w^w^w^w"
+  },
+  {
+   "word": "DVDWDDDDDDDD",
+   "bits": "21011111111",
+   "rank": "w^w^w^w^w^w^w^w^(e_w+1)"
+  },
+  {
+   "word": "DVWDDDDDDDDD",
+   "bits": "20111111111",
+   "rank": "w^w^w^w^w^w^w^w^w^(e0+1)"
+  },
+  {
+   "word": "DVWWWWWWWWWW",
+   "bits": "20000000000",
+   "rank": "e0+10"
+  },
+  {
+   "word": "WDVDDDDDDDDD",
+   "bits": "02111111111",
+   "rank": "e_w^w^w^w^w^w^w^w^w"
+  },
+  {
+   "word": "WDVDDDWDVDDD",
+   "bits": "0211102111",
+   "rank": "e_w^w^w^2"
+  },
+  {
+   "word": "WDVDDWWDVDDW",
+   "bits": "0211002110",
+   "rank": "e_w^w·2+1"
+  },
+  {
+   "word": "WDVDVDDDDDDD",
+   "bits": "0221111111",
+   "rank": "e_e_w^w^w^w^w^w^w"
+  },
+  {
+   "word": "WDVDVDWDVDVD",
+   "bits": "02210221",
+   "rank": "e_e_w^2"
+  },
+  {
+   "word": "WDVDVWWDVDVW",
+   "bits": "02200220",
+   "rank": "e_e0·2+1"
+  },
+  {
+   "word": "WDVDWDDDDDDD",
+   "bits": "02101111111",
+   "rank": "w^w^w^w^w^w^w^(e_w+1)"
+  },
+  {
+   "word": "WDVDWDVDWDVD",
+   "bits": "021021021",
+   "rank": "e_w^3"
+  },
+  {
+   "word": "WDVDWDWDVDWD",
+   "bits": "0210102101",
+   "rank": "w^(e_w·2+1)"
+  },
+  {
+   "word": "WDVWDDDDDDDD",
+   "bits": "02011111111",
+   "rank": "w^w^w^w^w^w^w^w^(e0+1)"
+  },
+  {
+   "word": "WDVWDDWDVWDD",
+   "bits": "0201102011",
+   "rank": "w^w^(e0·2+1)"
+  },
+  {
+   "word": "WDVWDVWDVWDV",
+   "bits": "02020202",
+   "rank": "e3"
+  },
+  {
+   "word": "WDVWWDVWWDVW",
+   "bits": "020020020",
+   "rank": "e0·3+1"
+  },
+  {
+   "word": "WDVWWWWWWWWW",
+   "bits": "02000000000",
+   "rank": "e0+9"
+  },
+  {
+   "word": "DVDDDDDDDDDDD",
+   "bits": "211111111111",
+   "rank": "e_w^w^w^w^w^w^w^w^w^w^w"
+  },
+  {
+   "word": "DVDDDDWDVDDDD",
+   "bits": "21111021111",
+   "rank": "e_w^w^w^w^2"
+  },
+  {
+   "word": "DVDVDDDDDDDDD",
+   "bits": "22111111111",
+   "rank": "e_e_w^w^w^w^w^w^w^w^w"
+  },
+  {
+   "word": "DVDVDDWDVDVDD",
+   "bits": "221102211",
+   "rank": "e_e_w^w^2"
+  },
+  {
+   "word": "DVDWDDDDDDDDD",
+   "bits": "210111111111",
+   "rank": "w^w^w^w^w^w^w^w^w^(e_w+1)"
+  },
+  {
+   "word": "DVWDDDDDDDDDD",
+   "bits": "201111111111",
+   "rank": "w^w^w^w^w^w^w^w^w^w^(e0+1)"
+  },
+  {
+   "word": "DVWWWWWWWWWWW",
+   "bits": "200000000000",
+   "rank": "e0+11"
+  },
+  {
+   "word": "WDVDDDDDDDDDD",
+   "bits": "021111111111",
+   "rank": "e_w^w^w^w^w^w^w^w^w^w"
+  },
+  {
+   "word": "WDVDVDDDDDDDD",
+   "bits": "02211111111",
+   "rank": "e_e_w^w^w^w^w^w^w^w"
+  },
+  {
+   "word": "WDVDWDDDDDDDD",
+   "bits": "021011111111",
+   "rank": "w^w^w^w^w^w^w^w^(e_w+1)"
+  },
+  {
+   "word": "WDVWDDDDDDDDD",
+   "bits": "020111111111",
+   "rank": "w^w^w^w^w^w^w^w^w^(e0+1)"
+  },
+  {
+   "word": "WDVWWWWWWWWWW",
+   "bits": "020000000000",
+   "rank": "e0+10"
+  },
+  {
+   "word": "DVDDWDVDDWDVDD",
+   "bits": "21102110211",
+   "rank": "e_w^w^3"
+  },
+  {
+   "word": "DVDVDDDDDDDDDD",
+   "bits": "221111111111",
+   "rank": "e_e_w^w^w^w^w^w^w^w^w^w"
+  },
+  {
+   "word": "DVDVWDVDVWDVDV",
+   "bits": "22022022",
+   "rank": "e_e2"
+  },
+  {
+   "word": "DVDWDDDDDDDDDD",
+   "bits": "2101111111111",
+   "rank": "w^w^w^w^w^w^w^w^w^w^(e_w+1)"
+  },
+  {
+   "word": "DVDWWDVDWWDVDW",
+   "bits": "21002100210",
+   "rank": "e_w·3+1"
+  },
+  {
+   "word": "DVWDDDDDDDDDDD",
+   "bits": "2011111111111",
+   "rank": "w^w^w^w^w^w^w^w^w^w^w^(e0+1)"
+  },
+  {
+   "word": "DVWDVWDVWDVWDV",
+   "bits": "202020202",
+   "rank": "e4"
+  },
+  {
+   "word": "DVWDWDVWDWDVWD",
+   "bits": "20102010201",
+   "rank": "w^(e0·3+1)"
+  },
+  {
+   "word": "WDVDDDDDDDDDDD",
+   "bits": "0211111111111",
+   "rank": "e_w^w^w^w^w^w^w^w^w^w^w"
+  },
+  {
+   "word": "WDVDDDDWDVDDDD",
+   "bits": "021111021111",
+   "rank": "e_w^w^w^w^2"
+  },
+  {
+   "word": "WDVDVDDDDDDDDD",
+   "bits": "022111111111",
+   "rank": "e_e_w^w^w^w^w^w^w^w^w"
+  },
+  {
+   "word": "WDVDVDDWDVDVDD",
+   "bits": "0221102211",
+   "rank": "e_e_w^w^2"
+  },
+  {
+   "word": "WDVDWDDDDDDDDD",
+   "bits": "0210111111111",
+   "rank": "w^w^w^w^w^w^w^w^w^(e_w+1)"
+  },
+  {
+   "word": "WDVWDDDDDDDDDD",
+   "bits": "0201111111111",
+   "rank": "w^w^w^w^w^w^w^w^w^w^(e0+1)"
+  },
+  {
+   "word": "WDVWWWWWWWWWWW",
+   "bits": "0200000000000",
+   "rank": "e0+11"
+  },
+  {
+   "word": "DVDVDDDDDDDDDDD",
+   "bits": "2211111111111",
+   "rank": "e_e_w^w^w^w^w^w^w^w^w^w^w"
+  },
+  {
+   "word": "DVDWDDDDDDDDDDD",
+   "bits": "21011111111111",
+   "rank": "w^w^w^w^w^w^w^w^w^w^w^(e_w+1)"
+  },
+  {
+   "word": "DVDWDVDWDVDWDVD",
+   "bits": "21021021021",
+   "rank": "e_w^4"
+  },
+  {
+   "word": "DVWWDVWWDVWWDVW",
+   "bits": "20020020020",
+   "rank": "e0·4+1"
+  },
+  {
+   "word": "WDVDDWDVDDWDVDD",
+   "bits": "021102110211",
+   "rank": "e_w^w^3"
+  },
+  {
+   "word": "WDVDVDDDDDDDDDD",
+   "bits": "0221111111111",
+   "rank": "e_e_w^w^w^w^w^w^w^w^w^w"
+  },
+  {
+   "word": "WDVDVWDVDVWDVDV",
+   "bits": "022022022",
+   "rank": "e_e2"
+  },
+  {
+   "word": "WDVDWDDDDDDDDDD",
+   "bits": "02101111111111",
+   "rank": "w^w^w^w^w^w^w^w^w^w^(e_w+1)"
+  },
+  {
+   "word": "WDVDWWDVDWWDVDW",
+   "bits": "021002100210",
+   "rank": "e_w·3+1"
+  },
+  {
+   "word": "WDVWDDDDDDDDDDD",
+   "bits": "02011111111111",
+   "rank": "w^w^w^w^w^w^w^w^w^w^w^(e0+1)"
+  },
+  {
+   "word": "WDVWDVWDVWDVWDV",
+   "bits": "0202020202",
+   "rank": "e4"
+  },
+  {
+   "word": "WDVWDWDVWDWDVWD",
+   "bits": "020102010201",
+   "rank": "w^(e0·3+1)"
+  },
+  {
+   "word": "WDVDVDDDDDDDDDDD",
+   "bits": "02211111111111",
+   "rank": "e_e_w^w^w^w^w^w^w^w^w^w^w"
+  },
+  {
+   "word": "WDVDWDDDDDDDDDDD",
+   "bits": "021011111111111",
+   "rank": "w^w^w^w^w^w^w^w^w^w^w^(e_w+1)"
+  },
+  {
+   "word": "WDVDWDVDWDVDWDVD",
+   "bits": "021021021021",
+   "rank": "e_w^4"
+  },
+  {
+   "word": "WDVWWDVWWDVWWDVW",
+   "bits": "020020020020",
+   "rank": "e0·4+1"
+  },
+  {
+   "word": "DVDDDWDVDDDWDVDDD",
+   "bits": "21110211102111",
+   "rank": "e_w^w^w^3"
+  },
+  {
+   "word": "DVDDWWDVDDWWDVDDW",
+   "bits": "21100211002110",
+   "rank": "e_w^w·3+1"
+  },
+  {
+   "word": "DVDVDWDVDVDWDVDVD",
+   "bits": "22102210221",
+   "rank": "e_e_w^3"
+  },
+  {
+   "word": "DVDVWWDVDVWWDVDVW",
+   "bits": "22002200220",
+   "rank": "e_e0·3+1"
+  },
+  {
+   "word": "DVDWDWDVDWDWDVDWD",
+   "bits": "21010210102101",
+   "rank": "w^(e_w·3+1)"
+  },
+  {
+   "word": "DVWDDWDVWDDWDVWDD",
+   "bits": "20110201102011",
+   "rank": "w^w^(e0·3+1)"
+  },
+  {
+   "word": "DVWDVWDVWDVWDVWDV",
+   "bits": "20202020202",
+   "rank": "e5"
+  },
+  {
+   "word": "WDVDDDWDVDDDWDVDDD",
+   "bits": "021110211102111",
+   "rank": "e_w^w^w^3"
+  },
+  {
+   "word": "WDVDDWWDVDDWWDVDDW",
+   "bits": "021100211002110",
+   "rank": "e_w^w·3+1"
+  },
+  {
+   "word": "WDVDVDWDVDVDWDVDVD",
+   "bits": "022102210221",
+   "rank": "e_e_w^3"
+  },
+  {
+   "word": "WDVDVWWDVDVWWDVDVW",
+   "bits": "022002200220",
+   "rank": "e_e0·3+1"
+  },
+  {
+   "word": "WDVDWDWDVDWDWDVDWD",
+   "bits": "021010210102101",
+   "rank": "w^(e_w·3+1)"
+  },
+  {
+   "word": "WDVWDDWDVWDDWDVWDD",
+   "bits": "020110201102011",
+   "rank": "w^w^(e0·3+1)"
+  },
+  {
+   "word": "WDVWDVWDVWDVWDVWDV",
+   "bits": "020202020202",
+   "rank": "e5"
+  },
+  {
+   "word": "DVDDWDVDDWDVDDWDVDD",
+   "bits": "211021102110211",
+   "rank": "e_w^w^4"
+  },
+  {
+   "word": "DVDVWDVDVWDVDVWDVDV",
+   "bits": "22022022022",
+   "rank": "e_e3"
+  },
+  {
+   "word": "DVDWDVDWDVDWDVDWDVD",
+   "bits": "21021021021021",
+   "rank": "e_w^5"
+  },
+  {
+   "word": "DVDWWDVDWWDVDWWDVDW",
+   "bits": "210021002100210",
+   "rank": "e_w·4+1"
+  },
+  {
+   "word": "DVWDWDVWDWDVWDWDVWD",
+   "bits": "201020102010201",
+   "rank": "w^(e0·4+1)"
+  },
+  {
+   "word": "DVWWDVWWDVWWDVWWDVW",
+   "bits": "20020020020020",
+   "rank": "e0·5+1"
+  },
+  {
+   "word": "DVDDDDWDVDDDDWDVDDDD",
+   "bits": "21111021111021111",
+   "rank": "e_w^w^w^w^3"
+  },
+  {
+   "word": "DVDVDDWDVDVDDWDVDVDD",
+   "bits": "22110221102211",
+   "rank": "e_e_w^w^3"
+  },
+  {
+   "word": "DVWDVWDVWDVWDVWDVWDV",
+   "bits": "2020202020202",
+   "rank": "e6"
+  },
+  {
+   "word": "WDVDDWDVDDWDVDDWDVDD",
+   "bits": "0211021102110211",
+   "rank": "e_w^w^4"
+  },
+  {
+   "word": "WDVDVWDVDVWDVDVWDVDV",
+   "bits": "022022022022",
+   "rank": "e_e3"
+  },
+  {
+   "word": "WDVDWDVDWDVDWDVDWDVD",
+   "bits": "021021021021021",
+   "rank": "e_w^5"
+  },
+  {
+   "word": "WDVDWWDVDWWDVDWWDVDW",
+   "bits": "0210021002100210",
+   "rank": "e_w·4+1"
+  },
+  {
+   "word": "WDVWDWDVWDWDVWDWDVWD",
+   "bits": "0201020102010201",
+   "rank": "w^(e0·4+1)"
+  },
+  {
+   "word": "WDVWWDVWWDVWWDVWWDVW",
+   "bits": "020020020020020",
+   "rank": "e0·5+1"
+  },
+  {
+   "word": "WDVDDDDWDVDDDDWDVDDDD",
+   "bits": "021111021111021111",
+   "rank": "e_w^w^w^w^3"
+  },
+  {
+   "word": "WDVDVDDWDVDVDDWDVDVDD",
+   "bits": "022110221102211",
+   "rank": "e_e_w^w^3"
+  },
+  {
+   "word": "WDVWDVWDVWDVWDVWDVWDV",
+   "bits": "02020202020202",
+   "rank": "e6"
+  },
+  {
+   "word": "DVDDDWDVDDDWDVDDDWDVDDD",
+   "bits": "2111021110211102111",
+   "rank": "e_w^w^w^4"
+  },
+  {
+   "word": "DVDDWWDVDDWWDVDDWWDVDDW",
+   "bits": "2110021100211002110",
+   "rank": "e_w^w·4+1"
+  },
+  {
+   "word": "DVDVDWDVDVDWDVDVDWDVDVD",
+   "bits": "221022102210221",
+   "rank": "e_e_w^4"
+  },
+  {
+   "word": "DVDVWWDVDVWWDVDVWWDVDVW",
+   "bits": "220022002200220",
+   "rank": "e_e0·4+1"
+  },
+  {
+   "word": "DVDWDVDWDVDWDVDWDVDWDVD",
+   "bits": "21021021021021021",
+   "rank": "e_w^6"
+  },
+  {
+   "word": "DVDWDWDVDWDWDVDWDWDVDWD",
+   "bits": "2101021010210102101",
+   "rank": "w^(e_w·4+1)"
+  },
+  {
+   "word": "DVWDDWDVWDDWDVWDDWDVWDD",
+   "bits": "2011020110201102011",
+   "rank": "w^w^(e0·4+1)"
+  },
+  {
+   "word": "DVWDVWDVWDVWDVWDVWDVWDV",
+   "bits": "202020202020202",
+   "rank": "e7"
+  },
+  {
+   "word": "DVWWDVWWDVWWDVWWDVWWDVW",
+   "bits": "20020020020020020",
+   "rank": "e0·6+1"
+  },
+  {
+   "word": "DVDDWDVDDWDVDDWDVDDWDVDD",
+   "bits": "2110211021102110211",
+   "rank": "e_w^w^5"
+  },
+  {
+   "word": "DVDVWDVDVWDVDVWDVDVWDVDV",
+   "bits": "22022022022022",
+   "rank": "e_e4"
+  },
+  {
+   "word": "DVDWWDVDWWDVDWWDVDWWDVDW",
+   "bits": "2100210021002100210",
+   "rank": "e_w·5+1"
+  },
+  {
+   "word": "DVWDWDVWDWDVWDWDVWDWDVWD",
+   "bits": "2010201020102010201",
+   "rank": "w^(e0·5+1)"
+  },
+  {
+   "word": "WDVDDDWDVDDDWDVDDDWDVDDD",
+   "bits": "02111021110211102111",
+   "rank": "e_w^w^w^4"
+  },
+  {
+   "word": "WDVDDWWDVDDWWDVDDWWDVDDW",
+   "bits": "02110021100211002110",
+   "rank": "e_w^w·4+1"
+  },
+  {
+   "word": "WDVDVDWDVDVDWDVDVDWDVDVD",
+   "bits": "0221022102210221",
+   "rank": "e_e_w^4"
+  },
+  {
+   "word": "WDVDVWWDVDVWWDVDVWWDVDVW",
+   "bits": "0220022002200220",
+   "rank": "e_e0·4+1"
+  },
+  {
+   "word": "WDVDWDVDWDVDWDVDWDVDWDVD",
+   "bits": "021021021021021021",
+   "rank": "e_w^6"
+  },
+  {
+   "word": "WDVDWDWDVDWDWDVDWDWDVDWD",
+   "bits": "02101021010210102101",
+   "rank": "w^(e_w·4+1)"
+  },
+  {
+   "word": "WDVWDDWDVWDDWDVWDDWDVWDD",
+   "bits": "02011020110201102011",
+   "rank": "w^w^(e0·4+1)"
+  },
+  {
+   "word": "WDVWDVWDVWDVWDVWDVWDVWDV",
+   "bits": "0202020202020202",
+   "rank": "e7"
+  },
+  {
+   "word": "WDVWWDVWWDVWWDVWWDVWWDVW",
+   "bits": "020020020020020020",
+   "rank": "e0·6+1"
+  },
+  {
+   "word": "WDVDDWDVDDWDVDDWDVDDWDVDD",
+   "bits": "02110211021102110211",
+   "rank": "e_w^w^5"
+  },
+  {
+   "word": "WDVDVWDVDVWDVDVWDVDVWDVDV",
+   "bits": "022022022022022",
+   "rank": "e_e4"
+  },
+  {
+   "word": "WDVDWWDVDWWDVDWWDVDWWDVDW",
+   "bits": "02100210021002100210",
+   "rank": "e_w·5+1"
+  },
+  {
+   "word": "WDVWDWDVWDWDVWDWDVWDWDVWD",
+   "bits": "02010201020102010201",
+   "rank": "w^(e0·5+1)"
+  },
+  {
+   "word": "DVWDVWDVWDVWDVWDVWDVWDVWDV",
+   "bits": "20202020202020202",
+   "rank": "e8"
+  },
+  {
+   "word": "DVDDDDWDVDDDDWDVDDDDWDVDDDD",
+   "bits": "21111021111021111021111",
+   "rank": "e_w^w^w^w^4"
+  },
+  {
+   "word": "DVDVDDWDVDVDDWDVDVDDWDVDVDD",
+   "bits": "2211022110221102211",
+   "rank": "e_e_w^w^4"
+  },
+  {
+   "word": "DVDWDVDWDVDWDVDWDVDWDVDWDVD",
+   "bits": "21021021021021021021",
+   "rank": "e_w^7"
+  },
+  {
+   "word": "DVWWDVWWDVWWDVWWDVWWDVWWDVW",
+   "bits": "20020020020020020020",
+   "rank": "e0·7+1"
+  },
+  {
+   "word": "WDVWDVWDVWDVWDVWDVWDVWDVWDV",
+   "bits": "020202020202020202",
+   "rank": "e8"
+  },
+  {
+   "word": "WDVDDDDWDVDDDDWDVDDDDWDVDDDD",
+   "bits": "021111021111021111021111",
+   "rank": "e_w^w^w^w^4"
+  },
+  {
+   "word": "WDVDVDDWDVDVDDWDVDVDDWDVDVDD",
+   "bits": "02211022110221102211",
+   "rank": "e_e_w^w^4"
+  },
+  {
+   "word": "WDVDWDVDWDVDWDVDWDVDWDVDWDVD",
+   "bits": "021021021021021021021",
+   "rank": "e_w^7"
+  },
+  {
+   "word": "WDVWWDVWWDVWWDVWWDVWWDVWWDVW",
+   "bits": "020020020020020020020",
+   "rank": "e0·7+1"
+  },
+  {
+   "word": "DVDDDWDVDDDWDVDDDWDVDDDWDVDDD",
+   "bits": "211102111021110211102111",
+   "rank": "e_w^w^w^5"
+  },
+  {
+   "word": "DVDDWDVDDWDVDDWDVDDWDVDDWDVDD",
+   "bits": "21102110211021102110211",
+   "rank": "e_w^w^6"
+  },
+  {
+   "word": "DVDDWWDVDDWWDVDDWWDVDDWWDVDDW",
+   "bits": "211002110021100211002110",
+   "rank": "e_w^w·5+1"
+  },
+  {
+   "word": "DVDVDWDVDVDWDVDVDWDVDVDWDVDVD",
+   "bits": "2210221022102210221",
+   "rank": "e_e_w^5"
+  },
+  {
+   "word": "DVDVWDVDVWDVDVWDVDVWDVDVWDVDV",
+   "bits": "22022022022022022",
+   "rank": "e_e5"
+  },
+  {
+   "word": "DVDVWWDVDVWWDVDVWWDVDVWWDVDVW",
+   "bits": "2200220022002200220",
+   "rank": "e_e0·5+1"
+  },
+  {
+   "word": "DVDWDWDVDWDWDVDWDWDVDWDWDVDWD",
+   "bits": "210102101021010210102101",
+   "rank": "w^(e_w·5+1)"
+  },
+  {
+   "word": "DVDWWDVDWWDVDWWDVDWWDVDWWDVDW",
+   "bits": "21002100210021002100210",
+   "rank": "e_w·6+1"
+  },
+  {
+   "word": "DVWDDWDVWDDWDVWDDWDVWDDWDVWDD",
+   "bits": "201102011020110201102011",
+   "rank": "w^w^(e0·5+1)"
+  },
+  {
+   "word": "DVWDVWDVWDVWDVWDVWDVWDVWDVWDV",
+   "bits": "2020202020202020202",
+   "rank": "e9"
+  },
+  {
+   "word": "DVWDWDVWDWDVWDWDVWDWDVWDWDVWD",
+   "bits": "20102010201020102010201",
+   "rank": "w^(e0·6+1)"
+  },
+  {
+   "word": "WDVDDDWDVDDDWDVDDDWDVDDDWDVDDD",
+   "bits": "0211102111021110211102111",
+   "rank": "e_w^w^w^5"
+  },
+  {
+   "word": "WDVDDWDVDDWDVDDWDVDDWDVDDWDVDD",
+   "bits": "021102110211021102110211",
+   "rank": "e_w^w^6"
+  },
+  {
+   "word": "WDVDDWWDVDDWWDVDDWWDVDDWWDVDDW",
+   "bits": "0211002110021100211002110",
+   "rank": "e_w^w·5+1"
+  },
+  {
+   "word": "WDVDVDWDVDVDWDVDVDWDVDVDWDVDVD",
+   "bits": "02210221022102210221",
+   "rank": "e_e_w^5"
+  },
+  {
+   "word": "WDVDVWDVDVWDVDVWDVDVWDVDVWDVDV",
+   "bits": "022022022022022022",
+   "rank": "e_e5"
+  },
+  {
+   "word": "WDVDVWWDVDVWWDVDVWWDVDVWWDVDVW",
+   "bits": "02200220022002200220",
+   "rank": "e_e0·5+1"
+  },
+  {
+   "word": "WDVDWDWDVDWDWDVDWDWDVDWDWDVDWD",
+   "bits": "0210102101021010210102101",
+   "rank": "w^(e_w·5+1)"
+  },
+  {
+   "word": "WDVDWWDVDWWDVDWWDVDWWDVDWWDVDW",
+   "bits": "021002100210021002100210",
+   "rank": "e_w·6+1"
+  },
+  {
+   "word": "WDVWDDWDVWDDWDVWDDWDVWDDWDVWDD",
+   "bits": "0201102011020110201102011",
+   "rank": "w^w^(e0·5+1)"
+  },
+  {
+   "word": "WDVWDVWDVWDVWDVWDVWDVWDVWDVWDV",
+   "bits": "02020202020202020202",
+   "rank": "e9"
+  },
+  {
+   "word": "WDVWDWDVWDWDVWDWDVWDWDVWDWDVWD",
+   "bits": "020102010201020102010201",
+   "rank": "w^(e0·6+1)"
+  },
+  {
+   "word": "DVDWDVDWDVDWDVDWDVDWDVDWDVDWDVD",
+   "bits": "21021021021021021021021",
+   "rank": "e_w^8"
+  },
+  {
+   "word": "DVWWDVWWDVWWDVWWDVWWDVWWDVWWDVW",
+   "bits": "20020020020020020020020",
+   "rank": "e0·8+1"
+  },
+  {
+   "word": "WDVDWDVDWDVDWDVDWDVDWDVDWDVDWDVD",
+   "bits": "021021021021021021021021",
+   "rank": "e_w^8"
+  },
+  {
+   "word": "WDVWWDVWWDVWWDVWWDVWWDVWWDVWWDVW",
+   "bits": "020020020020020020020020",
+   "rank": "e0·8+1"
+  },
+  {
+   "word": "DVDDDDWDVDDDDWDVDDDDWDVDDDDWDVDDDD",
+   "bits": "21111021111021111021111021111",
+   "rank": "e_w^w^w^w^5"
+  },
+  {
+   "word": "DVDDWDVDDWDVDDWDVDDWDVDDWDVDDWDVDD",
+   "bits": "211021102110211021102110211",
+   "rank": "e_w^w^7"
+  },
+  {
+   "word": "DVDVDDWDVDVDDWDVDVDDWDVDVDDWDVDVDD",
+   "bits": "221102211022110221102211",
+   "rank": "e_e_w^w^5"
+  },
+  {
+   "word": "DVDVWDVDVWDVDVWDVDVWDVDVWDVDVWDVDV",
+   "bits": "22022022022022022022",
+   "rank": "e_e6"
+  },
+  {
+   "word": "DVDWWDVDWWDVDWWDVDWWDVDWWDVDWWDVDW",
+   "bits": "210021002100210021002100210",
+   "rank": "e_w·7+1"
+  },
+  {
+   "word": "DVWDWDVWDWDVWDWDVWDWDVWDWDVWDWDVWD",
+   "bits": "201020102010201020102010201",
+   "rank": "w^(e0·7+1)"
+  },
+  {
+   "word": "DVDDDWDVDDDWDVDDDWDVDDDWDVDDDWDVDDD",
+   "bits": "21110211102111021110211102111",
+   "rank": "e_w^w^w^6"
+  },
+  {
+   "word": "DVDDWWDVDDWWDVDDWWDVDDWWDVDDWWDVDDW",
+   "bits": "21100211002110021100211002110",
+   "rank": "e_w^w·6+1"
+  },
+  {
+   "word": "DVDVDWDVDVDWDVDVDWDVDVDWDVDVDWDVDVD",
+   "bits": "22102210221022102210221",
+   "rank": "e_e_w^6"
+  },
+  {
+   "word": "DVDVWWDVDVWWDVDVWWDVDVWWDVDVWWDVDVW",
+   "bits": "22002200220022002200220",
+   "rank": "e_e0·6+1"
+  },
+  {
+   "word": "DVDWDVDWDVDWDVDWDVDWDVDWDVDWDVDWDVD",
+   "bits": "21021021021021021021021021",
+   "rank": "e_w^9"
+  },
+  {
+   "word": "DVDWDWDVDWDWDVDWDWDVDWDWDVDWDWDVDWD",
+   "bits": "21010210102101021010210102101",
+   "rank": "w^(e_w·6+1)"
+  },
+  {
+   "word": "DVWDDWDVWDDWDVWDDWDVWDDWDVWDDWDVWDD",
+   "bits": "20110201102011020110201102011",
+   "rank": "w^w^(e0·6+1)"
+  },
+  {
+   "word": "DVWWDVWWDVWWDVWWDVWWDVWWDVWWDVWWDVW",
+   "bits": "20020020020020020020020020",
+   "rank": "e0·9+1"
+  },
+  {
+   "word": "WDVDDDDWDVDDDDWDVDDDDWDVDDDDWDVDDDD",
+   "bits": "021111021111021111021111021111",
+   "rank": "e_w^w^w^w^5"
+  },
+  {
+   "word": "WDVDDWDVDDWDVDDWDVDDWDVDDWDVDDWDVDD",
+   "bits": "0211021102110211021102110211",
+   "rank": "e_w^w^7"
+  },
+  {
+   "word": "WDVDVDDWDVDVDDWDVDVDDWDVDVDDWDVDVDD",
+   "bits": "0221102211022110221102211",
+   "rank": "e_e_w^w^5"
+  },
+  {
+   "word": "WDVDVWDVDVWDVDVWDVDVWDVDVWDVDVWDVDV",
+   "bits": "022022022022022022022",
+   "rank": "e_e6"
+  },
+  {
+   "word": "WDVDWWDVDWWDVDWWDVDWWDVDWWDVDWWDVDW",
+   "bits": "0210021002100210021002100210",
+   "rank": "e_w·7+1"
+  },
+  {
+   "word": "WDVWDWDVWDWDVWDWDVWDWDVWDWDVWDWDVWD",
+   "bits": "0201020102010201020102010201",
+   "rank": "w^(e0·7+1)"
+  },
+  {
+   "word": "WDVDDDWDVDDDWDVDDDWDVDDDWDVDDDWDVDDD",
+   "bits": "021110211102111021110211102111",
+   "rank": "e_w^w^w^6"
+  },
+  {
+   "word": "WDVDDWWDVDDWWDVDDWWDVDDWWDVDDWWDVDDW",
+   "bits": "021100211002110021100211002110",
+   "rank": "e_w^w·6+1"
+  },
+  {
+   "word": "WDVDVDWDVDVDWDVDVDWDVDVDWDVDVDWDVDVD",
+   "bits": "022102210221022102210221",
+   "rank": "e_e_w^6"
+  },
+  {
+   "word": "WDVDVWWDVDVWWDVDVWWDVDVWWDVDVWWDVDVW",
+   "bits": "022002200220022002200220",
+   "rank": "e_e0·6+1"
+  },
+  {
+   "word": "WDVDWDVDWDVDWDVDWDVDWDVDWDVDWDVDWDVD",
+   "bits": "021021021021021021021021021",
+   "rank": "e_w^9"
+  },
+  {
+   "word": "WDVDWDWDVDWDWDVDWDWDVDWDWDVDWDWDVDWD",
+   "bits": "021010210102101021010210102101",
+   "rank": "w^(e_w·6+1)"
+  },
+  {
+   "word": "WDVWDDWDVWDDWDVWDDWDVWDDWDVWDDWDVWDD",
+   "bits": "020110201102011020110201102011",
+   "rank": "w^w^(e0·6+1)"
+  },
+  {
+   "word": "WDVWWDVWWDVWWDVWWDVWWDVWWDVWWDVWWDVW",
+   "bits": "020020020020020020020020020",
+   "rank": "e0·9+1"
+  },
+  {
+   "word": "DVDDWDVDDWDVDDWDVDDWDVDDWDVDDWDVDDWDVDD",
+   "bits": "2110211021102110211021102110211",
+   "rank": "e_w^w^8"
+  },
+  {
+   "word": "DVDVWDVDVWDVDVWDVDVWDVDVWDVDVWDVDVWDVDV",
+   "bits": "22022022022022022022022",
+   "rank": "e_e7"
+  },
+  {
+   "word": "DVDWDVDWDVDWDVDWDVDWDVDWDVDWDVDWDVDWDVD",
+   "bits": "21021021021021021021021021021",
+   "rank": "e_w^10"
+  },
+  {
+   "word": "DVDWWDVDWWDVDWWDVDWWDVDWWDVDWWDVDWWDVDW",
+   "bits": "2100210021002100210021002100210",
+   "rank": "e_w·8+1"
+  },
+  {
+   "word": "DVWDWDVWDWDVWDWDVWDWDVWDWDVWDWDVWDWDVWD",
+   "bits": "2010201020102010201020102010201",
+   "rank": "w^(e0·8+1)"
+  },
+  {
+   "word": "DVWWDVWWDVWWDVWWDVWWDVWWDVWWDVWWDVWWDVW",
+   "bits": "20020020020020020020020020020",
+   "rank": "e0·10+1"
+  },
+  {
+   "word": "WDVDDWDVDDWDVDDWDVDDWDVDDWDVDDWDVDDWDVDD",
+   "bits": "02110211021102110211021102110211",
+   "rank": "e_w^w^8"
+  },
+  {
+   "word": "WDVDVWDVDVWDVDVWDVDVWDVDVWDVDVWDVDVWDVDV",
+   "bits": "022022022022022022022022",
+   "rank": "e_e7"
+  },
+  {
+   "word": "WDVDWDVDWDVDWDVDWDVDWDVDWDVDWDVDWDVDWDVD",
+   "bits": "021021021021021021021021021021",
+   "rank": "e_w^10"
+  },
+  {
+   "word": "WDVDWWDVDWWDVDWWDVDWWDVDWWDVDWWDVDWWDVDW",
+   "bits": "02100210021002100210021002100210",
+   "rank": "e_w·8+1"
+  },
+  {
+   "word": "WDVWDWDVWDWDVWDWDVWDWDVWDWDVWDWDVWDWDVWD",
+   "bits": "02010201020102010201020102010201",
+   "rank": "w^(e0·8+1)"
+  },
+  {
+   "word": "WDVWWDVWWDVWWDVWWDVWWDVWWDVWWDVWWDVWWDVW",
+   "bits": "020020020020020020020020020020",
+   "rank": "e0·10+1"
+  },
+  {
+   "word": "DVDDDDWDVDDDDWDVDDDDWDVDDDDWDVDDDDWDVDDDD",
+   "bits": "21111021111021111021111021111021111",
+   "rank": "e_w^w^w^w^6"
+  },
+  {
+   "word": "DVDDDWDVDDDWDVDDDWDVDDDWDVDDDWDVDDDWDVDDD",
+   "bits": "2111021110211102111021110211102111",
+   "rank": "e_w^w^w^7"
+  },
+  {
+   "word": "DVDDWWDVDDWWDVDDWWDVDDWWDVDDWWDVDDWWDVDDW",
+   "bits": "2110021100211002110021100211002110",
+   "rank": "e_w^w·7+1"
+  },
+  {
+   "word": "DVDVDDWDVDVDDWDVDVDDWDVDVDDWDVDVDDWDVDVDD",
+   "bits": "22110221102211022110221102211",
+   "rank": "e_e_w^w^6"
+  },
+  {
+   "word": "DVDVDWDVDVDWDVDVDWDVDVDWDVDVDWDVDVDWDVDVD",
+   "bits": "221022102210221022102210221",
+   "rank": "e_e_w^7"
+  },
+  {
+   "word": "DVDVWWDVDVWWDVDVWWDVDVWWDVDVWWDVDVWWDVDVW",
+   "bits": "220022002200220022002200220",
+   "rank": "e_e0·7+1"
+  },
+  {
+   "word": "DVDWDWDVDWDWDVDWDWDVDWDWDVDWDWDVDWDWDVDWD",
+   "bits": "2101021010210102101021010210102101",
+   "rank": "w^(e_w·7+1)"
+  },
+  {
+   "word": "DVWDDWDVWDDWDVWDDWDVWDDWDVWDDWDVWDDWDVWDD",
+   "bits": "2011020110201102011020110201102011",
+   "rank": "w^w^(e0·7+1)"
+  },
+  {
+   "word": "WDVDDDDWDVDDDDWDVDDDDWDVDDDDWDVDDDDWDVDDDD",
+   "bits": "021111021111021111021111021111021111",
+   "rank": "e_w^w^w^w^6"
+  },
+  {
+   "word": "WDVDDDWDVDDDWDVDDDWDVDDDWDVDDDWDVDDDWDVDDD",
+   "bits": "02111021110211102111021110211102111",
+   "rank": "e_w^w^w^7"
+  },
+  {
+   "word": "WDVDDWWDVDDWWDVDDWWDVDDWWDVDDWWDVDDWWDVDDW",
+   "bits": "02110021100211002110021100211002110",
+   "rank": "e_w^w·7+1"
+  },
+  {
+   "word": "WDVDVDDWDVDVDDWDVDVDDWDVDVDDWDVDVDDWDVDVDD",
+   "bits": "022110221102211022110221102211",
+   "rank": "e_e_w^w^6"
+  },
+  {
+   "word": "WDVDVDWDVDVDWDVDVDWDVDVDWDVDVDWDVDVDWDVDVD",
+   "bits": "0221022102210221022102210221",
+   "rank": "e_e_w^7"
+  },
+  {
+   "word": "WDVDVWWDVDVWWDVDVWWDVDVWWDVDVWWDVDVWWDVDVW",
+   "bits": "0220022002200220022002200220",
+   "rank": "e_e0·7+1"
+  },
+  {
+   "word": "WDVDWDWDVDWDWDVDWDWDVDWDWDVDWDWDVDWDWDVDWD",
+   "bits": "02101021010210102101021010210102101",
+   "rank": "w^(e_w·7+1)"
+  },
+  {
+   "word": "WDVWDDWDVWDDWDVWDDWDVWDDWDVWDDWDVWDDWDVWDD",
+   "bits": "02011020110201102011020110201102011",
+   "rank": "w^w^(e0·7+1)"
+  },
+  {
+   "word": "DVDDWDVDDWDVDDWDVDDWDVDDWDVDDWDVDDWDVDDWDVDD",
+   "bits": "21102110211021102110211021102110211",
+   "rank": "e_w^w^9"
+  },
+  {
+   "word": "DVDVWDVDVWDVDVWDVDVWDVDVWDVDVWDVDVWDVDVWDVDV",
+   "bits": "22022022022022022022022022",
+   "rank": "e_e8"
+  },
+  {
+   "word": "DVDWWDVDWWDVDWWDVDWWDVDWWDVDWWDVDWWDVDWWDVDW",
+   "bits": "21002100210021002100210021002100210",
+   "rank": "e_w·9+1"
+  },
+  {
+   "word": "DVWDWDVWDWDVWDWDVWDWDVWDWDVWDWDVWDWDVWDWDVWD",
+   "bits": "20102010201020102010201020102010201",
+   "rank": "w^(e0·9+1)"
+  },
+  {
+   "word": "WDVDDWDVDDWDVDDWDVDDWDVDDWDVDDWDVDDWDVDDWDVDD",
+   "bits": "021102110211021102110211021102110211",
+   "rank": "e_w^w^9"
+  },
+  {
+   "word": "WDVDVWDVDVWDVDVWDVDVWDVDVWDVDVWDVDVWDVDVWDVDV",
+   "bits": "022022022022022022022022022",
+   "rank": "e_e8"
+  },
+  {
+   "word": "WDVDWWDVDWWDVDWWDVDWWDVDWWDVDWWDVDWWDVDWWDVDW",
+   "bits": "021002100210021002100210021002100210",
+   "rank": "e_w·9+1"
+  },
+  {
+   "word": "WDVWDWDVWDWDVWDWDVWDWDVWDWDVWDWDVWDWDVWDWDVWD",
+   "bits": "020102010201020102010201020102010201",
+   "rank": "w^(e0·9+1)"
+  },
+  {
+   "word": "DVDDDWDVDDDWDVDDDWDVDDDWDVDDDWDVDDDWDVDDDWDVDDD",
+   "bits": "211102111021110211102111021110211102111",
+   "rank": "e_w^w^w^8"
+  },
+  {
+   "word": "DVDDWWDVDDWWDVDDWWDVDDWWDVDDWWDVDDWWDVDDWWDVDDW",
+   "bits": "211002110021100211002110021100211002110",
+   "rank": "e_w^w·8+1"
+  },
+  {
+   "word": "DVDVDWDVDVDWDVDVDWDVDVDWDVDVDWDVDVDWDVDVDWDVDVD",
+   "bits": "2210221022102210221022102210221",
+   "rank": "e_e_w^8"
+  },
+  {
+   "word": "DVDVWWDVDVWWDVDVWWDVDVWWDVDVWWDVDVWWDVDVWWDVDVW",
+   "bits": "2200220022002200220022002200220",
+   "rank": "e_e0·8+1"
+  },
+  {
+   "word": "DVDWDWDVDWDWDVDWDWDVDWDWDVDWDWDVDWDWDVDWDWDVDWD",
+   "bits": "210102101021010210102101021010210102101",
+   "rank": "w^(e_w·8+1)"
+  },
+  {
+   "word": "DVWDDWDVWDDWDVWDDWDVWDDWDVWDDWDVWDDWDVWDDWDVWDD",
+   "bits": "201102011020110201102011020110201102011",
+   "rank": "w^w^(e0·8+1)"
+  },
+  {
+   "word": "DVDDDDWDVDDDDWDVDDDDWDVDDDDWDVDDDDWDVDDDDWDVDDDD",
+   "bits": "21111021111021111021111021111021111021111",
+   "rank": "e_w^w^w^w^7"
+  },
+  {
+   "word": "DVDVDDWDVDVDDWDVDVDDWDVDVDDWDVDVDDWDVDVDDWDVDVDD",
+   "bits": "2211022110221102211022110221102211",
+   "rank": "e_e_w^w^7"
+  },
+  {
+   "word": "WDVDDDWDVDDDWDVDDDWDVDDDWDVDDDWDVDDDWDVDDDWDVDDD",
+   "bits": "0211102111021110211102111021110211102111",
+   "rank": "e_w^w^w^8"
+  },
+  {
+   "word": "WDVDDWWDVDDWWDVDDWWDVDDWWDVDDWWDVDDWWDVDDWWDVDDW",
+   "bits": "0211002110021100211002110021100211002110",
+   "rank": "e_w^w·8+1"
+  },
+  {
+   "word": "WDVDVDWDVDVDWDVDVDWDVDVDWDVDVDWDVDVDWDVDVDWDVDVD",
+   "bits": "02210221022102210221022102210221",
+   "rank": "e_e_w^8"
+  },
+  {
+   "word": "WDVDVWWDVDVWWDVDVWWDVDVWWDVDVWWDVDVWWDVDVWWDVDVW",
+   "bits": "02200220022002200220022002200220",
+   "rank": "e_e0·8+1"
+  },
+  {
+   "word": "WDVDWDWDVDWDWDVDWDWDVDWDWDVDWDWDVDWDWDVDWDWDVDWD",
+   "bits": "0210102101021010210102101021010210102101",
+   "rank": "w^(e_w·8+1)"
+  },
+  {
+   "word": "WDVWDDWDVWDDWDVWDDWDVWDDWDVWDDWDVWDDWDVWDDWDVWDD",
+   "bits": "0201102011020110201102011020110201102011",
+   "rank": "w^w^(e0·8+1)"
+  },
+  {
+   "word": "DVDDWDVDDWDVDDWDVDDWDVDDWDVDDWDVDDWDVDDWDVDDWDVDD",
+   "bits": "211021102110211021102110211021102110211",
+   "rank": "e_w^w^10"
+  },
+  {
+   "word": "DVDVWDVDVWDVDVWDVDVWDVDVWDVDVWDVDVWDVDVWDVDVWDVDV",
+   "bits": "22022022022022022022022022022",
+   "rank": "e_e9"
+  },
+  {
+   "word": "DVDWWDVDWWDVDWWDVDWWDVDWWDVDWWDVDWWDVDWWDVDWWDVDW",
+   "bits": "210021002100210021002100210021002100210",
+   "rank": "e_w·10+1"
+  },
+  {
+   "word": "DVWDWDVWDWDVWDWDVWDWDVWDWDVWDWDVWDWDVWDWDVWDWDVWD",
+   "bits": "201020102010201020102010201020102010201",
+   "rank": "w^(e0·10+1)"
+  },
+  {
+   "word": "WDVDDDDWDVDDDDWDVDDDDWDVDDDDWDVDDDDWDVDDDDWDVDDDD",
+   "bits": "021111021111021111021111021111021111021111",
+   "rank": "e_w^w^w^w^7"
+  },
+  {
+   "word": "WDVDVDDWDVDVDDWDVDVDDWDVDVDDWDVDVDDWDVDVDDWDVDVDD",
+   "bits": "02211022110221102211022110221102211",
+   "rank": "e_e_w^w^7"
+  },
+  {
+   "word": "WDVDDWDVDDWDVDDWDVDDWDVDDWDVDDWDVDDWDVDDWDVDDWDVDD",
+   "bits": "0211021102110211021102110211021102110211",
+   "rank": "e_w^w^10"
+  },
+  {
+   "word": "WDVDVWDVDVWDVDVWDVDVWDVDVWDVDVWDVDVWDVDVWDVDVWDVDV",
+   "bits": "022022022022022022022022022022",
+   "rank": "e_e9"
+  },
+  {
+   "word": "WDVDWWDVDWWDVDWWDVDWWDVDWWDVDWWDVDWWDVDWWDVDWWDVDW",
+   "bits": "0210021002100210021002100210021002100210",
+   "rank": "e_w·10+1"
+  },
+  {
+   "word": "WDVWDWDVWDWDVWDWDVWDWDVWDWDVWDWDVWDWDVWDWDVWDWDVWD",
+   "bits": "0201020102010201020102010201020102010201",
+   "rank": "w^(e0·10+1)"
+  },
+  {
+   "word": "DVDDDWDVDDDWDVDDDWDVDDDWDVDDDWDVDDDWDVDDDWDVDDDWDVDDD",
+   "bits": "21110211102111021110211102111021110211102111",
+   "rank": "e_w^w^w^9"
+  },
+  {
+   "word": "DVDDWWDVDDWWDVDDWWDVDDWWDVDDWWDVDDWWDVDDWWDVDDWWDVDDW",
+   "bits": "21100211002110021100211002110021100211002110",
+   "rank": "e_w^w·9+1"
+  },
+  {
+   "word": "DVDVDWDVDVDWDVDVDWDVDVDWDVDVDWDVDVDWDVDVDWDVDVDWDVDVD",
+   "bits": "22102210221022102210221022102210221",
+   "rank": "e_e_w^9"
+  },
+  {
+   "word": "DVDVWWDVDVWWDVDVWWDVDVWWDVDVWWDVDVWWDVDVWWDVDVWWDVDVW",
+   "bits": "22002200220022002200220022002200220",
+   "rank": "e_e0·9+1"
+  },
+  {
+   "word": "DVDWDWDVDWDWDVDWDWDVDWDWDVDWDWDVDWDWDVDWDWDVDWDWDVDWD",
+   "bits": "21010210102101021010210102101021010210102101",
+   "rank": "w^(e_w·9+1)"
+  },
+  {
+   "word": "DVWDDWDVWDDWDVWDDWDVWDDWDVWDDWDVWDDWDVWDDWDVWDDWDVWDD",
+   "bits": "20110201102011020110201102011020110201102011",
+   "rank": "w^w^(e0·9+1)"
+  },
+  {
+   "word": "WDVDDDWDVDDDWDVDDDWDVDDDWDVDDDWDVDDDWDVDDDWDVDDDWDVDDD",
+   "bits": "021110211102111021110211102111021110211102111",
+   "rank": "e_w^w^w^9"
+  },
+  {
+   "word": "WDVDDWWDVDDWWDVDDWWDVDDWWDVDDWWDVDDWWDVDDWWDVDDWWDVDDW",
+   "bits": "021100211002110021100211002110021100211002110",
+   "rank": "e_w^w·9+1"
+  },
+  {
+   "word": "WDVDVDWDVDVDWDVDVDWDVDVDWDVDVDWDVDVDWDVDVDWDVDVDWDVDVD",
+   "bits": "022102210221022102210221022102210221",
+   "rank": "e_e_w^9"
+  },
+  {
+   "word": "WDVDVWWDVDVWWDVDVWWDVDVWWDVDVWWDVDVWWDVDVWWDVDVWWDVDVW",
+   "bits": "022002200220022002200220022002200220",
+   "rank": "e_e0·9+1"
+  },
+  {
+   "word": "WDVDWDWDVDWDWDVDWDWDVDWDWDVDWDWDVDWDWDVDWDWDVDWDWDVDWD",
+   "bits": "021010210102101021010210102101021010210102101",
+   "rank": "w^(e_w·9+1)"
+  },
+  {
+   "word": "WDVWDDWDVWDDWDVWDDWDVWDDWDVWDDWDVWDDWDVWDDWDVWDDWDVWDD",
+   "bits": "020110201102011020110201102011020110201102011",
+   "rank": "w^w^(e0·9+1)"
+  },
+  {
+   "word": "DVDDDDWDVDDDDWDVDDDDWDVDDDDWDVDDDDWDVDDDDWDVDDDDWDVDDDD",
+   "bits": "21111021111021111021111021111021111021111021111",
+   "rank": "e_w^w^w^w^8"
+  },
+  {
+   "word": "DVDVDDWDVDVDDWDVDVDDWDVDVDDWDVDVDDWDVDVDDWDVDVDDWDVDVDD",
+   "bits": "221102211022110221102211022110221102211",
+   "rank": "e_e_w^w^8"
+  },
+  {
+   "word": "WDVDDDDWDVDDDDWDVDDDDWDVDDDDWDVDDDDWDVDDDDWDVDDDDWDVDDDD",
+   "bits": "021111021111021111021111021111021111021111021111",
+   "rank": "e_w^w^w^w^8"
+  },
+  {
+   "word": "WDVDVDDWDVDVDDWDVDVDDWDVDVDDWDVDVDDWDVDVDDWDVDVDDWDVDVDD",
+   "bits": "0221102211022110221102211022110221102211",
+   "rank": "e_e_w^w^8"
+  },
+  {
+   "word": "DVDDDWDVDDDWDVDDDWDVDDDWDVDDDWDVDDDWDVDDDWDVDDDWDVDDDWDVDDD",
+   "bits": "2111021110211102111021110211102111021110211102111",
+   "rank": "e_w^w^w^10"
+  },
+  {
+   "word": "DVDDWWDVDDWWDVDDWWDVDDWWDVDDWWDVDDWWDVDDWWDVDDWWDVDDWWDVDDW",
+   "bits": "2110021100211002110021100211002110021100211002110",
+   "rank": "e_w^w·10+1"
+  },
+  {
+   "word": "DVDVDWDVDVDWDVDVDWDVDVDWDVDVDWDVDVDWDVDVDWDVDVDWDVDVDWDVDVD",
+   "bits": "221022102210221022102210221022102210221",
+   "rank": "e_e_w^10"
+  },
+  {
+   "word": "DVDVWWDVDVWWDVDVWWDVDVWWDVDVWWDVDVWWDVDVWWDVDVWWDVDVWWDVDVW",
+   "bits": "220022002200220022002200220022002200220",
+   "rank": "e_e0·10+1"
+  },
+  {
+   "word": "DVDWDWDVDWDWDVDWDWDVDWDWDVDWDWDVDWDWDVDWDWDVDWDWDVDWDWDVDWD",
+   "bits": "2101021010210102101021010210102101021010210102101",
+   "rank": "w^(e_w·10+1)"
+  },
+  {
+   "word": "DVWDDWDVWDDWDVWDDWDVWDDWDVWDDWDVWDDWDVWDDWDVWDDWDVWDDWDVWDD",
+   "bits": "2011020110201102011020110201102011020110201102011",
+   "rank": "w^w^(e0·10+1)"
+  },
+  {
+   "word": "WDVDDDWDVDDDWDVDDDWDVDDDWDVDDDWDVDDDWDVDDDWDVDDDWDVDDDWDVDDD",
+   "bits": "02111021110211102111021110211102111021110211102111",
+   "rank": "e_w^w^w^10"
+  },
+  {
+   "word": "WDVDDWWDVDDWWDVDDWWDVDDWWDVDDWWDVDDWWDVDDWWDVDDWWDVDDWWDVDDW",
+   "bits": "02110021100211002110021100211002110021100211002110",
+   "rank": "e_w^w·10+1"
+  },
+  {
+   "word": "WDVDVDWDVDVDWDVDVDWDVDVDWDVDVDWDVDVDWDVDVDWDVDVDWDVDVDWDVDVD",
+   "bits": "0221022102210221022102210221022102210221",
+   "rank": "e_e_w^10"
+  },
+  {
+   "word": "WDVDVWWDVDVWWDVDVWWDVDVWWDVDVWWDVDVWWDVDVWWDVDVWWDVDVWWDVDVW",
+   "bits": "0220022002200220022002200220022002200220",
+   "rank": "e_e0·10+1"
+  },
+  {
+   "word": "WDVDWDWDVDWDWDVDWDWDVDWDWDVDWDWDVDWDWDVDWDWDVDWDWDVDWDWDVDWD",
+   "bits": "02101021010210102101021010210102101021010210102101",
+   "rank": "w^(e_w·10+1)"
+  },
+  {
+   "word": "WDVWDDWDVWDDWDVWDDWDVWDDWDVWDDWDVWDDWDVWDDWDVWDDWDVWDDWDVWDD",
+   "bits": "02011020110201102011020110201102011020110201102011",
+   "rank": "w^w^(e0·10+1)"
+  },
+  {
+   "word": "DVDDDDWDVDDDDWDVDDDDWDVDDDDWDVDDDDWDVDDDDWDVDDDDWDVDDDDWDVDDDD",
+   "bits": "21111021111021111021111021111021111021111021111021111",
+   "rank": "e_w^w^w^w^9"
+  },
+  {
+   "word": "DVDVDDWDVDVDDWDVDVDDWDVDVDDWDVDVDDWDVDVDDWDVDVDDWDVDVDDWDVDVDD",
+   "bits": "22110221102211022110221102211022110221102211",
+   "rank": "e_e_w^w^9"
+  },
+  {
+   "word": "WDVDDDDWDVDDDDWDVDDDDWDVDDDDWDVDDDDWDVDDDDWDVDDDDWDVDDDDWDVDDDD",
+   "bits": "021111021111021111021111021111021111021111021111021111",
+   "rank": "e_w^w^w^w^9"
+  },
+  {
+   "word": "WDVDVDDWDVDVDDWDVDVDDWDVDVDDWDVDVDDWDVDVDDWDVDVDDWDVDVDDWDVDVDD",
+   "bits": "022110221102211022110221102211022110221102211",
+   "rank": "e_e_w^w^9"
+  },
+  {
+   "word": "DVDDDDWDVDDDDWDVDDDDWDVDDDDWDVDDDDWDVDDDDWDVDDDDWDVDDDDWDVDDDDWDVDDDD",
+   "bits": "21111021111021111021111021111021111021111021111021111021111",
+   "rank": "e_w^w^w^w^10"
+  },
+  {
+   "word": "DVDVDDWDVDVDDWDVDVDDWDVDVDDWDVDVDDWDVDVDDWDVDVDDWDVDVDDWDVDVDDWDVDVDD",
+   "bits": "2211022110221102211022110221102211022110221102211",
+   "rank": "e_e_w^w^10"
+  },
+  {
+   "word": "WDVDDDDWDVDDDDWDVDDDDWDVDDDDWDVDDDDWDVDDDDWDVDDDDWDVDDDDWDVDDDDWDVDDDD",
+   "bits": "021111021111021111021111021111021111021111021111021111021111",
+   "rank": "e_w^w^w^w^10"
+  },
+  {
+   "word": "WDVDVDDWDVDVDDWDVDVDDWDVDVDDWDVDVDDWDVDVDDWDVDVDDWDVDVDDWDVDVDDWDVDVDD",
+   "bits": "02211022110221102211022110221102211022110221102211",
+   "rank": "e_e_w^w^10"
+  }
+ ]
+}

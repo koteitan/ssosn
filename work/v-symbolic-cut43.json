@@ -1,0 +1,11 @@
+{
+ "counts": {
+  "V_HEAD": 44,
+  "checked_terms": 3000,
+  "D_ROOT": 127,
+  "W_ROOT": 75,
+  "D_W_HEAD": 129,
+  "W_V_HEAD": 33
+ },
+ "failures": []
+}

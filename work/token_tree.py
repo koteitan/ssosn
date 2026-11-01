@@ -13,6 +13,9 @@ import conj2
 from ordinal import cmp, ZERO as OZERO, ONE as OONE
 import token_base2
 from cut_structure import CutTree
+import evalord as _ev_v43
+from ordinal import lt, P as _P_v43
+E0_ORD = _P_v43(OONE, OZERO)
 
 
 class Unknown(Exception):
@@ -373,6 +376,10 @@ def parse(tail, allow_d=False):
     tail = tuple(tail)
     out = []
     while tail:
+        if allow_d and V_ROOT_EXPERIMENT and tail[:3] == (0,2,1):
+            out.append('V')
+            tail = tail[3:]
+            continue
         if allow_d and tail[:2] == (0,2):
             out.append('D')
             tail = tail[2:]
@@ -433,7 +440,7 @@ def fold(tokens, boundary=False, general=False):
     if relative is not None:return relative
     j = 0
     if general:
-        while j<len(tokens) and tokens[j] in ('W','D'):
+        while j<len(tokens) and tokens[j] in (('W','D','V') if V_ROOT_EXPERIMENT else ('W','D')):
             j+=1
     elif not boundary:
         while j < len(tokens) and tokens[j] == 'W':
@@ -494,7 +501,7 @@ def fold(tokens, boundary=False, general=False):
     fresh, active_depth, i = True, 0, j
     while i < len(tokens):
         token = tokens[i]
-        if token in ('W','D'):
+        if token in (('W','D','V') if V_ROOT_EXPERIMENT else ('W','D')):
             raise Unknown(('tree unattached operator', token))
         start = i
         i += 1
@@ -510,7 +517,7 @@ def fold(tokens, boundary=False, general=False):
             copies += ('D',)
             i += 1
         if general:
-            while i<len(tokens) and tokens[i] in ('W','D'):
+            while i<len(tokens) and tokens[i] in (('W','D','V') if V_ROOT_EXPERIMENT else ('W','D')):
                 copies+=(tokens[i],)
                 i+=1
         k = int(token[1:])
@@ -582,6 +589,10 @@ def fold(tokens, boundary=False, general=False):
                             if key not in PURE_FOLDS:_fold_flag_only(key,boundary,general)
                     pure = pure and all(PURE_FOLDS.get(tuple(tokens[:start])+('A'+str(n),),False)
                                         for n in (1,2,3,4))
+            elif fresh and (V_BITS_EXPERIMENT or V_RAW_EXPERIMENT) and general and not iterated and not lt(ordinal(offset),E0_ORD):
+                # §43: the fresh E1 is the sup of the towers over the offset,
+                # i.e. the next epsilon above the offset (e0 when offset < e0).
+                value = plus(base, _from_ordinal(_ev_v43.next_fp(OONE,ordinal(offset)),origin), origin)
             elif fresh:
                 value = plus(base, epsilon(amount if iterated else ZERO, origin), origin)
                 if PURITY_TRACKING:pure=False
@@ -616,8 +627,48 @@ def binary_index(bits, depth=0):
     return result
 
 
+V_ROOT_EXPERIMENT = False  # §43: D^omega marker inside a (2,1) block
+V_BITS_EXPERIMENT = False  # §43: V copy rank via 0/1/2 bits (v_bits43); needs V_ROOT
+V_RAW_EXPERIMENT = False   # §43: rank = old value of 00 ++ bits; partial diagnostic
+
+
 def copy_rank(copies):
     """Hypothesis for the next scope: W/D copy words use the binary rank tree."""
+    if V_ROOT_EXPERIMENT and V_RAW_EXPERIMENT and 'V' in copies:
+        import v_raw43
+        try:
+            return _from_ordinal(v_raw43.rank(tuple(copies)),Origin('V raw-bit rank',0,tuple(copies)))
+        except ValueError as error:
+            raise Unknown(('V raw-bit rank',error.args)) from error
+    if V_ROOT_EXPERIMENT and V_BITS_EXPERIMENT and 'V' in copies:
+        import v_bits43
+        try:
+            return _from_ordinal(v_bits43.rank(tuple(copies)),Origin('V bits rank',0,tuple(copies)))
+        except ValueError as error:
+            raise Unknown(('V bits rank',error.args)) from error
+    if V_ROOT_EXPERIMENT and 'V' in copies:
+        from ordinal import ONE as OONE, OMEGA as OOMEGA, P as OP, add as oadd, w as ow
+        from evalord import next_fp
+        origin=Origin('V copy rank',0,tuple(copies))
+        first=copies.index('V')
+        rank=ordinal(binary_index(tuple(0 if t=='W' else 1 for t in copies[:first])))
+        rank=next_fp(OONE,rank)
+        for i in range(first+1,len(copies)):
+            op=copies[i]
+            if op=='W':
+                rank=oadd(rank,OONE)
+            elif op=='D':
+                if copies[i-1]=='V' and len(rank)==1 and rank[0][1]==OONE:
+                    # Real terms of D V D have ranks epsilon_n for n>=1.
+                    rank=OP(OONE,oadd(rank[0][2],OOMEGA))
+                else:
+                    bumped=ow(rank)
+                    rank=next_fp(OONE,rank) if bumped==rank else bumped
+            elif op=='V':
+                rank=next_fp(OONE,rank)
+            else:
+                raise Unknown(('V copy unsupported operator',op))
+        return _from_ordinal(rank,origin)
     return binary_index(tuple(0 if token=='W' else 1 for token in copies))
 
 

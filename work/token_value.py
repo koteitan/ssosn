@@ -13,6 +13,10 @@ def A(k):return (0,1,2)+(0,2)*k
 W=A(0)+(1,)
 E0=P(ONE,ZERO)
 BOUNDARY_EXPERIMENT=False  # rejected broad fold; diagnostic runs only, fresh caches
+P1_ROOT_EXPERIMENT=False  # §43: D/W roots above P, measured separately
+P1_V_FOLD_EXPERIMENT=False  # §43: internal V rank, on top of P1_ROOT
+P1_V_BITS_EXPERIMENT=False  # §43: V copy rank via 0/1/2 bits (v_bits43); implies the V fold
+P1_V_RAW_EXPERIMENT=False   # §43: rank from old value of 00+bits; partial diagnostic
 
 class Unknown(Exception):pass
 
@@ -93,6 +97,16 @@ def index(tokens):
 @lru_cache(maxsize=200000)
 def block_value(u):
  u=tuple(u)
+ if P1_ROOT_EXPERIMENT and u==(2,1,0,2,0,2,1):
+  return p1_v_anchor()
+ if P1_ROOT_EXPERIMENT and (P1_V_FOLD_EXPERIMENT or P1_V_BITS_EXPERIMENT or P1_V_RAW_EXPERIMENT) and u[:7]==(2,1,0,2,0,2,1):
+  import token_tree
+  token_tree.GENERAL_COPY_EXPERIMENT=True
+  token_tree.V_ROOT_EXPERIMENT=True
+  token_tree.V_BITS_EXPERIMENT=P1_V_BITS_EXPERIMENT
+  token_tree.V_RAW_EXPERIMENT=P1_V_RAW_EXPERIMENT
+  try:return token_tree.block_value(u)
+  except token_tree.Unknown:pass
  import token_base2
  binary=token_base2.parse(u)
  if binary is not None:return P(ONE,token_base2.index(binary))
@@ -154,7 +168,51 @@ def value(s):
  s=tuple(s)
  if s[:2]!=(0,0) or max(s,default=0)>2:raise Unknown('outside 0/1/2 range')
  if len(s)>2 and s[-1]==0:return succ(value(s[:-1]))
- return add(nat(2),body_value(s[2:]))
+ try:return add(nat(2),body_value(s[2:]))
+ except Unknown:
+  if not P1_ROOT_EXPERIMENT:raise
+  return p1_root_candidate(s)
+
+
+def p1_root_candidate(s):
+ """Flagged D/W root extension; no assertion of a general value theorem.
+
+ The D/W anchors are the earlier §34 general-copy candidates.  The V anchor
+ is the stable finite-sample sup of the actual law P V[n] = P D^n 0.  The
+ L1 anchor is the sup of the cut=2 block repetitions of P D 0 0.
+ Other D-led strings are delegated to the same general-copy fold; failures
+ remain Unknown rather than acquiring an invented value.
+ """
+ import token_tree
+ root=(0,0,2,1,0,2)
+ if s[:len(root)]!=root:raise Unknown('outside P root experiment')
+ if s[:len(root)+1]==root+(1,):raise Unknown('at or above P1: outside P root experiment')
+ token_tree.GENERAL_COPY_EXPERIMENT=True
+ token_tree.V_ROOT_EXPERIMENT=P1_V_FOLD_EXPERIMENT or P1_V_BITS_EXPERIMENT or P1_V_RAW_EXPERIMENT
+ token_tree.V_BITS_EXPERIMENT=P1_V_BITS_EXPERIMENT
+ token_tree.V_RAW_EXPERIMENT=P1_V_RAW_EXPERIMENT
+ if s==root+(0,2,1):
+  return p1_v_anchor()
+ if s==root+(0,2,0,1):
+  return w(succ(value(root+(0,2))))
+ if s==root+(0,2,1,0,1):
+  return w(succ(value(root+(0,2,1))))
+ try:return token_tree.value(s)
+ except token_tree.Unknown as error:raise Unknown(('P root fold unknown',error.args)) from error
+
+
+@lru_cache(maxsize=1)
+def p1_v_anchor():
+ """The candidate sup of P V[n]=P D^n 0, checked at 3 and 4 terms."""
+ import token_tree
+ import evalord
+ from ordinal import lt
+ token_tree.GENERAL_COPY_EXPERIMENT=True
+ xs=[token_tree.value((0,0,2,1)+(0,2)*n) for n in range(1,5)]
+ limit3,limit4=evalord.sup(xs[:3]),evalord.sup(xs)
+ if limit3 is None or limit3!=limit4 or not all(lt(x,limit4) for x in xs):
+  raise Unknown('P V root sup undecided')
+ return limit4
 
 if __name__=='__main__':
  from ordinal import show
