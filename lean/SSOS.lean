@@ -21,3 +21,6 @@ import SSOS.CutRank
 import SSOS.TokenCut
 import SSOS.PrefixCut
 import SSOS.WRunCut
+import SSOS.VCut
+import SSOS.VNote
+import SSOS.ValueDef
